@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/prism-api/!svn/ver/4432/trunk/chado/ontologies
+END
+relationship.obo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/prism-api/!svn/ver/3984/trunk/chado/ontologies/relationship.obo
+END
+component.obo
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/prism-api/!svn/ver/4107/trunk/chado/ontologies/component.obo
+END
+go.obo
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/prism-api/!svn/ver/4014/trunk/chado/ontologies/go.obo
+END
+epitope.obo
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/prism-api/!svn/ver/4209/trunk/chado/ontologies/epitope.obo
+END
+ard.obo
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/prism-api/!svn/ver/3858/trunk/chado/ontologies/ard.obo
+END
+tigr_schemas.obo
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/prism-api/!svn/ver/2692/trunk/chado/ontologies/tigr_schemas.obo
+END
+oboRecordSorter.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/prism-api/!svn/ver/3408/trunk/chado/ontologies/oboRecordSorter.pl
+END
+adult_mouse_anatomy.obo
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/prism-api/!svn/ver/2173/trunk/chado/ontologies/adult_mouse_anatomy.obo
+END
+TIGR_roles.obo
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/prism-api/!svn/ver/3838/trunk/chado/ontologies/TIGR_roles.obo
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/prism-api/!svn/ver/2952/trunk/chado/ontologies/CHANGELOG
+END
+phytoplankton.obo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/prism-api/!svn/ver/4081/trunk/chado/ontologies/phytoplankton.obo
+END
+obo.list
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/prism-api/!svn/ver/3129/trunk/chado/ontologies/obo.list
+END
+evidence_code.obo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/prism-api/!svn/ver/4229/trunk/chado/ontologies/evidence_code.obo
+END
+so.aux.obo
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/prism-api/!svn/ver/4209/trunk/chado/ontologies/so.aux.obo
+END
+annotation_attributes.obo
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/prism-api/!svn/ver/4432/trunk/chado/ontologies/annotation_attributes.obo
+END
+go_properties.obo
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/prism-api/!svn/ver/2974/trunk/chado/ontologies/go_properties.obo
+END
+so.obo
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/prism-api/!svn/ver/3984/trunk/chado/ontologies/so.obo
+END
+bovine.obo
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/prism-api/!svn/ver/4303/trunk/chado/ontologies/bovine.obo
+END
+annotation_flags.obo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/prism-api/!svn/ver/2544/trunk/chado/ontologies/annotation_flags.obo
+END
+ec.obo
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/prism-api/!svn/ver/4423/trunk/chado/ontologies/ec.obo
+END
+gff3_attributes.obo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/prism-api/!svn/ver/2974/trunk/chado/ontologies/gff3_attributes.obo
+END
+viral_annotation_pipeline.obo
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/prism-api/!svn/ver/3754/trunk/chado/ontologies/viral_annotation_pipeline.obo
+END
+relation_typedef.obo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/prism-api/!svn/ver/2974/trunk/chado/ontologies/relation_typedef.obo
+END
+relationship.aux.obo
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/prism-api/!svn/ver/2974/trunk/chado/ontologies/relationship.aux.obo
+END
+output.obo
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/prism-api/!svn/ver/4070/trunk/chado/ontologies/output.obo
+END

@@ -1,0 +1,149 @@
+format-version: 1.0
+date: 28:09:2004 16:47
+saved-by: sundaram
+auto-generated-by: DAG-Edit 1.417
+default-namespace: go_properties
+
+[Term]
+id: GP:0000000
+name: Go_properties
+
+[Term]
+id: GP:0000001
+name: DB
+def: "The database contributing the gene_association file." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000002
+name: DB_Object_ID
+def: "A unique identifier in DB for the item being annotated." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000003
+name: DB_Object_Symbol
+def: "A (unique and valid) symbol to which DB_Object_ID is matched can use ORG name for otherwise unnamed gene or protein if gene products are annotated, can use gene product symbol if available, or many gene product annotation entries can share a gene symbol." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000004
+name: Qualifier
+def: "Flags that modify the interpretation of an annotation one (or more) of NOT, contributes_to, colocalizes_with." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000005
+name: GOid
+def: "The GO identifier for the term attributed to the DB_Object_ID." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000006
+name: DB:Reference
+def: "The unique identifier appropriate to DB for the authority for the attribution of the GOid to the DB_Object_ID.  This may be a literature reference or a database record." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000007
+name: Evidence
+def: "One of IMP, IGI, IPI, ISS, IDA, IEP, IEA, TAS, NAS, ND, IC." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000008
+name: With_or_From
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000009
+name: Aspect
+def: "One of P (biological process), F (molecular function), C (cellular component)." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000010
+name: DB_Object_Name
+def: "Name of gene or gene product." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000011
+name: Synonym
+def: "Gene_symbol" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000012
+name: DB_Object_Type
+def: "What kind of thing is being annotated." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000013
+name: Taxon
+def: "Taxonomic identifier(s)." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000014
+name: Date
+def: "Date on which the annotation was made; format is YYYYMMDD ." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+[Term]
+id: GP:0000015
+name: Assigned_by
+def: "The database which made the annotation.  Used for tracking the source of an individual annotation." [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000000
+
+
+[Term]
+id: GP:0000016
+name: NOT
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000004
+
+
+[Term]
+id: GP:0000017
+name: contributes_to
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000004
+
+[Term]
+id: GP:0000018
+name: colocalizes_with
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000004
+
+[Term]
+id: GP:0000019
+name: With
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000008
+
+[Term]
+id: GP:0000020
+name: From
+def: "See URL for details" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000008
+
+[Term]
+id: GP:0000021
+name: P
+def: "biological process" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000009
+
+[Term]
+id: GP:0000022
+name: F
+def: "molecular function" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000009
+
+[Term]
+id: GP:0000023
+name: C
+def: "cellular component" [http://www.geneontology.org/GO.annotation.html]
+is_a: GP:0000009

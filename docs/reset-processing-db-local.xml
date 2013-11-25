@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+	<state>incomplete</state>
+	<name>reset-processing-db workflow</name>
+	<!--Preprocessing-->
+	<command>
+	    <type>RunUnixCommand</type>
+	    <name>create output directory</name>
+	    <state>incomplete</state>
+	    <executable>mkdir</executable>
+	    <arg>-p -m 777 $;OUTPUT_DIRECTORY$;</arg>
+	</command>
+	<command>
+	    <type>RunUnixCommand</type>
+	    <name>create temp directory</name>
+	    <state>incomplete</state>
+	    <executable>mkdir</executable>
+	    <arg>-p -m 777 $;TMP_DIR$;</arg>
+	</command>
+        <command>
+		<type>RunUnixCommand</type>
+		<name>reset-processing-db</name>
+		<state>incomplete</state>
+		<executable>$;RESET_DB_EXEC$;</executable>
+		<arg>-ls ;INPUT_FILE$; -e $;LOCATION$; -o $;OUTPUT_DIRECTORY$;</arg>
+		<param>
+			<key>stderr</key>
+			<value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stderr</value>
+		</param>
+		<param>
+			<key>stdout</key>
+			<value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stdout</value>
+		</param>
+	</command>
+    </commandSet>
+</commandSetRoot>

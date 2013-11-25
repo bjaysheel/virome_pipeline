@@ -1,0 +1,1034 @@
+format-version: 1.0
+date: 09:08:2006 07:57
+saved-by: jorvis
+auto-generated-by: DAG-Edit 1.417
+default-namespace: component.ontology
+namespace-id-rule:* GO:$sequence(7,0,9999999)$
+!
+! This ontology lists component type attributes i.e. these attributes will 
+! only appear in the <Analysis> section of the BSML files.
+!
+
+[Term]
+id: CO:0000034
+name: Component
+is_a: CO:0000024
+
+[Term]
+id: CO:0000024
+name: Component_ontology
+
+[Term]
+id: CO:0000155
+name: _match
+is_a: CO:0000061
+
+[Term]
+id: CO:0000054
+name: aat
+is_a: CO:0000034
+
+[Term]
+id: CO:0000119
+name: alternative_base
+is_a: CO:0000116
+
+[Term]
+id: CO:0000068
+name: autoannotate
+is_a: CO:0000034
+
+[Term]
+id: CO:0000069
+name: autogo
+is_a: CO:0000034
+
+[Term]
+id: CO:0000063
+name: ber
+is_a: CO:0000034
+
+[Term]
+id: CO:0000072
+name: besthit
+is_a: CO:0000034
+
+[Term]
+id: CO:0000013
+name: bin_dir
+is_a: CO:0000032
+
+[Term]
+id: CO:0000075
+name: blast
+is_a: CO:0000034
+
+[Term]
+id: CO:0000055
+name: blastn
+is_a: CO:0000075
+
+[Term]
+id: CO:0000010
+name: blastp
+is_a: CO:0000075
+
+[Term]
+id: CO:0000056
+name: blastx
+is_a: CO:0000075
+
+[Term]
+id: CO:0000039
+name: breaklen
+is_a: CO:0000004
+
+[Term]
+id: CO:0000122
+name: bsml2chado_xml
+is_a: CO:0000012
+
+[Term]
+id: CO:0000016
+name: bsml_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000033
+name: bsml_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000029
+name: bsml_output_directory
+is_a: CO:0000011
+
+[Term]
+id: CO:0000134
+name: bsml_output_list
+is_a: CO:0000011
+
+[Term]
+id: CO:0000079
+name: bsml_repository
+is_a: CO:0000012
+
+[Term]
+id: CO:0000146
+name: bsml_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000137
+name: btab_output_list
+is_a: CO:0000011
+
+[Term]
+id: CO:0000144
+name: chado_prism_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000149
+name: chado_schema_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000142
+name: coati_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000073
+name: cog
+is_a: CO:0000034
+
+[Term]
+id: CO:0000113
+name: combine_mums_error_cutoff
+is_a: CO:0000112
+
+[Term]
+id: CO:0000051
+name: combiner
+is_a: CO:0000034
+
+[Term]
+id: CO:0000080
+name: component_config
+is_a: CO:0000012
+
+[Term]
+id: CO:0000121
+name: component_xml
+is_a: CO:0000012
+
+[Term]
+id: CO:0000132
+name: componenturl
+is_a: CO:0000012
+
+[Term]
+id: CO:0000133
+name: compress_raw_output
+is_a: CO:0000012
+
+[Term]
+id: CO:0000117
+name: consensus_quality_value
+is_a: CO:0000116
+
+[Term]
+id: CO:0000125
+name: contig_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000124
+name: contig_list
+is_a: CO:0000123
+
+[Term]
+id: CO:0000123
+name: coverage
+is_a: CO:0000034
+
+[Term]
+id: CO:0000127
+name: coverage_seq_size
+is_a: CO:0000123
+
+[Term]
+id: CO:0000163
+name: cutoff
+is_a: CO:0000059
+
+[Term]
+id: CO:0000150
+name: cvdata_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000031
+name: database
+is_a: CO:0000032
+
+[Term]
+id: CO:0000014
+name: database_bsml_directory
+is_a: CO:0000006
+
+[Term]
+id: CO:0000027
+name: database_bsml_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000023
+name: database_bsml_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000001
+name: database_fasta_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000104
+name: database_matches
+is_a: CO:0000075
+
+[Term]
+id: CO:0000138
+name: database_path
+is_a: CO:0000012
+
+[Term]
+id: CO:0000152
+name: database_server_name
+is_a: CO:0000012
+
+[Term]
+id: CO:0000165
+name: dds_opts
+is_a: CO:0000054
+
+[Term]
+id: CO:0000005
+name: debug
+is_a: CO:0000032
+
+[Term]
+id: CO:0000157
+name: delta
+is_a: CO:0000061
+
+[Term]
+id: CO:0000103
+name: descriptions
+is_a: CO:0000075
+
+[Term]
+id: CO:0000018
+name: diagfactor
+is_a: CO:0000004
+
+[Term]
+id: CO:0000006
+name: directory
+is_a: CO:0000041
+
+[Term]
+id: CO:0000178
+name: domain_name
+is_a: CO:0000070
+
+[Term]
+id: CO:0000168
+name: ergatis_dir
+is_a: CO:0000012
+
+[Term]
+id: CO:0000147
+name: ergatis_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000143
+name: euk_prism_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000044
+name: exonomy
+is_a: CO:0000034
+
+[Term]
+id: CO:0000175
+name: exp
+is_a: CO:0000174
+
+[Term]
+id: CO:0000105
+name: expect
+is_a: CO:0000075
+
+[Term]
+id: CO:0000130
+name: family_id
+is_a: CO:0000070
+
+[Term]
+id: CO:0000038
+name: fasta_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000047
+name: fgenesh
+is_a: CO:0000034
+
+[Term]
+id: CO:0000022
+name: file
+is_a: CO:0000041
+
+[Term]
+id: CO:0000107
+name: filter
+is_a: CO:0000075
+
+[Term]
+id: CO:0000166
+name: filter_opts
+is_a: CO:0000054
+
+[Term]
+id: CO:0000167
+name: gap2_output_list
+is_a: CO:0000054
+
+[Term]
+id: CO:0000099
+name: gap_penalty
+is_a: CO:0000074
+
+[Term]
+id: CO:0000094
+name: gene_count_cutoff
+is_a: CO:0000074
+
+[Term]
+id: CO:0000093
+name: gene_length_cutoff
+is_a: CO:0000074
+
+[Term]
+id: CO:0000053
+name: genesplicer
+is_a: CO:0000034
+
+[Term]
+id: CO:0000048
+name: genmarkhmm
+is_a: CO:0000034
+
+[Term]
+id: CO:0000049
+name: genscan
+is_a: CO:0000034
+
+[Term]
+id: CO:0000009
+name: ges
+is_a: CO:0000034
+
+[Term]
+id: CO:0000043
+name: glimmer
+is_a: CO:0000034
+
+[Term]
+id: CO:0000169
+name: group_count
+is_a: CO:0000012
+
+[Term]
+id: CO:0000078
+name: groupsize
+is_a: CO:0000012
+
+[Term]
+id: CO:0000109
+name: gspmax
+is_a: CO:0000075
+
+[Term]
+id: CO:0000062
+name: hmmer
+is_a: CO:0000034
+
+[Term]
+id: CO:0000170
+name: icm
+is_a: CO:0000012
+
+[Term]
+id: CO:0000032
+name: init
+is_a: CO:0000012
+
+[Term]
+id: CO:0000041
+name: input
+is_a: CO:0000012
+
+[Term]
+id: CO:0000153
+name: input_extension
+is_a: CO:0000022
+
+[Term]
+id: CO:0000171
+name: input_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000154
+name: input_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000064
+name: iprscan
+is_a: CO:0000034
+
+[Term]
+id: CO:0000071
+name: jaccard
+is_a: CO:0000034
+
+[Term]
+id: CO:0000106
+name: jaccard_filtering
+is_a: CO:0000073
+
+[Term]
+id: CO:0000102
+name: jaccard_filtering_directory
+is_a: CO:0000071
+
+[Term]
+id: CO:0000172
+name: lib_dir
+is_a: CO:0000032
+
+[Term]
+id: CO:0000088
+name: linkscore
+is_a: CO:0000071
+
+[Term]
+id: CO:0000003
+name: masklen
+is_a: CO:0000004
+
+[Term]
+id: CO:0000035
+name: master_template_ini
+is_a: CO:0000025
+
+[Term]
+id: CO:0000017
+name: master_template_xml
+is_a: CO:0000025
+
+[Term]
+id: CO:0000090
+name: match_bsml_directory
+is_a: CO:0000006
+
+[Term]
+id: CO:0000091
+name: match_bsml_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000092
+name: match_bsml_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000164
+name: matching_repeat
+is_a: CO:0000059
+
+[Term]
+id: CO:0000111
+name: matrix
+is_a: CO:0000075
+
+[Term]
+id: CO:0000179
+name: max_e_value
+is_a: CO:0000063
+
+[Term]
+id: CO:0000086
+name: max_multi_alignment
+is_a: CO:0000071
+
+[Term]
+id: CO:0000180
+name: max_num_hits
+is_a: CO:0000063
+
+[Term]
+id: CO:0000181
+name: max_num_hits_per_region
+is_a: CO:0000063
+
+[Term]
+id: CO:0000182
+name: max_p_value
+is_a: CO:0000063
+
+[Term]
+id: CO:0000015
+name: maxgap
+is_a: CO:0000004
+
+[Term]
+id: CO:0000158
+name: maxperiod
+is_a: CO:0000061
+
+[Term]
+id: CO:0000101
+name: min_matches_per_window
+is_a: CO:0000074
+
+[Term]
+id: CO:0000183
+name: min_num_experimental
+is_a: CO:0000063
+
+[Term]
+id: CO:0000037
+name: mincluster
+is_a: CO:0000004
+
+[Term]
+id: CO:0000030
+name: minmatch
+is_a: CO:0000004
+
+[Term]
+id: CO:0000159
+name: minscore
+is_a: CO:0000061
+
+[Term]
+id: CO:0000156
+name: mismatch
+is_a: CO:0000061
+
+[Term]
+id: CO:0000174
+name: mreps
+is_a: CO:0000034
+
+[Term]
+id: CO:0000028
+name: name
+is_a: CO:0000025
+
+[Term]
+id: CO:0000177
+name: nodistrib
+is_a: CO:0000012
+
+[Term]
+id: CO:0000184
+name: nucleotide_db
+is_a: CO:0000063
+
+[Term]
+id: CO:0000185
+name: nucleotide_db_format
+is_a: CO:0000063
+
+[Term]
+id: CO:0000112
+name: nucmer
+is_a: CO:0000034
+
+[Term]
+id: CO:0000116
+name: nucmer_snp
+is_a: CO:0000034
+
+[Term]
+id: CO:0000148
+name: ontologies_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000100
+name: orientation_penalty
+is_a: CO:0000074
+
+[Term]
+id: CO:0000011
+name: output
+is_a: CO:0000012
+
+[Term]
+id: CO:0000082
+name: output_directory
+is_a: CO:0000012
+
+[Term]
+id: CO:0000139
+name: output_token
+is_a: CO:0000012
+
+[Term]
+id: CO:0000070
+name: parafam
+is_a: CO:0000034
+
+[Term]
+id: CO:0000074
+name: peffect
+is_a: CO:0000034
+
+[Term]
+id: CO:0000151
+name: peffect_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000046
+name: phat
+is_a: CO:0000034
+
+[Term]
+id: CO:0000160
+name: pi
+is_a: CO:0000061
+
+[Term]
+id: CO:0000087
+name: pidentity_cutoff
+is_a: CO:0000071
+
+[Term]
+id: CO:0000083
+name: pipeline
+is_a: CO:0000012
+
+[Term]
+id: CO:0000120
+name: pipeline_xml
+is_a: CO:0000012
+
+[Term]
+id: CO:0000089
+name: pipelineid
+is_a: CO:0000032
+
+[Term]
+id: CO:0000131
+name: pipelineurl
+is_a: CO:0000012
+
+[Term]
+id: CO:0000161
+name: pm
+is_a: CO:0000061
+
+[Term]
+id: CO:0000186
+name: project_id_repository
+is_a: CO:0000012
+
+[Term]
+id: CO:0000141
+name: prok_prism_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000004
+name: promer
+is_a: CO:0000034
+
+[Term]
+id: CO:0000187
+name: protein_db
+is_a: CO:0000063
+
+[Term]
+id: CO:0000188
+name: protein_db_format
+is_a: CO:0000063
+
+[Term]
+id: CO:0000189
+name: protein_nucleotide_id_map
+is_a: CO:0000063
+
+[Term]
+id: CO:0000000
+name: psipred
+is_a: CO:0000034
+
+[Term]
+id: CO:0000066
+name: psort
+is_a: CO:0000034
+
+[Term]
+id: CO:0000085
+name: pvalcut
+is_a: CO:0000071
+
+[Term]
+id: CO:0000129
+name: qual_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000008
+name: query_bsml_directory
+is_a: CO:0000006
+
+[Term]
+id: CO:0000042
+name: query_bsml_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000002
+name: query_bsml_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000040
+name: query_fasta_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000136
+name: query_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000096
+name: rankfield
+is_a: CO:0000074
+
+[Term]
+id: CO:0000097
+name: ranktype
+is_a: CO:0000074
+
+[Term]
+id: CO:0000135
+name: raw_output_list
+is_a: CO:0000011
+
+[Term]
+id: CO:0000118
+name: read_depth
+is_a: CO:0000116
+
+[Term]
+id: CO:0000108
+name: reference_bsml_file_list
+is_a: CO:0000022
+
+[Term]
+id: CO:0000162
+name: repeat_lib
+is_a: CO:0000059
+
+[Term]
+id: CO:0000059
+name: repeatmasker
+is_a: CO:0000034
+
+[Term]
+id: CO:0000026
+name: repository_root
+is_a: CO:0000032
+
+[Term]
+id: CO:0000176
+name: res
+is_a: CO:0000174
+
+[Term]
+id: CO:0000173
+name: revision
+is_a: CO:0000032
+
+[Term]
+id: CO:0000036
+name: schema_dir
+is_a: CO:0000032
+
+[Term]
+id: CO:0000095
+name: scorefield
+is_a: CO:0000074
+
+[Term]
+id: CO:0000110
+name: search_bsml_directory
+is_a: CO:0000073
+
+[Term]
+id: CO:0000060
+name: seg
+is_a: CO:0000034
+
+[Term]
+id: CO:0000126
+name: seq_file
+is_a: CO:0000022
+
+[Term]
+id: CO:0000012
+name: shared
+is_a: CO:0000024
+
+[Term]
+id: CO:0000081
+name: shared_config
+is_a: CO:0000012
+
+[Term]
+id: CO:0000145
+name: shared_prism_version
+is_a: CO:0000012
+
+[Term]
+id: CO:0000065
+name: signalp
+is_a: CO:0000034
+
+[Term]
+id: CO:0000128
+name: source_database
+is_a: CO:0000032
+
+[Term]
+id: CO:0000067
+name: targetp
+is_a: CO:0000034
+
+[Term]
+id: CO:0000058
+name: tblastn
+is_a: CO:0000075
+
+[Term]
+id: CO:0000057
+name: tblastx
+is_a: CO:0000075
+
+[Term]
+id: CO:0000076
+name: template_ini
+is_a: CO:0000012
+
+[Term]
+id: CO:0000077
+name: template_xml
+is_a: CO:0000012
+
+[Term]
+id: CO:0000114
+name: tiling_coverage_threshold
+is_a: CO:0000112
+
+[Term]
+id: CO:0000115
+name: tiling_maximum_gap
+is_a: CO:0000112
+
+[Term]
+id: CO:0000020
+name: tmp_dir
+is_a: CO:0000032
+
+[Term]
+id: CO:0000061
+name: trf
+is_a: CO:0000034
+
+[Term]
+id: CO:0000052
+name: trnascan
+is_a: CO:0000034
+
+[Term]
+id: CO:0000050
+name: twinscan
+is_a: CO:0000034
+
+[Term]
+id: CO:0000045
+name: unveil
+is_a: CO:0000034
+
+[Term]
+id: CO:0000140
+name: username
+is_a: CO:0000032
+
+[Term]
+id: CO:0000021
+name: version
+is_a: CO:0000025
+
+[Term]
+id: CO:0000007
+name: wfid
+is_a: CO:0000032
+
+[Term]
+id: CO:0000098
+name: window_size
+is_a: CO:0000074
+
+[Term]
+id: CO:0000019
+name: workflow_repository
+is_a: CO:0000025
+
+[Term]
+id: CO:0000025
+name: workflowdocs
+is_a: CO:0000012
+
+[Term]
+id: CO:0000084
+name: workflowdocs_dir
+is_a: CO:0000012
+
+[Term]
+id: CO:0000190
+name: classification
+is_a: CO:0000000
+
+[Term]
+id: CO:0000191
+name: component_name
+is_a: CO:0000000
+
+[Term]
+id: CO:0000192
+name: fasta_nr_peptide
+is_a: CO:0000000
+
+[Term]
+id: CO:0000193
+name: ganezilla_exec
+is_a: CO:0000000
+
+[Term]
+id: CO:0000194
+name: hmm_all
+is_a: CO:0000000
+
+[Term]
+id: CO:0000195
+name: iso
+is_a: CO:0000000
+
+[Term]
+id: CO:0000196
+name: iterator1
+is_a: CO:0000000
+
+[Term]
+id: CO:0000197
+name: iterator1_xml
+is_a: CO:0000000
+
+[Term]
+id: CO:0000198
+name: pipeline_token
+is_a: CO:0000000
+
+[Term]
+id: CO:0000199
+name: project
+is_a: CO:0000000
+
+[Term]
+id: CO:0000200
+name: project_config
+is_a: CO:0000000
+
+[Term]
+id: CO:0000201
+name: release_tag
+is_a: CO:0000000
+
+[Term]
+id: CO:0000202
+name: simple_repeat_lib
+is_a: CO:0000000
+
+[Term]
+id: CO:0000203
+name: software_config
+is_a: CO:0000000
+
+[Term]
+id: CO:0000204
+name: mummer_remap
+is_a: CO:0000000

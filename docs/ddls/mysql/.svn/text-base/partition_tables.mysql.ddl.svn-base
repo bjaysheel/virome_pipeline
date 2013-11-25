@@ -1,0 +1,4 @@
+-- partitiontables  sql2Chado.pl parses this first line
+--
+-- MySQL introduced table partitioning in 5.1, but the implementation is still undergoing
+-- development.  Statements will be added here when it is better supported.

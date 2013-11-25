@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+	<state>incomplete</state>
+        <name>archiver_and_dumper</name>
+	<command>
+            <type>RunUnixCommand</type>
+            <name>create output directory</name>
+            <state>incomplete</state>
+            <executable>mkdir</executable>
+            <arg>-p -m 777 $;OUTPUT_DIRECTORY$;</arg>
+        </command>
+	<command>
+            <type>RunUnixCommand</type>
+            <name>create temp directory</name>
+            <state>incomplete</state>
+            <executable>mkdir</executable>
+            <arg>-p -m 777 $;TMP_DIR$;</arg>
+        </command>
+        <!--Processing-->
+        <command>
+            <type>RunUnixCommand</type>
+            <name>archiver_and_dumper</name>
+            <state>incomplete</state>
+            <executable>$;ARCHIVER_AND_DUMPER_EXEC$;</executable>
+            <arg>-i $;ID$; -u $;USER_NAME$; -r $;REPOSITORY_ROOT$; -p $;PIPELINEID$; -l $;LOCATION$;</arg>
+	    <param>
+		<key>stdout</key>
+		<value>$;TMP_DIR$;/archiver_and_dumper.stdout</value>
+	    </param>
+	    <param>
+		<key>stderr</key>    
+		<value>$;TMP_DIR$;/archiver_and_dumper.stderr</value>
+	    </param>
+	</command>
+    </commandSet>
+</commandSetRoot>

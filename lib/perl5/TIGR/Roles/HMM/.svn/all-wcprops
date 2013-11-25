@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/TIGR/Roles/HMM
+END
+TIGRFamToRoleLookup.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/TIGR/Roles/HMM/TIGRFamToRoleLookup.pm
+END
+PfamToRoleLookup.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/TIGR/Roles/HMM/PfamToRoleLookup.pm
+END

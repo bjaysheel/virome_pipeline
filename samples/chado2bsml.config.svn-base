@@ -1,0 +1,75 @@
+[interface]
+classification = database / extraction
+
+[parameters]
+$;USERNAME$; = 
+$;PASSWORD$; = 
+;; Relational database management system type e.g. sybase or postgresql
+$;DATABASE_TYPE$; = sybase
+;; Server name on which the database resides
+$;SERVER$; = 
+;; User can specify whether the GO data should not be extracted from the database and written to the output .bsml
+$;IGNORE_GO$; = 
+;; User can specify whether the Evidence codes data should not be extracted from the database and written to the output .bsml
+$;IGNORE_EVCODES$; =
+;; User can specify whether the TIGR_roles should not be extracted from the database and written to the output .bsml
+$;IGNORE_NON_GO$; = 
+;; User can specify whether only the polypeptides that localize to the assembly should be extracted from the database and written to the output .bsml
+;; Good for generating BSML files that serve as input to other computational analyses
+$;POLYPEPTIDES_ONLY$; = 
+
+[input]
+;; Name of chado database (if you are using either the control_file or bsml_file_list parameters)
+$;DATABASE$; = $;PROJECT$;
+;; chado2bsml control file:
+;; Should contain a new-line separated listing of all assembly identifers for assemblies that should be extracted from the
+;; source $;DATABASE$;.
+;;
+;; Either the CHADO2BSML_CONTROL_FILE or the BSML_FILE_LIST should be specified.
+;;
+;; A new-line separated list of assembly/reference sequence identifiers.
+$;CHADO2BSML_CONTROL_FILE$; = 
+;; A new-line separated list of BSML files whose contents were loaded into the
+;; chado database from which they shall now be drawn/extracted.
+$;BSML_FILE_LIST$; = 
+
+;; A new-line separated list of database names to be dumped:
+$;DATABASE_LIST$; = 
+
+$;BSML_DTD$; = $;DOCS_DIR$;/bsml3_1.dtd
+
+[output]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;FASTA_DIRECTORY$;  = $;OUTPUT_DIRECTORY$;/fasta
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.bsml.list
+$;FASTA_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.fsa.list
+
+
+[component]
+$;COMPONENT_NAME$; = chado2bsml
+$;DESCRIPTION$; = none
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/workflow/runtime/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;PIPELINE_TOKEN$; = unnamed
+
+;The version,revision,tag here is set by an interpolated CVS tag
+$;VERSION$; = 2.0
+$;RELEASE_TAG$; = $Name$
+$;REVISION$;            = $Revision$
+
+$;TEMPLATE_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.xml
+$;ITERATOR1$; = i1
+$;ITERATOR1_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.$;ITERATOR1$;.xml
+
+;Distributed options
+$;GROUP_COUNT$; = 5
+$;NODISTRIB$; = 0
+
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;COMPONENT_XML$; = 
+$;PIPELINE_XML$; = 
+$;PIPELINEID$; = 
+
+[include]
+$;PROJECT_CONFIG$;=

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>sequence-prep</name>
+        <!--Processing-->
+        <command>
+            <type>RunUnixCommand</type>
+            <name>sequence-prep</name>
+            <state>incomplete</state>
+            <executable>$;SEQUENCE_PREP_EXEC$;</executable>
+            <arg>-i $;I_FILE_PATH$; -od $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$; -ll $;LIBRARY_LIST_FILE$; -t $;SEQ_TYPE$;</arg>
+            <param>
+                <key>STDERR</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
+            </param>
+            <param>
+                <key>STDOUT</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stdout</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

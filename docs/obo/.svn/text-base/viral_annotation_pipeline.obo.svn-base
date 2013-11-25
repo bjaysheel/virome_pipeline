@@ -1,0 +1,149 @@
+format-version: 1.0
+date: Wed Oct  3 19:48:46 EDT 2007
+saved-by: sundaram
+auto-generated-by: DAG-Edit 1.418
+default-namespace: VAP
+
+[Term]
+id: VAP:0000001
+name: viral_annotation_pipeline
+
+[Term]
+id: VAP:0000002
+name: blinded_number
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000003
+name: center_project
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000004
+name: collection
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000005
+name: collection_date
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000006
+name: collection_location
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000007
+name: contact_address
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000008
+name: contact_email
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000009
+name: contact_investigator
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000010
+name: contact_PI
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000011
+name: cov_group
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000012
+name: date_received
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000013
+name: extraction_date
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000014
+name: extraction_method
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000015
+name: genbank_def_line
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000016
+name: inhabiting_organ
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000017
+name: library_id
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000018
+name: passage_history
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000019
+name: sample
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000020
+name: start_date
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000021
+name: taxon
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000022
+name: submission_date
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000023
+name: author_list
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000024
+name: collection_contact_address
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000025
+name: collection_contact_email
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000026
+name: collection_contact_name
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000027
+name: collection_contact_phone
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000028
+name: collection_start_date
+is_a: VAP:0000001 ! viral_annotation_pipeline
+
+[Term]
+id: VAP:0000029
+name: genbank_accession
+is_a: VAP:0000001 ! viral_annotation_pipeline

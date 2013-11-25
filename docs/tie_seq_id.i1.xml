@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>Tie Seq ID</name>
+        <!--Processing-->
+	<command>
+            <type>RunUnixCommand</type>
+            <name>syncing seq ids</name>
+            <state>incomplete</state>
+            <executable>$;BIN_DIR$;/tie_seq_id</executable>
+            <param>
+                <key>--env</key>
+                <value>$;LOCATION$;</value>
+            </param>
+            <param>
+                <key>stdout</key>
+                <value>$;TMP_DIR$;/tie_seq_id.stdout</value>
+	    </param>
+	    <param>
+                <key>stderr</key>    
+                <value>$;TMP_DIR$;/tie_seq_id.stderr</value>
+	    </param>
+        </command>
+    </commandSet>
+</commandSetRoot>
+

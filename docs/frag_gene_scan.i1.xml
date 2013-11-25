@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>frag_gene_scan</name>
+        <command>
+            <type>RunUnixCommand</type>
+            <name>frag_gene_scan</name>
+            <state>incomplete</state>
+            <executable>$;FRAG_GENE_SCAN$;</executable>
+            <arg>-s $;I_FILE_PATH$; -w $;COMPLETE$; -t $;TRAIN$; -o $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;</arg>
+            <param>  
+                <key>stdout</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.raw</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

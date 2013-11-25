@@ -1,0 +1,102 @@
+format-version: 1.0
+date: Wed Sep  9 11:48:46 EDT 2009
+saved-by: sundaram
+auto-generated-by: DAG-Edit 1.418
+default-namespace: BOV
+
+[Term]
+id: BOV:0000001
+name: bovine_ontology
+
+[Term]
+id: BOV:0000002
+name: source
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000003
+name: source_id
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000004
+name: desc_ncbi
+def: "NCBI's description for the gene."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000005
+name: symbol_ens
+def: "Ensembl's symbol for the gene."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000006
+name: symbol_hgnc
+def: "HUGO Gene Nomenclature Committee's symbol for the gene."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000007
+name: user_id
+def: "User identifier."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000008
+name: submitter
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000009
+name: temp_id
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000010
+name: old_glean
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000011
+name: submitted_name
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000012
+name: submitted_family
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000013
+name: submitted_keyword
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000014
+name: submitted_function
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000015
+name: name_ncbi
+def: "NCBI's name for the gene."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000016
+name: overlap_ncbi
+def: "NCBI gene model identifier which the official gene set (OGS) gene model overlaps.  Overlap criteria: 1) the OGS gene model overlaps the NCBI gene model by at least one CDS nucleotide, 2) the overlap does not involve a split or a merge."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000017
+name: overlap_ens
+def: "Ensembl gene model identifier which the official gene set (OGS) gene model overlaps.  Overlap criteria: 1) the OGS gene model overlaps the Ensembl gene model by at least one CDS nucleotide, 2) the overlap does not involve a split or a merge."
+is_a: BOV:0000001 ! bovine_ontology
+
+[Term]
+id: BOV:0000018
+name: symbol_ncbi
+def: "NCBI's symbol for the gene."
+is_a: BOV:0000001 ! bovine_ontology

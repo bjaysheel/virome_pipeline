@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="molecule_attr">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="aa"/>
+    <xs:enumeration value="dna"/>
+    <xs:enumeration value="rna"/>
+    <xs:enumeration value="mol-not-set"/>
+    <xs:enumeration value="na"/>
+    <xs:enumeration value="other-mol"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="seq_bsml_attr_name">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="ASSEMBLY"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="BsmlTables">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="BsmlTables"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="promer_bsml_attr_name">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="refframe"/>
+    <xs:enumeration value="compframe"/>
+    <xs:enumeration value="percent_identity"/>
+    <xs:enumeration value="percent_stop_codon"/>
+    <xs:enumeration value="percent_similarity"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="analysis_bsml_attr_name">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="algorithm"/>
+    <xs:enumeration value="description"/>
+    <xs:enumeration value="name"/>
+    <xs:enumeration value="program"/>
+    <xs:enumeration value="programversion"/>
+    <xs:enumeration value="sourcename"/>
+    <xs:enumeration value="sourceuri"/>
+    <xs:enumeration value="sourceversion"/>
+    <xs:enumeration value="queryfeature_id"/>
+    <xs:enumeration value="timeexecuted"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="Sequence">
+  <xs:complexType>
+    <xs:all>
+      <xs:element name="Attribute" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="name" type="seq_bsml_attr_name" use="required"/>
+          <xs:attribute name="content" type="xs:NMTOKEN" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+    <xs:attribute name="molecule" type="molecule_attr" use="optional" />
+    <xs:attribute name="title" type="xs:NMTOKEN" use="optional" />
+    <xs:attribute name="length" type="xs:NMTOKEN" use="optional" />
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Seq-pair-alignment">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Seq-pair-run" minOccurs="1" maxOccurs="unbounded" >
+              <xs:complexType>
+                <xs:sequence minOccurs="0">
+                  <xs:element name="Attribute" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attribute name="name" type="xs:NMTOKEN" use="required"/>
+                      <xs:attribute name="content" type="xs:NMTOKEN" use="required"/>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="refpos" type="xs:decimal" use="required" />
+                <xs:attribute name="runlength" type="xs:decimal" use="required" />
+                <xs:attribute name="refcomplement" type="xs:integer" use="optional" />
+                <xs:attribute name="comppos" type="xs:decimal" use="required" />
+                <xs:attribute name="comprunlength" type="xs:decimal" use="optional" />
+                <xs:attribute name="compcomplement" type="xs:integer" use="optional" />
+                <xs:attribute name="runscore" type="xs:decimal" use="optional" />
+                <xs:attribute name="runprob" type="xs:integer" use="optional" />
+             </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="refseq" type="xs:IDREF" use="required" />
+    <xs:attribute name="refxref" type="xs:string" use="optional" />
+    <xs:attribute name="refstart" type="xs:integer" use="optional" />
+    <xs:attribute name="refend" type="xs:integer" use="optional" />
+    <xs:attribute name="reflength" type="xs:integer" use="required" />
+    <xs:attribute name="complength" type="xs:integer" use="required" />
+    <xs:attribute name="compseq" type="xs:IDREF" use="required" />
+    <xs:attribute name="compxref" type="xs:string" use="optional" />
+    <xs:attribute name="method" type="xs:string" use="optional" />
+   </xs:complexType>
+ </xs:element>
+
+<xs:element name="Bsml">
+  <xs:complexType>
+    <xs:sequence>
+       <xs:element name="Attribute" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:NMTOKEN" use="required"/>
+          <xs:attribute name="content" type="xs:NMTOKEN" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Definitions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Sequences" minOccurs="0">
+               <xs:complexType>
+                 <xs:sequence>
+                   <xs:element ref="Sequence" maxOccurs="unbounded" />
+                 </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Tables" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="Seq-pair-alignment" maxOccurs="unbounded" />
+                </xs:sequence>
+                <xs:attribute name="id" type="BsmlTables" use="optional"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Research" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Analyses">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="Analysis">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attribute name="name" type="xs:string" use="required"/>
+                            <xs:attribute name="content" type="xs:string" use="required"/>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="Link" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                          <xs:attribute name="href" type="xs:string"/>
+                          <xs:attribute name="rel" type="xs:string"/>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+               </xs:all>
+              </xs:complexType>
+            </xs:element>
+           </xs:all>
+          </xs:complexType>
+        </xs:element>   
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

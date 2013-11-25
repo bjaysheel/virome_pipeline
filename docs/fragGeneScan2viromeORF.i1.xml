@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>fragGeneScan to VIROME ORF</name>
+        <!--Processing-->
+        <command>
+            <type>RunUnixCommand</type>
+            <name>fragGeneScan2viromeORF</name>
+            <state>incomplete</state>
+            <executable>$;BIN_DIR$;/fragGeneScan2viromeORF</executable>
+            <arg>-r $;READ_FILE_LIST$; -o $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$; -i $;I_FILE_PATH$;</arg>
+            <param>
+                <key>STDERR</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
+            </param>
+            <param>
+                <key>STDOUT</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stdout</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

@@ -1,0 +1,15 @@
+relationship.obo
+relationship.aux.obo
+annotation_attributes.obo
+annotation_flags.obo
+TIGR_roles.obo
+component.obo
+ec.obo
+evidence_code.obo
+gff3_attributes.obo
+go.obo
+go_properties.obo
+output.obo
+so.obo
+so.aux.obo
+ard.obo

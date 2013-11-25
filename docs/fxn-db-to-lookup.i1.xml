@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>fxn-db-to-lookup</name>
+        <!--Processing-->
+        <command>
+            <type>RunUnixCommand</type>
+            <name>fxn-db-to-lookup</name>
+            <state>incomplete</state>
+            <executable>$;FXN_DB_TO_LOOKUP_EXEC$;</executable>
+            <arg>-e $;LOCATION$; -o $;OUTPUT_DIRECTORY$; -t $;TABLE_NAME$;</arg>
+            <param>
+                <key>STDERR</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
+            </param>
+            <param>
+                <key>STDOUT</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stdout</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

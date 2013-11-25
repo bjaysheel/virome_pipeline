@@ -1,0 +1,6 @@
+chado-v1r9b1
+------------
+-terms added to ard.obo, output.obo and component.obo
+-explicit relationship added to so.aux.obo for exon part_of transcript (does not affect queries/usage)
+
+

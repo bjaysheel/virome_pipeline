@@ -1,0 +1,3 @@
+REVOKE ALL ON cm_cvterms TO PUBLIC;
+REVOKE ALL ON cm_structure TO PUBLIC;
+REVOKE ALL ON cm_genes TO PUBLIC;

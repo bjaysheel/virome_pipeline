@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>fastaQual2fastq compute</name>
+        <command>
+            <type>RunUnixCommand</type>
+            <name>fastaQual2fastq</name>
+            <state>incomplete</state>
+            <executable>$;FASTAQUAL2FASTQ_EXEC$;</executable>
+            <arg>-f $;INPUT_FILE$; -q $;QUALITY_FILE$;</arg>
+            <param>  
+                <key>--outdir</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;</value>
+            </param>
+            <param>
+                <key>--prefix</key>
+                <value>$;I_FILE_BASE$;</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

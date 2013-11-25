@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>open_reading_frames compute</name>
+        <command>
+            <type>RunUnixCommand</type>
+            <name>open_reading_frames</name>
+            <state>incomplete</state>
+            <executable>$;BIN_DIR$;/open_reading_frames</executable>
+            <param>
+                <key>--input_file</key>
+                <value>$;I_FILE_PATH$;</value>
+            </param>
+            <param>
+                <key>--translation_table</key>
+                <value>$;CODON_TABLE$;</value>
+            </param>
+            <param>
+                <key>--output_dir</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;</value>
+            </param>
+            <param>
+                <key>--gzip_output</key>
+                <value>$;GZIP_OUTPUT$;</value>
+            </param>
+            <param>
+                <key>--beginning_as_start</key>
+                <value>$;BEGINNING_AS_START$;</value>
+            </param>
+            <param>
+                <key>--end_as_stop</key>
+                <value>$;END_AS_STOP$;</value>
+            </param>
+            <param>
+                <key>--assume_stops</key>
+                <value>$;ASSUME_STOPS$;</value>
+            </param>
+            <param>
+                <key>--full_orfs</key>
+                <value>$;FULL_ORFS$;</value>
+            </param>
+            <param>
+                <key>--min_orf_size</key>
+                <value>$;MIN_ORF_SIZE$;</value>
+            </param>
+            <param>
+                <key>--max_orf_size</key>
+                <value>$;MAX_ORF_SIZE$;</value>
+            </param>
+            <param>
+                <key>--min_unmasked_size</key>
+                <value>$;MIN_UNMASKED_SIZE$;</value>
+            </param>
+            <param>
+                <key>--frames</key>
+                <value>$;FRAMES$;</value>
+            </param>
+            <param>
+                <key>--force_methionine</key>
+                <value>$;FORCE_METHIONINE$;</value>
+            </param>
+            <param>
+                <key>--header_additions</key>
+                <value>'$;HEADER_ADDITIONS$;'</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

@@ -1,0 +1,1241 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/CAMERA/!svn/ver/157/virome/pipeline/docs
+END
+viromeTaxonomyXML.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeTaxonomyXML.xml
+END
+hmmls.config
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmls.config
+END
+fxnal_count_chart_creator.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator.config
+END
+blast-result-prep.config
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast-result-prep.config
+END
+seq_length_check.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/seq_length_check.config
+END
+metagene.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene.i1.xml
+END
+cdhit-cluster-consensus.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cdhit-cluster-consensus.config
+END
+bsml2gff3.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/bsml2gff3.i1.xml
+END
+create_map_file.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/create_map_file.xml
+END
+wu-tblastn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-tblastn.xml
+END
+create_map_file.config
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/160/virome/pipeline/docs/create_map_file.config
+END
+derep-blast-output.config
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/CAMERA/!svn/ver/160/virome/pipeline/docs/derep-blast-output.config
+END
+scp_files.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/scp_files.xml
+END
+fxnal_count_chart_creator_all.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator_all.xml
+END
+groups_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/165/virome/pipeline/docs/groups_template.xml
+END
+bsml3_1.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/169/virome/pipeline/docs/bsml3_1.dtd
+END
+scp_files.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/scp_files.config
+END
+hmmer.config
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmer.config
+END
+ncbi-tblastn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastn.xml
+END
+viromeClassification.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeClassification.config
+END
+wu-blastp.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastp.config
+END
+iterator_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/iterator_template.xml
+END
+sff_to_CA.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sff_to_CA.config
+END
+viromeTaxonomyXML.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeTaxonomyXML.i1.xml
+END
+ncbi-tblastx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastx.xml
+END
+btabTrimMGOL.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrimMGOL.i1.xml
+END
+wu-blastx.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastx.config
+END
+split_multifasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_multifasta.i1.xml
+END
+hmmpfam.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam.i1.xml
+END
+split-tab-output.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split-tab-output.xml
+END
+db-load-uniref-lookup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-uniref-lookup.xml
+END
+nt_fasta_check.config
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/nt_fasta_check.config
+END
+ncbi-blastp.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastp.config
+END
+db-load-uniref-lookup.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-uniref-lookup.config
+END
+env_lib_stats.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/env_lib_stats.i1.xml
+END
+pipeline_summary_cloud.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/pipeline_summary_cloud.xml
+END
+mga2seq_pep.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/mga2seq_pep.config
+END
+clean_expand_btab.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/clean_expand_btab.xml
+END
+ncbi-blastx.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastx.config
+END
+tRNAScan-prep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAScan-prep.xml
+END
+tRNAscan-SE.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE.xml
+END
+ncbi-blastn_compress.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn_compress.i1.xml
+END
+db-upload.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-upload.i1.xml
+END
+reset-processing-db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/reset-processing-db.xml
+END
+validate_fasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_fasta.i1.xml
+END
+gen_lib_stats.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/gen_lib_stats.config
+END
+rRNA-scrub.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/rRNA-scrub.config
+END
+btabTrimMGOL.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrimMGOL.xml
+END
+db-to-lookup.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-to-lookup.i1.xml
+END
+reset-processing-db.config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/reset-processing-db.config
+END
+viromeorf-prep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeorf-prep.i1.xml
+END
+db-load-nohit.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-nohit.config
+END
+tRNAscan-SE.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE.i1.xml
+END
+blast2btab.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast2btab.i1.xml
+END
+pipeline_summary.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/pipeline_summary.i1.xml
+END
+cd-hit-454.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit-454.i1.xml
+END
+nt_fasta_check.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/nt_fasta_check.xml
+END
+bsml2fasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/bsml2fasta.xml
+END
+formatdb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/formatdb.xml
+END
+ncbi-tblastx.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastx.config
+END
+validate_bsml.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_bsml.xml
+END
+ncbi-blastall.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastall.xml
+END
+ncbi-blastall.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastall.config
+END
+cd-hit.config
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit.config
+END
+hmmpfam3.config
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam3.config
+END
+wait.i2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wait.i2.xml
+END
+split_fasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_fasta.config
+END
+update_mgol_seqname.config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/update_mgol_seqname.config
+END
+validate_bsml.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_bsml.i1.xml
+END
+QC_filter.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/QC_filter.i1.xml
+END
+clean_expand_btab.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/clean_expand_btab.i1.xml
+END
+wu-blastn.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastn.config
+END
+libraryHistogram.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/libraryHistogram.xml
+END
+sfffile.config
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sfffile.config
+END
+metagene.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene.xml
+END
+bsml2gff3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/bsml2gff3.xml
+END
+seq_length_check.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/seq_length_check.xml
+END
+hmmls.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmls.i1.xml
+END
+fxnal_count_chart_creator.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator.i1.xml
+END
+sffinfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sffinfo.xml
+END
+blast-result-prep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast-result-prep.i1.xml
+END
+metagene-prep.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene-prep.config
+END
+seq_length_check.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/seq_length_check.i1.xml
+END
+cdhit-cluster-consensus.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cdhit-cluster-consensus.i1.xml
+END
+ncbi-blastn.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn.config
+END
+split-tab-output.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split-tab-output.config
+END
+wu-tblastn.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-tblastn.config
+END
+derep-blast-output.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/CAMERA/!svn/ver/160/virome/pipeline/docs/derep-blast-output.i1.xml
+END
+btabTrim.config
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrim.config
+END
+wait.config
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wait.config
+END
+wu-blastn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastn.xml
+END
+fxnal_count_chart_creator_all.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator_all.config
+END
+wu-blastp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastp.xml
+END
+hmmer.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmer.i1.xml
+END
+blast2btab.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast2btab.xml
+END
+db-load-nohit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-nohit.xml
+END
+sequence-prep.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sequence-prep.config
+END
+tRNAScan-prep.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAScan-prep.config
+END
+file_iterator_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/file_iterator_template.xml
+END
+ncbi-tblastn.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastn.config
+END
+hmmpfam.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam.xml
+END
+viromeClassification.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeClassification.i1.xml
+END
+wu-blastp.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastp.i1.xml
+END
+wu-blastx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastx.xml
+END
+libraryHistogram.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/libraryHistogram.config
+END
+xdformat.config
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/xdformat.config
+END
+db-load-fams.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-fams.config
+END
+ncbi-blastn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn.xml
+END
+component_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/160/virome/pipeline/docs/component_template.xml
+END
+ncbi-blastp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastp.xml
+END
+tRNAscan-SE_compress.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE_compress.config
+END
+wu-blastx.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastx.i1.xml
+END
+metagene.dtd.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene.dtd.xml
+END
+sffinfo.config
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sffinfo.config
+END
+nt_fasta_check.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/nt_fasta_check.i1.xml
+END
+btabTrim.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrim.xml
+END
+wait.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wait.xml
+END
+ncbi-blastx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastx.xml
+END
+ncbi-blastp.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastp.i1.xml
+END
+db-load-uniref-lookup.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-uniref-lookup.i1.xml
+END
+QC_filter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/QC_filter.xml
+END
+split_fasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_fasta.xml
+END
+update_mgol_seqname.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/update_mgol_seqname.xml
+END
+mga2seq_pep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/mga2seq_pep.i1.xml
+END
+concatenate_files.config
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/concatenate_files.config
+END
+sequence-prep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sequence-prep.xml
+END
+ncbi-blastx.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastx.i1.xml
+END
+rRNA-scrub.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/rRNA-scrub.xml
+END
+hmmls.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmls.xml
+END
+fxnal_count_chart_creator.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator.xml
+END
+sff_to_CA.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sff_to_CA.xml
+END
+xdformat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/xdformat.xml
+END
+gen_lib_stats.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/gen_lib_stats.i1.xml
+END
+rRNA-scrub.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/rRNA-scrub.i1.xml
+END
+reset-processing-db.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/reset-processing-db.i1.xml
+END
+cdhit-cluster-consensus.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cdhit-cluster-consensus.xml
+END
+metagene-prep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene-prep.xml
+END
+db-load-nohit.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-nohit.i1.xml
+END
+metagene.config
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene.config
+END
+bsml2gff3.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/bsml2gff3.config
+END
+derep-blast-output.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/160/virome/pipeline/docs/derep-blast-output.xml
+END
+ncbi-tblastx.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastx.i1.xml
+END
+run_command.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/run_command.xml
+END
+mga2seq_pep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/mga2seq_pep.xml
+END
+run_workflow.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/run_workflow.config
+END
+hmmer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmer.xml
+END
+sfffile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sfffile.xml
+END
+ncbi-blastall.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastall.i1.xml
+END
+hmmpfam3.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam3.i1.xml
+END
+cd-hit.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit.i1.xml
+END
+split_fasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_fasta.i1.xml
+END
+update_mgol_seqname.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/160/virome/pipeline/docs/update_mgol_seqname.i1.xml
+END
+pipeline_summary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/pipeline_summary.xml
+END
+cd-hit-454.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit-454.xml
+END
+wu-blastn.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-blastn.i1.xml
+END
+blast-result-prep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast-result-prep.xml
+END
+sfffile.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sfffile.i1.xml
+END
+viromeTaxonomyXML.config
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeTaxonomyXML.config
+END
+btabTrimMGOL.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrimMGOL.config
+END
+split_multifasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_multifasta.config
+END
+tRNAscan-SE_compress.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE_compress.xml
+END
+hmmpfam.config
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam.config
+END
+metagene-prep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/metagene-prep.i1.xml
+END
+env_lib_stats.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/env_lib_stats.config
+END
+ncbi-blastn.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn.i1.xml
+END
+ncbi-blastn_compress.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn_compress.xml
+END
+db-upload.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-upload.xml
+END
+run_command.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/run_command.config
+END
+validate_fasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_fasta.xml
+END
+wu-tblastn.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wu-tblastn.i1.xml
+END
+db-load-library.config
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-library.config
+END
+ncbi-blastn_compress.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-blastn_compress.config
+END
+btabTrim.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/btabTrim.i1.xml
+END
+db-upload.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-upload.config
+END
+validate_fasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_fasta.config
+END
+wait.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/CAMERA/!svn/ver/160/virome/pipeline/docs/wait.i1.xml
+END
+viromeClassification.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeClassification.xml
+END
+fxnal_count_chart_creator_all.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/CAMERA/!svn/ver/160/virome/pipeline/docs/fxnal_count_chart_creator_all.i1.xml
+END
+db-to-lookup.config
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-to-lookup.config
+END
+viromeorf-prep.config
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeorf-prep.config
+END
+tRNAscan-SE.config
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE.config
+END
+sequence-prep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sequence-prep.i1.xml
+END
+split_multifasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/split_multifasta.xml
+END
+blast2btab.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/blast2btab.config
+END
+tRNAScan-prep.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAScan-prep.i1.xml
+END
+db-load-fams.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-fams.xml
+END
+pipeline_summary.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/pipeline_summary.config
+END
+cd-hit-454.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit-454.config
+END
+ncbi-tblastn.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/ncbi-tblastn.i1.xml
+END
+libraryHistogram.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/160/virome/pipeline/docs/libraryHistogram.i1.xml
+END
+env_lib_stats.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/env_lib_stats.xml
+END
+db-load-fams.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-fams.i1.xml
+END
+tRNAscan-SE_compress.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/160/virome/pipeline/docs/tRNAscan-SE_compress.i1.xml
+END
+sffinfo.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/CAMERA/!svn/ver/160/virome/pipeline/docs/sffinfo.i1.xml
+END
+bsml2fasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/bsml2fasta.config
+END
+formatdb.config
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/160/virome/pipeline/docs/formatdb.config
+END
+db-load-library.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-load-library.xml
+END
+concatenate_files.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/160/virome/pipeline/docs/concatenate_files.xml
+END
+hmmpfam3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/160/virome/pipeline/docs/hmmpfam3.xml
+END
+cd-hit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/CAMERA/!svn/ver/160/virome/pipeline/docs/cd-hit.xml
+END
+validate_bsml.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/CAMERA/!svn/ver/160/virome/pipeline/docs/validate_bsml.config
+END
+db-to-lookup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/db-to-lookup.xml
+END
+viromeorf-prep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/CAMERA/!svn/ver/160/virome/pipeline/docs/viromeorf-prep.xml
+END
+gen_lib_stats.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/CAMERA/!svn/ver/160/virome/pipeline/docs/gen_lib_stats.xml
+END
+QC_filter.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/CAMERA/!svn/ver/160/virome/pipeline/docs/QC_filter.config
+END
+clean_expand_btab.config
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/160/virome/pipeline/docs/clean_expand_btab.config
+END

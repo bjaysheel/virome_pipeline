@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis
+END
+ConfigFile.pm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/ConfigFile.pm
+END
+Pipeline.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/Pipeline.pm
+END
+Validator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/Validator.pm
+END
+Monitor.pm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/Monitor.pm
+END
+Common.pm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/Common.pm
+END
+SavedPipeline.pm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/SavedPipeline.pm
+END
+Logger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/Logger.pm
+END
+IdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Ergatis/IdGenerator.pm
+END

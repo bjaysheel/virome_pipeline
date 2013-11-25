@@ -1,0 +1,47 @@
+format-version: 1.2
+date: 05:15:2009 11:30
+saved-by: jaysundaram
+auto-generated-by: OBO-Edit 2.000-beta47
+default-namespace: jcvi_epitopes
+namespace-id-rule: * EPI:$sequence(7,0,9999999)$
+remark: To support loading of epiPEP feature types processed by JCVI annotation pipeline and services
+
+[Term]
+id: EPI:0000000
+name: jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000001
+name: epiPEP
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+relationship: part_of SO:0000104 ! polypeptide
+
+[Term]
+id: EPI:0000002
+name: epiDNA
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000003
+name: epiRNA
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000004
+name: epiCARB
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000005
+name: epiLIP
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000006
+name: epiOTHER
+is_a: EPI:0000000 ! jcvi_epitope_ontology
+
+[Term]
+id: EPI:0000007
+name: epiUNK
+is_a: EPI:0000000 ! jcvi_epitope_ontology

@@ -1,0 +1,1 @@
+GRANT ALL ON cm_blast TO PUBLIC;

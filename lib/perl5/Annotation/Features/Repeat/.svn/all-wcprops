@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Features/Repeat
+END
+testIdMapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Features/Repeat/testIdMapper.pl
+END
+IdMapper.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Features/Repeat/IdMapper.pm
+END
+repeats.idmap
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Features/Repeat/repeats.idmap
+END

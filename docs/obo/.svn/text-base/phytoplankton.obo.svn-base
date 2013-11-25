@@ -1,0 +1,83 @@
+format-version: 1.2
+date: 05:05:2009 11:30
+saved-by: jaysundaram
+auto-generated-by: OBO-Edit 2.000-beta47
+default-namespace: phytoplankton
+namespace-id-rule: * PP:$sequence(7,0,9999999)$
+remark: To support loading of phytoplankton organism attributes
+
+[Term]
+id: PP:0000000
+name: phytoplankton_ontology
+
+[Term]
+id: PP:0000001
+name: algae
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000002
+name: red
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000003
+name: green
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000004
+name: heterokont
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000005
+name: chromalveolate
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000006
+name: haptophyte
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000007
+name: marine
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000008
+name: superkingdom
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000009
+name: kingdom
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000010
+name: phylum
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000011
+name: class
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000012
+name: order
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000013
+name: genus
+is_a: PP:0000000 ! phytoplankton_ontology
+
+[Term]
+id: PP:0000014
+name: species
+is_a: PP:0000000 ! phytoplankton_ontology
+
+

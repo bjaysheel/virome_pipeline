@@ -1,0 +1,40 @@
+format-version: 1.0
+date: 01:05:2006 16:32
+saved-by: sundaram
+default-namespace: TS
+auto-generated-by: sundaram-lx
+
+[Term]
+id: TS:0000000
+name: tigr_schema_ontology
+
+[Term]
+id: TS:0000001
+name: euk
+is_a: TS:0000000
+
+[Term]
+id: TS:0000002
+name: prok
+is_a: TS:0000000
+
+[Term]
+id: TS:0000003
+name: ntprok
+is_a: TS:0000000
+
+[Term]
+id: TS:0000004
+name: chado
+is_a: TS:0000000
+
+[Term]
+id: TS:0000005
+name: viral
+is_a: TS:0000000
+
+[Term]
+id: TS:0000006
+name: ntviral
+is_a: TS:0000000
+

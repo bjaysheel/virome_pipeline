@@ -1,0 +1,28 @@
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"			xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+  	<name>validate_euk_records</name>
+          <command>
+            <type>RunUnixCommand</type>
+	  <state>incomplete</state>
+	  <name>Create database output directory</name>
+	  <executable>mkdir</executable>
+ 	  <arg>-p -m 777 $;WORKFLOW_REPOSITORY$;/$;DATABASE$;</arg>
+          </command>
+	<command>
+	    <type>RunUnixCommand</type>
+	    <state>incomplete</state>
+	    <executable>$;BIN_DIR$;/annot_validator</executable>
+	    <name>annot_validator</name>
+	    <arg>-D $;DATABASE$; -a $;ASMBL_ID$;</arg>
+	    <param>
+	      <key>stdout</key>
+	      <value>$;WORKFLOW_REPOSITORY$;/$;DATABASE$;/annot_validator.dbi.$;DATABASE$;_$;ASMBL_ID$;.stdout</value>
+	    </param>
+	    <param>
+	      <key>stderr</key>
+	      <value>$;WORKFLOW_REPOSITORY$;/$;DATABASE$;/annot_validator.dbi.$;DATABASE$;_$;ASMBL_ID$;.stderr</value>
+	    </param>
+	</command>
+	</command>
+    </commandSet>
+</commandSetRoot>

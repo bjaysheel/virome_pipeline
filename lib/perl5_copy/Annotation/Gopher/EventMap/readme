@@ -1,0 +1,40 @@
+Jay Sundaram
+sundaram@jcvi.org
+
+2008-09-06
+
+The Annotation::Gopher::EventMap::FileReader module
+was implemented to support a new requirement for the
+extraction software (legacy2bsml.pl).
+
+For the euk projects, a molecule name value should be
+constructed using the clone Genbank accession + the 
+genus species strain.
+
+A Prism API method retrieves the genus species strain
+information from the common..genomes.name field.
+
+The clone Genbank accession value is not available in
+the euk annotation database.   The accession is 
+available in the GOPHER system.
+
+A script is available for retrieving this accession 
+and corresponding clone identifier and GOPHER event ID.
+
+The script is invoked like this:
+/usr/local/devel/ANNOTATION/Release/bin/events_display.pl -D esg2 -type WGS -map > gopherEventsMaps.txt
+
+
+The Annotation::Gopher::EventMap::FileReader module knows
+how to read, parse and validate the contents of the output
+file.
+
+A test program has been prepared for the module as well.
+
+Sample invocation (and output) of the test driver is:
+
+perl -I . Annotation/Gopher/EventMap/testFileReader.pl --infile Annotation/Gopher/EventMap/gopherEventsMaps.txt
+Processed '2174' lines and read in '2173' records from file 'Annotation/Gopher/EventMap/gopherEventsMaps.txt'
+Retrieved accession 'AAFB02000004' for event_id '1105170360677'
+Retrieved accession 'AAFB02000004' for gopher_id '1104750507028'
+Died with 'Method has not been implemented' at Annotation/Gopher/EventMap/FileReader.pm line 372

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation
+END
+SequenceUtil.pm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/SequenceUtil.pm
+END
+SequenceDeriver.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/SequenceDeriver.pm
+END
+Logger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Logger.pm
+END
+Util2.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/Util2.pm
+END
+testIdMapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/testIdMapper.pl
+END
+IdMapper.pm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/Annotation/IdMapper.pm
+END

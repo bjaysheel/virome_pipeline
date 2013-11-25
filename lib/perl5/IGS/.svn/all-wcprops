@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS
+END
+get_quota.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS/get_quota.pl
+END
+UIDGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS/UIDGenerator.pm
+END
+MysqlUIDGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS/MysqlUIDGenerator.pm
+END
+OracleUIDGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS/OracleUIDGenerator.pm
+END
+PostgresUIDGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/IGS/PostgresUIDGenerator.pm
+END

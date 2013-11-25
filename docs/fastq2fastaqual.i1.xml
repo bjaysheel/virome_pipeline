@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>fastq2fastaqual</name>
+        <!--Processing-->
+      <command>
+        <type>RunUnixCommand</type>
+        <name>fastq2fastaqual</name>
+        <state>incomplete</state>
+        <executable>$;FASTQ2FASTAQUAL$;</executable>
+        <arg>-i $;INPUT_FILE$; -q $;QUAL_OUT$; -f $;FASTA_OUT$; -n 1 </arg>
+	<param>
+                <key>stderr</key>
+        	<value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
+        </param>
+	<param>
+                <key>stdout</key>
+        	<value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stdout</value>
+        </param>
+  </command>
+    </commandSet>
+</commandSetRoot>
+

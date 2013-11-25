@@ -1,0 +1,154 @@
+=head2 Fri Oct 22 14:37:25 2010: C<Module> L<ergatis|ergatis>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: bin/add_blast_polypeptide_links.pl bin/add_blast_polypeptide_links bin/add_pvalue_to_praze_output.pl bin/add_pvalue_to_praze_output bin/adjust_bsml_coordinates.pl bin/adjust_bsml_coordinates bin/adjust_btab_coordinates.pl bin/adjust_btab_coordinates bin/adjust_gap2_coordinates.pl bin/adjust_gap2_coordinates bin/adjust_nap_coordinates.pl bin/adjust_nap_coordinates bin/analysis2bsml.pl bin/analysis2bsml bin/annotation_collection_to_bsml.pl bin/annotation_collection_to_bsml bin/antigenic2bsml.pl bin/antigenic2bsml bin/appendfile.pl bin/appendfile bin/aragorn2bsml.pl bin/aragorn2bsml bin/archive.pl bin/archive bin/assign_annotations.pl bin/assign_annotations bin/assign_ec_from_rps.pl bin/assign_ec_from_rps bin/augustus2bsml.pl bin/augustus2bsml bin/auto_annotate.pl bin/auto_annotate bin/auto_gene_curation.pl bin/auto_gene_curation bin/bepipred2bsml.pl bin/bepipred2bsml bin/ber_blast_hit_selector.pl bin/ber_blast_hit_selector bin/berbtab2bsml.pl bin/berbtab2bsml bin/best_hit.pl bin/best_hit bin/bin_and_trim_barcoded_seqs.pl bin/bin_and_trim_barcoded_seqs bin/blast2bsml.pl bin/blast2bsml bin/blast2btab.pl bin/blast2btab bin/blastbsml2btab.pl bin/blastbsml2btab bin/blastbtab2bsml.pl bin/blastbtab2bsml bin/brcGff3ToBsml.pl bin/brcGff3ToBsml bin/bsml2agp.pl bin/bsml2agp bin/bsml2fasta.pl bin/bsml2fasta bin/bsml2featurerelationships.pl bin/bsml2featurerelationships bin/bsml2idlookup.pl bin/bsml2idlookup bin/bsml2interevidence_fasta.pl bin/bsml2interevidence_fasta bin/bsml2legacydb.pl bin/bsml2legacydb bin/bsml2mugsymap.pl bin/bsml2mugsymap bin/bsml2PEmatchXML.pl bin/bsml2PEmatchXML bin/bsml2PEposXML.pl bin/bsml2PEposXML bin/bsml2ptt.pl bin/bsml2ptt bin/bsml2tbl.pl bin/bsml2tbl bin/bsml_qc.pl bin/bsml_qc bin/build_supercontig.pl bin/build_supercontig bin/cat_files.pl bin/cat_files bin/chado_aengine_dumper.pl bin/chado_aengine_dumper bin/check_file_size.pl bin/check_file_size bin/check_logfiles.pl bin/check_logfiles bin/checksum.pl bin/checksum bin/clovr16S_rdp_tables.pl bin/clovr16S_rdp_tables bin/clovr_metagenomics_prep.pl bin/clovr_metagenomics_prep bin/clovr_metagenomics_tsvtables.pl bin/clovr_metagenomics_tsvtables bin/clusterBsmlPairwiseAlignments.pl bin/clusterBsmlPairwiseAlignments bin/CogBsmlLoader.pl bin/CogBsmlLoader bin/CogProteinFasta.pl bin/CogProteinFasta bin/cogs_summary.pl bin/cogs_summary bin/combine_ncRNA_alignments.pl bin/combine_ncRNA_alignments bin/compress_file.pl bin/compress_file bin/concat_and_sort_dnadist_worker_output.pl bin/concat_and_sort_dnadist_worker_output bin/concatenate_files.pl bin/concatenate_files bin/convert_snp_output_to_clusterer_input.pl bin/convert_snp_output_to_clusterer_input bin/count_barcoded_seqs.pl bin/count_barcoded_seqs bin/create_amoscmp_input.pl bin/create_amoscmp_input bin/create_amoscmp_iterator_list.pl bin/create_amoscmp_iterator_list bin/create_blast_query_view_bcp.pl bin/create_blast_query_view_bcp bin/create_bsml_scaffolds.pl bin/create_bsml_scaffolds bin/create_chado2bsml_iterator_list.pl bin/create_chado2bsml_iterator_list bin/create_clovrtag_iterator_list.pl bin/create_clovrtag_iterator_list bin/create_distributed_iterator_xml.pl bin/create_distributed_iterator_xml bin/create_dnadist_control_file.pl bin/create_dnadist_control_file bin/create_dnadist_iterator_list.pl bin/create_dnadist_iterator_list bin/create_download_tag_iterator_list.pl bin/create_download_tag_iterator_list bin/create_ec_list.pl bin/create_ec_list bin/create_file_iterator_list.pl bin/create_file_iterator_list bin/create_genome_file_iterator_list.pl bin/create_genome_file_iterator_list bin/create_islandpath_iterator_list.pl bin/create_islandpath_iterator_list bin/create_iterator_groups.pl bin/create_iterator_groups bin/create_iterator_list.pl bin/create_iterator_list bin/create_legacy2bsml_iterator_list.pl bin/create_legacy2bsml_iterator_list bin/create_list_file.pl bin/create_list_file bin/create_map_file.pl bin/create_map_file bin/create_metagene_bsml_iterator_list.pl bin/create_metagene_bsml_iterator_list bin/create_mothur_cluster_iterator_list.pl bin/create_mothur_cluster_iterator_list bin/create_mothur_get_oturep_iterator_list.pl bin/create_mothur_get_oturep_iterator_list bin/create_mothur_read_otu_iterator_list.pl bin/create_mothur_read_otu_iterator_list bin/create_mothur_screen_seqs_iterator_list.pl bin/create_mothur_screen_seqs_iterator_list bin/create_mothur_unique_seqs_iterator_list.pl bin/create_mothur_unique_seqs_iterator_list bin/create_nucmer_iterator_list.pl bin/create_nucmer_iterator_list bin/create_pairwise_iterator_list.pl bin/create_pairwise_iterator_list bin/create_phage_find_info.pl bin/create_phage_find_info bin/create_pipeline.pl bin/create_pipeline bin/create_pssm_list.pl bin/create_pssm_list bin/create_ptools_input_files.pl bin/create_ptools_input_files bin/Create_Qiime_tables.pl bin/Create_Qiime_tables bin/create_scaffold_file.pl bin/create_scaffold_file bin/create_table_iterator_list.pl bin/create_table_iterator_list bin/create_trivial_scaffold_files.pl bin/create_trivial_scaffold_files bin/create_update_euk_model_sequences_iterator_list.pl bin/create_update_euk_model_sequences_iterator_list bin/cufflinks.pl bin/cufflinks bin/dataprep_dual16S.pl bin/dataprep_dual16S bin/deprecated_blast2btab.pl bin/deprecated_blast2btab bin/die_if_empty.pl bin/die_if_empty bin/diff_wrapper.pl bin/diff_wrapper bin/dnadist_combiner_wrapper.pl bin/dnadist_combiner_wrapper bin/dnadist_worker_wrapper.pl bin/dnadist_worker_wrapper bin/dummy.pl bin/dummy bin/enzyme2obo.pl bin/enzyme2obo bin/evmgff32bsml.pl bin/evmgff32bsml bin/extract_blast_hits_by_id.pl bin/extract_blast_hits_by_id bin/extract_seq_data_from_snp_output.pl bin/extract_seq_data_from_snp_output bin/fasta2bsml.pl bin/fasta2bsml bin/fasta2seqlen.pl bin/fasta2seqlen bin/fasta_align2Bsml.pl bin/fasta_align2Bsml bin/fasta_masker.pl bin/fasta_masker bin/fetch_fasta_from_db.pl bin/fetch_fasta_from_db bin/fgenesh2bsml.pl bin/fgenesh2bsml bin/filtermummer.pl bin/filtermummer bin/find_homopolymers.pl bin/find_homopolymers bin/findhomopolymers2bsml.pl bin/findhomopolymers2bsml bin/format_uclust_fasta_ids.pl bin/format_uclust_fasta_ids bin/fuzznuc2bsml.pl bin/fuzznuc2bsml bin/gap22bsml.pl bin/gap22bsml bin/gatekeeper.pl bin/gatekeeper bin/genbank2bsml.pl bin/genbank2bsml bin/gene_boundaries_bsml.pl bin/gene_boundaries_bsml bin/gene_pos_bsml.pl bin/gene_pos_bsml bin/geneidgff32bsml.pl bin/geneidgff32bsml bin/genemark2bsml.pl bin/genemark2bsml bin/genemarkes2bsml.pl bin/genemarkes2bsml bin/generate_asmbl_list.pl bin/generate_asmbl_list bin/generate_legacy2bsml_list.pl bin/generate_legacy2bsml_list bin/genewise2bsml.pl bin/genewise2bsml bin/genezilla2bsml.pl bin/genezilla2bsml bin/genie2bsml.pl bin/genie2bsml bin/genscan2bsml.pl bin/genscan2bsml bin/get_blast_querynames.pl bin/get_blast_querynames bin/get_seq_by_blastx.pl bin/get_seq_by_blastx bin/get_seq_by_metagene.pl bin/get_seq_by_metagene bin/get_seq_included.pl bin/get_seq_included bin/gff2bsml.pl bin/gff2bsml bin/gff3_to_annotab.pl bin/gff3_to_annotab bin/gff3_to_fasta.pl bin/gff3_to_fasta bin/gff3Valid.pl bin/gff3Valid bin/glimmer32bsml.pl bin/glimmer32bsml bin/glimmerHMM2bsml.pl bin/glimmerHMM2bsml bin/hmmls2bsml.pl bin/hmmls2bsml bin/hmmpfam2bsml.pl bin/hmmpfam2bsml bin/hmmpfam2htab.pl bin/hmmpfam2htab bin/hmmpir2bsml.pl bin/hmmpir2bsml bin/id_test.pl bin/id_test bin/identify_human_contaminants.pl bin/identify_human_contaminants bin/infernal2bsml.pl bin/infernal2bsml bin/intergenic_analysis.pl bin/intergenic_analysis bin/iprscan2bsml.pl bin/iprscan2bsml bin/islandpath2bsml.pl bin/islandpath2bsml bin/join_multifasta.pl bin/join_multifasta bin/lipop2bsml.pl bin/lipop2bsml bin/lipoprotein_motif.pl bin/lipoprotein_motif bin/load_phage_finder.pl bin/load_phage_finder bin/make_pathologic_dat_files.pl bin/make_pathologic_dat_files bin/mask_by_analysis.pl bin/mask_by_analysis bin/mepipe_create_tree.pl bin/mepipe_create_tree bin/mepipe_prepare_input.pl bin/mepipe_prepare_input bin/mepipe_run_paml.pl bin/mepipe_run_paml bin/merge_lists.pl bin/merge_lists bin/merge_sorted_files.pl bin/merge_sorted_files bin/metagene2bsml.pl bin/metagene2bsml bin/mothur.pl bin/mothur bin/mothur_unique_seq_limit.pl bin/mothur_unique_seq_limit bin/move_ber_files_for_manatee.pl bin/move_ber_files_for_manatee bin/mreps2bsml.pl bin/mreps2bsml bin/MSF2Bsml.pl bin/MSF2Bsml bin/MSF_domain2bsml.pl bin/MSF_domain2bsml bin/multialign2pairwise.pl bin/multialign2pairwise bin/mummer2bsml.pl bin/mummer2bsml bin/mummertab.pl bin/mummertab bin/nap2bsml.pl bin/nap2bsml bin/new_id.pl bin/new_id bin/ngap.pl bin/ngap bin/notify_database_users.pl bin/notify_database_users bin/obo_term_count.pl bin/obo_term_count bin/observer_script.pl bin/observer_script bin/open_reading_frames.pl bin/open_reading_frames bin/outer_membrane_domain.pl bin/outer_membrane_domain bin/overlap_analysis.pl bin/overlap_analysis bin/panda2genbank.pl bin/panda2genbank bin/pangenome_blast_parse.pl bin/pangenome_blast_parse bin/pangenome_make_graphs.pl bin/pangenome_make_graphs bin/pangenome_make_pangenome.pl bin/pangenome_make_pangenome bin/pangenome_make_profile.pl bin/pangenome_make_profile bin/pangenome_make_table.pl bin/pangenome_make_table bin/pangenome_merge_results.pl bin/pangenome_merge_results bin/pangenome_query_list.pl bin/pangenome_query_list bin/panther2bsml.pl bin/panther2bsml bin/parse_evidence.pl bin/parse_evidence bin/parse_for_ncRNAs.pl bin/parse_for_ncRNAs bin/pasagff32bsml.pl bin/pasagff32bsml bin/pause.pl bin/pause bin/pe2bsml.pl bin/pe2bsml bin/pe_fasta_dumper.pl bin/pe_fasta_dumper bin/pepstats2bsml.pl bin/pepstats2bsml bin/percent_gc.pl bin/percent_gc bin/phat2bsml.pl bin/phat2bsml bin/phobos2bsml.pl bin/phobos2bsml bin/pipeline_summary.pl bin/pipeline_summary bin/post_process_annotations.pl bin/post_process_annotations bin/predict_prokaryotic_gene_function.pl bin/predict_prokaryotic_gene_function bin/predotar2bsml.pl bin/predotar2bsml bin/prepare_ber_extended_nt_db.pl bin/prepare_ber_extended_nt_db bin/prepare_for_genewise_best_loc.pl bin/prepare_for_genewise_best_loc bin/prepare_for_tbl2asn.pl bin/prepare_for_tbl2asn bin/prepare_for_transterm.pl bin/prepare_for_transterm bin/prepare_paired_ends_for_velvet.pl bin/prepare_paired_ends_for_velvet bin/prepfasta4mugsy.pl bin/prepfasta4mugsy bin/printmatchgraph.pl bin/printmatchgraph bin/printrepresentative.pl bin/printrepresentative bin/process_crossbow_input.pl bin/process_crossbow_input bin/process_crossbow_reference_genome.pl bin/process_crossbow_reference_genome bin/prok_pipeline_check.pl bin/prok_pipeline_check bin/promote_gene_prediction.pl bin/promote_gene_prediction bin/ps_scan2bsml.pl bin/ps_scan2bsml bin/psortb2bsml.pl bin/psortb2bsml bin/qiime_to_mothur_meta.pl bin/qiime_to_mothur_meta bin/quicktree2bsml.pl bin/quicktree2bsml bin/region2bsml.pl bin/region2bsml bin/repeatmasker2bsml.pl bin/repeatmasker2bsml bin/replace_amoscmp_fasta_seqids.pl bin/replace_amoscmp_fasta_seqids bin/replace_config_keys.pl bin/replace_config_keys bin/replace_fasta_headers.pl bin/replace_fasta_headers bin/replace_template_keys.pl bin/replace_template_keys bin/repository_info.pl bin/repository_info bin/rna2bsml.pl bin/rna2bsml bin/rnammer2bsml.pl bin/rnammer2bsml bin/run_cmsearch.pl bin/run_cmsearch bin/run_genemark-es.pl bin/run_genemark-es bin/run_hmmsearch.pl bin/run_hmmsearch bin/run_phage_finder.pl bin/run_phage_finder bin/run_qsub_cmd.pl bin/run_qsub_cmd bin/run_velvet_optimiser.pl bin/run_velvet_optimiser bin/run_wf.pl bin/run_wf bin/RunBestHit.pl bin/RunBestHit bin/runCA_wrapper.pl bin/runCA_wrapper bin/runcc.pl bin/runcc bin/scp_files.pl bin/scp_files bin/screen_seqs_by_ids.pl bin/screen_seqs_by_ids bin/script_template.pl bin/script_template bin/seg2bsml.pl bin/seg2bsml bin/sff_to_CA.pl bin/sff_to_CA bin/sfffile.pl bin/sfffile bin/sffinfo.pl bin/sffinfo bin/signalp2bsml.pl bin/signalp2bsml bin/signalp_graphics_rename.pl bin/signalp_graphics_rename bin/snap2bsml.pl bin/snap2bsml bin/snoscan2bsml.pl bin/snoscan2bsml bin/snp2bsml.pl bin/snp2bsml bin/SNP_Analysis.pl bin/SNP_Analysis bin/SNP_ExtractFASTA.pl bin/SNP_ExtractFASTA bin/sort_snoscan_output.pl bin/sort_snoscan_output bin/spin_wait.pl bin/spin_wait bin/split_fasta.pl bin/split_fasta bin/split_multifasta.pl bin/split_multifasta bin/start_site_curation.pl bin/start_site_curation bin/store_chado_version.pl bin/store_chado_version bin/submit_for_harvesting.pl bin/submit_for_harvesting bin/tabula_rasa.pl bin/tabula_rasa bin/tag_data.pl bin/tag_data bin/targetp2bsml.pl bin/targetp2bsml bin/tcov2bsml.pl bin/tcov2bsml bin/template.pl bin/template bin/tiling2bsml.pl bin/tiling2bsml bin/tmhmm2bsml.pl bin/tmhmm2bsml bin/tophat.pl bin/tophat bin/train_for_glimmer3.pl bin/train_for_glimmer3 bin/train_for_glimmer3_iteration.pl bin/train_for_glimmer3_iteration bin/translate_sequence.pl bin/translate_sequence bin/transterm2bsml.pl bin/transterm2bsml bin/trf2bsml.pl bin/trf2bsml bin/trf_wrapper.pl bin/trf_wrapper bin/tRNAscan-SE2bsml.pl bin/tRNAscan-SE2bsml bin/twinscan2bsml.pl bin/twinscan2bsml bin/uclust_replicate_removal.pl bin/uclust_replicate_removal bin/validate_clustalw_output.pl bin/validate_clustalw_output bin/velvetg_post_processing.pl bin/velvetg_post_processing bin/velvetg_pre_processing.pl bin/velvetg_pre_processing bin/velveth_post_processing.pl bin/velveth_post_processing htdocs/cgi/bin/archive_pipeline_in_place.pl bin/archive_pipeline_in_place htdocs/cgi/bin/archive_pipeline_to_location.pl bin/archive_pipeline_to_location htdocs/cgi/bin/delete_pipeline.pl bin/delete_pipeline>
+
+=back
+
+=head2 Fri Oct 22 14:37:40 2010: C<Module> L<BSML|BSML>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Oct 22 14:37:52 2010: C<Module> L<Coati|Coati>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Oct 22 14:38:21 2010: C<Module> L<Prism|Prism>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: bin/addCommentToBsml.pl bin/addCommentToBsml bin/assertClustersDisjoint.pl bin/assertClustersDisjoint bin/bcpdir2iterator.pl bin/bcpdir2iterator bin/bcpScanner.pl bin/bcpScanner bin/bsmlqa.pl bin/bsmlqa bin/chado_statistics.pl bin/chado_statistics bin/check_database_status.pl bin/check_database_status bin/clostox2bsml.pl bin/clostox2bsml bin/clusterStatistics.pl bin/clusterStatistics bin/confirm_database_loaded.pl bin/confirm_database_loaded bin/consolidateIdMapFiles.pl bin/consolidateIdMapFiles bin/createEnzymeObo.pl bin/createEnzymeObo bin/db2bsml.pl bin/db2bsml bin/db2fasta.pl bin/db2fasta bin/dbParafam2bsml.pl bin/dbParafam2bsml bin/ddl2iterator.pl bin/ddl2iterator bin/deriveCDSSequences.pl bin/deriveCDSSequences bin/fastaToBsmlWorkingGeneModels.pl bin/fastaToBsmlWorkingGeneModels bin/fixResidues.pl bin/fixResidues bin/getDbStatus.pl bin/getDbStatus bin/getIsCurrentAsmblId.pl bin/getIsCurrentAsmblId bin/launcher.pl bin/launcher bin/legacy2bsml.pl bin/legacy2bsml bin/legacyparafam2bsml.pl bin/legacyparafam2bsml bin/mapClusters.pl bin/mapClusters bin/movezerofiles.pl bin/movezerofiles bin/proteinLocalization.pl bin/proteinLocalization bin/scanOBO.pl bin/scanOBO bin/sql2DB.pl bin/sql2DB bin/statusChecker.pl bin/statusChecker bin/testTermUsage.pl bin/testTermUsage bin/validate_indexes_and_constraints.pl bin/validate_indexes_and_constraints bin/watchdatabase.pl bin/watchdatabase>
+
+=back
+
+=head2 Fri Oct 22 14:38:57 2010: C<Module> L<Prism|Prism>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: bin/assign_pks.pl bin/assign_pks bin/backuptables.pl bin/backuptables bin/bcpConverter.pl bin/bcpConverter bin/bsml2chado.pl bin/bsml2chado bin/bsml2gff3.pl bin/bsml2gff3 bin/calculate_cvtermpath.pl bin/calculate_cvtermpath bin/chado2bsml.pl bin/chado2bsml bin/chado_admin.pl bin/chado_admin bin/chadoToChadoMart.pl bin/chadoToChadoMart bin/chadotogff3.pl bin/chadotogff3 bin/chadoToObo.pl bin/chadoToObo bin/check_bsml2chado.pl bin/check_bsml2chado bin/checkAndDelete.pl bin/checkAndDelete bin/checkDatabase.pl bin/checkDatabase bin/checkDeletedTableRecordCounts.pl bin/checkDeletedTableRecordCounts bin/checkFeaturelocRecords.pl bin/checkFeaturelocRecords bin/checkForDuplicatePropertyTuples.pl bin/checkForDuplicatePropertyTuples bin/collate_bcp_records.pl bin/collate_bcp_records bin/compare_cvterm_relationships.pl bin/compare_cvterm_relationships bin/create_bcp_file_list_ini.pl bin/create_bcp_file_list_ini bin/create_delete_sql.pl bin/create_delete_sql bin/create_splice_site_records.pl bin/create_splice_site_records bin/create_table_group_file_list.pl bin/create_table_group_file_list bin/createCMProteins.pl bin/createCMProteins bin/createDeleteSQLFile.pl bin/createDeleteSQLFile bin/createSelectRecordCountsSQL.pl bin/createSelectRecordCountsSQL bin/createTableIteratorListFile.pl bin/createTableIteratorListFile bin/createViewsSQL.pl bin/createViewsSQL bin/cvtermpath_closure.pl bin/cvtermpath_closure bin/ddl2iterator.pl bin/ddl2iterator bin/deriveIdMappingFileFromChado.pl bin/deriveIdMappingFileFromChado bin/deriveSpliceSiteFeaturesFromChado.pl bin/deriveSpliceSiteFeaturesFromChado bin/dropchadoobjects.pl bin/dropchadoobjects bin/dropChadoObjects.pl bin/dropChadoObjects bin/dropchadotables.pl bin/dropchadotables bin/dup_list.pl bin/dup_list bin/epitopeAttributes.pl bin/epitopeAttributes bin/epitopeRelationships.pl bin/epitopeRelationships bin/externalAnnotation2Chado.pl bin/externalAnnotation2Chado bin/extract_checksums.pl bin/extract_checksums bin/featureMapping2Chado.pl bin/featureMapping2Chado bin/flatFileToChado.pl bin/flatFileToChado bin/generate_custom_cvterm_relationships.pl bin/generate_custom_cvterm_relationships bin/generate_genomic_seq.pl bin/generate_genomic_seq bin/generate_jaccard_organism_asmbl_files.pl bin/generate_jaccard_organism_asmbl_files bin/generateChadoReportPages.pl bin/generateChadoReportPages bin/lineageSpecificAnalysis.pl bin/lineageSpecificAnalysis bin/lineageSpecificAnalysisByPairwiseAlignments.pl bin/lineageSpecificAnalysisByPairwiseAlignments bin/make_external_reference_replacement_list.pl bin/make_external_reference_replacement_list bin/OBO2Chado.pl bin/OBO2Chado bin/obov1p2tochado.pl bin/obov1p2tochado bin/obsoleteFeatures.pl bin/obsoleteFeatures bin/parse_table_names.pl bin/parse_table_names bin/profileBSMLFile.pl bin/profileBSMLFile bin/queries2Chado.pl bin/queries2Chado bin/remove_dups.pl bin/remove_dups bin/replace_checksums.pl bin/replace_checksums bin/translateIdentifiersInBtab.pl bin/translateIdentifiersInBtab bin/validate_foreign_key_constraints.pl bin/validate_foreign_key_constraints bin/validateBSML2Chado.pl bin/validateBSML2Chado bin/validateRelationships.pl bin/validateRelationships>
+
+=back
+
+=head2 Fri Oct 22 14:39:12 2010: C<Module> L<Prism|Prism>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: bin/euktigr2GFF.pl bin/euktigr2GFF bin/get_valid_asmbl_ids.pl bin/get_valid_asmbl_ids bin/ntproklink2bsml.pl bin/ntproklink2bsml bin/ntproktigr2chado.pl bin/ntproktigr2chado bin/proktigr2chado.pl bin/proktigr2chado bin/proktigr2GFF.pl bin/proktigr2GFF>
+
+=back
+
+=head2 Fri Oct 22 14:39:28 2010: C<Module> L<Prism|Prism>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/local/projects/ergatis/package-virome/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: >
+
+=item *
+
+C<EXE_FILES: bin/euktigr2chado.pl bin/euktigr2chado bin/fixResidues.pl bin/fixResidues bin/pubLocus2Chado.pl bin/pubLocus2Chado>
+
+=back
+

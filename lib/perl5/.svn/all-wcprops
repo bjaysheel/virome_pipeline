@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/CAMERA/!svn/ver/161/virome/pipeline/lib/perl5
+END
+UTILS_V.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/164/virome/pipeline/lib/perl5/UTILS_V.pm
+END
+BeginPerlBioinfo.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/BeginPerlBioinfo.pm
+END
+LIBInfo.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/CAMERA/!svn/ver/162/virome/pipeline/lib/perl5/LIBInfo.pm
+END
