@@ -1,0 +1,2621 @@
+<!-- ************************************************************* -->
+<!--         BSML (tm) Bioinformatic Sequence Markup Language      -->
+<!--     Document Type Definition DTD Version 3.1 June 12, 2002    -->
+<!--                     Copyright 1998 - 2002                     -->
+<!--                          LabBook, Inc.                        -->
+<!--                                                               -->
+<!-- ************************************************************* -->
+<!-- This document defines an XML-compliant DTD for the            -->
+<!-- representation and display of genetic sequence information.   -->
+<!-- ************************************************************* -->
+<!--            CDATA attribute values defined by entities.        -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!--                General Parameter Entity Definitions           -->
+<!-- ************************************************************* -->
+<!ENTITY amp "&#38;#38;">
+<!ENTITY lt "&#38;#60;">
+<!ENTITY gt "&#62;">
+<!ENTITY quot "&#34;">
+<!ENTITY apos "&#39;">
+<!ENTITY % yesorno "CDATA">
+<!-- boolean as 1=true|0=false -->
+<!ENTITY % integer "CDATA">
+<!-- positive or negative int  -->
+<!ENTITY % real "CDATA">
+<!-- positive or negative real -->
+<!ENTITY % length "CDATA">
+<!-- length units (see 1.1)    -->
+<!ENTITY % linewidth "CDATA">
+<!-- line width (see 1.2)      -->
+<!ENTITY % linestyle "(solid|dash|dot|none)">
+<!-- style of line   -->
+<!ENTITY % displayshape "(ellipse|rectangle|roundrectangle|triangle|borderless)">
+<!-- display state -->
+<!ENTITY % displaystate "(on | off | gray)">
+<!-- connector style for networks -->
+<!ENTITY % connectortype "(none | ball | arrow)">
+<!ENTITY % textposition "(above|below|left|right)">
+<!--                                                               -->
+<!--     The following entities were adapted from html 4.0:        -->
+<!--                                                               -->
+<!ENTITY % color "CDATA">
+<!-- name, RGB value (see 1.3)  -->
+<!ENTITY % contenttype "CDATA">
+<!-- media type,RFC2045         -->
+<!ENTITY % character "CDATA">
+<!-- one character,ISO10646     -->
+<!ENTITY % mediadesc "CDATA">
+<!-- single or comma-separated
+                                     list of media descriptors     -->
+<!ENTITY % url "CDATA">
+<!-- Uniform Res. Locator,RFC1808,RFC1738 -->
+<!ENTITY % datetime "CDATA">
+<!-- date,time ISO 8601 format  -->
+<!-- 2001-08-01T13:04:00 -->
+<!ENTITY % date "CDATA">
+<!-- date ISO 8601 format       -->
+<!-- 2001-01-31 -->
+<!ENTITY % script "CDATA">
+<!-- script expression          -->
+<!ENTITY % text "CDATA">
+<!-- render as CDATA            -->
+<!ENTITY % shape "(rect|circle|poly|default)">
+<!-- image maps  -->
+<!ENTITY % coords "CDATA">
+<!-- comma sep list of numbers  -->
+<!ENTITY % frametarget "CDATA">
+<!-- render in this frame       -->
+<!--
+********************      Length: Units of Distance    *************** 
+Locations on the page and distance values such as line lengths are 
+specified in terms of horizontal and vertical coordinates, expressed 
+as a %length attribute value. Distance and location may use a variety 
+of measures:
+
+o px = pixels
+o cm = centimeters
+o in = inches
+o pt = points (1 pt = 1/72 in)
+o % = percentage of the page width (length)
+
+The default measurement unit is set in an attribute of the Display element,
+(e.g., default-unit="cm"). This unit is supplied if no unit is specified 
+(e.g., hloc="10"). It is permissible to specify horizontal and vertical 
+coordinates of a point in different dimension units, e.g., 
+hloc="10.2cm" vloc="20%". If a length is followed by "@idV:" and an 
+object's ID, the value is taken from a location or size of the corresponding 
+widget. "V" is one of the following:
+
+x : horizontal center
+y : vertical center
+w : width
+h : height
+l : left
+r : right
+t : top
+b : bottom
+
+For example, if a sequence view-line with id="VLN1" has a horizontal center 
+of 300 pixels, a horizontal length of "20px@idx:VLN1" returns a value of 320 
+pixels. This method is most commonly used in resolving coordinates on the 
+display page.
+-->
+<!--
+**********************  Units of Line Width   ****************** 
+Line width is specified in an attribute with the value %linewidth, which 
+may be expressed as a relative or absolute value, or using one of a set of 
+enumerated types:
+
+o Absolute value units include pixels (px), inches (in) and
+  centimeters (cm), e.g.,line-width="0.01in".
+o Relative values are stated without units as values between 1
+ (thinnest) and 7 (thickest). The value of the thinnest line is 
+  specified as an attribute of the Display element (e.g., line-width-base="0.01in").
+  The increment applied from one step to another is specified as an attribute of the 
+  Display element (e.g., line-width-inc="0.005in"). Thus the absolute value of a 
+  relative value is calculated by adding a multiple of line-width-inc to 
+  line-width-base, e.g., 3=line-width-base+2*line-width-inc.
+o Enumerated values selected from "thin","medium","thick", which
+  correspond to relative values of 1, 2, and 4, respectively.
+-->
+<!--
+*********************  Colors (from HTML 4.0) ********************** 
+An attribute value type "color" (%color) may be either a hexadecimal number 
+(prefixed by a hash mark) or one of the following 16 color names:
+
+             Black   = "#000000"          Green  = "#008000"
+             Silver  = "#C0C0C0"          Lime   = "#00FF00"
+             Gray    = "#808080"          Olive  = "#808000"
+             White   = "#FFFFFF"          Yellow = "#FFFF00"
+             Maroon  = "#800000"          Navy   = "#000080"
+             Red     = "#FF0000"          Blue   = "#0000FF"
+             Purple  = "#800080"          Teal   = "#008080"
+             Fuchsia = "#FF00FF"          Aqua   = "#00FFFF"
+
+Thus the color values "#800080" and "Purple" both refer to the color purple.
+-->
+<!-- ************************************************************* -->
+<!--      General attributes applied to most elements              -->
+<!-- ************************************************************* -->
+<!ENTITY % mainattrs "id          ID         #IMPLIED
+  class       CDATA      #IMPLIED
+  editstatus  CDATA      #IMPLIED
+  title       CDATA      #IMPLIED
+  comment     CDATA      #IMPLIED
+  value-type  CDATA      #IMPLIED
+  value       CDATA      #IMPLIED
+  selectable  %yesorno;  #IMPLIED
+  selected    %yesorno;  #IMPLIED
+  display     %yesorno;  #IMPLIED
+  readonly    %yesorno;  #IMPLIED">
+<!--   Events used to define actions when element are selected:    -->
+<!ENTITY % events "onclick     %script;   #IMPLIED
+  ondblclick  %script;   #IMPLIED
+  onmousedown %script;   #IMPLIED
+  onmouseup   %script;   #IMPLIED
+  onmouseover %script;   #IMPLIED
+  onmousemove %script;   #IMPLIED
+  onmouseout  %script;   #IMPLIED
+  onkeypress  %script;   #IMPLIED
+  onkeydown   %script;   #IMPLIED
+  onkeyup     %script;   #IMPLIED">
+<!ENTITY % attrs "%mainattrs; %events;">
+<!--
+Note: attrs is added as an attribute group for all major elements.
+-->
+<!-- ************************************************************* -->
+<!--         XML Linking Elements and Generic Descriptors          -->
+<!-- ************************************************************* -->
+<!ENTITY % datatype "(integer|float|character)">
+<!-- data types  -->
+<!ELEMENT Attribute EMPTY>
+<!ATTLIST Attribute
+	name CDATA #REQUIRED
+	content CDATA #IMPLIED
+	type %datatype; #IMPLIED
+>
+<!ELEMENT Attribute-list (Attribute)*>
+<!ATTLIST Attribute-list
+	%attrs; 
+	idref IDREF #IMPLIED
+>
+<!ELEMENT Info (Attribute)*>
+<!ATTLIST Info
+	%attrs; 
+	idref IDREF #IMPLIED
+>
+<!-- 
+Note: Cross-reference may be used as a linking element in place of the 
+qualifier dbxref entry. This allows specification of the context 
+and role of the cross-reference, e.g., role="mouse homolog"
+-->
+<!ELEMENT Cross-reference (Attribute)*>
+<!ATTLIST Cross-reference
+	id ID #IMPLIED
+	context CDATA #IMPLIED
+	database CDATA #IMPLIED
+	identifier CDATA #IMPLIED
+	identifier-type CDATA #IMPLIED
+	title CDATA #IMPLIED
+	behavior CDATA #IMPLIED
+	href CDATA #IMPLIED
+	role CDATA #IMPLIED
+>
+<!ELEMENT Locator EMPTY>
+<!ATTLIST Locator
+	id ID #IMPLIED
+	xml-link CDATA #FIXED "LOCATOR"
+	role CDATA #IMPLIED
+	href CDATA #REQUIRED
+	title CDATA #IMPLIED
+	rel CDATA #IMPLIED
+	rev CDATA #IMPLIED
+	show (embed | replace | new) "embed"
+	actuate (auto | user) "user"
+	behavior CDATA #IMPLIED
+>
+<!ELEMENT Link EMPTY>
+<!ATTLIST Link
+	id ID #IMPLIED
+	xml-link CDATA #FIXED "SIMPLE"
+	role CDATA #IMPLIED
+	href CDATA #REQUIRED
+	title CDATA #IMPLIED
+	rel CDATA #IMPLIED
+	rev CDATA #IMPLIED
+	show (embed | replace | new) "embed"
+	actuate (auto | user) "user"
+	behavior CDATA #IMPLIED
+>
+<!ELEMENT Extended-link (Locator | Cross-reference)*>
+<!ATTLIST Extended-link
+	id ID #IMPLIED
+	xml-link CDATA #FIXED "EXTENDED"
+	inline CDATA #FIXED "TRUE"
+	content-title CDATA #IMPLIED
+	content-role CDATA #IMPLIED
+	role CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+	rel CDATA #IMPLIED
+	rev CDATA #IMPLIED
+	show (embed | replace | new) "embed"
+	actuate (auto | user) "user"
+	behavior CDATA #IMPLIED
+>
+<!ELEMENT Document-link EMPTY>
+<!ATTLIST Document-link
+	id ID #IMPLIED
+	xml-link CDATA #FIXED "DOCUMENT"
+	role CDATA #IMPLIED
+	href CDATA #REQUIRED
+	title CDATA #IMPLIED
+	rel CDATA #IMPLIED
+	rev CDATA #IMPLIED
+	mime-type CDATA #IMPLIED
+	show (embed | replace | new) "embed"
+	actuate (auto | user) "user"
+	behavior CDATA #IMPLIED
+>
+<!ELEMENT Group-link (Document-link)*>
+<!ATTLIST Group-link
+	id ID #IMPLIED
+	xml-link CDATA #FIXED "GROUP"
+	steps CDATA #IMPLIED
+	role CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+	rel CDATA #IMPLIED
+	rev CDATA #IMPLIED
+	show (embed | replace | new) "embed"
+	actuate (auto | user) "user"
+	behavior CDATA #IMPLIED
+>
+<!ENTITY % links "(Attribute-list|Cross-reference|Link|Extended-link|Group-link)*">
+<!-- ************************************************************* -->
+<!--              Resource Identification and Description          -->
+<!--    New content for resource description; also to be used with -->
+<!--    descriptions of sources of information for sequences and   -->
+<!--    annotation (supports Dublic Core Initiative).              -->
+<!-- ************************************************************* -->
+<!ELEMENT Postal-address EMPTY>
+<!ATTLIST Postal-address
+	building-address1 CDATA #IMPLIED
+	building-address2 CDATA #IMPLIED
+	street-address1 CDATA #IMPLIED
+	street-address2 CDATA #IMPLIED
+	city CDATA #IMPLIED
+	state-province CDATA #IMPLIED
+	country CDATA #IMPLIED
+	postal-code CDATA #IMPLIED
+	utc-time-zone CDATA #IMPLIED
+>
+<!ELEMENT Contact-info (Postal-address?)>
+<!ATTLIST Contact-info
+	telephone-number CDATA #IMPLIED
+	cellular-number CDATA #IMPLIED
+	fax-number CDATA #IMPLIED
+	pager-number CDATA #IMPLIED
+	department CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Person (Contact-info?)>
+<!ATTLIST Person
+	fullname CDATA #IMPLIED
+	lastname CDATA #IMPLIED
+	firstname CDATA #IMPLIED
+	middlename CDATA #IMPLIED
+	title CDATA #IMPLIED
+	department CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Organization (Contact-info?, Person*)>
+<!ATTLIST Organization
+	name CDATA #REQUIRED
+	description CDATA #IMPLIED
+	department CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Software-system (Contact-info?, Person*, Organization*, Version*)>
+<!ATTLIST Software-system
+	name CDATA #REQUIRED
+	description CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Contributor (Person | Organization | Software-system)+>
+<!ELEMENT Creator (Person | Organization | Software-system)+>
+<!ELEMENT Publisher (Person | Organization | Software-system)+>
+<!ELEMENT Rights (#PCDATA)>
+<!ATTLIST Rights
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT Coverage (#PCDATA)>
+<!ATTLIST Coverage
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+>
+<!ELEMENT Subject (#PCDATA)>
+<!ATTLIST Subject
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Source (#PCDATA)>
+<!ATTLIST Source
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Language (#PCDATA)>
+<!ATTLIST Language
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Relation (#PCDATA)>
+<!ATTLIST Relation
+	type CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Date EMPTY>
+<!ATTLIST Date
+	datetime %datetime; #REQUIRED
+	role (created | valid | available | issued | modified | other) #IMPLIED
+	other CDATA #IMPLIED
+>
+<!ELEMENT Format (#PCDATA)>
+<!ATTLIST Format
+	extent CDATA #IMPLIED
+	medium CDATA #IMPLIED
+>
+<!ELEMENT Identifier (#PCDATA)>
+<!ATTLIST Identifier
+	context CDATA #IMPLIED
+	refid CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Version (Organization?, Date?)>
+<!ATTLIST Version
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	full-version CDATA #IMPLIED
+	major-version CDATA #IMPLIED
+	minor-version CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Content (#PCDATA)>
+<!ATTLIST Content
+	id ID #IMPLIED
+	name CDATA #IMPLIED
+	description CDATA #IMPLIED
+	content-type CDATA #IMPLIED
+	role CDATA #IMPLIED
+>
+<!ELEMENT History (History-event*)>
+<!ATTLIST History
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT History-event (Date?, Contributor*, History-event-description?, %links;)>
+<!ATTLIST History-event
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT History-event-description (#PCDATA)>
+<!ELEMENT Authority (Authority-url*, Authority-domain*)>
+<!ATTLIST Authority
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT Authority-url EMPTY>
+<!ATTLIST Authority-url
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	type (website | vocabulary-list | identifier-access | other) #IMPLIED
+	other-type CDATA #IMPLIED
+	content-type %contenttype; #IMPLIED
+	url %url; #REQUIRED
+>
+<!ELEMENT Authority-domain EMPTY>
+<!ATTLIST Authority-domain
+	title CDATA #IMPLIED
+	description CDATA #IMPLIED
+	element-name CDATA #REQUIRED
+	attribute-name CDATA #REQUIRED
+	class-names CDATA #IMPLIED
+>
+<!ENTITY % metadata "(Attribute | Coverage | Description | Type | Relation | 
+              Source | Subject | Title | Contributor | Creator | Publisher | 
+              Rights | Date | Format | Identifier | Language | Content | 
+              Version | History | Authority | %links;)*">
+<!ELEMENT Resource (%metadata;)>
+<!ATTLIST Resource
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                    Major BSML Document Divisions              -->
+<!-- ************************************************************* -->
+<!ELEMENT Bsml (Attribute*, Info*, Resource*, Definitions?, Research?, Display?)>
+<!--
+Note: For the top level Bsml element, the following Attribute
+elements (name/content pairs) are commonly defined:
+document-title="title of document" 
+project="name of project" (used with project manager) 
+project-id="unique project identifer for this document" 
+author="originator of document" 
+storage="primary storage location" 
+owner="user who has complete access to change the document" 
+create-date="date of origination (yyyy-mm-dd)" 
+update-date="date of last modification (yyyy-mm-dd)"
+-->
+<!--
+Notes:
+1.	The Definitions section may be used without a Research or Display section if the 
+      goal is simply to encode sequence data; for convenience, a few elements 
+      in the Definitions section have display-related attributes, but these 
+      attributes are never required. Thus a BSML document may be used to 
+      convey data independently of a BSML browser, and the document may be 
+      read and processed by any suitable XML parsing software.
+2.	The Display section provides information that is mainly relevant for 
+      the graphical display of bioinformatic data and for accessing links 
+      in other network resources. Much of the content of the Display section 
+      only has meaning for a browser that works specifically with BSML and 
+      has been customized to display the widgets defined in the BSML standard.
+-->
+<!-- ************************************************************* -->
+<!--                      Definitions Sub-divisions                -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!ELEMENT Definitions (Attribute*, Genomes?, Sequences?, Isoforms?, Sets?, Tables?, Networks?)>
+<!-- ************************************************************* -->
+<!--          Genomes, Chromosomes, Cytobands, Extra-chromosomal   -->
+<!-- ************************************************************* -->
+<!ELEMENT Genomes (Attribute*, Genome*, Resource*, %links;)>
+<!ELEMENT Genome (Attribute*, (Organism | Organism-clone | Cell-line)?, Chromosome*, Extrachromosomal-sequence*, Resource*, %links;)>
+<!ATTLIST Genome
+	%attrs; 
+	autosomal-chromosome-count %integer; #IMPLIED
+	sex-chromosome-count %integer; #IMPLIED
+	ploidy-count %integer; #IMPLIED
+	distinct-chromosome-count %integer; #IMPLIED
+	total-chromosome-count %integer; #IMPLIED
+>
+<!ELEMENT Chromosome (Cytoband*, Seq-data-import?)>
+<!ATTLIST Chromosome
+	id ID #IMPLIED
+	name CDATA #IMPLIED
+	number CDATA #IMPLIED
+	length %integer; #IMPLIED
+	circular %yesorno; #IMPLIED
+	autosomal %yesorno; #IMPLIED
+>
+<!ELEMENT Extrachromosomal-sequence (Cytoband*, Seq-data-import?)>
+<!ATTLIST Extrachromosomal-sequence
+	id IDREF #IMPLIED
+	type CDATA #IMPLIED
+	name CDATA #IMPLIED
+	number CDATA #IMPLIED
+	length %integer; #IMPLIED
+	circular %yesorno; #IMPLIED
+>
+<!ELEMENT Cytoband EMPTY>
+<!ATTLIST Cytoband
+	id ID #IMPLIED
+	band-name CDATA #IMPLIED
+	major-band CDATA #IMPLIED
+	minor-band CDATA #IMPLIED
+	band-color CDATA #IMPLIED
+	band-type (euchromatin | telomere | centromere | heterochromatin) #IMPLIED
+	band-start-pos %integer; #IMPLIED
+	band-end-pos %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--          Sequences, Features, Annotation, and Citations       -->
+<!-- ************************************************************* -->
+<!ELEMENT Sequences (Attribute*, (Sequence | Sequence-import)*, Segment-set*, Resource*, %links;)>
+<!ATTLIST Sequences
+	%attrs; 
+>
+<!-- ************************************************************* -->
+<!--                           Sequence-import                     -->
+<!-- ************************************************************* -->
+<!ELEMENT Sequence-import (Attribute*, Resource*, %links;)>
+<!-- imported from file/url -->
+<!ATTLIST Sequence-import
+	type CDATA #FIXED "bsml"
+	source %url; #REQUIRED
+	id ID #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                   Sequence Element (adapted from NCBI)        -->
+<!-- ************************************************************* -->
+<!ENTITY % dbsource "CDATA">
+<!-- database source such as swissprot-->
+<!ENTITY % repr-opts "(not-set|virtual|raw|segmented|constructed|
+                       reference|consensus|map|derived|other)">
+<!ENTITY % segment-opts "(chromosome|chromosomal-contig|clone|sequence-contig|sequence|other)">
+<!--                 Sequence representation options               -->
+<!ELEMENT Sequence (Attribute*, Feature-tables?, (Seq-data | Seq-data-import)?, Numbering?, Modification*, Segment*, Resource*, %links;)>
+<!ATTLIST Sequence
+	%attrs; 
+	locus CDATA #IMPLIED
+	ic-acckey CDATA #IMPLIED
+	local-acckey CDATA #IMPLIED
+	db-source %dbsource; #IMPLIED
+	length CDATA #IMPLIED
+	end5hang5 %integer; #IMPLIED
+	end3hang5 %integer; #IMPLIED
+	end5phos %yesorno; #IMPLIED
+	end3phos %yesorno; #IMPLIED
+	genomeref IDREF #IMPLIED
+	trans-table CDATA #IMPLIED
+	segmenttype %segment-opts; "sequence"
+	dnatype (genomic | cdna) #IMPLIED
+	representation %repr-opts; "raw"
+	molecule (mol-not-set | dna | rna | aa | na | other-mol) "dna"
+	topology (top-not-set | linear | circular | tandem | top-other) "linear"
+	strand (std-not-set | ss | ds | mixed | std-other) #IMPLIED
+	refs IDREFS #IMPLIED
+	alignment-sequence IDREFS #IMPLIED
+	alignment-position CDATA #IMPLIED
+	alignment-inverted CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                           Segment-set                         -->
+<!-- ************************************************************* -->
+<!ELEMENT Segment-set (Attribute*, Segment+, Resource*, %links;)>
+<!ATTLIST Segment-set
+	%attrs; 
+	seg-set-type CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                                 Segment                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Segment (Attribute*, Resource*, %links;)>
+<!ATTLIST Segment
+	%attrs; 
+	seg-source-type CDATA #IMPLIED
+	seg-source CDATA #IMPLIED
+	seg-id CDATA #IMPLIED
+	seg-url %url; #IMPLIED
+	seg-role CDATA #IMPLIED
+	seg-start %integer; #IMPLIED
+	seg-end %integer; #IMPLIED
+	seg-on-complement %integer; #IMPLIED
+	seg-translated %yesorno; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Modification                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Modification (Attribute*, Resource*, %links;)>
+<!--        WIPO ST.25 Modification type -->
+<!ATTLIST Modification
+	%attrs; 
+	position %integer; #REQUIRED
+	change CDATA #REQUIRED
+	source CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                           Sequence Data                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Seq-data (#PCDATA)>
+<!--                dna/rna=IUPACna, protein=IUPACaa               -->
+<!-- ************************************************************* -->
+<!--                            Location Types                     -->
+<!-- ************************************************************* -->
+<!ELEMENT Site-loc (Attribute*, Resource*, %links;)>
+<!-- one position   -->
+<!ATTLIST Site-loc
+	%attrs; 
+	sitepos CDATA #REQUIRED
+	fuzzypos CDATA #IMPLIED
+	complement %yesorno; "0"
+	strand-unknown %yesorno; "0"
+>
+<!ELEMENT Interval-loc (Attribute*, Resource*, %links;)>
+<!ATTLIST Interval-loc
+	%attrs; 
+	startpos CDATA #REQUIRED
+	fuzzystart CDATA #IMPLIED
+	endpos CDATA #REQUIRED
+	fuzzyend CDATA #IMPLIED
+	startopen %yesorno; "0"
+	endopen %yesorno; "0"
+	onepos %yesorno; "0"
+	complement %yesorno; "0"
+	strand-unknown %yesorno; "0"
+	segment-ref IDREF #IMPLIED
+>
+<!ENTITY % location "(Site-loc|Interval-loc)">
+<!-- location entity provides reference to either type of location -->
+<!-- ************************************************************* -->
+<!--                            Qualifier Types                    -->
+<!-- ************************************************************* -->
+<!ELEMENT Qualifier (Attribute*, Resource*, %links;)>
+<!--        Qualifier uses value-type and value attributes         -->
+<!ATTLIST Qualifier
+	%attrs; 
+>
+<!-- ************************************************************* -->
+<!--                             Feature Types                     -->
+<!-- ************************************************************* -->
+<!ELEMENT Feature (Attribute*, (%location; | Qualifier)*, Resource*, %links;)>
+<!ATTLIST Feature
+	%attrs; 
+	display-auto %yesorno; #IMPLIED
+	auto-view IDREF #IMPLIED
+	refs IDREFS #IMPLIED
+	join %yesorno; #IMPLIED
+	group-type CDATA #IMPLIED
+	segment-ref IDREF #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Reference                          -->
+<!-- ************************************************************* -->
+<!ELEMENT Reference (Attribute*, RefAuthors?, RefTitle?, RefJournal?, Resource*, %links;)>
+<!ATTLIST Reference
+	%attrs; 
+	dbxref CDATA #IMPLIED
+	refs IDREFS #IMPLIED
+>
+<!ELEMENT RefAuthors (#PCDATA)>
+<!ELEMENT RefTitle (#PCDATA)>
+<!ELEMENT RefJournal (#PCDATA)>
+<!-- ************************************************************* -->
+<!--                             Feature-group                     -->
+<!-- ************************************************************* -->
+<!ELEMENT Feature-group-member (#PCDATA)>
+<!ATTLIST Feature-group-member
+	%attrs; 
+	featref IDREF #REQUIRED
+	feature-type CDATA #IMPLIED
+	group-type CDATA #IMPLIED
+>
+<!ELEMENT Feature-group (Attribute*, Feature-group-member*, Resource*, %links;)>
+<!ATTLIST Feature-group
+	%attrs; 
+	group-set CDATA #IMPLIED
+>
+<!-- Use Feature-group to define a set of related features such as exons comprising a gene
+-->
+<!-- ************************************************************* -->
+<!--                              Digest Set                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Restriction-enzyme EMPTY>
+<!-- record for 1 enzyme -->
+<!ATTLIST Restriction-enzyme
+	%attrs; 
+	source CDATA #IMPLIED
+	recognition-seq CDATA #IMPLIED
+	offset %integer; "0"
+	overhang %integer; "0"
+	sites CDATA #IMPLIED
+>
+<!ELEMENT Digest-set (Attribute*, Restriction-enzyme*, Resource*, %links;)>
+<!-- set of enzymes   -->
+<!ATTLIST Digest-set
+	%attrs; 
+	fragments CDATA #IMPLIED
+	units CDATA #IMPLIED
+	start-pos %integer; #IMPLIED
+	end-pos %integer; #IMPLIED
+	min-cuts %integer; #IMPLIED
+	max-cuts %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Feature Table                      -->
+<!-- ************************************************************* -->
+<!ELEMENT Feature-table (Attribute*, (Reference | Feature | Digest-set)*, Resource*, %links;)>
+<!ATTLIST Feature-table
+	%attrs; 
+	feature-count %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                               Feature Tables                  -->
+<!-- ************************************************************* -->
+<!ELEMENT Feature-tables (Attribute | Feature-table | Feature-group)*>
+<!ATTLIST Feature-tables
+	%attrs; 
+>
+<!-- ************************************************************* -->
+<!--                              Seq-data-import                  -->
+<!-- ************************************************************* -->
+<!--
+  IUPACna :  IUPAC 1 letter codes, no spaces
+  IUPACaa :  IUPAC 1 letter codes, no spaces
+  NCBI2na :  00=A, 01=C, 10=G, 11=T (4 bases per byte)
+  NCBI4na :  1 bit each for agct (2 bases per byte)
+               0001=A, 0010=C, 0100=G, 1000=T/U
+               0101=Purine, 1010=Pyrimidine, etc
+-->
+<!ELEMENT Seq-data-import (Attribute*)>
+<!-- import data only -->
+<!ATTLIST Seq-data-import
+	%attrs; 
+	format CDATA #IMPLIED
+	source %url; #IMPLIED
+	identifier CDATA #IMPLIED
+	encrypted %yesorno; #IMPLIED
+	start-pos %integer; #IMPLIED
+	length %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                       Sequence Numbering - NCBI               -->
+<!-- ************************************************************* -->
+<!-- ************************* Sequence Units ******************** -->
+<!--
+Internally, the length of every sequence is expressed as a positive integer. Sequences may specify their unit of measurement (bp, cM, etc.) through the use of a Numbering element, which also may define a relative numbering basis or a linear transformation rule for converting internal sequence positions to display values.
+Use seqref to associate a numbering basis with a particular sequence,
+e.g., sequence to clone to chromosome
+-->
+<!ELEMENT Numbering EMPTY>
+<!ATTLIST Numbering
+	%attrs; 
+	use-numbering %yesorno; #IMPLIED
+	type (continuous | real | enumerated | reference) #IMPLIED
+	units CDATA #IMPLIED
+	a %real; #IMPLIED
+	b %real; #IMPLIED
+	dec-places %integer; #IMPLIED
+	refnum %integer; #IMPLIED
+	has-zero %yesorno; #IMPLIED
+	ascending %yesorno; #IMPLIED
+	names CDATA #IMPLIED
+	from-aligns %yesorno; #IMPLIED
+	aligns IDREF #IMPLIED
+	seqref IDREF #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                               Isoforms                        -->
+<!--  Use Isoforms for alleles, mutations, and SNPs,case records   -->
+<!-- ************************************************************* -->
+<!ELEMENT Isoforms (Isoform-set | Case-set | Phenotype-set | Genotype-set | Pedigree-set)*>
+<!ELEMENT Isoform-set (Attribute*, (Organism | Organism-clone | Cell-line)?, Isoform*, Resource*, %links;)>
+<!ATTLIST Isoform-set
+	%attrs; 
+>
+<!ELEMENT Isoform (Attribute*, Resource*, %links;)>
+<!ATTLIST Isoform
+	%attrs; 
+	seqref IDREF #IMPLIED
+	phenoref IDREF #IMPLIED
+	url %url; #IMPLIED
+	location CDATA #IMPLIED
+	change CDATA #IMPLIED
+>
+<!ELEMENT Phenotype-set (Attribute*, (Organism | Organism-clone | Cell-line)?, Phenotype*, Resource*, %links;)>
+<!ATTLIST Phenotype-set
+	%attrs; 
+	population CDATA #IMPLIED
+	source CDATA #IMPLIED
+	frequency-total CDATA #IMPLIED
+>
+<!ELEMENT Phenotype (Attribute*, Resource*, %links;)>
+<!ATTLIST Phenotype
+	%attrs; 
+	frequency CDATA #IMPLIED
+>
+<!ELEMENT Case-set (Attribute*, (Organism | Organism-clone | Cell-line)?, Case*, Resource*, %links;)>
+<!ATTLIST Case-set
+	%attrs; 
+>
+<!ELEMENT Case (Attribute*, (Organism | Organism-clone | Cell-line)?, Isoform*, Life-event*, Genotype-set*, Resource*, %links;)>
+<!ATTLIST Case
+	%attrs; 
+	sex (male | female | other | unknown) #IMPLIED
+	propositus %yesorno; #IMPLIED
+>
+<!ELEMENT Life-event EMPTY>
+<!ATTLIST Life-event
+	life-event-type (birth | marriage | death | abortion-or-stillbirth | other-life-event) #REQUIRED
+	year %integer; #REQUIRED
+	month %integer; #IMPLIED
+	day %integer; #IMPLIED
+>
+<!ELEMENT Genotype-set (Attribute*, (Organism | Organism-clone | Cell-line)?, Genotype*, Resource*, %links;)>
+<!ATTLIST Genotype-set
+	%attrs; 
+	population CDATA #IMPLIED
+	source CDATA #IMPLIED
+	frequency-total CDATA #IMPLIED
+>
+<!ELEMENT Genotype (Haplotype*)>
+<!ATTLIST Genotype
+	%attrs; 
+	homozygous %yesorno; #IMPLIED
+	recessive %yesorno; #IMPLIED
+	sex-linked %yesorno; #IMPLIED
+	phenoref IDREF #IMPLIED
+	affected %yesorno; #IMPLIED
+	population CDATA #IMPLIED
+	source CDATA #IMPLIED
+	frequency-total CDATA #IMPLIED
+>
+<!ELEMENT Haplotype EMPTY>
+<!ATTLIST Haplotype
+	%attrs; 
+	frequency CDATA #IMPLIED
+>
+<!ELEMENT Pedigree-set (Attribute*, Pedigree*, Resource*, %links;)>
+<!ATTLIST Pedigree-set
+	%attrs; 
+>
+<!ELEMENT Pedigree (Attribute*, (Organism | Organism-clone | Cell-line)?, Mating*, Resource*, %links;)>
+<!ATTLIST Pedigree
+	%attrs; 
+>
+<!ELEMENT Mating (Life-event?, Children?)>
+<!ATTLIST Mating
+	maleref IDREF #REQUIRED
+	femaleref IDREF #REQUIRED
+	consanguinal %yesorno; #IMPLIED
+>
+<!ELEMENT Children (Case*)>
+<!-- ************************************************************* -->
+<!--                               Sets                            -->
+<!-- ************************************************************* -->
+<!ELEMENT Sets (Attribute*, Set*, Resource*, %links;)>
+<!ATTLIST Sets
+	%attrs; 
+>
+<!ELEMENT Set (Attribute*, List-member*, Resource*, %links;)>
+<!ATTLIST Set
+	%attrs; 
+	idrefs IDREFS #REQUIRED
+	refs IDREFS #IMPLIED
+>
+<!ELEMENT List-member EMPTY>
+<!ATTLIST List-member
+	%attrs; 
+	source CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                              Tables                           -->
+<!-- ************************************************************* -->
+<!ELEMENT Tables (Attribute | Table | Motif-table | Sequence-search-table | Multiple-alignment-table | Seq-pair-alignment | Alignment-point-set | PCR-primer-table | Table-import)*>
+<!ATTLIST Tables
+	%attrs; 
+>
+<!-- ************************************************************* -->
+<!--                          Table-import Definition              -->
+<!-- ************************************************************* -->
+<!ELEMENT Table-data EMPTY>
+<!ATTLIST Table-data
+	%attrs; 
+>
+<!-- Note: use title to name table row, if appropriate
+use value for comma separated data table row list -->
+<!ELEMENT Table-import (Attribute*, Table-data*, Resource*, %links;)>
+<!-- internal, if table-data, or external file or internet href -->
+<!ATTLIST Table-import
+	%attrs; 
+	format CDATA #IMPLIED
+	read-field-desc %yesorno; #IMPLIED
+	column-numbers CDATA #IMPLIED
+	column-headers CDATA #IMPLIED
+	column-starts CDATA #IMPLIED
+	column-widths CDATA #IMPLIED
+	header-count %integer; #IMPLIED
+	display-widths CDATA #IMPLIED
+	alignments CDATA #IMPLIED
+	font IDREF #IMPLIED
+	add-row-numbers %yesorno; #IMPLIED
+	locked-columns %integer; #IMPLIED
+	source %url; #REQUIRED
+	refs IDREFS #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                          HTML Table                           -->
+<!-- ************************************************************* -->
+<!-- IETF HTML table standard, see RFC1942                         -->
+<!ENTITY % tframe "(void|above|below|hsides|lhs|rhs|vsides|box|border)">
+<!ENTITY % trules "(none | groups | rows | cols | all)">
+<!ENTITY % talign "(left|center|right)">
+<!ENTITY % cellhalign "align (left|center|right|justify|char) #IMPLIED
+   char    %character;  #IMPLIED
+   charoff %length;     #IMPLIED">
+<!ENTITY % cellvalign "valign (top|middle|bottom|baseline) #IMPLIED">
+<!ENTITY % scope "(row|col|rowgroup|colgroup)">
+<!ELEMENT Table (Caption?, (Col* | Colgroup*), Thead?, Tfoot?, Tbody+)>
+<!ELEMENT Caption (#PCDATA)>
+<!ELEMENT Thead (Tr)+>
+<!ELEMENT Tfoot (Tr)+>
+<!ELEMENT Tbody (Tr)+>
+<!ELEMENT Colgroup (Col)*>
+<!ELEMENT Col EMPTY>
+<!ELEMENT Tr (Th | Td)+>
+<!ELEMENT Th (#PCDATA)>
+<!ELEMENT Td (#PCDATA)>
+<!ATTLIST Table
+	%attrs; 
+	summary %text; #IMPLIED
+	width %length; #IMPLIED
+	border CDATA #IMPLIED
+	frame %tframe; #IMPLIED
+	rules %trules; #IMPLIED
+	cellspacing %length; #IMPLIED
+	cellpadding %length; #IMPLIED
+>
+<!ENTITY % calign "(top|bottom|left|right)">
+<!ATTLIST Caption
+	%attrs; 
+>
+<!ATTLIST Colgroup
+	%attrs; 
+	span %integer; "1"
+	width %length; #IMPLIED
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Col
+	%attrs; 
+	repeat %integer; "1"
+	width %length; #IMPLIED
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Thead
+	%attrs; 
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Tbody
+	%attrs; 
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Tfoot
+	%attrs; 
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Tr
+	%attrs; 
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Th
+	%attrs; 
+	abbr %text; #IMPLIED
+	axis CDATA #IMPLIED
+	headers IDREFS #IMPLIED
+	scope %scope; #IMPLIED
+	width %length; #IMPLIED
+	rowspan %integer; "1"
+	colspan %integer; "1"
+	%cellhalign; 
+	%cellvalign; 
+>
+<!ATTLIST Td
+	%attrs; 
+	abbr %text; #IMPLIED
+	axis CDATA #IMPLIED
+	headers IDREFS #IMPLIED
+	scope %scope; #IMPLIED
+	width %length; #IMPLIED
+	rowspan %integer; "1"
+	colspan %integer; "1"
+	%cellhalign; 
+	%cellvalign; 
+>
+<!-- ************************************************************* -->
+<!--                           Motif-table                         -->
+<!-- ************************************************************* -->
+<!ELEMENT Motif-data (Motif-data*)>
+<!ATTLIST Motif-data
+	%attrs; 
+	one-element %yesorno; "0"
+	positions CDATA #REQUIRED
+	widths CDATA #IMPLIED
+	strands CDATA #IMPLIED
+	titles CDATA #IMPLIED
+	values CDATA #IMPLIED
+	markers CDATA #IMPLIED
+	overhangs CDATA #IMPLIED
+	refs CDATA #IMPLIED
+>
+<!ELEMENT Sequence-motif (Interval-loc*, Motif-data*)>
+<!ATTLIST Sequence-motif
+	%attrs; 
+	display-auto %yesorno; #IMPLIED
+	auto-view IDREF #IMPLIED
+	seqref IDREF #REQUIRED
+	alignment %integer; #IMPLIED
+	startpos %integer; #IMPLIED
+	endpos %integer; #IMPLIED
+	refs CDATA #IMPLIED
+>
+<!ELEMENT Motif-element EMPTY>
+<!-- describes one element of motif -->
+<!ATTLIST Motif-element
+	%attrs; 
+	display-auto %yesorno; #IMPLIED
+	border-color %color; #IMPLIED
+	fill-fg-color %color; #IMPLIED
+	fill-bg-color %color; #IMPLIED
+	fill-pattern (clear | horiz | vert | fdiag | bdiag | cross | diagcross | solid) #IMPLIED
+	column-width %length; #IMPLIED
+	show-values %yesorno; #IMPLIED
+	show-titles %yesorno; #IMPLIED
+	show-no-position %yesorno; #IMPLIED
+	state-names CDATA #IMPLIED
+	value-scale %integer; #IMPLIED
+	value-min %integer; #IMPLIED
+	value-max %integer; #IMPLIED
+>
+<!ELEMENT Motif-table (Attribute*, Numbering?, Interval-loc*, Motif-element*, Sequence-motif*, Resource*, %links;)>
+<!ATTLIST Motif-table
+	%attrs; 
+	display-height %length; #IMPLIED
+	display-gap %length; #IMPLIED
+	point-width %length; #IMPLIED
+	title-width %length; #IMPLIED
+	value-width %length; #IMPLIED
+	values-as-color %yesorno; #IMPLIED
+	value-scale %integer; #IMPLIED
+	global-length %integer; #IMPLIED
+	refs IDREFS #IMPLIED
+>
+<!-- Note: For further information on the use of the display
+parameters, see the browser motif viewer description;
+the display attributes are all optional if the goal
+is simply to convey information content.                -->
+<!-- ************************************************************* -->
+<!--                          Alignment-point-set                  -->
+<!-- ************************************************************* -->
+<!ELEMENT Alignment-point-set (Attribute*, Numbering?, Resource*, %links;)>
+<!ATTLIST Alignment-point-set
+	%attrs; 
+	seqids IDREFS #REQUIRED
+	featids CDATA #REQUIRED
+	captions CDATA #IMPLIED
+	consensus %yesorno; #IMPLIED
+	numseg %integer; #IMPLIED
+	starts CDATA #IMPLIED
+	strands CDATA #IMPLIED
+	seglens CDATA #IMPLIED
+	refs IDREFS #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Seq-pair-alignment                 -->
+<!-- ************************************************************* -->
+<!ELEMENT Seq-pair-run (Attribute*, Resource*, %links;)>
+<!-- run of similarity  -->
+<!ATTLIST Seq-pair-run
+	id IDREF #IMPLIED
+	translated %yesorno; #IMPLIED
+	runlength %integer; #REQUIRED
+	comprunlength %integer; #IMPLIED
+	refpos %integer; #REQUIRED
+	refcomplement %yesorno; #IMPLIED
+	refdata CDATA #IMPLIED
+	comppos %integer; #REQUIRED
+	compcomplement %integer; #IMPLIED
+	compdata CDATA #IMPLIED
+	runscore CDATA #IMPLIED
+	runprob CDATA #IMPLIED
+	alignment CDATA #IMPLIED
+	refs IDREFS #IMPLIED
+>
+<!ELEMENT Seq-pair-alignment (Attribute*, Seq-pair-run*, Resource*, %links;)>
+<!ATTLIST Seq-pair-alignment
+	%attrs; 
+	reftype CDATA #IMPLIED
+	refsource CDATA #IMPLIED
+	refseq IDREF #REQUIRED
+	refxref CDATA #IMPLIED
+	refcaption CDATA #IMPLIED
+	refstart %integer; #IMPLIED
+	refend %integer; #IMPLIED
+	reflength %integer; #IMPLIED
+	comptype CDATA #IMPLIED
+	compsource CDATA #IMPLIED
+	compseq IDREF #IMPLIED
+	compxref CDATA #IMPLIED
+	compcaption CDATA #IMPLIED
+	compstart %integer; #IMPLIED
+	compend %integer; #IMPLIED
+	complength %integer; #IMPLIED
+	method CDATA #IMPLIED
+	runminscore CDATA #IMPLIED
+	runmaxscore CDATA #IMPLIED
+	totalscore CDATA #IMPLIED
+	refs IDREFS #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                           Sequence Search              	 -->
+<!-- ************************************************************* -->
+<!ELEMENT Sequence-search-table (Attribute*, Sequence-search-output?, Resource*, %links;)>
+<!ATTLIST Sequence-search-table
+	%attrs; 
+	search-type CDATA #IMPLIED
+	url %url; #IMPLIED
+	analysis-title CDATA #IMPLIED
+	analysisref IDREF #IMPLIED
+	queryseqref IDREF #IMPLIED
+	query-start %integer; #IMPLIED
+	query-length %integer; #IMPLIED
+	on-complement %yesorno; #IMPLIED
+	translated %yesorno; #IMPLIED
+	frames CDATA #IMPLIED
+	trans-table CDATA #IMPLIED
+	query-data CDATA #IMPLIED
+>
+<!ELEMENT Sequence-search-output (#PCDATA)>
+<!-- ************************************************************* -->
+<!--                       Multiple Alignment        			 -->
+<!-- ************************************************************* -->
+<!ELEMENT Multiple-alignment-table (Attribute*, CLUSTAL-parameters?, Alignment-summary?, Pairwise-alignments?, Aligned-groups?, Sequence-alignment*, Resource*, %links;)>
+<!ATTLIST Multiple-alignment-table
+	%attrs; 
+	molecule-type (nucleotide | protein) #REQUIRED
+>
+<!ELEMENT CLUSTAL-parameters EMPTY>
+<!ATTLIST CLUSTAL-parameters
+	version CDATA #IMPLIED
+	method CDATA #IMPLIED
+	output CDATA #IMPLIED
+	outorder CDATA #IMPLIED
+	ktuple %integer; #IMPLIED
+	window %integer; #IMPLIED
+	score CDATA #IMPLIED
+	topdiags %integer; #IMPLIED
+	pairgap %integer; #IMPLIED
+	matrix CDATA #IMPLIED
+	gapopen %integer; #IMPLIED
+	endgaps %integer; #IMPLIED
+	gapext %integer; #IMPLIED
+	gapdist %integer; #IMPLIED
+>
+<!ELEMENT Alignment-summary (Aligned-sequence*)>
+<!ATTLIST Alignment-summary
+	seq-type (nucleotide | protein) #REQUIRED
+	seq-format CDATA #REQUIRED
+>
+<!ELEMENT Aligned-sequence EMPTY>
+<!ATTLIST Aligned-sequence
+	seqref IDREF #IMPLIED
+	start %integer; #IMPLIED
+	on-complement %yesorno; #IMPLIED
+	translated %yesorno; #IMPLIED
+	frame %integer; #IMPLIED
+	trans-table CDATA #IMPLIED
+	seqnum %integer; #REQUIRED
+	name CDATA #REQUIRED
+	length %integer; #REQUIRED
+>
+<!ELEMENT Pairwise-alignments (Aligned-pair*)>
+<!ELEMENT Aligned-pair EMPTY>
+<!ATTLIST Aligned-pair
+	seqnum1 %integer; #REQUIRED
+	seqnum2 %integer; #REQUIRED
+	score %integer; #REQUIRED
+>
+<!ELEMENT Aligned-groups (Aligned-group*, Total-alignment)>
+<!ATTLIST Aligned-groups
+	groups %integer; #REQUIRED
+>
+<!ELEMENT Aligned-group EMPTY>
+<!ATTLIST Aligned-group
+	group %integer; #REQUIRED
+	total-seq %integer; #REQUIRED
+	group-score %integer; #REQUIRED
+>
+<!ELEMENT Total-alignment EMPTY>
+<!ATTLIST Total-alignment
+	align-score %integer; #REQUIRED
+>
+<!ELEMENT Sequence-alignment (Sequence-data*, Alignment-consensus)>
+<!ATTLIST Sequence-alignment
+	sequences %integer; #REQUIRED
+>
+<!ELEMENT Sequence-data (#PCDATA)>
+<!ATTLIST Sequence-data
+	seq-name CDATA #REQUIRED
+>
+<!ELEMENT Alignment-consensus (#PCDATA)>
+<!-- ************************************************************* -->
+<!--                          PCR-primer-table 	            	 -->
+<!-- ************************************************************* -->
+<!ELEMENT PCR-primer-table (Attribute*, PCR-primer*, PCR-summary?, PCR-statistical-analysis?, Resource*, %links;)>
+<!ELEMENT PCR-primer (Primer-sequence*, PCR-product?)>
+<!ATTLIST PCR-primer
+	%attrs; 
+	seqref IDREF #IMPLIED
+>
+<!ELEMENT Primer-sequence EMPTY>
+<!ATTLIST Primer-sequence
+	%attrs; 
+	primer-left %yesorno; #REQUIRED
+	start %integer; #REQUIRED
+	length %integer; #REQUIRED
+	seq CDATA #REQUIRED
+	tm %real; #IMPLIED
+	gc-percent %real; #IMPLIED
+	any %real; #IMPLIED
+	three-end %real; #IMPLIED
+>
+<!ELEMENT PCR-summary EMPTY>
+<!ATTLIST PCR-summary
+	seq-size %integer; #REQUIRED
+	include-region-size %integer; #REQUIRED
+>
+<!ELEMENT PCR-product EMPTY>
+<!ATTLIST PCR-product
+	product-size %integer; #REQUIRED
+	pair-any-compl %real; #IMPLIED
+	pair-3-compl %real; #IMPLIED
+>
+<!ELEMENT PCR-statistical-analysis (PCR-statistics+)>
+<!ELEMENT PCR-statistics EMPTY>
+<!ATTLIST PCR-statistics
+	statistics-left %yesorno; #REQUIRED
+	considered %integer; #IMPLIED
+	too-many-ns %integer; #IMPLIED
+	in-target %integer; #IMPLIED
+	in-excl-reg %integer; #IMPLIED
+	bad-gc-percent %integer; #IMPLIED
+	no-gc-clamp %integer; #IMPLIED
+	tm-too-low %integer; #IMPLIED
+	tm-too-high %integer; #IMPLIED
+	high-any-compl %integer; #IMPLIED
+	high-3-compl %integer; #IMPLIED
+	poly-x %integer; #IMPLIED
+	high-end-stab %integer; #IMPLIED
+	ok %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                Network Representation Linking Elements        -->
+<!-- Representation of directed and undirected graphs to be used   -->
+<!-- to capture semantics of pathways, etc. using Links to refer   -->
+<!-- underlying biological objects.                                -->
+<!-- ************************************************************* -->
+<!ELEMENT Networks (Network*)>
+<!ELEMENT Network (Attribute*, Node*, Arc*, Network-selection-set*, Resource*, %links;)>
+<!ATTLIST Network
+	%attrs; 
+	directed %yesorno; #IMPLIED
+	weighted %yesorno; #IMPLIED
+      allow-multiple-arcs %yesorno; #IMPLIED
+>
+<!ELEMENT Node (Attribute*, Resource*, %links;)>
+<!ATTLIST Node
+	%attrs; 
+	node-type %url; #IMPLIED
+	level %integer; #IMPLIED
+>
+<!ELEMENT Arc (Attribute*, Resource*, %links;)>
+<!ATTLIST Arc
+	%attrs; 
+	arc-type %url; #IMPLIED
+	sourcenode IDREF #REQUIRED
+	destnode IDREF #REQUIRED
+	weight CDATA #IMPLIED
+>
+<!ELEMENT Network-selection-set EMPTY>
+<!ATTLIST Network-selection-set
+	%attrs; 
+	node-default-selection-state %displaystate; #REQUIRED
+	nodes-on IDREFS #IMPLIED
+	nodes-off IDREFS #IMPLIED
+	nodes-gray IDREFS #IMPLIED
+	arc-default-selection-state %displaystate; #REQUIRED
+	arcs-on IDREFS #REQUIRED
+	arcs-off IDREFS #REQUIRED
+	arcs-gray IDREFS #IMPLIED
+	use-node-display-levels %yesorno; #IMPLIED
+	initial-node-display-level %integer; #IMPLIED
+	show-node-selection-state %yesorno; #IMPLIED
+	show-node-expansion-state %yesorno; #IMPLIED
+	set-connector-width-from-weight %yesorno; #IMPLIED
+	min-weight %real; #IMPLIED
+	max-weight %real; #IMPLIED
+	min-width %real; #IMPLIED
+	max-width %real; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                       Research Sub-divisions                  -->
+<!-- ************************************************************* -->
+<!ELEMENT Research (Attribute*, Searches?, Queries?, Analyses?, Experiments?)>
+<!-- ************************************************************* -->
+<!--                                Search                         -->
+<!-- ************************************************************* -->
+<!ELEMENT Searches (Attribute*, Search*)>
+<!ELEMENT Search (Attribute*, Search-conditions?, Search-result-map?, Search-result-set*, Resource*, %links;)>
+<!ATTLIST Search
+	%attrs; 
+	database CDATA #IMPLIED
+	url %url; #IMPLIED
+	searchid CDATA #IMPLIED
+	total-results %integer; #IMPLIED
+	results-per-set %integer; #IMPLIED
+>
+<!ELEMENT Search-conditions (#PCDATA)>
+<!ELEMENT Search-result-map (Search-result-field-desc*)>
+<!ATTLIST Search-result-map
+	%attrs; 
+>
+<!ELEMENT Search-result-field-desc EMPTY>
+<!ATTLIST Search-result-field-desc
+	field-number %integer; #IMPLIED
+	field-name CDATA #IMPLIED
+	field-type CDATA #IMPLIED
+>
+<!ELEMENT Search-result-set (Search-result-item*)>
+<!ATTLIST Search-result-set
+	%attrs; 
+	offset-in-total-result-set %integer; #IMPLIED
+	results-this-set %integer; #IMPLIED
+>
+<!ELEMENT Search-result-item (Search-result-field*, (Link | Cross-reference)*)>
+<!ATTLIST Search-result-item
+	item-number %integer; #IMPLIED
+	select %yesorno; #IMPLIED
+>
+<!ELEMENT Search-result-field (#PCDATA)>
+<!ATTLIST Search-result-field
+	field-number %integer; #IMPLIED
+	field-name CDATA #IMPLIED
+	field-type CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                                 Query                         -->
+<!-- ************************************************************* -->
+<!ELEMENT Queries (Attribute*, Query*)>
+<!ELEMENT Query (Attribute*, Query-request*, Query-return*, Resource*, %links;)>
+<!ATTLIST Query
+	%attrs; 
+	description CDATA #IMPLIED
+	database CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Query-request (#PCDATA)>
+<!ATTLIST Query-request
+	%attrs; 
+	request-desc CDATA #IMPLIED
+	request-type CDATA #IMPLIED
+>
+<!--incorporate SQL or XML or other request -->
+<!ELEMENT Query-return (#PCDATA)>
+<!ATTLIST Query-return
+	%attrs; 
+	index CDATA #IMPLIED
+	return-desc CDATA #IMPLIED
+	return-type CDATA #IMPLIED
+	hit-count %integer; #IMPLIED
+>
+<!-- specify return format -->
+<!-- ************************************************************* -->
+<!--                              Analysis                         -->
+<!-- ************************************************************* -->
+<!ELEMENT Analyses (Attribute*, Analysis*)>
+<!ELEMENT Analysis (Attribute*, Parameter*, Input-data*, Resource*, %links;)>
+<!ATTLIST Analysis
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Parameter EMPTY>
+<!ATTLIST Parameter
+	name CDATA #REQUIRED
+	value CDATA #REQUIRED
+	type (int | float | string) #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Input-data (#PCDATA)>
+<!-- ************************************************************* -->
+<!--                              Experiment                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Experiments (Attribute*, Experiment*)>
+<!ELEMENT Experiment (Attribute*, Description?, (Enzyme | Equipment | Materials | Note | Product | Reagent | Sample | Solution | Structure | Supplier | Terminology)*, Protocol*, Resource*, %links;)>
+<!ATTLIST Experiment
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Description (#PCDATA | Log-entry | Measure | Measure-range | Link)*>
+<!ELEMENT Log-entry (#PCDATA | Measure | Measure-range)*>
+<!ATTLIST Log-entry
+	id ID #IMPLIED
+	event CDATA #IMPLIED
+	event-time %datetime; #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Measure-range (Measure+)>
+<!ATTLIST Measure-range
+	range-type (lt | lte | gt | gte | between-exclusive | between-inclusive) "between-inclusive"
+>
+<!ELEMENT Measure (Measure-quantity, Measure-units?)>
+<!ELEMENT Measure-quantity (#PCDATA)>
+<!ELEMENT Measure-units (#PCDATA)>
+<!ELEMENT Note (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Note
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Enzyme (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Enzyme
+	%attrs; 
+	url %url; #IMPLIED
+	ec-number CDATA #IMPLIED
+	recognition-sequence CDATA #IMPLIED
+	offset %integer; #IMPLIED
+	overhang %integer; #IMPLIED
+>
+<!ELEMENT Equipment (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Equipment
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Materials (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Materials
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Product (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Product
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Reagent (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Reagent
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Sample (Attribute*, Description?, (Organism | Organism-clone | Cell-line)?, Development-stage?, Tissue-sample*, Resource*, %links;)>
+<!ATTLIST Sample
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Solution (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Solution
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Structure (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Structure
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Supplier (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Supplier
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Terminology (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Terminology
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Organism (Attribute*, Description?, Strain*, Resource*, %links;)>
+<!ATTLIST Organism
+	%attrs; 
+	genus CDATA #IMPLIED
+	species CDATA #IMPLIED
+	taxon-num CDATA #IMPLIED
+	taxonomy CDATA #IMPLIED
+	url %url; #IMPLIED
+>
+<!ELEMENT Strain (Attribute*, Description?, (Organism-clone | Cell-line)?, Resource*, %links;)>
+<!ATTLIST Strain
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Organism-clone (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Organism-clone
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Cell-line (Attribute*, Description?, Resource*, %links;)>
+<!ATTLIST Cell-line
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ENTITY % timeunits "(msec|seconds|minutes|hours|days|weeks|months|year)">
+<!ELEMENT Development-stage (#PCDATA)>
+<!ATTLIST Development-stage
+	id ID #IMPLIED
+	name CDATA #REQUIRED
+	stage-age-value CDATA #IMPLIED
+	stage-age-units %timeunits; #IMPLIED
+>
+<!ELEMENT Tissue-sample (#PCDATA)>
+<!ATTLIST Tissue-sample
+	id ID #IMPLIED
+	tissue-type CDATA #IMPLIED
+	organ CDATA #IMPLIED
+	tissue-age-value CDATA #IMPLIED
+	tissue-age-units %timeunits; #IMPLIED
+>
+<!ELEMENT Protocol (Attribute*, Description?, Protocol-step*, Resource*, %links;)>
+<!ATTLIST Protocol
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!ELEMENT Protocol-step (Attribute*, Note*, Description*, Resource*, %links;)>
+<!ATTLIST Protocol-step
+	%attrs; 
+	url %url; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                       Display Sub-divisions                   -->
+<!-- ************************************************************* -->
+<!ELEMENT Display (Links?, Fonts?, Styles?, Screen?, Paper?, Page+)>
+<!-- screen and paper set defaults for all pages, if defined       -->
+<!ATTLIST Display
+	master-doc %yesorno; #IMPLIED
+	first-page %integer; #IMPLIED
+	default-unit (pct | cm | in | px) "in"
+	line-width-base %length; "0.01in"
+	line-width-inc %length; "0.01in"
+>
+<!-- ************************************************************* -->
+<!--                           Links Element                       -->
+<!-- ************************************************************* -->
+<!ELEMENT Links %links;>
+<!-- any number of link -->
+<!-- ************************************************************* -->
+<!--                                Fonts                          -->
+<!-- ************************************************************* -->
+<!--
+BSML uses a modified version of the HTML 4.0 font element. Fonts are described by their face, color, size (pts), and style (bold,italics,underline). Fonts may refer to base fonts and specify only attributes that they wish to change. Display objects refer to a specific font or use default fonts assigned for particular types of text.
+-->
+<!ELEMENT Fonts (Font*)>
+<!-- list of all defined fonts       -->
+<!ATTLIST Fonts
+	base-font IDREF #IMPLIED
+	text-font IDREF #IMPLIED
+	numb-font IDREF #IMPLIED
+	fixed-font IDREF #IMPLIED
+	font-sizes CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                   HTML Fonts -   modified                     -->
+<!-- ************************************************************* -->
+<!ELEMENT Font EMPTY>
+<!-- Not used to enclose text as in html -->
+<!ATTLIST Font
+	id ID #IMPLIED
+	class CDATA #IMPLIED
+	title CDATA #IMPLIED
+	comment CDATA #IMPLIED
+	reffont IDREF #IMPLIED
+	size CDATA #IMPLIED
+	color CDATA #IMPLIED
+	face CDATA #IMPLIED
+	bold %yesorno; #IMPLIED
+	italic %yesorno; #IMPLIED
+	underline %yesorno; #IMPLIED
+	fixed %yesorno; "0"
+>
+<!--
+Attribute definitions
+size = cdata
+This attribute sets the size of the font. Possible values:
+o An integer between 1 and 7. This sets the font to a fixed size;
+rendering depends on the user agent. Not all user agents may render all seven sizes.
+o A relative increase in font size. The value "+1" means one size
+larger. The value "-3" means three sizes smaller. All sizes belong to the scale of 1 to 7.
+o An absolute size in pts, e.g., size="14pt".
+o color = color
+This attribute sets the text color.
+o face = cdata-list
+This attribute defines a comma-separated list of font names the user agent should search for in order of preference.
+-->
+<!-- ************************************************************* -->
+<!--                             Styles                            -->
+<!-- ************************************************************* -->
+<!ELEMENT Styles (Style-import*, Style?)>
+<!-- CSS Style Sheets -->
+<!ELEMENT Style-import EMPTY>
+<!-- imported Style section -->
+<!ATTLIST Style-import
+	%attrs; 
+	source %url; #REQUIRED
+>
+<!ELEMENT Style (#PCDATA)>
+<!-- CSS style info  -->
+<!ATTLIST Style
+	type %contenttype; #REQUIRED
+	media %mediadesc; #IMPLIED
+	title %text; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                Pages, Views and Display Objects               -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!--            HTML 4.0 Object and Param, slightly modified       -->
+<!-- ************************************************************* -->
+<!ELEMENT Object (Param)*>
+<!ATTLIST Object
+	%attrs; 
+	declare (declare) #IMPLIED
+	classid %url; #IMPLIED
+	codebase %url; #IMPLIED
+	data %url; #IMPLIED
+	type %contenttype; #IMPLIED
+	codetype %contenttype; #IMPLIED
+	archive %url; #IMPLIED
+	standby %text; #IMPLIED
+	height %length; #IMPLIED
+	width %length; #IMPLIED
+	usemap %url; #IMPLIED
+	shapes (shapes) #IMPLIED
+	export (export) #IMPLIED
+	name CDATA #IMPLIED
+	tabindex %integer; #IMPLIED
+>
+<!ELEMENT Param EMPTY>
+<!ATTLIST Param
+	id ID #IMPLIED
+	name CDATA #REQUIRED
+	value CDATA #IMPLIED
+	valuetype (data | ref | object) "data"
+	type %contenttype; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--         HTML 4.0 Client-side image maps slightly modified     -->
+<!-- ************************************************************* -->
+<!ELEMENT Image-map (Area)+>
+<!-- client-side image map -->
+<!ATTLIST Image-map
+	%attrs; 
+	name CDATA #REQUIRED
+>
+<!ELEMENT Area (Attribute*, Resource*, %links;)>
+<!-- client-side image map area            -->
+<!ATTLIST Area
+	%attrs; 
+	shape %shape; "rect"
+	coords %coords; #IMPLIED
+	href %url; #IMPLIED
+	target %frametarget; #IMPLIED
+	nohref (nohref) #IMPLIED
+	alt %text; #REQUIRED
+	tabindex %integer; #IMPLIED
+	accesskey %character; #IMPLIED
+	onfocus %script; #IMPLIED
+	onblur %script; #IMPLIED
+>
+<!-- Note: Most of these attributes are not supported by the
+current version of the browser.                         -->
+<!-- ************************************************************* -->
+<!--                       Page Utility Elements                   -->
+<!-- ************************************************************* -->
+<!ELEMENT Coord EMPTY>
+<!-- coordinates of a point -->
+<!ATTLIST Coord
+	%attrs; 
+	hloc %length; #IMPLIED
+	vloc %length; #IMPLIED
+>
+<!ELEMENT Quantifier EMPTY>
+<!-- display aspect quantifier -->
+<!ATTLIST Quantifier
+	%attrs; 
+	type (color | saturation | length) #REQUIRED
+	min-val %real; "0.0"
+	max-val %real; "1.0"
+	val-name CDATA #IMPLIED
+	base %real; #IMPLIED
+	slope %real; #IMPLIED
+	minimum %real; #IMPLIED
+	maximum %real; #IMPLIED
+	red-base %real; #IMPLIED
+	red-slope %real; #IMPLIED
+	blue-base %real; #IMPLIED
+	blue-slope %real; #IMPLIED
+	green-base %real; #IMPLIED
+	green-slope %real; #IMPLIED
+	to-white %yesorno; #IMPLIED
+>
+<!ELEMENT Margin EMPTY>
+<!-- page and other uses -->
+<!ATTLIST Margin
+	%attrs; 
+	margin %length; #IMPLIED
+	horizontal %length; #IMPLIED
+	vertical %length; #IMPLIED
+	left %length; #IMPLIED
+	right %length; #IMPLIED
+	top %length; #IMPLIED
+	bottom %length; #IMPLIED
+>
+<!ELEMENT Screen (Margin?)>
+<!--default attribs of screen display -->
+<!ATTLIST Screen
+	%attrs; 
+	width %length; #IMPLIED
+	height %length; #IMPLIED
+	color %color; #IMPLIED
+	monochrome %yesorno; "0"
+>
+<!ELEMENT Paper (Margin?)>
+<!-- default attribs of printed output -->
+<!ATTLIST Paper
+	%attrs; 
+	monochrome %yesorno; "0"
+	landscape %yesorno; "0"
+>
+<!ELEMENT Border EMPTY>
+<!-- any border around a rectangular area -->
+<!ATTLIST Border
+	%attrs; 
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	gutter %length; #IMPLIED
+>
+<!ELEMENT Symbol EMPTY>
+<!-- symbol display object -->
+<!ATTLIST Symbol
+	%attrs; 
+	shape (opencircle | closedcircle | opensquare | closedsquare | triangle) #IMPLIED
+	color %color; #IMPLIED
+	diam %length; #IMPLIED
+>
+<!ELEMENT X-axis (Numbering?)>
+<!-- sequence scale -->
+<!ATTLIST X-axis
+	use-interval %yesorno; #IMPLIED
+	interval-value %integer; #IMPLIED
+	tick-length %length; #IMPLIED
+	tick-width %linewidth; #IMPLIED
+	tick-color %color; #IMPLIED
+	axis-font IDREF #IMPLIED
+>
+<!ELEMENT Y-axis (Numbering?)>
+<!-- sequence scale -->
+<!ATTLIST Y-axis
+	use-interval %yesorno; #IMPLIED
+	interval-value %integer; #IMPLIED
+	tick-length %length; #IMPLIED
+	tick-width %linewidth; #IMPLIED
+	tick-color %color; #IMPLIED
+	axis-font IDREF #IMPLIED
+>
+<!ELEMENT Chart (Border?)>
+<!-- chart display to locate chart data -->
+<!ATTLIST Chart
+	%attrs; 
+	source %url; #IMPLIED
+	tableid IDREF #IMPLIED
+	bycolumn %yesorno; "1"
+	colrownum %integer; #IMPLIED
+>
+<!ELEMENT Member EMPTY>
+<!-- used to define sequence point in group -->
+<!ATTLIST Member
+	caption CDATA #IMPLIED
+	position %integer; #REQUIRED
+	plus %yesorno; #IMPLIED
+	display %yesorno; #IMPLIED
+	value CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                           Display Set Types                   -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!--                             Simple-set                        -->
+<!-- ************************************************************* -->
+<!ELEMENT Simple-set-widget (Coord, Border?, Set*, Object?, Resource*, %links;)>
+<!-- is Set elements, these refer to links-->
+<!ATTLIST Simple-set-widget
+	%attrs; 
+	own-window %yesorno; #IMPLIED
+	setids IDREFS #IMPLIED
+	caption CDATA #IMPLIED
+	capt-font IDREF #IMPLIED
+	list-font IDREF #IMPLIED
+	align (left | center | right) #IMPLIED
+	line-link %yesorno; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	depth %integer; #IMPLIED
+	indent %length; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                                Tree-set                       -->
+<!-- ************************************************************* -->
+<!--
+Tree-set = hierarchy displayed as tree. Basic display is titles obtained from list by ids; length of branch specified in value of set is relative to branchunit and branchbase; set points to the root of the tree.
+-->
+<!ELEMENT Tree-node EMPTY>
+<!ATTLIST Tree-node
+	%attrs; 
+	hloc %length; #REQUIRED
+	vloc %length; #REQUIRED
+	setid IDREF #IMPLIED
+	parentid IDREF #IMPLIED
+	node-font IDREF #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	branchlen %length; #IMPLIED
+	text-gap %length; #IMPLIED
+	text-space %length; #IMPLIED
+	node-caption CDATA #IMPLIED
+	node-cap-valign (top | middle | bottom | baseline) #IMPLIED
+	node-cap-halign (left | center | right) #IMPLIED
+	branch-caption CDATA #IMPLIED
+	branch-cap-above %yesorno; #IMPLIED
+>
+<!ELEMENT Tree-set-widget (Coord, Border?, Tree-node*, Object?, Resource*, %links;)>
+<!ATTLIST Tree-set-widget
+	%attrs; 
+	seqtype (nucleotide | protein | both) #IMPLIED
+	elementtype (sequence | feature | mixed) #IMPLIED
+	caption CDATA #IMPLIED
+	capt-font IDREF #IMPLIED
+	node-cap-font IDREF #IMPLIED
+	branch-cap-font IDREF #IMPLIED
+	leaf-value-font IDREF #IMPLIED
+	show-leaf-values %yesorno; #IMPLIED
+	show-sequence %yesorno; #IMPLIED
+	orientation (vertical | horizontal) #IMPLIED
+	link-straight %yesorno; #IMPLIED
+	node-font IDREF #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	branchlen %length; #IMPLIED
+	text-gap %length; #IMPLIED
+	text-space %length; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                Network Representation Linking Elements        -->
+<!-- Representation of directed and undirected graphs to be used   -->
+<!-- to capture semantics of pathways, etc. using Links to refer   -->
+<!-- underlying biological objects.                                -->
+<!-- ************************************************************* -->
+<!ENTITY % direction "(default|north|northeast|east|southeast|south|southwest|west|northwest)">
+<!ELEMENT Network-display-widget (Coord?, Node-display*, Arc-display*, Object?, Resource*, %links;)>
+<!ATTLIST Network-display-widget
+	%attrs; 
+	networkref IDREF #REQUIRED
+	canvascolor %color; #IMPLIED
+	nodetextfont IDREF #IMPLIED
+	nodetextcolor %color; #IMPLIED
+	nodebgcolor %color; #IMPLIED
+	nodebordercolor %color; #IMPLIED
+	nodeborderstrokesize %length; #IMPLIED
+	arctextfont IDREF #IMPLIED
+	arctextcolor %color; #IMPLIED
+	arcdashline %yesorno; #IMPLIED
+	arcline-color %color; #IMPLIED
+	arcline-width %length; #IMPLIED
+	arc-diam %length; #IMPLIED
+	arc-len %length; #IMPLIED
+	own-window %yesorno; #IMPLIED
+	width %length; #IMPLIED
+	height %length; #IMPLIED
+	draw-border %yesorno; #IMPLIED
+	scale-pct %integer; #IMPLIED
+	showgrid %yesorno; #IMPLIED
+	gridcolor %color; #IMPLIED
+	gridspacing %length; #IMPLIED
+	shadow %yesorno; #IMPLIED
+>
+<!ELEMENT Node-display EMPTY>
+<!ATTLIST Node-display
+	%attrs; 
+	noderef IDREF #REQUIRED
+	networkref IDREF #IMPLIED
+	node-icon %url; #IMPLIED
+	node-image %url; #IMPLIED
+	node-shape %displayshape; #IMPLIED
+	text-font-name CDATA #IMPLIED
+	text-font-style %integer; #IMPLIED
+	text-font-size %integer; #IMPLIED
+	textcolor %color; #IMPLIED
+	bgcolor %color; #IMPLIED
+	bordercolor %color; #IMPLIED
+	borderstrokesize %length; #IMPLIED
+	left %length; #IMPLIED
+	top %length; #IMPLIED
+	width %length; #IMPLIED
+	height %length; #IMPLIED
+	displaystate %displaystate; #IMPLIED
+	showexpand %yesorno; #IMPLIED
+	showselection %yesorno; #IMPLIED
+	expanded %yesorno; #IMPLIED
+>
+<!ELEMENT Arc-display EMPTY>
+<!ATTLIST Arc-display
+	%attrs; 
+	arcref IDREF #IMPLIED
+	text-font-name CDATA #IMPLIED
+	text-font-style %integer; #IMPLIED
+	text-font-size %integer; #IMPLIED
+	textcolor %color; #IMPLIED
+	text-position %textposition; #IMPLIED
+	dashline %yesorno; #IMPLIED
+	line-mode (straight | orthogonal) "straight"
+	line-color %color; #IMPLIED
+	line-width %length; #IMPLIED
+	source-point %direction; #IMPLIED
+	source-arc-type %connectortype; #IMPLIED
+	source-arc-filled %yesorno; #IMPLIED
+	source-arc-diam %length; #IMPLIED
+	source-arc-len %length; #IMPLIED
+	dest-point %direction; #IMPLIED
+	dest-arc-type %connectortype; #IMPLIED
+	dest-arc-filled %yesorno; #IMPLIED
+	dest-arc-diam %length; #IMPLIED
+	dest-arc-len %length; #IMPLIED
+	display-state %displaystate; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                          Alignment-point-sets                 -->
+<!-- ************************************************************* -->
+<!ELEMENT Alignment-point-sets-widget (Symbol?, Object?, Resource*, %links;)>
+<!ATTLIST Alignment-point-sets-widget
+	%attrs; 
+	pointsets IDREFS #REQUIRED
+	alignto IDREF #IMPLIED
+	viewids IDREFS #REQUIRED
+	capt-font IDREF #IMPLIED
+	capt-above %yesorno; #IMPLIED
+	line-width %length; #IMPLIED
+	line-color %color; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                 Dot-plot using Seq-pair-alignment             -->
+<!-- ************************************************************* -->
+<!ELEMENT Dot-plot-widget (Coord, X-axis?, Y-axis?, Quantifier?, Object?, Resource*, %links;)>
+<!-- display a dot matrix plot for a pair of sequences showing runs-->
+<!ATTLIST Dot-plot-widget
+	%attrs; 
+	seqpair IDREF #REQUIRED
+	width %length; #IMPLIED
+	height %length; #IMPLIED
+	use-x-axis %yesorno; #IMPLIED
+	use-y-axis %yesorno; #IMPLIED
+	y-proportional %yesorno; #IMPLIED
+	y-on-top %yesorno; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	border-width %linewidth; #IMPLIED
+	border-color %color; #IMPLIED
+	min-runlength %integer; #IMPLIED
+	min-runscore %real; #IMPLIED
+	max-runscore %real; #IMPLIED
+>
+<!ENTITY % setwidgets "(Simple-set-widget|Tree-set-widget|
+Alignment-point-sets-widget|Dot-plot-widget)">
+<!-- ************************************************************* -->
+<!--             View (Sequence)-relative Display Widgets          -->
+<!-- ************************************************************* -->
+<!ELEMENT View-line-widget EMPTY>
+<!ATTLIST View-line-widget
+	%attrs; 
+	strands (one | two) #IMPLIED
+	shape (circular | horizontal | vertical) #IMPLIED
+	hcenter %length; #IMPLIED
+	vcenter %length; #IMPLIED
+	haligned %yesorno; #IMPLIED
+	halignview IDREF #IMPLIED
+	valigned %yesorno; #IMPLIED
+	valignview IDREF #IMPLIED
+	width %linewidth; #IMPLIED
+	gap %length; #IMPLIED
+	linear-length %length; #IMPLIED
+	circular-diam %length; #IMPLIED
+	plus-color %color; #IMPLIED
+	minus-color %color; #IMPLIED
+	interval-gap-width %length; #IMPLIED
+	site-criterion CDATA #IMPLIED
+	group-criterion CDATA #IMPLIED
+	interval-criterion CDATA #IMPLIED
+	interval-as-point CDATA #IMPLIED
+>
+<!ELEMENT View-axis-widget EMPTY>
+<!ATTLIST View-axis-widget
+	%attrs; 
+	linear-at-side %yesorno; #IMPLIED
+	linear-offset %length; #IMPLIED
+	circular-rotate %yesorno; #IMPLIED
+	base-at-top %integer; #IMPLIED
+	use-interval %yesorno; #IMPLIED
+	interval-value %integer; #IMPLIED
+	axis-strand (both | minus | plus) #IMPLIED
+	tick-length %length; #IMPLIED
+	tick-width %linewidth; #IMPLIED
+	tick-color %color; #IMPLIED
+	axis-font IDREF #IMPLIED
+>
+<!ELEMENT Point-widget (Symbol?, Object?, Resource*, %links;)>
+<!ATTLIST Point-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	position %integer; #IMPLIED
+	on-strand (both | plus | minus | source) #IMPLIED
+	caption CDATA #IMPLIED
+	caption-font IDREF #IMPLIED
+	position-font IDREF #IMPLIED
+	align-text (auto-align | top | center | bottom) #IMPLIED
+	text-length %length; #IMPLIED
+	wrap-text %yesorno; #IMPLIED
+	show-text %yesorno; #IMPLIED
+	show-position %yesorno; #IMPLIED
+	line-gap %length; #IMPLIED
+	text-gap %length; #IMPLIED
+	line-width %length; #IMPLIED
+	line-color %color; #IMPLIED
+	line-length %length; #IMPLIED
+>
+<!--Point-group may refer to Members, Features, or Point-widgets   -->
+<!ELEMENT Point-group-widget (Quantifier?, Member*, Object?, Resource*, %links;)>
+<!ATTLIST Point-group-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	show-as-one %yesorno; #IMPLIED
+	check-members %yesorno; #IMPLIED
+	group-pos %integer; #IMPLIED
+	featurerefs IDREFS #IMPLIED
+	sites CDATA #IMPLIED
+	on-strand (plus | minus | source | auto-strand) #IMPLIED
+	auto-plot %yesorno; #IMPLIED
+	one-vert-col %yesorno; #IMPLIED
+	defcaption CDATA #IMPLIED
+	caption-font IDREF #IMPLIED
+	position-font IDREF #IMPLIED
+	align-text (auto-align | top | center | bottom) #IMPLIED
+	text-length %length; #IMPLIED
+	wrap-text %yesorno; #IMPLIED
+	show-text %yesorno; #IMPLIED
+	show-position %yesorno; #IMPLIED
+	line-gap %length; #IMPLIED
+	text-gap %length; #IMPLIED
+	line-width %length; #IMPLIED
+	line-color %color; #IMPLIED
+	line-length %length; #IMPLIED
+>
+<!ELEMENT Interval-widget (Object?, Resource*, %links;)>
+<!ATTLIST Interval-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	startpos %integer; #REQUIRED
+	endpos %integer; #REQUIRED
+	show-start-err %yesorno; #IMPLIED
+	start-err-len %integer; #IMPLIED
+	show-end-err %yesorno; #IMPLIED
+	end-err-len %integer; #IMPLIED
+	on-sequence CDATA #IMPLIED
+	gap-in-seq-line %yesorno; #IMPLIED
+	show-positions (no | plus | minus) #IMPLIED
+	start-pos-only %yesorno; #IMPLIED
+	position-font IDREF #IMPLIED
+	line-width %linewidth; #IMPLIED
+	interior-gap %length; #IMPLIED
+	fill-pattern (clear | horiz | vert | fdiag | bdiag | cross | diagcross | solid) #IMPLIED
+	border-color %color; #IMPLIED
+	fill-fg-color %color; #IMPLIED
+	fill-bg-color %color; #IMPLIED
+	auto-offset %yesorno; #IMPLIED
+	offset-from-seq %length; #IMPLIED
+	arrow-start-len %length; #IMPLIED
+	arrow-end-len %length; #IMPLIED
+	arrow-width %length; #IMPLIED
+	bracket-text-gap %length; #IMPLIED
+	bracket-line-gap %length; #IMPLIED
+	bracket-line-len %length; #IMPLIED
+	bracket-line-wid %length; #IMPLIED
+	bracket-color %color; #IMPLIED
+	plus-text CDATA #IMPLIED
+	plus-font IDREF #IMPLIED
+	plus-bracket CDATA #IMPLIED
+	minus-text CDATA #IMPLIED
+	minus-font IDREF #IMPLIED
+	minus-bracket CDATA #IMPLIED
+	center-text CDATA #IMPLIED
+	center-font IDREF #IMPLIED
+	start-type CDATA #IMPLIED
+	end-type CDATA #IMPLIED
+>
+<!ELEMENT Blowup-widget (Object?, Resource*, %links;)>
+<!ATTLIST Blowup-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	startpos %integer; #REQUIRED
+	endpos %integer; #REQUIRED
+	on-plus %yesorno; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	interior-gap %length; #IMPLIED
+	fill-pattern (clear | horiz | vert | fdiag | bdiag | cross | diagcross | solid) #IMPLIED
+	border-color %color; #IMPLIED
+	fill-fg-color %color; #IMPLIED
+	fill-bg-color %color; #IMPLIED
+	bracket-text-gap %length; #IMPLIED
+	bracket-line-gap %length; #IMPLIED
+	bracket-line-len %length; #IMPLIED
+	bracket-line-wid %length; #IMPLIED
+	bracket-color %color; #IMPLIED
+	cut-thickness %length; #IMPLIED
+	plus-text CDATA #IMPLIED
+	plus-font IDREF #IMPLIED
+	minus-text CDATA #IMPLIED
+	minus-color %color; #IMPLIED
+	inside-text CDATA #IMPLIED
+	inside-font IDREF #IMPLIED
+	outside-text CDATA #IMPLIED
+	outside-font IDREF #IMPLIED
+>
+<!ELEMENT Aligned-chart-widget (Chart, Quantifier?, Object?, Resource*, %links;)>
+<!ATTLIST Aligned-chart-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	full-only %yesorno; #IMPLIED
+	min-points %integer; #IMPLIED
+	field-number %integer; #IMPLIED
+	startpos %integer; #REQUIRED
+	endpos %integer; #REQUIRED
+	min-offset %length; #REQUIRED
+	max-offset %length; #REQUIRED
+	on-plus %yesorno; #IMPLIED
+	min-data %real; #REQUIRED
+	max-data %real; #REQUIRED
+	dec-places %integer; #IMPLIED
+	show-y-axis %yesorno; #IMPLIED
+	histogram %yesorno; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	caption CDATA #IMPLIED
+	caption-font IDREF #IMPLIED
+	data-font IDREF #IMPLIED
+	standard-height %yesorno; #IMPLIED
+>
+<!ENTITY % seqdisplaywidgets "(Point-widget|Point-group-widget|
+Interval-widget|Blowup-widget|
+View-axis-widget|View-line-widget|
+Aligned-chart-widget)*">
+<!-- ************************************************************* -->
+<!--                    View and View-related Elements             -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!--                               View                            -->
+<!-- ************************************************************* -->
+<!ELEMENT View (Numbering?, Margin?, %seqdisplaywidgets;, Object?, Resource*, %links;)>
+<!ATTLIST View
+	%attrs; 
+	seqref IDREF #REQUIRED
+	histref IDREF #IMPLIED
+	title1 CDATA #IMPLIED
+	title1-font IDREF #IMPLIED
+	title2 CDATA #IMPLIED
+	title2-font IDREF #IMPLIED
+	startpos %integer; #IMPLIED
+	endpos %integer; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                         Feature-histogram-widget              -->
+<!-- ************************************************************* -->
+<!ELEMENT Feature-histogram-widget (Coord, Object?, Resource*, %links;)>
+<!ATTLIST Feature-histogram-widget
+	%attrs; 
+	viewref IDREF #REQUIRED
+	caption CDATA #IMPLIED
+	capt-font IDREF #IMPLIED
+	numb-font IDREF #IMPLIED
+	features-histogram %integer; #IMPLIED
+	feature-position %integer; #IMPLIED
+	nbins %integer; #IMPLIED
+	height-per-bin %length; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	bin-width %length; #IMPLIED
+	line-color %color; #IMPLIED
+	fill-bins %yesorno; #IMPLIED
+	maximum-height %length; #IMPLIED
+	auto-fit %yesorno; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                           View-master                         -->
+<!-- ************************************************************* -->
+<!ELEMENT View-master-widget (Coord, Object?, Resource*, %links;)>
+<!ATTLIST View-master-widget
+	views IDREFS #IMPLIED
+	width %length; #IMPLIED
+	height %length; #IMPLIED
+	outerwidth %linewidth; #IMPLIED
+	outerborder %color; #IMPLIED
+	outerfill %color; #IMPLIED
+	innerwidth %linewidth; #IMPLIED
+	innerborder %color; #IMPLIED
+	innerfill %color; #IMPLIED
+	shapeborder %color; #IMPLIED
+	shapefill %color; #IMPLIED
+	disabledborder %color; #IMPLIED
+	disabledfill %color; #IMPLIED
+	shape (circular | horizontal | vertical) #IMPLIED
+	hcenter %length; #IMPLIED
+	vcenter %length; #IMPLIED
+	hoffset %length; #IMPLIED
+	voffset %length; #IMPLIED
+	numviews %integer; #IMPLIED
+	linear-length %length; #IMPLIED
+	circular-diam %length; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Sequence-viewer                    -->
+<!-- ************************************************************* -->
+<!--      Sequence-viewer controls display in a separate viewer    -->
+<!ELEMENT Class-key EMPTY>
+<!ATTLIST Class-key
+	key-title CDATA #REQUIRED
+	key-class CDATA #REQUIRED
+	border-color %color; #IMPLIED
+	fill-color %color; #IMPLIED
+	row %integer; #IMPLIED
+	enabled %yesorno; #IMPLIED
+	set-number %integer; #IMPLIED
+>
+<!ELEMENT Sequence-viewer (Class-key*, Object?, Resource*, %links;)>
+<!ATTLIST Sequence-viewer
+	%attrs; 
+	refseq IDREF #IMPLIED
+	maximize-window %yesorno; #IMPLIED
+	complete-seq %yesorno; #IMPLIED
+	view-start %integer; #IMPLIED
+	view-end %integer; #IMPLIED
+	fit-to-window %yesorno; #IMPLIED
+	spacing %integer; #IMPLIED
+	bases-per-line %integer; #IMPLIED
+	bases-per-window %integer; #IMPLIED
+	int-pos %integer; #IMPLIED
+	interval-height-min %integer; #IMPLIED
+	interval-height-max %integer; #IMPLIED
+	font-pos %integer; #IMPLIED
+	font-size-min %integer; #IMPLIED
+	font-size-max %integer; #IMPLIED
+	show-sites %yesorno; #IMPLIED
+	sites-as-ints %yesorno; #IMPLIED
+	sites-not-full %yesorno; #IMPLIED
+	sites-by-pct %yesorno; #IMPLIED
+	sites-percent %integer; #IMPLIED
+	interval-pos %integer; #IMPLIED
+	interval-overlap %yesorno; #IMPLIED
+	interval-separate %yesorno; #IMPLIED
+	interval-by-width %yesorno; #IMPLIED
+	int-pixels %integer; #IMPLIED
+	int-as-point %yesorno; #IMPLIED
+	plus-strand %yesorno; #IMPLIED
+	minus-strand %yesorno; #IMPLIED
+	frame %yesorno; #IMPLIED
+	show-point-titles %yesorno; #IMPLIED
+	show-interval-titles %yesorno; #IMPLIED
+	interval-titles-above %yesorno; #IMPLIED
+	interval-title-once %yesorno; #IMPLIED
+	title-length %integer; #IMPLIED
+	show-key %yesorno; #IMPLIED
+	feature-histogram %integer; #IMPLIED
+	feature-position %integer; #IMPLIED
+	density-per-window %yesorno; #IMPLIED
+	density-method %integer; #IMPLIED
+	density-threshold %integer; #IMPLIED
+	nbins %integer; #IMPLIED
+	pixels-per-countX1000 %integer; #IMPLIED
+	max-histo-height %integer; #IMPLIED
+	auto-fit-histogram %yesorno; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--               Other Sequence-related Display Objects         -->
+<!-- ************************************************************* -->
+<!-- ************************************************************* -->
+<!--                             Gel-widget                        -->
+<!-- ************************************************************* -->
+<!ELEMENT Gel-widget (Coord, Border?, Object?, Resource*, %links;)>
+<!--        gel-widget simulates gel electrophoresis display       -->
+<!--        using data from Digest-set elements                    -->
+<!ATTLIST Gel-widget
+	%attrs; 
+	digests IDREFS #REQUIRED
+	title-font IDREF #IMPLIED
+	min-length %integer; #IMPLIED
+	max-length %integer; #IMPLIED
+	min-label %integer; #IMPLIED
+	scale-factor %real; #IMPLIED
+	label-decimals %integer; #IMPLIED
+	label-ratio %real; #IMPLIED
+	label-font IDREF #IMPLIED
+	gel-length %length; #IMPLIED
+	lane-width %length; #IMPLIED
+	lane-gap %length; #IMPLIED
+	lane-thick %linewidth; #IMPLIED
+	lane-color %color; #IMPLIED
+	band-prop %yesorno; #IMPLIED
+	band-thick %linewidth; #IMPLIED
+	band-low %linewidth; #IMPLIED
+	band-color %color; #IMPLIED
+	confusion %linewidth; #IMPLIED
+	confusion-color %color; #IMPLIED
+	plot-big %yesorno; #IMPLIED
+	use-key %yesorno; #IMPLIED
+	show-band-on-seq %yesorno; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                            Seq-Data-widget                    -->
+<!-- ************************************************************* -->
+<!ELEMENT Seq-data-widget (Coord, Border?, Seq-data?, Object?, Resource*, %links;)>
+<!ATTLIST Seq-data-widget
+	%attrs; 
+	featureref IDREF #IMPLIED
+	seqref IDREF #IMPLIED
+	startpos %integer; #REQUIRED
+	length %integer; #REQUIRED
+	caption CDATA #IMPLIED
+	seq-font IDREF #IMPLIED
+	caption-font IDREF #IMPLIED
+	bases-per-line %integer; #IMPLIED
+	number-bases %yesorno; #IMPLIED
+	space-blocks %yesorno; #IMPLIED
+	double-stranded %yesorno; #IMPLIED
+	translate-dna (yes | no | only) #IMPLIED
+	translate-start %integer; #IMPLIED
+	translate-length %integer; #IMPLIED
+	source %url; #IMPLIED
+	seq-len %integer; #IMPLIED
+	is-protein %yesorno; #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                 Sequence-Independent Display widgets          -->
+<!-- ************************************************************* -->
+<!ELEMENT Popup-text-widget (#PCDATA)>
+<!ATTLIST Popup-text-widget
+	%attrs; 
+>
+<!ELEMENT Caption-widget (Coord, Resource*, %links;)>
+<!ATTLIST Caption-widget
+	%attrs; 
+	text CDATA #IMPLIED
+	font IDREF #IMPLIED
+	orientation (horizontal | down | angled) #IMPLIED
+	angle %integer; #IMPLIED
+	border %yesorno; #IMPLIED
+	border-gutter %length; #IMPLIED
+	border-width %length; #IMPLIED
+	border-color %color; #IMPLIED
+	wordwrap %yesorno; #IMPLIED
+	wrap-length %length; #IMPLIED
+	align (left | center | right) #IMPLIED
+>
+<!ELEMENT Line-pointer-widget (Coord+, Resource*, %links;)>
+<!ATTLIST Line-pointer-widget
+	%attrs; 
+	line-style %linestyle; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	line-color %color; #IMPLIED
+	use-start-arrow %yesorno; #IMPLIED
+	start-arrow-length %length; #IMPLIED
+	start-arrow-width %length; #IMPLIED
+	use-end-arrow %yesorno; #IMPLIED
+	end-arrow-length %length; #IMPLIED
+	end-arrow-width %length; #IMPLIED
+	caption CDATA #IMPLIED
+	font IDREF #IMPLIED
+	above-line %yesorno; #IMPLIED
+>
+<!ELEMENT Shape-widget (Coord, Resource*, %links;)>
+<!ATTLIST Shape-widget
+	%attrs; 
+	height %length; #IMPLIED
+	width %length; #IMPLIED
+	filled %yesorno; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	shape %displayshape; #IMPLIED
+	color %color; #IMPLIED
+>
+<!ELEMENT File-widget (Coord?, Border?, Image-map?, Object?, Resource*, %links;)>
+<!ATTLIST File-widget
+	%attrs; 
+	own-window %yesorno; #IMPLIED
+	caption CDATA #IMPLIED
+	height %length; #IMPLIED
+	width %length; #IMPLIED
+	text-font IDREF #IMPLIED
+	type CDATA #IMPLIED
+	source %url; #REQUIRED
+>
+<!ELEMENT Table-column EMPTY>
+<!ATTLIST Table-column
+	colnum %integer; #REQUIRED
+	colwid %length; #IMPLIED
+	align (left | center | right) "right"
+>
+<!ELEMENT Table-widget (Coord?, Border?, Table-column+, Object?, Resource*, %links;)>
+<!ATTLIST Table-widget
+	%attrs; 
+	own-window %yesorno; #IMPLIED
+	own-in-grid %yesorno; #IMPLIED
+	tableid IDREF #REQUIRED
+	rownums CDATA #IMPLIED
+	title-font IDREF #IMPLIED
+	header-font IDREF #IMPLIED
+	cell-font IDREF #IMPLIED
+	row-height %length; #IMPLIED
+	rules %trules; #IMPLIED
+	rule-color %color; #IMPLIED
+	rule-width %linewidth; #IMPLIED
+	cellspacing %length; #IMPLIED
+	cellpadding %length; #IMPLIED
+>
+<!ELEMENT Text-key-item EMPTY>
+<!ATTLIST Text-key-item
+	key CDATA #REQUIRED
+	explanation CDATA #REQUIRED
+>
+<!ELEMENT Text-key-widget (Coord, Border?, Text-key-item+, Resource*, %links;)>
+<!ATTLIST Text-key-widget
+	%attrs; 
+	key-font IDREF #IMPLIED
+	explanation-font IDREF #IMPLIED
+	key-width %length; #IMPLIED
+	item-gap %length; #IMPLIED
+>
+<!ELEMENT Fill-key-widget (Coord, Border?, Resource*, %links;)>
+<!ATTLIST Fill-key-widget
+	%attrs; 
+	font IDREF #IMPLIED
+	pattern-width %length; #IMPLIED
+	pattern-height %length; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	pattern-gap %length; #IMPLIED
+	patterns CDATA #IMPLIED
+	fore-colors CDATA #IMPLIED
+	back-colors CDATA #IMPLIED
+	explanations CDATA #IMPLIED
+>
+<!ELEMENT Symbol-key-widget (Coord, Border?, Resource*, %links;)>
+<!ATTLIST Symbol-key-widget
+	%attrs; 
+	do-substitute %yesorno; #IMPLIED
+	font IDREF #IMPLIED
+	size %length; #IMPLIED
+	line-width %linewidth; #IMPLIED
+	color %color; #IMPLIED
+	open-circle CDATA #IMPLIED
+	closed-circle CDATA #IMPLIED
+	open-square CDATA #IMPLIED
+	closed-square CDATA #IMPLIED
+	triangle CDATA #IMPLIED
+	suppress CDATA #IMPLIED
+>
+<!ELEMENT Axis-widget (Coord, (X-axis | Y-axis))>
+<!-- display the axis-widget beginning at Coord.X and Coord.Y -->
+<!ATTLIST Axis-widget
+	%attrs; 
+	caption CDATA #IMPLIED
+	capt-font IDREF #IMPLIED
+	ascending %yesorno; #IMPLIED
+	topright %yesorno; #IMPLIED
+	axis-length %length; #REQUIRED
+	start %integer; #REQUIRED
+	end %integer; #REQUIRED
+	num-divisions %integer; #IMPLIED
+	show-first %yesorno; #IMPLIED
+	zero-as-1 %yesorno; #IMPLIED
+	labels CDATA #IMPLIED
+>
+<!-- ************************************************************* -->
+<!--                    Chart Widget and Related Elements          -->
+<!-- ************************************************************* -->
+<!ELEMENT X-chart-axis EMPTY>
+<!ATTLIST X-chart-axis
+	scale-automatic %yesorno; #IMPLIED
+	lower-limit %real; #IMPLIED
+	upper-limit %real; #IMPLIED
+	display-mode (decimal-places | best-fit | log | suppressed) #IMPLIED
+	dec-places %integer; #IMPLIED
+	grid (none | at-zero | at-ticks) #IMPLIED
+>
+<!ELEMENT Y-chart-axis EMPTY>
+<!ATTLIST Y-chart-axis
+	scale-automatic %yesorno; #IMPLIED
+	lower-limit %real; #IMPLIED
+	upper-limit %real; #IMPLIED
+	display-mode (decimal-places | best-fit | log | suppressed) #IMPLIED
+	dec-places %integer; #IMPLIED
+	grid (none | at-zero | at-ticks) #IMPLIED
+>
+<!ELEMENT Chart-page EMPTY>
+<!ATTLIST Chart-page
+	left %length; #IMPLIED
+	top %length; #IMPLIED
+	width %length; #IMPLIED
+	length %length; #IMPLIED
+	portrait %yesorno; #IMPLIED
+>
+<!ELEMENT Chart-screen-display EMPTY>
+<!ATTLIST Chart-screen-display
+	monochrome %yesorno; #IMPLIED
+	text-font-size %integer; #IMPLIED
+	text-font-bold %yesorno; #IMPLIED
+	numb-font-size %integer; #IMPLIED
+	numb-font-bold %yesorno; #IMPLIED
+	plot-thickness %linewidth; #IMPLIED
+	frame-thickness %linewidth; #IMPLIED
+	text-color %color; #IMPLIED
+	numb-color %color; #IMPLIED
+	plot-color %color; #IMPLIED
+	frame-color %color; #IMPLIED
+	plot-background-color %color; #IMPLIED
+	frame-background-color %color; #IMPLIED
+	symbol-size %length; #IMPLIED
+>
+<!ELEMENT Chart-print-display EMPTY>
+<!ATTLIST Chart-print-display
+	monochrome %yesorno; #IMPLIED
+	text-font-size %integer; #IMPLIED
+	text-font-bold %yesorno; #IMPLIED
+	numb-font-size %integer; #IMPLIED
+	numb-font-bold %yesorno; #IMPLIED
+	plot-thickness %linewidth; #IMPLIED
+	frame-thickness %linewidth; #IMPLIED
+	text-color %color; #IMPLIED
+	numb-color %color; #IMPLIED
+	plot-color %color; #IMPLIED
+	frame-color %color; #IMPLIED
+	plot-background-color %color; #IMPLIED
+	frame-background-color %color; #IMPLIED
+	symbol-size %length; #IMPLIED
+>
+<!ELEMENT Chart-data EMPTY>
+<!ATTLIST Chart-data
+	setnum %integer; #REQUIRED
+	symbol (nosymbol | plus | ex | opencircle | filledcircle | opensquare | filledsquare) #IMPLIED
+	line-format (none | line-only | symbol-only | both | err-bar) #IMPLIED
+	line-color %color; #IMPLIED
+	fill-color %color; #IMPLIED
+	do-fill %yesorno; #IMPLIED
+	fill-pattern (clear | horiz | vert | fdiag | bdiag | cross | diagcross | solid) #IMPLIED
+	legend CDATA #IMPLIED
+	drop-left CDATA #IMPLIED
+	drop-right CDATA #IMPLIED
+	colrownum %integer; #IMPLIED
+	values CDATA #IMPLIED
+>
+<!ELEMENT Chart-widget (Coord?, X-chart-axis?, Y-chart-axis?, Chart-page?, Chart-screen-display?, Chart-print-display?, Chart-data*, Object?, Resource*, %links;)>
+<!ATTLIST Chart-widget
+	%attrs; 
+	own-window %yesorno; #IMPLIED
+	width %length; #IMPLIED
+	length %length; #IMPLIED
+	chart-type (xy | multi-xy | box-plot | bar | histogram | line) #IMPLIED
+	text-font IDREF #IMPLIED
+	numb-font IDREF #IMPLIED
+	title-1 CDATA #IMPLIED
+	title-2 CDATA #IMPLIED
+	x-title CDATA #IMPLIED
+	y-title CDATA #IMPLIED
+	legend-pos (below | upper-left | upper-right | lower-left | lower-right) #IMPLIED
+	presort %yesorno; #IMPLIED
+	x-no-zero %yesorno; #IMPLIED
+	format CDATA #IMPLIED
+	source %url; #IMPLIED
+	tableid IDREF #IMPLIED
+	bycolumn %yesorno; #IMPLIED
+	column-starts CDATA #IMPLIED
+	column-widths CDATA #IMPLIED
+	header-count %integer; #IMPLIED
+>
+<!ENTITY % pagedisplaywidgets "(Popup-text-widget|Sequence-viewer|
+Feature-histogram-widget|Caption-widget|Line-pointer-widget|
+Shape-widget|Table-widget|File-widget|Gel-widget|Axis-widget|
+Text-key-widget|Fill-key-widget|Symbol-key-widget|
+Seq-data-widget|Chart-widget|View-master-widget|Network-display-widget)">
+<!-- ************************************************************* -->
+<!--                                Page                           -->
+<!-- ************************************************************* -->
+<!ELEMENT Page (Screen?, Paper?, Border?, (%pagedisplaywidgets; | %setwidgets; | View | Resource | %links;)*, Object?)>
+<!ATTLIST Page
+	%attrs; 
+>
+
