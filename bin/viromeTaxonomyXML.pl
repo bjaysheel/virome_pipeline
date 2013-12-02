@@ -24,7 +24,7 @@ B<--help,-h>
    This help message
 
 =head1  DESCRIPTION
-    Create XML document that contaions information to draw taxonomy breakdown
+    Create XML document that contains information to draw taxonomy breakdown
     pie chart
 
 =head1  INPUT
@@ -142,27 +142,27 @@ foreach my $lib (@libArray){
 
     my $tStruct = {};
     foreach my $rec (@$rslt){
-	if (!length($rec->{'domain'})){
-	    $rec->{'domain'} = "UNKNOWN DOMAIN";
-	} elsif (!length($rec->{'kingdom'})){
-	    $rec->{'kingdom'} = "UNKNOWN KINGDOM";
-	} elsif (!length($rec->{'phylum'})){
-	    $rec->{'phylum'} = "UNKNOWN PHYLUM";
-	} elsif (!length($rec->{'class'})){
-	    $rec->{'class'} = "UNKNOWN CLASS";
-	} elsif (!length($rec->{'order'})){
-	    $rec->{'order'} = "UNKNOWN ORDER";
-	} elsif (!length($rec->{'family'})){
-	    $rec->{'family'} = "UNKNOWN FAMILY";
-	} elsif (!length($rec->{'genus'})){
-	    $rec->{'genus'} =  "UNKNOW GENUS";
-	} elsif (!length($rec->{'species'})){
-	    $rec->{'species'} = "UNKNOWN SPECIES";
-	} elsif (!length($rec->{'organism'})){
-	    $rec->{'organism'} = "UNKNOWN ORGANISM";
-	}
-
-	$tStruct = createStruct($tStruct, $rec, $rec->{'sequenceId'});
+		if (!length($rec->{'domain'})){
+		    $rec->{'domain'} = "UNKNOWN DOMAIN";
+		} elsif (!length($rec->{'kingdom'})){
+		    $rec->{'kingdom'} = "UNKNOWN KINGDOM";
+		} elsif (!length($rec->{'phylum'})){
+		    $rec->{'phylum'} = "UNKNOWN PHYLUM";
+		} elsif (!length($rec->{'class'})){
+		    $rec->{'class'} = "UNKNOWN CLASS";
+		} elsif (!length($rec->{'order'})){
+		    $rec->{'order'} = "UNKNOWN ORDER";
+		} elsif (!length($rec->{'family'})){
+		    $rec->{'family'} = "UNKNOWN FAMILY";
+		} elsif (!length($rec->{'genus'})){
+		    $rec->{'genus'} =  "UNKNOW GENUS";
+		} elsif (!length($rec->{'species'})){
+		    $rec->{'species'} = "UNKNOWN SPECIES";
+		} elsif (!length($rec->{'organism'})){
+		    $rec->{'organism'} = "UNKNOWN ORGANISM";
+		}
+	
+		$tStruct = createStruct($tStruct, $rec, $rec->{'sequenceId'});
     }
 
     print "\nPrinting XML:\n";

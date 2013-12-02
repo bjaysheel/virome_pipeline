@@ -1,4 +1,0 @@
-next
-----
--added missing DROP VIEW statements to drop_cm_views.postgresql.ddl, removed duplicate DROP TABLEs
--changed NUMERIC(0,9) to INT for the infection module

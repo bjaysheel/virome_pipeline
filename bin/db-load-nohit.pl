@@ -141,11 +141,11 @@ foreach my $lib (@libArray){
         my ($name, $size, $id) = $seq_info->fetchrow_array();
 
         #print $id."\t".$name."\t".$size."\n";
-	print OUT join("\t",$id,$name,$size,
+		print OUT join("\t",$id,$name,$size,
 			    "BLASTP",
                             "NOHIT",
                             "Sequence has no homologs in KNOWN or ENVIRONMENTAL database",
-                            "0.001");
+                            "0.001")."\n";
     }
 }
 $dbh0->disconnect;

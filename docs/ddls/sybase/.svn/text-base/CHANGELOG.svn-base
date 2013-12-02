@@ -1,4 +1,0 @@
-chado-v1r8b2
-------------
--feature.uniquename changed from VARCHAR(50) to VARCHAR(255)
--featureloc.residue_info changed from TEXT to VARCHAR(255)

@@ -2,67 +2,76 @@
 
 eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
     if 0; # not running under some shell
+#-----------------------------------------------------------------------------------------------------
+# program name: dropchadoobjects.pl
+# author:       Jay Sundaram
+# date:         2005-09-27
+#
+# purpose:      Dynamically generates list of tables to be dropped from specified chado database
+#
+#-----------------------------------------------------------------------------------------------------
+
+
 =head1 NAME
 
-dropchadotables.pl - Drops tables from specified chado database
+dropchadoobjects.pl - Drops tables from specified chado database
 
 =head1 SYNOPSIS
 
-USAGE:  dropChadoObjects.pl --database --database_type [--debug_level] [--help|-h] [--logfile] [-m] --password --server --username
+USAGE:  dropchadoobjects.pl -D database --database_type -P password --server -U username [-d debug_level] [-h] [-l logfile] [-m] [--object_type]
 
 =head1 OPTIONS
 
 =over 8
 
-=item B<--database>
+=item B<--database,-D>
     
-Name of the chado database
+    Target database name
 
 =item B<--database_type>
     
-Relational database management system type e.g. sybase or postgresql
+    Relational database management system type e.g. sybase or postgresql
 
-=item B<--password>
+=item B<--password,-P>
     
-Database password
+    Database password
 
-=item B<--server>
+=item B<--server,-S>
     
-Name of server on which the database resides
+    Name of server on which the database resides
 
-=item B<--username>
+=item B<--username,-U>
     
-Database username
+    Database username
 
-=item B<--debug_level>
+=item B<--debug_level,-d>
     
-Optional - Coati::Logger log4perl logging level (default is 0)
+    Optional - Coati::Logger log4perl logging level (default is 0)
 
 =item B<--help,-h>
 
-Print this help
+    Print this help
 
-=item B<--logfile>
+=item B<--logfile,-l>
     
-Optional - Log4perl log file.  (default is /tmp/dropchadotables.pl.log)
+    Optional - Log4perl log file.  (default is /tmp/dropchadoobjects.pl.log)
 
 =item B<--man,-m>
 
-Display pod2usage man page for this utility
+    Display pod2usage man page for this utility
 
+=item B<--object_type>
+
+    Optional - tables or views (default is tables)
 
 =back
 
 =head1 DESCRIPTION
 
-    dropchadotables.pl - Drops all foreign key constraints and then all drops all tables
+    dropchadoobjects.pl - Drops all foreign keys and tables or all views
     e.g.
-    1) ./dropChadoObjects.pl --username=sundaram --password=sundaram7 --database=chado_test --database_type=sybase --logfile=my.log --server=SYBIL
-
-=head1 AUTHOR
-
-Jay Sundaram
-sundaram@jcvi.org
+    1) ./dropchadoobjects.pl -U username -P password -D chado_test -S SYBIL
+    2) ./dropchadoobjects.pl -U username -P password -D chado_test -S SYBIL -l drop.log
 
 =cut
 
@@ -78,18 +87,24 @@ use Coati::Logger;
 
 $|=1;
 
-my ($username, $password, $database, $database_type, $server, $logfile, $help, $man, $debug_level);
+my ($username, $password, $database, $server, $log4perl, $help, $man, 
+    $debug_level, $objectType, $database_type);
 
+
+#---------------------------------------------------------------------------------
+# Process the command-line arguments
+#
 my $results = GetOptions (
-			  'database=s'        => \$database,
-			  'database_type=s'   => \$database_type,
-			  'password=s'        => \$password,
-			  'server=s'          => \$server,
-			  'username=s'        => \$username,
-			  'debug_level|d=s'   => \$debug_level,
-			  'help|h'            => \$help, 
-			  'logfile=s'         => \$logfile,
-			  'man|m'             => \$man
+			  'database|D=s'        => \$database,
+			  'database_type=s'     => \$database_type,
+			  'password|P=s'        => \$password,
+			  'server|S=s'          => \$server,
+			  'username|U=s'        => \$username,
+			  'debug_level|d=s'     => \$debug_level,
+			  'help|h'              => \$help, 
+			  'logfile|l=s'         => \$log4perl,
+			  'man|m'               => \$man,
+			  'object_type=s'       => \$objectType
 			  );
 
 
@@ -107,13 +122,34 @@ if ($fatalCtr>0){
     &print_usage();
 }
 
-## Initialize the logger
-if (!defined($logfile)){
-    $logfile = '/tmp/dropchadotables.pl.log';
-    print STDERR "log file was set to '$logfile'\n";
+## The only objects types we'll process at this point
+my $validTableObjects = { 'tables' => 'U',
+			  'views'  => 'V' };
+
+## Each object type has its own env variable
+my $objectTypeToCommitOrderLookup = { 'tables' => 'COMMIT_ORDER',
+				      'views' => 'COMMIT_ORDER_VIEWS' };
+
+## Set default object type
+if (!defined($objectType)){
+    $objectType = 'tables';
 }
 
-my $mylogger = new Coati::Logger('LOG_FILE'=>$logfile,
+## validate the object type
+if (! exists $validTableObjects->{$objectType} ){
+    die "Invalid object type '$objectType'";
+}
+
+## Assign the Sybase object symbol
+my $sybaseObjectSymbol = $validTableObjects->{$objectType};
+
+## Initialize the logger
+if (!defined($log4perl)){
+    $log4perl = '/tmp/dropchado" . $objectType . ".pl.log';
+    print STDERR "log_file was set to '$log4perl'\n";
+}
+
+my $mylogger = new Coati::Logger('LOG_FILE'=>$log4perl,
 				 'LOG_LEVEL'=>$debug_level);
 
 my $logger = Coati::Logger::get_logger(__PACKAGE__);
@@ -126,57 +162,49 @@ $ENV{DBCACHE_DIR} = undef;
 &setPrismEnv($server, $database_type);
 
 ## Instantiate Prism object
-my $prism = new Prism( user => $username,
-		       password => $password,
-		       db => $database
-		       );
-if (!defined($prism)){
-    $logger->logdie("prism was not defined");
+my $prism = &retrieve_prism_object($username, $password, $database);
+
+## This script will now drop all foreign key constraints prior to
+## dropping all tables (bug 2281).
+if ($objectType eq 'tables'){
+    $prism->drop_foreign_key_constraints();
 }
 
-my $tableList = $prism->tableList();
-my $tableCount = scalar(@{$tableList});
+## Retrieve the list of sysobjects
+my $objectLookup = $prism->sysobjects($validTableObjects->{$objectType});
 
-if ($tableCount > 0 ){
 
-    # JC: isn't this redundant with the call to foreignKeyConstraintAndTableList, which provides strictly more information?
-    my $foreignKeyConstraintsList = $prism->foreignKeyConstraintsList();
-    my $constraintCount = scalar(@{$foreignKeyConstraintsList});
+## Get the correct env variable
+my $commitOrderEnv = $objectTypeToCommitOrderLookup->{$objectType};
 
-    if ($constraintCount > 0 ){
-	print "Will drop '$constraintCount' foreign key constraint(s) prior to dropping remaining '$tableCount' table(s)\n";
 
-	my $fkConstraintTableList = $prism->foreignKeyConstraintAndTableList();
+## Retrieve the table commit order from the conf/Prism.conf
+if ((exists $ENV{$commitOrderEnv}) && (defined($ENV{$commitOrderEnv}))){
 
-	my $fkConstraintDropCtr=0;
+    my $commit_order = $ENV{$commitOrderEnv};
 
-	foreach my $array (@{$fkConstraintTableList}){
-	    $prism->dropForeignKeyConstraint($array->[0], $array->[1]);
-	    $fkConstraintDropCtr++;
-	}
-	print "Attempted to drop '$fkConstraintDropCtr' foreign key constraints\n";
+    my @commit_list = split(/,/,$commit_order);
+
+    ## Drop the objects in the correct order
+    if ($objectType eq 'tables'){
+	$prism->droptables($objectLookup, \@commit_list, $database);
+    }
+    elsif ($objectType eq 'views'){
+    	$prism->dropviews($objectLookup, \@commit_list, $database);
     }
     else {
-	if ($logger->is_debug()){
-	    $logger->debug("No foreign constraints need to be dropped");
-	}
+	$logger->logdie("Invalid object type '$objectType'");
     }
-    my $tableDropCtr=0;
-    foreach my $table (@{$tableList}){
-	$prism->dropTable($table);
-	$tableDropCtr++;
-    }
-    print "Attempted to drop '$tableDropCtr' tables\n";
+
 }
 else {
-    if ($logger->is_debug()){
-	$logger->debug("No tables need to be dropped");
-    }
+    $logger->logdie("commit order for '$commitOrderEnv' did not exist");
 }
 
-print "'$0' program execution complete\n";
-print "The log file is '$logfile'\n";
-exit(0);
+
+print ("'$0': Program execution complete\n");
+print ("Please review logfile: $log4perl\n");
+
 
 #------------------------------------------------------------------------------------------------------------
 #
@@ -184,22 +212,56 @@ exit(0);
 #
 #------------------------------------------------------------------------------------------------------------
 
+
+#----------------------------------------------------------------
+# retrieve_prism_object()
+#
+#----------------------------------------------------------------
+sub retrieve_prism_object {
+
+    my ( $username, $password, $database, $pparse) = @_;
+    
+    if (defined($pparse)){
+	$pparse = 0;
+    }
+    else{
+	$pparse = 1;
+    }
+    
+
+    my $prism = new Prism( 
+			   user             => $username,
+			   password         => $password,
+			   db               => $database,
+			   use_placeholders => $pparse,
+			   );
+    
+    if (!defined($prism)){
+	$logger->logdie("prism was not defined");
+    }
+
+    return $prism;
+
+
+}#end sub retrieve_prism_object()
+
 #--------------------------------------------------------------------
 # print_usage()
 #
 #--------------------------------------------------------------------
 sub print_usage {
 
-    print STDERR "SAMPLE USAGE:  $0 --database --database_type [--debug_level] [--help|-h] [--logfile] [-m] --password --server --username\n".
-    "  --database              = Name of the chado database\n".
+    print STDERR "SAMPLE USAGE:  $0 -D database --database_type -P password --server -U username [-d debug_level] [-h] [-l logfile] [-m] [--object_type]\n".
+    "  -D|--database           = target Chado database\n".
     "  --database_type         = Relational database management system type e.g. sybase or postgresql\n".
-    "  --debug_level           = Optional - Coati::Logger log4perl logging level (default is 0)\n".
+    "  -P|--password           = password\n".
+    "  --server                = Name of server on which the database resides\n".
+    "  -U|--username           = username\n".
+    "  -d|--debug_level        = Optional - Coati::Logger log4perl logging level (default is 0)\n".
     "  -h|--help               = This help message\n".
     "  -l|--logfile            = Optional - log4perl log file (default is /tmp/dropchadotables.pl.log)\n".
     "  -m|--man                = Display the pod2usage man page for this utility\n".
-    "  -P|--password           = password\n".
-    "  -S|--server             = Name of the server on which the database resides\n".
-    "  -U|--username           = username\n";
+    " --object_type            = Optional - either tables or views (default tables)\n";
     exit 1;
 
 }
@@ -235,6 +297,7 @@ sub setPrismEnv {
     $vendor = "Bulk" . ucfirst($vendor);
     ## We're overriding the env stored in conf/Prism.conf
     my $prismenv = "Chado:$vendor:$server";
+
 
     $ENV{PRISM} = $prismenv;
 }

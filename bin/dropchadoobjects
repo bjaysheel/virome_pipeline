@@ -82,5 +82,5 @@ export SCHEMAVALID
 fi
 
 
-exec /usr/bin/perl -I /diag/projects/virome/package_virome/lib/perl5 /diag/projects/virome/package_virome/bin/dropchadoobjects.pl "$@"    
+exec /usr/bin/perl -I /diag/projects/virome/package_virome/lib/perl5 /diag/projects/virome/package_virome/bin/dropChadoObjects.pl "$@"    
 
