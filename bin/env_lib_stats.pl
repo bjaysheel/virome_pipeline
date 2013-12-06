@@ -194,12 +194,12 @@ foreach my $lib (@$libraryRSLT) {
                     $cat = $a->{'type'};
                     $link='';
                 }
-
-                #eval_sum is a hash containing sum of all evalues per genera
+                
+		#eval_sum is a hash containing sum of all evalues per genera
                 #$eval_sum is log inverse eval.
-                my $weight = log(1/$a->{'eval'}) / $eval_sum->{$a->{'type'}};
-
-                #'cat' contains sub cat of each 'type' i.e: natural, anthropegenic
+		my $weight = log(1/$a->{'eval'}) / $eval_sum->{$a->{'type'}};
+                
+		#'cat' contains sub cat of each 'type' i.e: natural, anthropegenic
                 $link .= $a->{'cat'}."=>".$weight."^|^";
 
                 #summarized and store for entire library in libHash.
