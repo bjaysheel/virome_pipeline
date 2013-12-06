@@ -130,46 +130,68 @@
 .\"
 .IX Title "DROPCHADOOBJECTS 1"
 .TH DROPCHADOOBJECTS 1 "2010-10-22" "perl v5.8.8" "User Contributed Perl Documentation"
+.SH "NAME"
+dropchadoobjects.pl \- Drops tables from specified chado database
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
-\&\s-1USAGE:\s0  dropChadoObjects.pl \-\-database \-\-database_type [\-\-debug_level] [\-\-help|\-h] [\-\-logfile] [\-m] \-\-password \-\-server \-\-username
+\&\s-1USAGE:\s0  dropchadoobjects.pl \-D database \-\-database_type \-P password \-\-server \-U username [\-d debug_level] [\-h] [\-l logfile] [\-m] [\-\-object_type]
 .SH "OPTIONS"
 .IX Header "OPTIONS"
-.IP "\fB\-\-database\fR" 8
-.IX Item "--database"
-Name of the chado database
+.IP "\fB\-\-database,\-D\fR" 8
+.IX Item "--database,-D"
+.Vb 1
+\&    Target database name
+.Ve
 .IP "\fB\-\-database_type\fR" 8
 .IX Item "--database_type"
-Relational database management system type e.g. sybase or postgresql
-.IP "\fB\-\-password\fR" 8
-.IX Item "--password"
-Database password
-.IP "\fB\-\-server\fR" 8
-.IX Item "--server"
-Name of server on which the database resides
-.IP "\fB\-\-username\fR" 8
-.IX Item "--username"
-Database username
-.IP "\fB\-\-debug_level\fR" 8
-.IX Item "--debug_level"
-Optional \- Coati::Logger log4perl logging level (default is 0)
+.Vb 1
+\&    Relational database management system type e.g. sybase or postgresql
+.Ve
+.IP "\fB\-\-password,\-P\fR" 8
+.IX Item "--password,-P"
+.Vb 1
+\&    Database password
+.Ve
+.IP "\fB\-\-server,\-S\fR" 8
+.IX Item "--server,-S"
+.Vb 1
+\&    Name of server on which the database resides
+.Ve
+.IP "\fB\-\-username,\-U\fR" 8
+.IX Item "--username,-U"
+.Vb 1
+\&    Database username
+.Ve
+.IP "\fB\-\-debug_level,\-d\fR" 8
+.IX Item "--debug_level,-d"
+.Vb 1
+\&    Optional - Coati::Logger log4perl logging level (default is 0)
+.Ve
 .IP "\fB\-\-help,\-h\fR" 8
 .IX Item "--help,-h"
-Print this help
-.IP "\fB\-\-logfile\fR" 8
-.IX Item "--logfile"
-Optional \- Log4perl log file.  (default is /tmp/dropchadotables.pl.log)
+.Vb 1
+\&    Print this help
+.Ve
+.IP "\fB\-\-logfile,\-l\fR" 8
+.IX Item "--logfile,-l"
+.Vb 1
+\&    Optional - Log4perl log file.  (default is /tmp/dropchadoobjects.pl.log)
+.Ve
 .IP "\fB\-\-man,\-m\fR" 8
 .IX Item "--man,-m"
-Display pod2usage man page for this utility
+.Vb 1
+\&    Display pod2usage man page for this utility
+.Ve
+.IP "\fB\-\-object_type\fR" 8
+.IX Item "--object_type"
+.Vb 1
+\&    Optional - tables or views (default is tables)
+.Ve
 .SH "DESCRIPTION"
 .IX Header "DESCRIPTION"
-.Vb 3
-\&    dropchadotables.pl - Drops all foreign key constraints and then all drops all tables
+.Vb 4
+\&    dropchadoobjects.pl - Drops all foreign keys and tables or all views
 \&    e.g.
-\&    1) ./dropChadoObjects.pl --username=sundaram --password=sundaram7 --database=chado_test --database_type=sybase --logfile=my.log --server=SYBIL
+\&    1) ./dropchadoobjects.pl -U username -P password -D chado_test -S SYBIL
+\&    2) ./dropchadoobjects.pl -U username -P password -D chado_test -S SYBIL -l drop.log
 .Ve
-.SH "AUTHOR"
-.IX Header "AUTHOR"
-Jay Sundaram
-sundaram@jcvi.org
