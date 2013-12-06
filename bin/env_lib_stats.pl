@@ -157,7 +157,7 @@ foreach my $lib (@$libraryRSLT) {
 				 	inner join 
 				 	  sequence s on s.id=b.sequenceId
 				 WHERE s.libraryId = $lib->{id}
-				 	and b.evalue <= 0.001
+				 	and b.e_value <= 0.001
 				  	and b.database_name='METAGENOMES' }
 	);
 				   # and query_name like '$lib->{prefix}%' }
@@ -519,7 +519,7 @@ sub bestEvalue {
                                    WHERE b.sequenceId = $sequenceId 
                                    	and b.database_name='METAGENOMES'
                                     and LEFT(hit_name,3) not like LEFT('$query_name',3)
-                                    and b.evalue <= 0.001
+                                    and b.e_value <= 0.001
                                    GROUP BY field, m.lib_prefix
                                    ORDER BY e_value}
 		);
