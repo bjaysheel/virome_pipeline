@@ -106,7 +106,7 @@ my $get_orfans = $dbh->prepare(
 my $filename    = $options{outdir} . "/blastp.txt";
 my $column_list = qq/blastp.sequenceId,blastp.query_name,blastp.query_length,/;
 $column_list = $column_list . qq/blastp.algorithm,blastp.database_name,/;
-$column_list = $column_list . qq/blastp.hit_description,blastp.e_value/;
+$column_list = $column_list . qq/blastp.hit_description,blastp.e_value, blastp.sys_topHit/;
 my @libArray;
 
 open( OUT, ">", $filename )
@@ -149,7 +149,7 @@ foreach my $lib (@libArray) {
 		print OUT join( "\t",
 			$id, $name, $size, "BLASTP", "NOHIT",
 			"Sequence has no homologs in KNOWN or ENVIRONMENTAL database",
-			"0.001" )
+			"0.001", "1" )
 		  . "\n";
 	}
 }
