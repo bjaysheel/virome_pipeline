@@ -106,7 +106,7 @@ my $get_orfans = $dbh->prepare(
 my $filename    = $options{outdir} . "/blastp.txt";
 my $column_list = qq/blastp.sequenceId,blastp.query_name,blastp.query_length,/;
 $column_list = $column_list . qq/blastp.algorithm,blastp.database_name,/;
-$column_list = $column_list . qq/blastp.hit_description,blastp.e_value, blastp.sys_topHit/;
+$column_list = $column_list . qq/blastp.hit_description,blastp.e_value,blastp.sys_topHit/;
 my @libArray;
 
 open( OUT, ">", $filename )
