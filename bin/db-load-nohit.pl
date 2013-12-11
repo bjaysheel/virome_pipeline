@@ -162,7 +162,7 @@ $dbh->disconnect;
 my $cmd =
   "mysqlimport --columns=$column_list --compress --fields-terminated-by='\\t'";
 $cmd = $cmd
-  . " --lines-terminated-by='\\r\\n' --host="
+  . " --lines-terminated-by='\\n' --host="
   . $utils->db_host
   . " --user="
   . $utils->db_user;
