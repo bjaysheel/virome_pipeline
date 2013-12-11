@@ -73,39 +73,49 @@ $logger = $logger->get_logger();
 #############################################################################
 #### DEFINE GLOBAL VAIRABLES.
 ##############################################################################
-my $lv_db_host;
-my $lv_db_user;
-my $lv_db_pass;
-my $lv_db_name;
 
-my $stg_db_host;
-my $stg_db_user;
-my $stg_db_pass;
-my $stg_db_name;
+unless ($options{lib_file} || $options{output_dir} || $options{env}) {
+    pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
+    exit(-1);
+}
 
-my $server='';
-my $location='';
+my $server = '';
 my $min = '';
 my $max = '';
 
-## make sure everything passed was peachy
-## variables declared about are set in check_parameters
-&check_parameters(\%options);
+parse_library_info();
+    my %processing_databases = (
+        'diag1'  =>  'virome_processing_1',
+        'diag2'  =>  'virome_processing_2',
+	'diag3'  =>  'virome_processing_3',
+        'diag4'  =>  'virome_processing_4',
+        'diag5'  =>  'virome_processing_5',
+    );
+my $lv_db_host = q|virome-db|;
+my $lv_db_user = q|dnasko|;
+my $lv_db_pass = q|dnas_76|;
+my $lv_db_name = $server;
+
+my $stg_db_host = q|dnode001.igs.umaryland.edu|;
+my $stg_db_user = q|dnasko|;
+my $stg_db_pass = q|dnas_76|;
+my $stg_db_name = $processing_databases{$options{env}};
 
 ## Two hashes to assure our ID's don't overlap between processing databases
 my %MIN = ('diag1','1000000000000','diag2','2000000000000','diag3','3000000000000','diag4','4000000000000','diag5','5000000000000');
 my %MAX = ('diag1','2000000000000','diag2','3000000000000','diag3','4000000000000','diag4','5000000000000','diag5','6000000000000');
+my $location = $options{env};
 if (exists $MIN{$location}) {
     $min = $MIN{$location};
     $max = $MAX{$location};
 }
 else {
-    die "\n\n The location you have enetered was an invalid location for DIAG\n\n";
+    die "\n\n The location you have enetered was an invalid location for DIAG: $location $options{env}\n\n";
 }
 
 #my @tables = ('blastn','blastp','blastx','sequence','orf','statistics','tRNA', 'sequence_relationship');
 my @tables = ('blastn','blastp','sequence','statistics','tRNA', 'sequence_relationship');
-
+print STDERR " Hey Dan: $lv_db_name\n\n";
 my $lv_dbh = DBI->connect("DBI:mysql:database=$lv_db_name;host=$lv_db_host",
     "$lv_db_user", "$lv_db_pass",{PrintError=>1, RaiseError =>1, AutoCommit =>1});
 
@@ -154,35 +164,6 @@ exit(0);
 
 ###############################################################################
 ####  SUBS
-###############################################################################
-sub check_parameters {
-    my $options = shift;
-
-    ## make sure sample_file and output_dir were passed
-    unless ($options{lib_file} || $options{output_dir} || $options{env}) {
-      pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
-      exit(-1);
-    }
-
-    parse_library_info();
-    my %processing_databases = (
-	'diag1'  =>  'virome_processing_1',
-	'diag2'  =>  'virome_processing_2',
-	'diag3'  =>  'virome_processing_3',
-	'diag4'  =>  'virome_processing_4',
-	'diag5'  =>  'virome_processing_5',
-	);
-    $lv_db_host = q|virome-db|;
-    $lv_db_user = q|dnasko|;
-    $lv_db_pass = q|dnas_76|;
-    $lv_db_name = $server;
-
-    $stg_db_host = q|dnode001.igs.umaryland.edu|;
-    $stg_db_user = q|dnasko|;
-    $stg_db_pass = q|dnas_76|;
-    $stg_db_name = $processing_databases{$options{env}};
-}
-
 ###############################################################################
 sub timer {
     my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
