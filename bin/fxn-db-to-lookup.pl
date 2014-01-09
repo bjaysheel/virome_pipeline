@@ -159,9 +159,9 @@ if (length($sel_qry)) {  #table info is passed and expected
 			$utils->db_user, $utils->db_pass, {PrintError=>1, RaiseError =>1, AutoCommit =>1});
     }
 
-    my $filename = $options{outdir}."/".$options{table}.".ldb";
+	my $filename = $options{outdir}."/".$options{table}.".ldb";
 
-      #remove file if it already exists;
+    #### remove file if it already exists;
     if (-e $filename){
 		system("rm $filename");
     }
@@ -169,81 +169,69 @@ if (length($sel_qry)) {  #table info is passed and expected
     ## create the tied hash
     tie(my %info, 'MLDBM', $filename);
 
-	my $qry = $sel_qry;
+	#### get max rows of selected table and iterate through per 10000 rows
+	#### due to tmp dir space
+	my $max_sql = qq|SELECT count(id) from $options{table}|;
+    my $max_sth = $dbh->prepare($max_sql);
+    $max_sth->execute();
 
-	print"\n\n$qry\n\n";
+	my $r=$max_sth->fetchall_arrayref;
+	my $max_rows=$r->[0][0];
+	my $MAX_LIMIT=10000;
 
-	my $seq_sth = $dbh->prepare($qry);
-	$seq_sth->execute();
+	for (my $i=0; $i<=$max_rows; $i+=$MAX_LIMIT){
+		my $qry = $sel_qry;
+		
+		$qry .= qq| limit $i, $MAX_LIMIT|;
+	
+		#print"\n\n$qry\n\n";	
+	
 
-	my %sel_data;
-	my $cnt = 0;
+		my $seq_sth = $dbh->prepare($qry);
+		$seq_sth->execute();
 
-	print "Adding data hash\n";
-	if ($options{table} =~ /uniref/i){
-	  while (my $row = $seq_sth->fetchrow_hashref){
-	    push( @{$sel_data{$$row{acc}}}, {desc => $$row{desc},
-					      kegg_acc => $$row{kegg_acc},
-					      cog_acc => $$row{cog_acc},
-					      seed_acc => $$row{seed_acc},
-					      phgseed_acc => $$row{phage_seed_acc},
-					      aclame_acc => $$row{aclame_acc},
-					      domain => $$row{domain},
-					      kingdom => $$row{kingdom},
-					      phylum => $$row{phylum},
-					      n_class => $$row{n_class},
-					      n_order => $$row{n_order},
-					      family => $$row{family},
-					      genus => $$row{genus},
-					      species => $$row{species},
-					      organism => $$row{organism},
-					    } );
-	    $cnt++;
-	    if ($cnt > 10000){
-	      foreach my $acc (keys %sel_data) {
-		$info{$acc} = {'acc_data' => $sel_data{$acc}};
+		my %sel_data;
+		my $cnt = 0;
+
+		print "Adding data hash\n";
+		if ($options{table} =~ /uniref/i){
+			while (my $row = $seq_sth->fetchrow_hashref){
+		  		$info{$$row{acc}} = {'acc_data' => [{desc => $$row{desc},
+						      kegg_acc => $$row{kegg_acc},
+						      cog_acc => $$row{cog_acc},
+						      seed_acc => $$row{seed_acc},
+						      phgseed_acc => $$row{phage_seed_acc},
+						      aclame_acc => $$row{aclame_acc},
+						      domain => $$row{domain},
+						      kingdom => $$row{kingdom},
+						      phylum => $$row{phylum},
+						      n_class => $$row{n_class},
+						      n_order => $$row{n_order},
+						      family => $$row{family},
+						      genus => $$row{genus},
+						      species => $$row{species},
+						      organism => $$row{organism},
+						    }]};
 	      }
-	      $cnt=0;
-	      %sel_data = ();
-	    }
-	  }
-
-	} elsif ($options{table} =~ /kegg|cog/i){
-	  while (my $row = $seq_sth->fetchrow_hashref){
-	    push (@{$sel_data{$$row{realacc}}}, {desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
+		} elsif ($options{table} =~ /kegg|cog/i) {
+	  		while (my $row = $seq_sth->fetchrow_hashref){
+				$info{$$row{realacc}} = {'acc_data' => [{desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
 						 fxn1 => (!defined $$row{fxn1}) ? 'UNKNOWN' : $$row{fxn1},
 						 fxn2 => (!defined $$row{fxn2}) ? 'UNKNOWN' : $$row{fxn2},
 						 fxn3 => (!defined $$row{fxn3}) ? 'UNKNOWN' : $$row{fxn3},
-						});
-	    $cnt++;
-	    if ($cnt > 10000){
-	      foreach my $acc (keys %sel_data) {
-		$info{$acc} = {'acc_data' => $sel_data{$acc}};
-	      }
-	      $cnt=0;
-	      %sel_data = ();
-	    }
-	  }
-	} elsif ($options{table} =~ /seed/i){
-	  while (my $row = $seq_sth->fetchrow_hashref){
-	    push (@{$sel_data{$$row{realacc}}}, {desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
+						}]};
+	      	}
+		} elsif ($options{table} =~ /seed|phgseed/i) {
+	  		while (my $row = $seq_sth->fetchrow_hashref){
+				$info{$$row{realacc}} = {'acc_data' => [{desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
 						 fxn1 => (!defined $$row{fxn1}) ? 'UNKNOWN' : $$row{fxn1},
 						 fxn2 => (!defined $$row{fxn2}) ? 'UNKNOWN' : $$row{fxn2},
 						 fxn3 => (!defined $$row{subsystem}) ? 'UNKNOWN' : $$row{subsystem},
-						});
-	    $cnt++;
-	    if ($cnt > 10000){
-	      foreach my $acc (keys %sel_data) {
-		$info{$acc} = {'acc_data' => $sel_data{$acc}};
-	      }
-	      $cnt=0;
-	      %sel_data = ();
-	    }
-	  }
-
-	} elsif ($options{table} =~ /mgol/i){
-	  while (my $row = $seq_sth->fetchrow_hashref){
-	    push (@{$sel_data{$$row{lib_prefix}}}, {seq_type => (!defined $$row{seq_type}) ? 'UNKNOWN' : $$row{seq_type},
+						}]};
+	      	}
+		} elsif ($options{table} =~ /mgol/i) {
+	  		while (my $row = $seq_sth->fetchrow_hashref){
+	    		$info{$$row{lib_prefix}} = {'acc_data' => [{seq_type => (!defined $$row{seq_type}) ? 'UNKNOWN' : $$row{seq_type},
 						    lib_type => (!defined $$row{lib_type}) ? 'UNKNOWN' : $$row{lib_type},
 						    na_type => (!defined $$row{na_type}) ? 'UNKNOWN' : $$row{na_type},
 						    phys_subst => (!defined $$row{phys_subst}) ? 'UNKNOWN' : $$row{phys_subst},
@@ -253,78 +241,50 @@ if (length($sel_qry)) {  #table info is passed and expected
 						    country => (!defined $$row{country}) ? 'UNKNOWN' : $$row{country},
 						    lib_shortname => (!defined $$row{lib_shortname}) ? 'UNKNOWN' : $$row{lib_shortname},
 						    qryDb => (!defined $$row{qryDb}) ? 'UNKNOWN' : $$row{qryDb}
-						   });
-	    $cnt++;
-	    if ($cnt > 10000){
-	      foreach my $prefix (keys %sel_data) {
-		$info{$prefix} = {'acc_data' => $sel_data{$prefix}};
-	      }
-	      $cnt=0;
-	      %sel_data = ();
-	    }
-	  }
-	} elsif ($options{table} =~ /aclame/i){
-	  my $prev_acc = '';
-	  my $tform = {};
-	  my $desc = '';
-	  my $realacc = '';
-	  while (my $row = $seq_sth->fetchrow_hashref){
-	    if ($realacc ne $$row{realacc}){
-	      if ($realacc ne ''){ #check for the very first time.
-		push (@{$sel_data{$realacc}}, {desc => $desc,
-						fxn1 => (!defined $tform->{fxn1}) ? 'UNKNOWN' : $tform->{fxn1},
-						fxn2 => (!defined $tform->{fxn2}) ? 'UNKNOWN' : $tform->{fxn2},
-						fxn3 => (!defined $tform->{fxn3}) ? 'UNKNOWN' : $tform->{fxn3},
-						fxn4 => (!defined $tform->{fxn4}) ? 'UNKNOWN' : $tform->{fxn4},
-						fxn5 => (!defined $tform->{fxn5}) ? 'UNKNOWN' : $tform->{fxn5},
-						fxn6 => (!defined $tform->{fxn6}) ? 'UNKNOWN' : $tform->{fxn6}
-					      });
-		$tform = {};
-		$cnt++;
-		if ($cnt > 10000){
-		  foreach my $acc (keys %sel_data) {
-		    $info{$acc} = {'acc_data' => $sel_data{$acc}};
-		  }
-		  print "Adding to file and reset\n\n";
-		  $cnt=0;
-		  %sel_data = ();
-		}
-	      }
-	    }
+						   }]};
+	      	}
+		} elsif ($options{table} =~ /aclame/i){
+			my $prev_acc = '';
+			my $tform = {};
+			my $desc = '';
+			my $realacc = '';
+	  		
+	  		while (my $row = $seq_sth->fetchrow_hashref){
+	    		if ($realacc ne $$row{realacc}){
+	      			if ($realacc ne ''){ #check for the very first time.
+						
+						$info{$realacc} = {'acc_data' => [{desc => $desc,
+														fxn1 => (!defined $tform->{fxn1}) ? 'UNKNOWN' : $tform->{fxn1},
+														fxn2 => (!defined $tform->{fxn2}) ? 'UNKNOWN' : $tform->{fxn2},
+														fxn3 => (!defined $tform->{fxn3}) ? 'UNKNOWN' : $tform->{fxn3},
+														fxn4 => (!defined $tform->{fxn4}) ? 'UNKNOWN' : $tform->{fxn4},
+														fxn5 => (!defined $tform->{fxn5}) ? 'UNKNOWN' : $tform->{fxn5},
+														fxn6 => (!defined $tform->{fxn6}) ? 'UNKNOWN' : $tform->{fxn6}
+													      }]};
+						$tform = {};
+		  			}
+		  		}
 
-	    switch ($$row{level}){
-	      case 1  { $tform->{fxn1} = $$row{name}; }
-	      case 2  { $tform->{fxn2} = $$row{name}; }
-	      case 3  { $tform->{fxn3} = $$row{name}; }
-	      case 4  { $tform->{fxn4} = $$row{name}; }
-	      case 5  { $tform->{fxn5} = $$row{name}; }
-	      case 6  { $tform->{fxn6} = $$row{name}; }
-	    } # else swtich stmt
-	    $realacc = $$row{realacc};
-	    $desc = $$row{desc};
-	    #$prev_acc = $$row{chain_id};
-	  } # end of while loop
+				switch ($$row{level}){
+					case 1  { $tform->{fxn1} = $$row{name}; }
+					case 2  { $tform->{fxn2} = $$row{name}; }
+					case 3  { $tform->{fxn3} = $$row{name}; }
+					case 4  { $tform->{fxn4} = $$row{name}; }
+					case 5  { $tform->{fxn5} = $$row{name}; }
+					case 6  { $tform->{fxn6} = $$row{name}; }
+	    		} # else swtich stmt
+	    
+	    		$realacc = $$row{realacc};
+	    		$desc = $$row{desc};
+	  		} # end of while loop
+		} # end else go|aclame stmt
 
-	  #push in last acc details.
-	  push (@{$sel_data{$realacc}}, {desc => $desc,
-					  fxn1 => (!defined $tform->{fxn1}) ? 'UNKNOWN' : $tform->{fxn1},
-					  fxn2 => (!defined $tform->{fxn2}) ? 'UNKNOWN' : $tform->{fxn2},
-					  fxn3 => (!defined $tform->{fxn3}) ? 'UNKNOWN' : $tform->{fxn3},
-					  fxn4 => (!defined $tform->{fxn4}) ? 'UNKNOWN' : $tform->{fxn4},
-					  fxn5 => (!defined $tform->{fxn5}) ? 'UNKNOWN' : $tform->{fxn5},
-					  fxn6 => (!defined $tform->{fxn6}) ? 'UNKNOWN' : $tform->{fxn6}
-					 });
-	  $tform={};
-	} # end else go|aclame stmt
-
-	##any anything left in sel_data to mldbm file.
-	foreach my $key (keys %sel_data) {
-	  $info{$key} = {'acc_data' => $sel_data{$key}};
+		$seq_sth->finish();
+		
 	}
-
-      untie(%info);
-      $seq_sth->finish();
-      $dbh->disconnect();
+	
+	untie(%info);
+	$dbh->disconnect();
 }
 
 exit(0);
