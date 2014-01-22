@@ -117,6 +117,13 @@ if ($options{table} =~ /uniref/i){
 	       FROM cog c
 	       ORDER BY c.realacc,c.fxn1,c.fxn2,c.fxn3|;
 
+} elsif ($options{table} =~ /phgseed/i){
+  $sel_qry = qq|SELECT p.realacc, p.desc,
+                  p.fxn1,
+                  p.fxn2,
+                  p.subsystem
+               FROM phgseed p
+               ORDER BY p.realacc,p.fxn1,p.fxn2,p.subsystem|;
 } elsif ($options{table} =~ /seed/i){
   $sel_qry = qq|SELECT s.realacc, s.desc,
 		  s.fxn1,
@@ -221,16 +228,34 @@ if (length($sel_qry)) {  #table info is passed and expected
 						 fxn3 => (!defined $$row{fxn3}) ? 'UNKNOWN' : $$row{fxn3},
 						}]};
 	      	}
-		} elsif ($options{table} =~ /seed|phgseed/i) {
+		} elsif ($options{table} =~ /seed/i) {
 	  		while (my $row = $seq_sth->fetchrow_hashref){
 				$info{$$row{realacc}} = {'acc_data' => [{desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
 						 fxn1 => (!defined $$row{fxn1}) ? 'UNKNOWN' : $$row{fxn1},
 						 fxn2 => (!defined $$row{fxn2}) ? 'UNKNOWN' : $$row{fxn2},
 						 fxn3 => (!defined $$row{subsystem}) ? 'UNKNOWN' : $$row{subsystem},
 						}]};
-	      	}
-		} elsif ($options{table} =~ /mgol/i) {
-	  		while (my $row = $seq_sth->fetchrow_hashref){
+			}
+		}
+		elsif ($options{table} =~ /phgseed/i){
+		    while (my $row = $seq_sth->fetchrow_hashref){
+			push (@{$sel_data{$$row{realacc}}}, {desc => (!defined $$row{desc}) ? 'UNKNOWN' : $$row{desc},
+							     fxn1 => (!defined $$row{fxn1}) ? 'UNKNOWN' : $$row{fxn1},
+							     fxn2 => (!defined $$row{fxn2}) ? 'UNKNOWN' : $$row{fxn2},
+							     fxn3 => (!defined $$row{subsystem}) ? 'UNKNOWN' : $$row{subsystem},
+			      });
+			$cnt++;
+			if ($cnt > 10000000){
+			    foreach my $acc (keys %sel_data) {
+				$info{$acc} = {'acc_data' => $sel_data{$acc}};
+			    }
+			    $cnt=0;
+			    %sel_data = ();
+			}
+		    }
+		}
+		elsif ($options{table} =~ /mgol/i) {
+		    while (my $row = $seq_sth->fetchrow_hashref){
 	    		$info{$$row{lib_prefix}} = {'acc_data' => [{seq_type => (!defined $$row{seq_type}) ? 'UNKNOWN' : $$row{seq_type},
 						    lib_type => (!defined $$row{lib_type}) ? 'UNKNOWN' : $$row{lib_type},
 						    na_type => (!defined $$row{na_type}) ? 'UNKNOWN' : $$row{na_type},
