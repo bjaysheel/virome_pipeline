@@ -124,4 +124,13 @@ my $check_sql = qq/UPDATE processing_db_checkout SET status = "AVAILABLE" WHERE 
 my $sth_check = $dbh->prepare($check_sql);
 $sth_check->execute ($proc);
 
+my $complete_sql = qq/UPDATE library SET dateCompleted = ? WHERE id = ?/;
+my $sth_complete = $dbh->prepare($complete_sql);
+my $date_time = `date --rfc-3339='seconds'`;
+chomp($date_time);
+my $rev = scalar reverse($date_time);
+$rev =~ s/^......//;
+$date_time = scalar reverse($rev);
+$sth_complete->execute($date_time,$library_id);
+
 exit 0;
