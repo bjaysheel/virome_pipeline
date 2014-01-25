@@ -16,7 +16,16 @@
             <type>RunUnixCommand</type>
             <name>concatenate_files</name>
             <state>incomplete</state>
-            <executable>for i in `cat $;INPUT_FILE_LIST$;`; do cat $i; done >> $;OUTPUT_FILE$;</executable>
+            <executable>$;CONCATENATE_FILES$;</executable>
+	    <arg>--input_lists=$;INPUT_FILE_LIST$; --output=$;OUTPUT_FILE$;</arg>
+	    <param>
+	      <key>STDERR</key>
+	      <value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stderr</value>
+	    </param>
+	    <param>
+	      <key>STDOUT</key>
+	      <value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stdout</value>
+	    </param>
         </command>
     </commandSet>
 </commandSetRoot>
