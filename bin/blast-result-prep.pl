@@ -193,7 +193,7 @@ while (<DAT>){
 	#### get bytes read so far
 	{
 		use bytes;
-		$bytes_read += length($_);
+		$bytes_read += length($line);
 
 		my $percent = ($bytes_read/$total_bytes)*100;
 
@@ -226,6 +226,8 @@ while (<DAT>){
 			$p = 9;
 		}
 	}
+
+	print $line."\n";
 
     my @info = split (/\t/, $line);
     my $sequenceId = $utils->get_sequenceId($info[0]);
