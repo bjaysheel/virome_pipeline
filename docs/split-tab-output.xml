@@ -30,7 +30,7 @@
                 <value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stderr</value>
             </param>
             <param>
-                <key>STDOUT</key>
+                <key>stdout</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stdout</value>
             </param>
         </command>
