@@ -227,8 +227,6 @@ while (<DAT>){
 		}
 	}
 
-	print $line."\n";
-
     my @info = split (/\t/, $line);
     my $sequenceId = $utils->get_sequenceId($info[0]);
 
