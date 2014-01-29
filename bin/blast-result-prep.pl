@@ -186,7 +186,9 @@ print "Total # of bytes to process: $total_bytes\n";
 
 while (<DAT>){
   unless (/^#/){
-    chomp $_;
+
+	my $line = $_;
+    chomp $line;
 
 	#### get bytes read so far
 	{
@@ -225,7 +227,7 @@ while (<DAT>){
 		}
 	}
 
-    my @info = split (/\t/, $_);
+    my @info = split (/\t/, $line);
     my $sequenceId = $utils->get_sequenceId($info[0]);
 
     #update on 10/6/10 by Jaysheel, assuming that input comes from
