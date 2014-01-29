@@ -184,9 +184,8 @@ if (length($sel_qry)) {  #table info is passed and expected
 		
 		$qry .= qq| limit $i, $MAX_LIMIT|;
 	
-		#print"\n\n$qry\n\n";	
-	
-
+		#print"\n\n$qry\n\n";
+		
 		my $seq_sth = $dbh->prepare($qry);
 		$seq_sth->execute();
 

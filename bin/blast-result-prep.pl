@@ -176,10 +176,54 @@ $fxn_topHit=0;
 open (DAT, "<", $options{input}) || die; #$logger->logdie("Could not open file $options{input}");
 open (OUT, ">", $filename) || die; # $logger->logdie("Could not open file $filename");
 
+my $bytes_read = 0;
+my $total_bytes = (-s $options{input});
+my $p=0;
+
 #loop through input and upload them to db
+print "Starting updates...\n";
+print "Total # of bytes to process: $total_bytes\n";
+
 while (<DAT>){
   unless (/^#/){
     chomp $_;
+
+	#### get bytes read so far
+	{
+		use bytes;
+		$bytes_read += length($_);
+
+		my $percent = ($bytes_read/$total_bytes)*100;
+
+		if (($percent >= 10) && ($percent < 20) && $p < 1) {
+			print "10% complete\n";
+			$p = 1;
+		} elsif (($percent >= 20) && ($percent < 30) && $p < 2) {
+			print "20% complete\n";
+			$p = 2;
+		} elsif (($percent >= 30) && ($percent < 40) && $p < 3) {
+			print "30% complete\n";
+			$p = 3;
+		} elsif (($percent >= 40) && ($percent < 50) && $p < 4) {
+			print "40% complete\n";
+			$p = 4;
+		} elsif (($percent >= 50) && ($precent < 60) && $p < 5) {
+			print "50% complete\n";
+			$p = 5;
+		} elsif (($present >= 60) && ($present < 70) && $p < 6) {
+			print "60% complete\n";
+			$p = 6;
+		} elsif (($present >= 70) && ($present < 80) && $p < 7) {
+			print "70% complete\n";
+			$p = 7;
+		} elsif (($present >= 80) && ($present < 90) && $p < 8) }
+			print "80% complete\n";
+			$p = 8;
+		} elsif (($present >= 90) && ($present < 100) && $p < 9) {
+			print "90% complete\n";
+			$p = 9;
+		}
+	}
 
     my @info = split (/\t/, $_);
     my $sequenceId = $utils->get_sequenceId($info[0]);
@@ -269,6 +313,9 @@ while (<DAT>){
 
   } #end check for comments
 } #end while loop
+
+print "100% complete\n";
+prnt "Closing all handles\n";
 
 #close file handlers
 untie(%sequenceLookup);

@@ -26,7 +26,7 @@
             <executable>$;SPLIT_TAB_OUTPUT_EXEC$;</executable>
 	    <arg>-i $;INPUT_FILE$; -o $;OUTPUT_DIRECTORY$; -p $;PREFIX$; -s $;NUM_OF_FILE_SPLIT$;</arg>
 	    <param>
-                <key>STDERR</key>
+                <key>stderr</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.stderr</value>
             </param>
             <param>

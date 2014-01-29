@@ -11,7 +11,7 @@
             <executable>$;TRNASCAN_PREP_EXEC$;</executable>
             <arg>-i $;I_FILE_PATH$; -od $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$; -ll $;LIBRARY_LIST_FILE$; -ld $;LOOKUP_DIR$;</arg>
             <param>
-                <key>STDERR</key>
+                <key>stderr</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
             </param>
             <param>

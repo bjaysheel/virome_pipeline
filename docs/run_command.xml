@@ -32,7 +32,7 @@
             </param>
             <param>  
                 <key>stderr</key>
-                <value>$;COMMAND_STDERR$;</value>
+                <value>$;COMMAND_stderr$;</value>
             </param>
         </command>
         <!--Postprocessing-->

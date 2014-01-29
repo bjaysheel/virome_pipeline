@@ -11,7 +11,7 @@
             <executable>$;FXN_DB_TO_LOOKUP_EXEC$;</executable>
             <arg>-e $;LOCATION$; -o $;OUTPUT_DIRECTORY$; -t $;TABLE_NAME$;</arg>
             <param>
-                <key>STDERR</key>
+                <key>stderr</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.stderr</value>
             </param>
             <param>
