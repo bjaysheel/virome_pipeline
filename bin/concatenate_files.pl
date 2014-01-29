@@ -54,7 +54,6 @@ B<--help,-h>
 
 use strict;
 use warnings;
-use File::OpenFile qw( open_file );
 use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Data::Dumper;
 
@@ -64,22 +63,33 @@ my $results = GetOptions ("input_files=s" => \$input_files,
                           "output=s" => \$output,
                           );
 
-my $oh = open_file( $output, 'out' );
+#my $oh = open_file( $output, 'out' );
 
 my @input_files = split( ",", $input_files ) if( $input_files );
 my @input_lists = split( ",", $input_lists ) if( $input_lists );
 
-foreach my $list ( @input_lists ) {
-    my $lh = open_file( $list, 'in' );
-    chomp( my @tmp = <$lh> );
-    push( @input_files, @tmp );
-    close($lh);
+foreach my $list (@input_lists) {
+    open(IN,"<$list") || die "\n\n Cannot open the list file: $list\n\n";
+    while(<IN>) {
+	chomp;
+	print `cat $_ >> $output`;
+    }
+    close(IN);
 }
 
-foreach my $input_file ( @input_files ) {
-    my $in = open_file( $input_file, 'in' );
-    print $oh (<$in>);
-    close($in);
-}
+#foreach my $list ( @input_lists ) {
+#    my $lh = open_file( $list, 'in' );
+#    chomp( my @tmp = <$lh> );
+#    push( @input_files, @tmp );
+#    close($lh);
+#}
 
-close($oh);
+#foreach my $input_file ( @input_files ) {
+#    my $in = open_file( $input_file, 'in' );
+#    print $oh (<$in>);
+#    close($in);
+#}
+
+#close($oh);
+
+exit 0;
