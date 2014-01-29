@@ -315,7 +315,7 @@ while (<DAT>){
 } #end while loop
 
 print "100% complete\n";
-prnt "Closing all handles\n";
+print "Closing all handles\n";
 
 #close file handlers
 untie(%sequenceLookup);
