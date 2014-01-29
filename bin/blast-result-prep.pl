@@ -207,19 +207,19 @@ while (<DAT>){
 		} elsif (($percent >= 40) && ($percent < 50) && $p < 4) {
 			print "40% complete\n";
 			$p = 4;
-		} elsif (($percent >= 50) && ($precent < 60) && $p < 5) {
+		} elsif (($percent >= 50) && ($percent < 60) && $p < 5) {
 			print "50% complete\n";
 			$p = 5;
-		} elsif (($present >= 60) && ($present < 70) && $p < 6) {
+		} elsif (($percent >= 60) && ($percent < 70) && $p < 6) {
 			print "60% complete\n";
 			$p = 6;
-		} elsif (($present >= 70) && ($present < 80) && $p < 7) {
+		} elsif (($percent >= 70) && ($percent < 80) && $p < 7) {
 			print "70% complete\n";
 			$p = 7;
-		} elsif (($present >= 80) && ($present < 90) && $p < 8) }
+		} elsif (($percent >= 80) && ($percent < 90) && $p < 8) }
 			print "80% complete\n";
 			$p = 8;
-		} elsif (($present >= 90) && ($present < 100) && $p < 9) {
+		} elsif (($percent >= 90) && ($percent < 100) && $p < 9) {
 			print "90% complete\n";
 			$p = 9;
 		}
