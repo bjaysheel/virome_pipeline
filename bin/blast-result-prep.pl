@@ -216,7 +216,7 @@ while (<DAT>){
 		} elsif (($percent >= 70) && ($percent < 80) && $p < 7) {
 			print "70% complete\n";
 			$p = 7;
-		} elsif (($percent >= 80) && ($percent < 90) && $p < 8) }
+		} elsif (($percent >= 80) && ($percent < 90) && $p < 8) {
 			print "80% complete\n";
 			$p = 8;
 		} elsif (($percent >= 90) && ($percent < 100) && $p < 9) {
