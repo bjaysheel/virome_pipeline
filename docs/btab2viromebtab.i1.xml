@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>btab2viromebtab</name>
+        <command>
+            <type>RunUnixCommand</type>
+            <name>btab2viromebtab</name>
+            <state>incomplete</state>
+            <executable>$;BTAB2VIROMEBTAB$;</executable>
+            <arg>-i $;I_FILE_PATH$;</arg>
+            <param>
+	      <key>--algorithm</key>
+	      <value>$;ALGORITHM$;</value>
+	    </param>
+	    <param>
+	      <key>--database</key>
+	      <value>$;DATABASE$;</value>
+	    </param>
+	    <param>  
+              <key>--outdir</key>
+              <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;</value>
+            </param>
+            <param>
+              <key>--prefix</key>
+              <value>$;I_FILE_BASE$;</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>

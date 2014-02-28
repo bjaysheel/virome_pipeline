@@ -10,7 +10,7 @@ btab2viromebtab.pl -- converts btab files
 
 =head1 SYNOPSIS
 
- btab2viromebtab.pl --input /path/to/file.btab --outfile=/path/to/formatted.btab
+ btab2viromebtab.pl --input /path/to/file.btab --prefix=base_name --outdir=/path/to/outdir/
                      [--help] [--manual]
 
 =head1 DESCRIPTION
@@ -69,9 +69,21 @@ Output Fields:
 
 Input file in BTAB format. (Required) 
 
-=item B<-o, --outfile>=FILENAME
+=item B<-o, --outdir>=FILENAME
 
-Output file in BTAB format. (Required)
+Output file directory. (Required)
+
+=item B<-p, --prefix>=FILENAME
+
+Name of the output file. (Required)
+
+=item B<-a, --algorithm>=FILENAME
+
+Name of the program (BLASTN or BLASTP). (Required)
+
+=item B<-d, --database>=FILENAME
+
+Name of the database (UNIREF100P_SEP2013, METAGENOMES_FEB2013, UniVec_Core, rRNA). (Required)
 
 =item B<-h, --help>
 
@@ -111,20 +123,23 @@ usage <http://bioinformatics.udel.edu/Core/Acknowledge>.
 =cut
 
 
-    use strict;
+use strict;
 use Getopt::Long;
 use File::Basename;
 use Pod::Usage;
 
 #ARGUMENTS WITH NO DEFAULT
-my($infile,$outfile,$help,$manual);
+my($infile,$outdir,$prefix,$algorithm,$database,$help,$manual);
 
 #ARGUMENTS WITH DEFAULT
 my $e = 2.71828182845904523536028747135266249775724709369995;
 
 GetOptions (
                              "i|infile=s"=>\$infile,
-                             "o|outfile=s"=>\$outfile,
+                             "o|outdir=s"=>\$outdir,
+                             "p|prefix=s"=>\$prefix,
+                             "a|algorithm=s" =>\$algorithm,
+                             "d|database=s" =>\$database,
                              "h|help"=>\$help,
                              "m|manual"=>\$manual);
 
@@ -132,16 +147,21 @@ GetOptions (
 pod2usage(-verbose => 2)  if ($manual);
 pod2usage(-verbose => 1)  if ($help);
 pod2usage( -msg  => "\n\n ERROR!  Required argument -infile missing or not found.\n", -exitval => 2, -verbose => 1)  if (! $infile );
-pod2usage( -msg  => "\n\n ERROR!  Required argument -outfile missing or not found.\n", -exitval => 2, -verbose => 1)  if (! $outfile );
+pod2usage( -msg  => "\n\n ERROR!  Required argument -outdir missing or not found.\n", -exitval => 2, -verbose => 1)  if (! $outdir );
+pod2usage( -msg  => "\n\n ERROR!  Required argument -prefix missing or not found.\n", -exitval => 2, -verbose => 1)  if (! $prefix );
+pod2usage( -msg  => "\n\n ERROR!  Required argument -algorithm missing or not found.\n", -exitval => 2, -verbose => 1)  if (! $algorithm );
+pod2usage( -msg  => "\n\n ERROR!  Required argument -database missing or not found.\n", -exitval => 2, -verbose => 1)   if (! $database );
+
+my $date = `date +%Y-%m-%d`; chomp($date);
 
 open(IN,"<$infile") || die "\n\n Error: Cannot open the infile: $infile\n\n";
-open(OUT,">$outfile") || die "\n\n Error: Cannot open the outfile: $outfile\n\n";
+open(OUT,">$outdir/$prefix.btab") || die "\n\n Error: Cannot open the outfile: $outdir/$prefix.btab\n\n";
 while(<IN>) {
     chomp;
     my @A = split(/\t/, $_);
     my $pvalue = 1-($e**(-1*$A[15]));
-    print OUT $A[0] . "\t" . "" . "\t" . $A[1] . "\t" .
-	"BLASTP" . "\t" . "UNIREF100P" . "\t" . $A[2] . "\t" .
+    print OUT $A[0] . "\t" . $date . "\t" . $A[1] . "\t" .
+	$algorithm . "\t" . $database . "\t" . $A[2] . "\t" .
 	$A[3] . "\t" . $A[4] ."\t" . $A[5] ."\t" . $A[6] ."\t" .
 	$A[7] ."\t" . $A[8] ."\t" . $A[9] ."\t" . $A[10] ."\t" .
 	"NULL" . "\t" . $A[11] ."\t" . $A[12] ."\t" . $A[13] ."\t" .
