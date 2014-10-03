@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/ergatis/!svn/ver/7578/trunk/lib/Ergatis
+END
+ConfigFile.pm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7489/trunk/lib/Ergatis/ConfigFile.pm
+END
+Pipeline.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7578/trunk/lib/Ergatis/Pipeline.pm
+END
+Validator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/3648/trunk/lib/Ergatis/Validator.pm
+END
+Monitor.pm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7421/trunk/lib/Ergatis/Monitor.pm
+END
+Common.pm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7554/trunk/lib/Ergatis/Common.pm
+END
+SavedPipeline.pm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7421/trunk/lib/Ergatis/SavedPipeline.pm
+END
+Logger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/3648/trunk/lib/Ergatis/Logger.pm
+END
+IdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5077/trunk/lib/Ergatis/IdGenerator.pm
+END

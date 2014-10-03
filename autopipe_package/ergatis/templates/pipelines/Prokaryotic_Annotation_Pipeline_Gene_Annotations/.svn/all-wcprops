@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/ergatis/!svn/ver/7624/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations
+END
+bsml2fasta.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2fasta.post_overlap_analysis.config
+END
+formatdb.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svnroot/ergatis/!svn/ver/7370/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/formatdb.post_overlap_analysis.config
+END
+bsml2fasta.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svnroot/ergatis/!svn/ver/6975/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2fasta.pre_overlap_analysis.config
+END
+formatdb.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svnroot/ergatis/!svn/ver/7370/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/formatdb.pre_overlap_analysis.config
+END
+translate_sequence.final_polypeptides.config
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/translate_sequence.final_polypeptides.config
+END
+bsml2fasta.final_cds.config
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2fasta.final_cds.config
+END
+bsml2featurerelationships.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2featurerelationships.post_overlap_analysis.config
+END
+parse_evidence.lipoprotein.config
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.lipoprotein.config
+END
+bsml2featurerelationships.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svnroot/ergatis/!svn/ver/6975/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2featurerelationships.pre_overlap_analysis.config
+END
+parse_evidence.eggNOG.config
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svnroot/ergatis/!svn/ver/7590/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.eggNOG.config
+END
+split_multifasta.split_interevidence.config
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svnroot/ergatis/!svn/ver/7516/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/split_multifasta.split_interevidence.config
+END
+ncbi-blastx.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ncbi-blastx.post_overlap_analysis.config
+END
+ncbi-blastx.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ncbi-blastx.pre_overlap_analysis.config
+END
+prokpipe_consistency_checks.bsml.config
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svnroot/ergatis/!svn/ver/7481/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/prokpipe_consistency_checks.bsml.config
+END
+parse_evidence.hmmpfam3_post.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/7131/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.hmmpfam3_post.config
+END
+parse_evidence.ber_pre.config
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/ergatis/!svn/ver/6958/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.ber_pre.config
+END
+parse_evidence.tmhmm.config
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.tmhmm.config
+END
+overlap_analysis.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/ergatis/!svn/ver/7131/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/overlap_analysis.default.config
+END
+bsml2fasta.create_blastx_post_input.config
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2fasta.create_blastx_post_input.config
+END
+ncbi-blastp.eggNOG.config
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/ergatis/!svn/ver/7590/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ncbi-blastp.eggNOG.config
+END
+xdformat.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/xdformat.post_overlap_analysis.config
+END
+hmmpfam.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/hmmpfam.post_overlap_analysis.config
+END
+xdformat.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/xdformat.pre_overlap_analysis.config
+END
+pipeline_summary.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/ergatis/!svn/ver/7624/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/pipeline_summary.default.config
+END
+tmhmm.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/ergatis/!svn/ver/7308/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/tmhmm.default.config
+END
+parse_evidence.hypothetical.config
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.hypothetical.config
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/ergatis/!svn/ver/7595/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/pipeline.layout
+END
+ncbi-blastx.interevidence_search.config
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svnroot/ergatis/!svn/ver/7546/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ncbi-blastx.interevidence_search.config
+END
+signalp.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/signalp.default.config
+END
+translate_sequence.translate.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/6975/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/translate_sequence.translate.config
+END
+bsml2interevidence_fasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svnroot/ergatis/!svn/ver/7324/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2interevidence_fasta.default.config
+END
+ber.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svnroot/ergatis/!svn/ver/7371/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ber.post_overlap_analysis.config
+END
+hmmpfam3.post_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svnroot/ergatis/!svn/ver/7131/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/hmmpfam3.post_overlap_analysis.config
+END
+parse_evidence.ber_post.config
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svnroot/ergatis/!svn/ver/6958/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.ber_post.config
+END
+ncbi-blastp.COGS.config
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ncbi-blastp.COGS.config
+END
+ber.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/ergatis/!svn/ver/7371/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ber.pre_overlap_analysis.config
+END
+hmmpfam3.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svnroot/ergatis/!svn/ver/7131/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/hmmpfam3.pre_overlap_analysis.config
+END
+parse_evidence.hmmpfam3_pre.config
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svnroot/ergatis/!svn/ver/7131/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.hmmpfam3_pre.config
+END
+p_func.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/ergatis/!svn/ver/7618/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/p_func.default.config
+END
+translate_sequence.translate_new_models.config
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/translate_sequence.translate_new_models.config
+END
+bsml2fasta.create_blastx_pre_input.config
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svnroot/ergatis/!svn/ver/6975/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/bsml2fasta.create_blastx_pre_input.config
+END
+parse_evidence.hmmpfam_post.config
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.hmmpfam_post.config
+END
+hmmpfam.pre_overlap_analysis.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/hmmpfam.pre_overlap_analysis.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/ergatis/!svn/ver/7469/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/pipeline.config
+END
+parse_evidence.hmmpfam_pre.config
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/parse_evidence.hmmpfam_pre.config
+END
+lipop.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/lipop.default.config
+END
+start_site_curation.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svnroot/ergatis/!svn/ver/6956/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/start_site_curation.default.config
+END
+ps_scan.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Gene_Annotations/ps_scan.default.config
+END

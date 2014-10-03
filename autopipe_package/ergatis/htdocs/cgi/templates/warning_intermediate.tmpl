@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>ergatis | warning</title>
+    <link rel='stylesheet' type='text/css' href='../css/common.css'>
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+</head>
+
+<body>
+
+<div id='bannertop'>
+    <img src='../banner_main.png' alt='main banner'>
+</div>
+<div id='bannerbottom'>
+    <div id='pipelinesummary'>
+        <div id='pipelinecommands'>
+            <a href='http://htc.tigr.org/antware/cgi-bin/sgestatus.cgi'><img class='navbutton' src='../button_blue_grid_info.png' alt='grid info' title='grid info'></a>
+        </div>
+    </div>
+</div>
+
+<div class='warning_container'>
+    <h3>warnings:</h3>
+    <p>
+        <TMPL_VAR NAME=MESSAGE>
+    </p>
+    <ul>
+<TMPL_LOOP NAME=WARNING_MESSAGES>
+        <li><TMPL_VAR NAME=TEXT></li>
+</TMPL_LOOP>
+    </ul>
+    <p>
+        <span class='button'><a href='<TMPL_VAR NAME=CONTINUE_ACTION>'>continue anyway</a></span>
+        <span class='button'><a href='<TMPL_VAR NAME=RETRY_ACTION>'>recheck pipeline</a></span>
+    </p>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

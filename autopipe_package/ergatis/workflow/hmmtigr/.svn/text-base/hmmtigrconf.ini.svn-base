@@ -1,0 +1,40 @@
+#configuration file for the hmmtigr workflow
+
+[parameters hmmtigr]
+$;OTHER_OPTS$; = -E 20.000000 -A 100
+
+[input hmmtigr]
+$;INPUT_FILE_LIST$; = 
+$;INPUT_FILE$; = 
+$;INPUT_DIRECTORY$; = 
+;; the following is only used when iterating over an INPUT_DIRECTORY
+$;INPUT_EXTENSION$; = fsa
+$;DATABASE_PATH$; = /usr/local/devel/ANNOTATION/jorvis/iprscan_4.0/data/TIGRFAMs_HMM.LIB
+
+[output hmmtigr]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;RAW_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.raw.list
+$;HTAB_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.htab.list
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.bsml.list
+
+[workflowdocs hmmtigr]
+$;VERSION$; = $Name$
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;NAME$; = hmmtigr 
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/hmmtigr-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/hmmtigr-master_template.xml
+$;TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/hmmtigr.ini
+$;TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/hmmtigr_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 150
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include hmmtigr]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

@@ -1,0 +1,45 @@
+#configuration file for the ncbi-blastn workflow
+
+[parameters ncbi-blastn]
+$;EXPECT$; = 1e-5
+$;FILTER$; = T
+$;DATABASE_MATCHES$; = 150
+$;DESCRIPTIONS$; = 150
+$;OTHER_OPTS$; =
+
+[input ncbi-blastn]
+$;INPUT_FILE_LIST$; = 
+$;INPUT_FILE$; = 
+$;INPUT_DIRECTORY$; = 
+;; the following is only used when iterating over an INPUT_DIRECTORY
+$;INPUT_EXTENSION$; = fsa
+$;DATABASE_PATH$; =
+
+[output ncbi-blastn]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.bsml.list
+$;BTAB_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.btab.list
+$;RAW_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.raw.list
+$;COMPRESS_RAW_OUTPUT$; = 0
+
+[workflowdocs ncbi-blastn]
+$;VERSION$; = $Name$
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;NAME$; = ncbi-blastn 
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/ncbi-blastn-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/ncbi-blastn-master_template.xml
+$;TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/ncbi-blastn.ini
+$;TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/ncbi-blastn_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 150
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include ncbi-blastn]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

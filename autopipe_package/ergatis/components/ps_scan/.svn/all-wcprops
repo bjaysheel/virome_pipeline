@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5803/trunk/components/ps_scan
+END
+ps_scan.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5803/trunk/components/ps_scan/ps_scan.xml
+END
+ps_scan.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5801/trunk/components/ps_scan/ps_scan.config
+END
+ps_scan.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5803/trunk/components/ps_scan/ps_scan.i1.xml
+END

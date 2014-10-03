@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5611/trunk/htdocs/cgi/templates/documentation/main
+END
+index.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5611/trunk/htdocs/cgi/templates/documentation/main/index.tmpl
+END
+not_found.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/templates/documentation/main/not_found.tmpl
+END

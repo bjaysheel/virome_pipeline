@@ -1,0 +1,22 @@
+=head2 Mon Feb  4 13:27:07 2013: C<Module> L<DBI|DBI>
+
+=over 4
+
+=item *
+
+C<installed into: /diag/projects/virome/automated_pipeline_package/lib//share/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.623>
+
+=item *
+
+C<EXE_FILES: dbiproxy dbiprof dbilogstrip>
+
+=back
+

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/ergatis/!svn/ver/7544/trunk/install
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/4870/trunk/install/LICENSE
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/6318/trunk/install/INSTALL
+END
+Makefile.PL
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/7544/trunk/install/Makefile.PL
+END
+check_installation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6807/trunk/install/check_installation.pl
+END
+python2wrapper_ergatis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7151/trunk/install/python2wrapper_ergatis.pl
+END
+perl2wrapper_ergatis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7146/trunk/install/perl2wrapper_ergatis.pl
+END

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>ergatis</title>
+    <!-- bring in the styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/documentation.css">
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+</head>
+
+<body class='documentation'>
+
+<div id='page_container'>
+
+<TMPL_INCLUDE NAME="header.tmpl">
+
+    <div id='content_container'>
+    <TMPL_IF NAME=IS_INDEX>
+        <h2><a href='./documentation.cgi'>documentation</a> - <a href='./documentation.cgi?article=<TMPL_VAR NAME=ARTICLE>'><TMPL_VAR NAME=ARTICLE_DISPLAY></a></h2>
+    <TMPL_ELSE>
+        <h2><a href='./documentation.cgi'>documentation</a> - <a href='./documentation.cgi?article=<TMPL_VAR NAME=ARTICLE>'><TMPL_VAR NAME=ARTICLE_DISPLAY></a> : <TMPL_VAR NAME=PAGE_DISPLAY></h2>
+    </TMPL_IF>
+
+<TMPL_VAR NAME=DOC_CONTENT>
+        
+    </div> <!-- end content_container -->
+
+</div> <!-- end page_container -->
+
+</body>
+
+</html>

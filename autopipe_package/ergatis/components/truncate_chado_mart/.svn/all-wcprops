@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5803/trunk/components/truncate_chado_mart
+END
+truncate_chado_mart.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/5803/trunk/components/truncate_chado_mart/truncate_chado_mart.sqlforce.xml
+END
+truncate_chado_mart.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5803/trunk/components/truncate_chado_mart/truncate_chado_mart.xml
+END
+truncate_chado_mart.config
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/5801/trunk/components/truncate_chado_mart/truncate_chado_mart.config
+END

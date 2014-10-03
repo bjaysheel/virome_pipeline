@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG
+END
+Common.pm
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/Common.pm
+END
+Math.pm
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/Math.pm
+END
+ManFasta.pm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/ManFasta.pm
+END
+SqlFunc.pm
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/SqlFunc.pm
+END
+RunParse.pm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/RunParse.pm
+END
+ParseSeq.pm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6309/trunk/lib/MG/ParseSeq.pm
+END

@@ -1,0 +1,38 @@
+#configuration file for the mepipe workflow
+[input mepipe]
+;; list of clustalw aa alignments (corresponding nt sequence fasta files must exist in the same path as each file)
+$;INPUT_FILE_LIST$; = 
+;; a single alignment file to perform analysis on (with accompanying nt sequence fasta file in same path)
+$;INPUT_FILE$; = 
+;; directory containing clustalw aa alignments and corresponding nt sequence fasta files
+$;INPUT_DIRECTORY$; = 
+;; the following is only used when iterating over an INPUT_DIRECTORY
+$;INPUT_EXTENSION$; = aln
+
+[output mepipe]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;RAW_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.raw.list
+$;COMPRESS_RAW_OUTPUT$; = 0
+
+[workflowdocs mepipe]
+$;VERSION$; = current
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;ALGORITHM$; = mepipe
+$;NAME$; = mepipe
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/mepipe-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/mepipe-master_template.xml
+$;TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/mepipe.ini
+$;TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/mepipe_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 150
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include mepipe]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

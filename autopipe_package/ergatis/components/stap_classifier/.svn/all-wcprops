@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5803/trunk/components/stap_classifier
+END
+stap_classifier.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5633/trunk/components/stap_classifier/stap_classifier.config
+END
+stap_classifier.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5550/trunk/components/stap_classifier/stap_classifier.i1.xml
+END
+stap_classifier.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/5802/trunk/components/stap_classifier/stap_classifier.tmpl
+END
+stap_classifier.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/5803/trunk/components/stap_classifier/stap_classifier.xml
+END

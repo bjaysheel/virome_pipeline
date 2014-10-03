@@ -1,0 +1,26 @@
+a {  
+    color: #262F4C; 
+    text-decoration: underline;
+}
+dd {
+    margin-bottom: 15px;
+}
+dl {
+    margin-left: 20px;
+}
+dt {
+    font-weight: bold;
+}
+img {
+    border: none;
+}
+span.filename {
+    color: rgb(0,100,100);
+}
+.code {
+    white-space: pre;
+    background-color: rgb(230,230,230);
+}
+ul#required_perl_modules {
+    list-style-image: url('../images/list_paper.gif');
+}

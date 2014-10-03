@@ -1,0 +1,132 @@
+10
+
+dir
+7655
+https://ergatis.svn.sourceforge.net/svnroot/ergatis/trunk
+https://ergatis.svn.sourceforge.net/svnroot/ergatis
+
+
+
+2012-03-23T19:33:40.795163Z
+7644
+sagrawal9
+has-props
+
+
+svn:externals
+
+
+
+
+
+
+
+
+
+
+c60d6122-3b2e-0410-912d-af40fea696fe
+
+LICENSE
+file
+
+
+
+
+2012-04-03T18:11:21.267953Z
+bab1fa6d6fc0c5ff499ace05c9fb6f13
+2007-01-16T16:47:32.000000Z
+4230
+jorvis
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4853
+
+htdocs
+dir
+
+samples
+dir
+
+components
+dir
+
+doc
+dir
+
+install
+dir
+
+lib
+dir
+
+src
+dir
+
+test_suite
+dir
+
+example_control.ini
+file
+
+
+
+
+2012-04-03T18:11:21.271306Z
+0feaa8324da1c990fc49b6677162b015
+2006-06-29T13:32:04.000000Z
+3084
+bwhitty
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+172
+
+workflow
+dir
+
+util
+dir
+
+web
+dir
+
+templates
+dir
+

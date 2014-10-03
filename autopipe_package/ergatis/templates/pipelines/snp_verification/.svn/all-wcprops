@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/pipeline.layout
+END
+blast_snp_regions.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/7482/trunk/templates/pipelines/snp_verification/blast_snp_regions.default.config
+END
+make_snp_lists.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/7482/trunk/templates/pipelines/snp_verification/make_snp_lists.default.config
+END
+ncbi-blastn.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/ncbi-blastn.default.config
+END
+formatdb.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/formatdb.default.config
+END
+formatdb_snp.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/7482/trunk/templates/pipelines/snp_verification/formatdb_snp.default.config
+END
+extract_snp_regions.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/extract_snp_regions.default.config
+END
+snp_verify.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/snp_verify.default.config
+END
+split_multifasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/ergatis/!svn/ver/7644/trunk/templates/pipelines/snp_verification/split_multifasta.default.config
+END

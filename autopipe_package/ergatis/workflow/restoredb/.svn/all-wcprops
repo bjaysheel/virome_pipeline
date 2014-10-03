@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/3538/trunk/workflow/restoredb
+END
+restoredb-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/3538/trunk/workflow/restoredb/restoredb-master.ini
+END
+restoredb-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/3507/trunk/workflow/restoredb/restoredb-master_template.xml
+END
+readme
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/3509/trunk/workflow/restoredb/readme
+END
+restoredbconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/3538/trunk/workflow/restoredb/restoredbconf.ini
+END

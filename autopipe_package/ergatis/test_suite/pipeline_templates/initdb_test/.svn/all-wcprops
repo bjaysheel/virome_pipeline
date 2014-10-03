@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/initdb_test
+END
+pipeline.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/initdb_test/pipeline.xml
+END
+initdb.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/initdb_test/initdb.default.ini
+END

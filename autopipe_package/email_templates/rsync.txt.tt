@@ -1,0 +1,5 @@
+Hi [% first_name %],
+
+It would appear there was an error with rsync at $ [% date_time %]. You'll want to take a look at this.
+
+Thank you!

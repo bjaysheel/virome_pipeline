@@ -1,0 +1,42 @@
+#configuration file for the PROmer workflow
+
+[parameters region]
+$;REGIONS_XMAX_GAP$; = 10000
+$;REGIONS_YMAX_GAP$; = 10000
+$;REGIONS_MIN_CLUSTER$; = 3000
+
+[input region]
+$;INPUT_FILE_LIST$; = 
+$;INPUT_FILE$; = 
+$;INPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/BSML_repository/pe
+;; the following is only used when iterating over an INPUT_DIRECTORY
+$;INPUT_EXTENSION$; = bsml
+
+$;BSML_REPOSITORY$; = $;REPOSITORY_ROOT$;/BSML_repository
+
+[output region]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/BSML_repository/$;NAME$;
+$;COMPRESS_BSML_OUTPUT$; = 0
+
+[workflowdocs region]
+;The version here is set by an interpolated CVS tag
+$;VERSION$; = $Name$
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;NAME$; = region 
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/region-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/region-master_template.xml
+$;TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/region.ini
+$;TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/region_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 150
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include region]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/unpartition_tables
+END
+unpartition_tables_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/unpartition_tables/unpartition_tables_template.xml
+END
+unpartition_tables.ini
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/2841/trunk/workflow/database_components/unpartition_tables/unpartition_tables.ini
+END

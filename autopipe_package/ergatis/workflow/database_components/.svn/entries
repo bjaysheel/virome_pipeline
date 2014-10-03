@@ -1,0 +1,67 @@
+10
+
+dir
+7655
+https://ergatis.svn.sourceforge.net/svnroot/ergatis/trunk/workflow/database_components
+https://ergatis.svn.sourceforge.net/svnroot/ergatis
+
+
+
+2006-10-26T15:53:52.000000Z
+3551
+bwhitty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c60d6122-3b2e-0410-912d-af40fea696fe
+
+dump_tables
+dir
+
+create_views
+dir
+
+duplicate_detection_elimination
+dir
+
+create_indices
+dir
+
+drop_views
+dir
+
+drop_indices
+dir
+
+partition_tables
+dir
+
+grant_permissions
+dir
+
+revoke_permissions
+dir
+
+unpartition_tables
+dir
+
+load_tables
+dir
+
+create_tables
+dir
+
+drop_tables
+dir
+

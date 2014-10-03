@@ -1,0 +1,129 @@
+[empty]
+
+[create_compute_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;
+
+[set_workflowdocs_permissions]
+param.command=find
+arg=$;WORKFLOW_REPOSITORY$; 
+arg=-type f ! -regex '.*/\..*' -exec chmod 666 \{\} \;
+
+[create_compute_output]
+;make the output directory
+param.command=mkdir
+arg=-p -m 777 $;OUTPUT_DIRECTORY$;
+
+[set_scratch_permissions]
+;give global read/write access to the scratch files
+param.command=find
+arg=$;TMP_DIR$;
+arg=-type f ! -regex '.*/\..*' -exec chmod \{\} -R 666 \;
+
+[set_output_permissions]
+;give global read/write access to the output files
+param.command=find
+arg=$;OUTPUT_DIRECTORY$;
+arg=-type f ! -regex '.*/\..*' -exec chmod \{\} -R 666 \;
+
+[make_reference_fasta]
+;create reference fasta data
+param.command=$;BIN_DIR$;/bsml2fasta
+param.--bsml_list='$;REFERENCE_BSML_FILE_LIST$;'
+param.--output=$;TMP_DIR$;/$;REF_ASMBL_ID$;.fasta
+param.--type=assembly
+
+[make_query_fasta]
+;create query fasta data
+param.command=$;BIN_DIR$;/bsml2fasta
+param.--bsml_list='$;QUERY_BSML_FILE_LIST$;'
+param.--output=$;TMP_DIR$;/query_seq.fasta
+param.--type=assembly
+
+[nucmer]
+;run nucmer
+param.command=/usr/local/common/nucmer
+arg=-p $;TMP_DIR$;/nucmer 
+arg=$;TMP_DIR$;/$;REF_ASMBL_ID$;.fasta
+arg=$;TMP_DIR$;/query_seq.fasta
+
+[show_tiling]
+;run show tiling
+param.command=/usr/local/common/show-tiling
+arg=-c
+arg=-v $;TILING_COVERAGE_THRESHOLD$;
+arg=-g $;TILING_MAXIMUM_GAP$;
+arg=$;TMP_DIR$;/nucmer.delta
+param.stdout=$;TMP_DIR$;/tiling.txt 
+
+[snp_extract_fasta]
+;prepare tiled assemblies for mummer and reverse compliment the
+;data as appropriate
+param.command=$;BIN_DIR$;/SNP_ExtractFASTA.pl
+arg=$;TMP_DIR$;/tiling.txt
+arg=$;TMP_DIR$;/query_seq.fasta
+arg=$;TMP_DIR$;/tile;
+
+[mummer]
+; Mummer Analysis (these three steps are equivalent to the run-mummer3 shell script)
+param.command=/usr/local/common/mummer
+arg=-mumcand
+arg=-b
+arg=-l $;MUMMER_MIMIMUM_MATCH_LENGTH$;
+arg=$;TMP_DIR$;/$;REF_ASMBL_ID$;.fasta
+arg=$;TMP_DIR$;/tile.tiled_asmbl.fasta
+param.stdout=$;TMP_DIR$;/mums.out
+
+[mgaps]
+param.command=/usr/local/common/mgaps
+arg=-l $;MGAPS_MINIMUM_CLUSTER_MATCH_LENGTH$;
+arg=-f $;MGAPS_FRACTIONAL_DIAGONAL_DISTANCE$;
+arg=-s $;MGAPS_MAXIMUM_SEPERATION_BETWEEN_CLUSTERS$;
+param.stdin=$;TMP_DIR$;/mums.out
+param.stdout=$;TMP_DIR$;/mums.gaps
+
+[combineMUMS]
+param.command=/usr/local/common/combineMUMs
+arg=-D
+arg=-x
+arg=-e $;COMBINE_MUMS_ERROR_CUTOFF$;
+arg=-W $;TMP_DIR$;/mums.errorsgaps
+arg=$;TMP_DIR$;/$;REF_ASMBL_ID$;.fasta
+arg=$;TMP_DIR$;/tile.tiled_asmbl.fasta
+arg=$;TMP_DIR$;/mums.gaps
+param.stdout=$;TMP_DIR$;/mums.align
+
+[SNP_Analysis]
+param.command=$;BIN_DIR$;/SNP_Analysis
+param.mumsAlignFile=$;TMP_DIR$;/mums.align
+param.ref_assmbl=$;REF_ASMBL_ID$;
+param.outFile=$;OUTPUT_DIRECTORY$;/$;REF_ASMBL_ID$;_$;NAME$;_$;WFID$;.bsml
+
+[store_config_parameters]
+;store parameters associated with analysis in bsml file
+;workflow will pass add'l optional parameters if invoked with LoggedUnixCommand
+;--command-id
+param.command=$;BIN_DIR$;/analysis2bsml
+param.--ergatis_control_file=$;ERGATIS_DIR$;.ini
+param.--conf=$;COMPONENT_CONFIG$;
+param.--bsml_file=$;OUTPUT_DIRECTORY$;/$;REF_ASMBL_ID$;_$;NAME$;_$;WFID$;.bsml
+
+[dtd_validation]
+;Perform dtd validation on the snps output 
+param.command=$;BIN_DIR$;/dtdValid.pl
+param.-d=$;SCHEMA_DIR$;/bsml3_1.dtd
+arg=$;OUTPUT_DIRECTORY$;/$;REF_ASMBL_ID$;_$;NAME$;_$;WFID$;.bsml
+
+[create_checksum_file_list]
+;create list of files to use for checksums
+param.command=$;BIN_DIR$;/create_list_file
+param.--output_list=$;TMP_DIR$;/$;NAME$;_checksum_filelist.txt
+param.--directory=$;OUTPUT_DIRECTORY$;
+param.--regex=".*\.bsml"
+
+[create_checksum]
+;create individual checksums
+param.command=$;BIN_DIR$;/checksum.pl
+param.-f=$;TMP_DIR$;/$;NAME$;_checksum_filelist.txt
+param.-o=$;OUTPUT_DIRECTORY$;/CHECKSUM

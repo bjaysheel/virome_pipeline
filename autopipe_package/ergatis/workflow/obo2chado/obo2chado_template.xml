@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>obo2chado Compute</name>
+        <configMapId>empty</configMapId>
+        <command>
+          <type>RunUnixCommand</type>
+          <name>Count terms</name>
+          <configMapId>obo_term_count</configMapId>
+        </command>
+        <command>
+          <type>RunUnixCommand</type>
+          <name>Create scratch</name>
+          <configMapId>create_ir_scratch</configMapId>
+        </command>
+        <command>    
+            <type>RunUnixCommand</type>
+            <name>Process Ontology</name>
+            <configMapId>parse_ir_onto</configMapId>
+        </command>
+        <command>    
+            <type>RunUnixCommand</type>
+            <name>Load Ontology</name>
+            <configMapId>load_ir_onto</configMapId>
+        </command>
+        <command>
+          <type>RunUnixCommand</type>
+          <name>Create scratch</name>
+          <configMapId>create_ro_scratch</configMapId>
+        </command>
+        <command>    
+            <type>RunUnixCommand</type>
+            <name>Process Ontology</name>
+            <configMapId>parse_ro_onto</configMapId>
+        </command>
+        <command>    
+            <type>RunUnixCommand</type>
+            <name>Load Ontology</name>
+            <configMapId>load_ro_onto</configMapId>
+        </command>
+    </commandSet>
+</commandSetRoot>

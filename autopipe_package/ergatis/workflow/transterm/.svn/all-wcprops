@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/3556/trunk/workflow/transterm
+END
+transterm-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/3285/trunk/workflow/transterm/transterm-master_template.xml
+END
+transtermconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/3556/trunk/workflow/transterm/transtermconf.ini
+END
+transterm-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/3357/trunk/workflow/transterm/transterm-master.ini
+END
+transterm_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/3285/trunk/workflow/transterm/transterm_template.xml
+END
+transterm.ini
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3556/trunk/workflow/transterm/transterm.ini
+END

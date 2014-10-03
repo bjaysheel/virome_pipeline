@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5803/trunk/components/update_euk_model_sequences
+END
+update_euk_model_sequences.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/ergatis/!svn/ver/5803/trunk/components/update_euk_model_sequences/update_euk_model_sequences.xml
+END
+update_euk_model_sequences.config
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/5801/trunk/components/update_euk_model_sequences/update_euk_model_sequences.config
+END
+update_euk_model_sequences.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/5803/trunk/components/update_euk_model_sequences/update_euk_model_sequences.i1.xml
+END
+update_euk_model_sequences.sql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/ergatis/!svn/ver/5803/trunk/components/update_euk_model_sequences/update_euk_model_sequences.sql.xml
+END

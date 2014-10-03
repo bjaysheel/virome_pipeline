@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/genie
+END
+genie_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/genie/genie_template.xml
+END
+genie.ini
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/3006/trunk/workflow/genie/genie.ini
+END
+genie-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/genie/genie-master_template.xml
+END
+genieconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/genie/genieconf.ini
+END
+genie-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/3123/trunk/workflow/genie/genie-master.ini
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/4233/trunk/workflow/mask_by_analysis
+END
+mask_by_analysis-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/ergatis/!svn/ver/3220/trunk/workflow/mask_by_analysis/mask_by_analysis-master.ini
+END
+mask_by_analysis_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/mask_by_analysis/mask_by_analysis_template.xml
+END
+mask_by_analysis.ini
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/4233/trunk/workflow/mask_by_analysis/mask_by_analysis.ini
+END
+mask_by_analysis-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/mask_by_analysis/mask_by_analysis-master_template.xml
+END
+mask_by_analysisconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/4233/trunk/workflow/mask_by_analysis/mask_by_analysisconf.ini
+END

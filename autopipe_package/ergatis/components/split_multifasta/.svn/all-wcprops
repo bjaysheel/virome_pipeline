@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6514/trunk/components/split_multifasta
+END
+split_multifasta.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5802/trunk/components/split_multifasta/split_multifasta.tmpl
+END
+split_multifasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/5803/trunk/components/split_multifasta/split_multifasta.xml
+END
+split_multifasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/6161/trunk/components/split_multifasta/split_multifasta.config
+END
+split_multifasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/6514/trunk/components/split_multifasta/split_multifasta.i1.xml
+END

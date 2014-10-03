@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/initdb
+END
+initdb-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3479/trunk/workflow/initdb/initdb-master.ini
+END
+initdb.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/1001/trunk/workflow/initdb/initdb.txt
+END
+initdb-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/initdb/initdb-master_template.xml
+END
+initdbconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3293/trunk/workflow/initdb/initdbconf.ini
+END

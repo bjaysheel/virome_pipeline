@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/wu-tblastn
+END
+wu-tblastn-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/wu-tblastn/wu-tblastn-master_template.xml
+END
+wu-tblastnconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/wu-tblastn/wu-tblastnconf.ini
+END
+wu-tblastn-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/3123/trunk/workflow/wu-tblastn/wu-tblastn-master.ini
+END
+wu-tblastn_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/wu-tblastn/wu-tblastn_template.xml
+END
+wu-tblastn.ini
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/3006/trunk/workflow/wu-tblastn/wu-tblastn.ini
+END

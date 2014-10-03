@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/3577/trunk/workflow/snoscan
+END
+snoscan.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3577/trunk/workflow/snoscan/snoscan.ini
+END
+snoscan-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/snoscan/snoscan-master_template.xml
+END
+snoscanconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3577/trunk/workflow/snoscan/snoscanconf.ini
+END
+snoscan-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/2993/trunk/workflow/snoscan/snoscan-master.ini
+END
+snoscan_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/snoscan/snoscan_template.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred
+END
+psipred_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred/psipred_template.xml
+END
+psipred.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred/psipred.ini
+END
+psipred-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred/psipred-master_template.xml
+END
+psipredconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred/psipredconf.ini
+END
+psipred-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/3059/trunk/workflow/psipred/psipred-master.ini
+END

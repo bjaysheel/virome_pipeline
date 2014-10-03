@@ -1,0 +1,79 @@
+<TMPL_IF NAME=COMPONENT_FOUND>
+<table class='config_table' id='<TMPL_VAR NAME=COMPONENT_ID>_config_table'>
+    <tbody id='<TMPL_VAR NAME=COMPONENT_ID>_ct_basic'>
+    <TMPL_LOOP NAME=BASIC_SECTIONS>
+    <tr class='config_section' colspan='2'>
+        <td><TMPL_VAR NAME=NAME></td>
+    </tr>
+    <TMPL_LOOP NAME=PARAMETERS>
+    <TMPL_IF NAME=COMMENT>
+    <tr class='comment'>
+        <td>&nbsp;</td><td><TMPL_VAR NAME=COMMENT></td>
+    </tr>
+    </TMPL_IF>
+    <tr>
+        <td id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>_label'><TMPL_VAR NAME=PRETTY_LABEL></td>
+        <TMPL_IF NAME=SELECTABLE>
+        <TMPL_IF NAME=ENUMERATED>
+        <td class="<TMPL_VAR NAME=SECTION>">
+            <select class='enumerated_input_selector' name='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>'>
+            <TMPL_LOOP NAME=VALUES>
+                <option value="<TMPL_VAR NAME=VALUE>"><TMPL_VAR NAME=VALUE></option>
+            </TMPL_LOOP>
+            </select>
+            <input class='select_shadow' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>_shadow' value=''>
+        </td>
+        <TMPL_ELSE>
+	<td class="<TMPL_VAR NAME=SECTION>">
+            <select class='input_selector' name='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>'>
+            <TMPL_LOOP NAME=VALUES>
+                <option value="<TMPL_VAR NAME=VALUE>"><TMPL_VAR NAME=VALUE></option>
+            </TMPL_LOOP>
+            </select>
+            <input class='select_shadow' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>_shadow' value=''>
+        </td>
+        </TMPL_IF>
+        <TMPL_ELSE>
+        <td class="<TMPL_VAR NAME=SECTION>"><input type='text' name='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' value='<TMPL_LOOP NAME=VALUES><TMPL_VAR NAME=VALUE></TMPL_LOOP>'></td> 
+        </TMPL_IF> 
+    </tr>
+    </TMPL_LOOP> <!-- end parameters loop -->
+    </TMPL_LOOP> <!-- end sections loop -->
+    </tbody>
+    <tbody id='<TMPL_VAR NAME=COMPONENT_ID>_ct_advanced'>
+    <TMPL_LOOP NAME=ADVANCED_SECTIONS>
+    <tr class='config_section' colspan='2'>
+        <td><TMPL_VAR NAME=NAME></td>
+    </tr>
+    <TMPL_LOOP NAME=PARAMETERS>
+    <TMPL_IF NAME=COMMENT>
+    <tr class='comment'>
+        <td>&nbsp;</td><td><TMPL_VAR NAME=COMMENT></td>
+    </tr>
+    </TMPL_IF>
+    <tr>
+        <td id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>_label'><TMPL_VAR NAME=PRETTY_LABEL></td>
+        <TMPL_IF NAME=SELECTABLE>
+        <td class="<TMPL_VAR NAME=SECTION>">
+            <select class='input_selector' name='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>'></select>
+            <input class='select_shadow' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>_shadow' value=''>
+        </td>
+        <TMPL_ELSE>
+        <td class="<TMPL_VAR NAME=SECTION>"><input type='text' name='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' id='<TMPL_VAR NAME=COMPONENT_ID>_<TMPL_VAR NAME=LABEL>' value='<TMPL_LOOP NAME=VALUES><TMPL_VAR NAME=VALUE></TMPL_LOOP>'></td> 
+        </TMPL_IF> 
+    </tr>
+    </TMPL_LOOP> <!-- end parameters loop -->
+    </TMPL_LOOP> <!-- end sections loop -->
+    </tbody>
+</table>
+<TMPL_ELSE>
+Component configuration file not found.  This shouldn't happen.  Please try again or contact 
+an administrator.
+</TMPL_IF>
+
+<div class='button_container'>
+<TMPL_IF NAME=COMPONENT_FOUND>
+    <div class='button save' id='<TMPL_VAR NAME=COMPONENT_ID>_save' onclick='saveComponentConfig("<TMPL_VAR NAME=COMPONENT_ID>", true)'>save</div>
+    <div class='button edit' id='<TMPL_VAR NAME=COMPONENT_ID>_edit' onclick='makeComponentEditable("<TMPL_VAR NAME=COMPONENT_ID>")'>edit</div>
+</TMPL_IF>
+</div>

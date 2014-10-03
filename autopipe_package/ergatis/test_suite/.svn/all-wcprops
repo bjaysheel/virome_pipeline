@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/ergatis/!svn/ver/3518/trunk/test_suite
+END
+crontab.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/2701/trunk/test_suite/crontab.txt
+END
+ergatis_test_init.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/3378/trunk/test_suite/ergatis_test_init.pl
+END

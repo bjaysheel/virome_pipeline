@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_sgc_records
+END
+validate_sgc_records.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_sgc_records/validate_sgc_records.xml
+END
+validate_sgc_records.check_small_genome_db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_sgc_records/validate_sgc_records.check_small_genome_db.xml
+END
+validate_sgc_records.config
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/5801/trunk/components/validate_sgc_records/validate_sgc_records.config
+END

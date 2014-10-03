@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5989/trunk/lib/GenePredictionUtils
+END
+FGeneShBsmlGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/2336/trunk/lib/GenePredictionUtils/FGeneShBsmlGenerator.pm
+END
+GenePredictionBsmlGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5989/trunk/lib/GenePredictionUtils/GenePredictionBsmlGenerator.pm
+END
+GeneMarkBsmlGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/5989/trunk/lib/GenePredictionUtils/GeneMarkBsmlGenerator.pm
+END
+GenscanBsmlGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/2336/trunk/lib/GenePredictionUtils/GenscanBsmlGenerator.pm
+END

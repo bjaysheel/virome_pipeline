@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/ergatis/!svn/ver/7424/trunk/src/python
+END
+lgtanalysis.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7145/trunk/src/python/lgtanalysis.py
+END
+gff3_to_gbrowse.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6547/trunk/src/python/gff3_to_gbrowse.py
+END
+lgt_bwa_post_process.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/7424/trunk/src/python/lgt_bwa_post_process.py
+END
+seqfileparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/7145/trunk/src/python/seqfileparse.py
+END

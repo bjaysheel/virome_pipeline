@@ -1,0 +1,51 @@
+[interface]
+classification = file / conversion
+
+[parameters]
+;; in percentages for both
+$;IDENTITY_PERCENTAGE$; = 30
+$;READ_LENGTH_COVERAGE$; = 80
+
+[input]
+$;DB_FILE_LIST$; =
+$;DB_FILE$; = /mnt/resistome-data/input-data/resistome-db/all-res-proteins.pfasta
+$;QUERY_FILE_LIST$;=
+$;QUERY_FILE$;= /mnt/resistome-data/input-data/bgi-data/test_file.fa
+$;BLAST_FILE_LIST$; = /mnt/resistome-data/input-data/bgi-data/bgi-blastx-files.list
+
+[output]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;READ_LENGTH_FILE$; = $;OUTPUT_DIRECTORY$;/read_length_file.txt
+$;FILTERED_BLAST_FILE$; = $;OUTPUT_DIRECTORY$;/filtered_blast_file.txt
+$;RESISTOME_TABLE$; = $;OUTPUT_DIRECTORY$;/resistome_table.txt
+$;FILTERED_READS_FILE$; = $;OUTPUT_DIRECTORY$;/filtered_reads.fa
+
+[component]
+$;COMPONENT_NAME$; = resistome
+$;DESCRIPTION$; = none
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/workflow/runtime/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;PIPELINE_TOKEN$; = unnamed
+
+;The version,revision,tag here is set by an interpolated CVS tag
+$;VERSION$; = 2.0
+$;RELEASE_TAG$; = $Name$
+$;REVISION$;            = $Revision: 4680 $
+
+$;TEMPLATE_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.xml
+$;ITERATOR1$; = i1
+$;ITERATOR1_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.$;ITERATOR1$;.xml
+
+;Distributed options
+$;GROUP_COUNT$; = 150
+$;NODISTRIB$; = 0
+
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;COMPONENT_XML$; = 
+$;PIPELINE_XML$; = 
+$;PIPELINEID$; = 
+
+[include]
+$;PROJECT_CONFIG$;=
+

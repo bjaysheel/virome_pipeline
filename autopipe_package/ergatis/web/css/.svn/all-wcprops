@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/ergatis/!svn/ver/4711/trunk/web/css
+END
+common.css
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/4708/trunk/web/css/common.css
+END
+header.css
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/4708/trunk/web/css/header.css
+END
+documentation.css
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/4711/trunk/web/css/documentation.css
+END
+sourceforge.css
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/4708/trunk/web/css/sourceforge.css
+END
+monitor.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/4708/trunk/web/css/monitor.css
+END

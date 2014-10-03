@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/7552/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Velvet_Assembly
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/7552/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Velvet_Assembly/pipeline.layout
+END
+velvet_optimiser.assembly.config
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/ergatis/!svn/ver/7552/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Velvet_Assembly/velvet_optimiser.assembly.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/7552/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Velvet_Assembly/pipeline.config
+END
+prepare_paired_ends_for_velvet.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svnroot/ergatis/!svn/ver/7552/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Velvet_Assembly/prepare_paired_ends_for_velvet.default.config
+END

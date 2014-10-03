@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6366/trunk/components/prepare_paired_ends_for_velvet
+END
+prepare_paired_ends_for_velvet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/ergatis/!svn/ver/6356/trunk/components/prepare_paired_ends_for_velvet/prepare_paired_ends_for_velvet.xml
+END
+prepare_paired_ends_for_velvet.config
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/6366/trunk/components/prepare_paired_ends_for_velvet/prepare_paired_ends_for_velvet.config
+END

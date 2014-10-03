@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/6895/trunk/templates/pipelines/JOCs_comparative_pipeline
+END
+bsml2fasta.fastasingle.config
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/ergatis/!svn/ver/5515/trunk/templates/pipelines/JOCs_comparative_pipeline/bsml2fasta.fastasingle.config
+END
+j_ortholog_clusters.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/ergatis/!svn/ver/5893/trunk/templates/pipelines/JOCs_comparative_pipeline/j_ortholog_clusters.default.config
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/ergatis/!svn/ver/5515/trunk/templates/pipelines/JOCs_comparative_pipeline/pipeline.layout
+END
+muscle.jaccard.config
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/6895/trunk/templates/pipelines/JOCs_comparative_pipeline/muscle.jaccard.config
+END
+muscle.j_ortholog_clusters.config
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/6895/trunk/templates/pipelines/JOCs_comparative_pipeline/muscle.j_ortholog_clusters.config
+END
+pipeline.xml.comment
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/5515/trunk/templates/pipelines/JOCs_comparative_pipeline/pipeline.xml.comment
+END
+wu-blastp.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/5515/trunk/templates/pipelines/JOCs_comparative_pipeline/wu-blastp.default.config
+END
+bsml2fasta.fastamulti.config
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/ergatis/!svn/ver/5515/trunk/templates/pipelines/JOCs_comparative_pipeline/bsml2fasta.fastamulti.config
+END
+split_multifasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/ergatis/!svn/ver/5894/trunk/templates/pipelines/JOCs_comparative_pipeline/split_multifasta.default.config
+END
+xdformat.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/5924/trunk/templates/pipelines/JOCs_comparative_pipeline/xdformat.default.config
+END
+jaccard.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/ergatis/!svn/ver/5893/trunk/templates/pipelines/JOCs_comparative_pipeline/jaccard.default.config
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/wait_test
+END
+pipeline.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/wait_test/pipeline.xml
+END
+wait.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/wait_test/wait.default.ini
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6009/trunk/components/drop_chado_indexes
+END
+drop_chado_indexes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/6009/trunk/components/drop_chado_indexes/drop_chado_indexes.xml
+END
+drop_chado_indexes.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/6009/trunk/components/drop_chado_indexes/drop_chado_indexes.config
+END
+drop_chado_indexes.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/ergatis/!svn/ver/6009/trunk/components/drop_chado_indexes/drop_chado_indexes.sqlforce.xml
+END

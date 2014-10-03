@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps
+END
+mreps_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps/mreps_template.xml
+END
+mreps.ini
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps/mreps.ini
+END
+mreps-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps/mreps-master_template.xml
+END
+mrepsconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps/mrepsconf.ini
+END
+mreps-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/3191/trunk/workflow/mreps/mreps-master.ini
+END

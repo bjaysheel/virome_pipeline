@@ -1,0 +1,31 @@
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"			xsi:schemaLocation='commandSet.xsd'>
+  <commandSet type="serial">
+    <name>collate bcp files</name>
+      <command>
+	<type>RunUnixCommand</type>
+	<name>collate and remove dups</name>
+	<state>incomplete</state>
+	<executable>$;BIN_DIR$;/cat_files</executable>
+	<arg>--extension=$;I_TABLE_NAME$;.out --list_file=$;TMP_DIR$;/tables.out | sh | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/$;I_TABLE_NAME$;.bcp.out -d $;RDBMS$;</arg>
+	<param>
+	    <key>
+		stderr
+	    </key>
+	    <value>
+		$;TMP_DIR$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_TABLE_NAME$;.stderr
+	    </value>
+	</param>
+	<param>
+	    <key>
+		stdout
+	    </key>
+	    <value>
+		$;TMP_DIR$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_TABLE_NAME$;.stdout
+	    </value>
+	</param>
+        <dceSpec type="sge">
+            <OS>linux</OS>
+        </dceSpec>
+    </command>
+  </commandSet>
+</commandSetRoot>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/dump_tables
+END
+dump_tables_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/dump_tables/dump_tables_template.xml
+END
+dump_tables.ini
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/2841/trunk/workflow/database_components/dump_tables/dump_tables.ini
+END

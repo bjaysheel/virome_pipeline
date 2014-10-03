@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/5927/trunk/components/initdb
+END
+initdb.partition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5803/trunk/components/initdb/initdb.partition.xml
+END
+initdb.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5803/trunk/components/initdb/initdb.sqlforce.xml
+END
+initdb.obo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5803/trunk/components/initdb/initdb.obo.xml
+END
+initdb.sql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5803/trunk/components/initdb/initdb.sql.xml
+END
+initdb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5803/trunk/components/initdb/initdb.xml
+END
+initdb.config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5927/trunk/components/initdb/initdb.config
+END

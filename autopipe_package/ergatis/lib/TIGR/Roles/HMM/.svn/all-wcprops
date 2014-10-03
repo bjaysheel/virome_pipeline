@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6290/trunk/lib/TIGR/Roles/HMM
+END
+TIGRFamToRoleLookup.pm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6290/trunk/lib/TIGR/Roles/HMM/TIGRFamToRoleLookup.pm
+END
+PfamToRoleLookup.pm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/6290/trunk/lib/TIGR/Roles/HMM/PfamToRoleLookup.pm
+END

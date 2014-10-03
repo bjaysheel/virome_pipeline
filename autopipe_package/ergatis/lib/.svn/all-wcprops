@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svnroot/ergatis/!svn/ver/7596/trunk/lib
+END
+IntervalTree.pm
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/4908/trunk/lib/IntervalTree.pm
+END
+SingleLinkageClusterer.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/2184/trunk/lib/SingleLinkageClusterer.pm
+END
+Jaccard_coefficient_cluster_resolver.pm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/5374/trunk/lib/Jaccard_coefficient_cluster_resolver.pm
+END
+NestedDB.pm
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/7316/trunk/lib/NestedDB.pm
+END
+GiTaxon.pm
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/7295/trunk/lib/GiTaxon.pm
+END
+BPlite.pm
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/ergatis/!svn/ver/972/trunk/lib/BPlite.pm
+END
+Split_DB_File.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/3486/trunk/lib/Split_DB_File.pm
+END
+HmmTools.pm
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/7055/trunk/lib/HmmTools.pm
+END
+Overlap_piler.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/7293/trunk/lib/Overlap_piler.pm
+END

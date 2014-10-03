@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3648/trunk/workflow/shared
+END
+groups-iterator_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/shared/groups-iterator_template.xml
+END
+iterator_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3648/trunk/workflow/shared/iterator_template.xml
+END
+sharedconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2697/trunk/workflow/shared/sharedconf.ini
+END

@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/ergatis/!svn/ver/7582/trunk/htdocs/cgi
+END
+save_pipeline_template.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/save_pipeline_template.cgi
+END
+component_summary.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/component_summary.cgi
+END
+view_formatted_xml_source.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/view_formatted_xml_source.cgi
+END
+save_comment.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7328/trunk/htdocs/cgi/save_comment.cgi
+END
+save_component.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7488/trunk/htdocs/cgi/save_component.cgi
+END
+get_pipeline_templates.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/get_pipeline_templates.cgi
+END
+rss_pipeline_list.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/rss_pipeline_list.cgi
+END
+reset_component_form.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/7419/trunk/htdocs/cgi/reset_component_form.cgi
+END
+run_pipeline.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7450/trunk/htdocs/cgi/run_pipeline.cgi
+END
+archive_pipeline_form.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/archive_pipeline_form.cgi
+END
+create_project.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/create_project.cgi
+END
+login_form.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7529/trunk/htdocs/cgi/login_form.cgi
+END
+view_component.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/view_component.cgi
+END
+subflow_summary.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/subflow_summary.cgi
+END
+pipeline_list.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/pipeline_list.cgi
+END
+view_formatted_log_source.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/view_formatted_log_source.cgi
+END
+view_raw_source.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/view_raw_source.cgi
+END
+reset_component.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7419/trunk/htdocs/cgi/reset_component.cgi
+END
+archive_pipeline.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7341/trunk/htdocs/cgi/archive_pipeline.cgi
+END
+login.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/7529/trunk/htdocs/cgi/login.cgi
+END
+logout.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7529/trunk/htdocs/cgi/logout.cgi
+END
+ergatis.ini
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7452/trunk/htdocs/cgi/ergatis.ini
+END
+subflowgroup_summary.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/subflowgroup_summary.cgi
+END
+pipeline_summary.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7419/trunk/htdocs/cgi/pipeline_summary.cgi
+END
+get_pipeline_lists.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7467/trunk/htdocs/cgi/get_pipeline_lists.cgi
+END
+build_pipeline.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7542/trunk/htdocs/cgi/build_pipeline.cgi
+END
+clone_pipeline.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7419/trunk/htdocs/cgi/clone_pipeline.cgi
+END
+kill_wf.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/kill_wf.cgi
+END
+admin.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/admin.cgi
+END
+projects.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/projects.cgi
+END
+pipeline_list_json.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7336/trunk/htdocs/cgi/pipeline_list_json.cgi
+END
+get_component_template.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/7488/trunk/htdocs/cgi/get_component_template.cgi
+END
+component_stats_summary.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/7336/trunk/htdocs/cgi/component_stats_summary.cgi
+END
+templates.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5585/trunk/htdocs/cgi/templates.cgi
+END
+view_formatted_ini_source.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7553/trunk/htdocs/cgi/view_formatted_ini_source.cgi
+END
+view_pipeline.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7582/trunk/htdocs/cgi/view_pipeline.cgi
+END
+quick_search.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7328/trunk/htdocs/cgi/quick_search.cgi
+END
+get_pipeline_layout.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/get_pipeline_layout.cgi
+END
+index.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/index.cgi
+END
+documentation.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5478/trunk/htdocs/cgi/documentation.cgi
+END
+edit_config.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5485/trunk/htdocs/cgi/edit_config.cgi
+END
+modify_pipeline_groups.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/7419/trunk/htdocs/cgi/modify_pipeline_groups.cgi
+END

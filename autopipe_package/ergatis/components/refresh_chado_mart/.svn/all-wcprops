@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5803/trunk/components/refresh_chado_mart
+END
+refresh_chado_mart.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/5801/trunk/components/refresh_chado_mart/refresh_chado_mart.config
+END
+refresh_chado_mart.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/ergatis/!svn/ver/5802/trunk/components/refresh_chado_mart/refresh_chado_mart.tmpl
+END
+refresh_chado_mart.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/ergatis/!svn/ver/5803/trunk/components/refresh_chado_mart/refresh_chado_mart.sqlforce.xml
+END
+refresh_chado_mart.load.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/5803/trunk/components/refresh_chado_mart/refresh_chado_mart.load.xml
+END
+refresh_chado_mart.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/5803/trunk/components/refresh_chado_mart/refresh_chado_mart.xml
+END

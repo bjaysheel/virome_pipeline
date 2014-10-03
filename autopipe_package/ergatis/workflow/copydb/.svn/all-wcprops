@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/copydb
+END
+copydb-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/copydb/copydb-master_template.xml
+END
+copydbconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/copydb/copydbconf.ini
+END
+copydb-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/2184/trunk/workflow/copydb/copydb-master.ini
+END

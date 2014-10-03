@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/bin/bak
+END
+fixpaths.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/bin/bak/fixpaths.sh
+END
+dtdValid.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/bin/bak/dtdValid.pl
+END
+dummyObserver.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/bin/bak/dummyObserver.pl
+END
+ergatis_checkout.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/bin/bak/ergatis_checkout.pl
+END

@@ -1,0 +1,57 @@
+#notes on tiling component:
+#  - Negative start coords occur when tiles "wrap" around origin
+#  - Any tiling subsumed by another tiling will not show up in output
+
+#configuration file for the tiling workflow
+
+[parameters tiling]
+;;-v float      Set minimum contig coverage to tile [0.0, 100.0]
+;;              (nucmer default = 95.0) sum of individual alignments
+;;              (promer default = 50.0) extent of syntenic region
+$;TILING_COVERAGE_THRESHOLD$; = 100
+
+;;-i float      Set minimum percent identity to tile [0.0, 100.0]
+;;              (nucmer default = 90.0)
+;;              (promer default = 55.0)
+$;TILING_PERCENT_IDENTITY$; = 100
+
+;;-g int        Set maximum gap between clustered alignments [-1, INT_MAX]
+;;              A value of -1 will represent infinity
+;;              (nucmer default = 1000)
+;;              (promer default = -1)
+$;TILING_MAXIMUM_GAP$; = 1000
+ 
+[input tiling]
+;;nucmer  [options]  -Reference aka Scaffold-  -Query aka Contigs-
+;;both in fasta format
+$;REFERENCE_FILE$; = 
+$;QUERY_FILE$; = 
+;;class= attributes for the reference and query inputs
+$;REFERENCE_CLASS$; = supercontig
+$;QUERY_CLASS$; = contig
+
+[output tiling]
+$;OUTPUT_TOKEN$; = default
+;$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/BSML_repository/$;NAME$;
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.bsml.list
+$;COMPRESS_BSML_OUTPUT$; = 0
+
+[workflowdocs tiling]
+$;VERSION$; = $Name$
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;NAME$; = tiling
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/tiling-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/tiling-master_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 400
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include tiling]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

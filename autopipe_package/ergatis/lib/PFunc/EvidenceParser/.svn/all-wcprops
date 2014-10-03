@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc/EvidenceParser
+END
+BERParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/6276/trunk/lib/PFunc/EvidenceParser/BERParser.pm
+END
+BERUniprotParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc/EvidenceParser/BERUniprotParser.pm
+END
+ConservedHypothetical.pm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5937/trunk/lib/PFunc/EvidenceParser/ConservedHypothetical.pm
+END
+ValidEvidenceTypes.pm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc/EvidenceParser/ValidEvidenceTypes.pm
+END
+PfuncParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5758/trunk/lib/PFunc/EvidenceParser/PfuncParser.pm
+END
+Hypothetical.pm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/6083/trunk/lib/PFunc/EvidenceParser/Hypothetical.pm
+END
+PriamECParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/5758/trunk/lib/PFunc/EvidenceParser/PriamECParser.pm
+END
+HMMParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/6410/trunk/lib/PFunc/EvidenceParser/HMMParser.pm
+END
+TMHMMParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6410/trunk/lib/PFunc/EvidenceParser/TMHMMParser.pm
+END
+LipoPParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5937/trunk/lib/PFunc/EvidenceParser/LipoPParser.pm
+END
+LipoproteinMotifParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5758/trunk/lib/PFunc/EvidenceParser/LipoproteinMotifParser.pm
+END
+BlastParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6261/trunk/lib/PFunc/EvidenceParser/BlastParser.pm
+END
+EggnogParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc/EvidenceParser/EggnogParser.pm
+END

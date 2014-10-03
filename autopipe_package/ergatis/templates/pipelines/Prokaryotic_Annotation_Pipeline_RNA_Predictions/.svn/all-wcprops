@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/6945/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_RNA_Predictions
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_RNA_Predictions/pipeline.layout
+END
+tRNAscan-SE.find_tRNA.config
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_RNA_Predictions/tRNAscan-SE.find_tRNA.config
+END
+RNAmmer.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_RNA_Predictions/RNAmmer.default.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/6945/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_RNA_Predictions/pipeline.config
+END

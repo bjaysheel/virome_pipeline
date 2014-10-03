@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc
+END
+CommonNameAnnotation.pm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7495/trunk/lib/PFunc/CommonNameAnnotation.pm
+END
+TIGRRolesAnnotation.pm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6290/trunk/lib/PFunc/TIGRRolesAnnotation.pm
+END
+AnnotationCollection.pm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6458/trunk/lib/PFunc/AnnotationCollection.pm
+END
+AnnotationOrder.pm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/PFunc/AnnotationOrder.pm
+END
+Annotation.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5933/trunk/lib/PFunc/Annotation.pm
+END
+EvidenceParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7493/trunk/lib/PFunc/EvidenceParser.pm
+END

@@ -1,0 +1,80 @@
+;workflow for $;NAME$;
+[empty]
+
+[blastprodom]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl blastprodom -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.blastprodom.raw
+
+[coils]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl coils -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.coils.raw
+
+[hmmpir]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl hmmpir -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.hmmpir.raw
+
+[hmmpfam]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl hmmpfam -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.hmmpfam.raw
+
+[hmmsmart]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl hmmsmart -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.hmmsmart.raw
+
+[hmmtigr]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl hmmtigr -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.hmmtigr.raw
+
+[fprintscan]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl fprintscan -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.fprintscan.raw
+
+[scanregexp]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl scanregexp -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.scanregexp.raw
+
+[profilescan]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl profilescan -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.profilescan.raw
+
+[superfamily]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl superfamily -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.superfamily.raw
+
+[seg]
+param.command=/usr/local/packages/$;NAME$;/bin/$;NAME$;.sh
+arg=-cli -nocrc -iprlookup -goterms -appl seg -seqtype $;SEQ_TYPE$; -format raw -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.seg.raw
+
+[combine_raw_output]
+param.command=find
+arg=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/ -type f -regex '.*$;ITER_FILE_BASE$;.*.raw' ! -regex '.*$;ITER_FILE_BASE$;.*.$;NAME$;.raw' -exec cat {} \;
+param.stdout=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.raw
+
+[iprscan2bsml]
+param.command=$;BIN_DIR$;/iprscan2bsml
+param.--input=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.raw
+param.--output=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.bsml
+param.--query_file_path=$;ITER_FILE_PATH$;
+param.--query_id=$;ITER_FILE_BASE$;
+param.--gzip_output=$;COMPRESS_BSML_OUTPUT$;
+
+[store_config_params]
+;store parameters associated with analysis in bsml file
+;workflow will pass add'l optional parameters if invoked with LoggedUnixCommand
+;--command-id
+param.command=$;BIN_DIR$;/analysis2bsml
+param.--ergatis_control_file=$;ERGATIS_DIR$;.ini
+param.--conf=$;COMPONENT_CONFIG$;
+param.--bsml_file=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.bsml
+param.--componenturl=$;WORKFLOW_REPOSITORY$;/pipeline.xml
+param.--pipelineurl=$;REPOSITORY_ROOT$;/Workflow/pipeline/$;PIPELINEID$;/pipeline.xml.instance
+param.--analysis_id=$;NAME$;_analysis
+
+[dtd_validation]
+;perform document schema validation
+param.command=$;BIN_DIR$;/dtdValid.pl
+param.-d=$;SCHEMA_DIR$;/bsml3_1.dtd
+arg=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.bsml
+
+
+

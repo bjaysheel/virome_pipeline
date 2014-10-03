@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/coverage
+END
+coverageconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/coverage/coverageconf.ini
+END
+coverage-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/2993/trunk/workflow/coverage/coverage-master.ini
+END
+coverage_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/coverage/coverage_template.xml
+END
+coverage.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3006/trunk/workflow/coverage/coverage.ini
+END
+coverage-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/coverage/coverage-master_template.xml
+END

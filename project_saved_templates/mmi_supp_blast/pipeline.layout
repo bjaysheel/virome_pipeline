@@ -1,0 +1,22 @@
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="commandSet.xsd" type="instance">
+    <commandSet type="serial">
+        <state>incomplete</state>
+        <name>start</name>
+	<commandSet type="serial">
+	    <state>incomplete</state>
+	    <name>split_multifasta.default</name>
+	</commandSet>	
+        <commandSet type="serial">
+            <state>incomplete</state>
+	    <name>ncbi-blastp-plus.default</name>
+	</commandSet>
+	<commandSet type="serial">
+	    <state>incomplete</state>
+	    <name>concatenate_files.default</name>
+	</commandSet>
+	<commandSet type="serial">
+	    <state>incomplete</state>
+	    <name>btab2viromebtab.default</name>
+	</commandSet>	
+    </commandSet>
+</commandSetRoot>

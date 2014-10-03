@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/3207/trunk/workflow/legacyparafam2bsml
+END
+legacyparafam2bsml-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/3197/trunk/workflow/legacyparafam2bsml/legacyparafam2bsml-master_template.xml
+END
+legacyparafam2bsmlconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/3205/trunk/workflow/legacyparafam2bsml/legacyparafam2bsmlconf.ini
+END
+legacyparafam2bsml-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/3207/trunk/workflow/legacyparafam2bsml/legacyparafam2bsml-master.ini
+END
+sample_legacyparafam2bsml_control_file.dat
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/3198/trunk/workflow/legacyparafam2bsml/sample_legacyparafam2bsml_control_file.dat
+END
+legacyparafam2bsml_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/3197/trunk/workflow/legacyparafam2bsml/legacyparafam2bsml_template.xml
+END
+legacyparafam2bsml.ini
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/3197/trunk/workflow/legacyparafam2bsml/legacyparafam2bsml.ini
+END

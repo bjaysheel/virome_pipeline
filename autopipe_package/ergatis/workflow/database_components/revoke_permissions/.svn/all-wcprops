@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/revoke_permissions
+END
+revoke_permissions_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/revoke_permissions/revoke_permissions_template.xml
+END
+revoke_permissions.ini
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/2841/trunk/workflow/database_components/revoke_permissions/revoke_permissions.ini
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/tiling
+END
+tiling-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/tiling/tiling-master_template.xml
+END
+tilingconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3440/trunk/workflow/tiling/tilingconf.ini
+END
+tiling-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3441/trunk/workflow/tiling/tiling-master.ini
+END

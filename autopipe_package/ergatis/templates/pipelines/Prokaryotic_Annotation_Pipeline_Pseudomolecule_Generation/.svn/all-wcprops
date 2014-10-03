@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/ergatis/!svn/ver/6982/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation/pipeline.layout
+END
+create_pseudomolecules.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svnroot/ergatis/!svn/ver/6982/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation/create_pseudomolecules.default.config
+END
+pmarks2bsml.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation/pmarks2bsml.default.config
+END
+clean_fasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation/clean_fasta.default.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/ergatis/!svn/ver/6982/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation/pipeline.config
+END

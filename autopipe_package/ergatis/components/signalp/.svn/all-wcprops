@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5214/trunk/components/signalp
+END
+signalp.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5214/trunk/components/signalp/signalp.config
+END
+signalp.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/4554/trunk/components/signalp/signalp.i1.xml
+END
+signalp.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/4100/trunk/components/signalp/signalp.tmpl
+END
+signalp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/4563/trunk/components/signalp/signalp.xml
+END

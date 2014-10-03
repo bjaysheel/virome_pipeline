@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline
+END
+pangenome.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/pangenome.default.config
+END
+j_ortholog_clusters.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/j_ortholog_clusters.default.config
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/pipeline.layout
+END
+muscle.jaccard.config
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/muscle.jaccard.config
+END
+muscle.j_ortholog_clusters.config
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/muscle.j_ortholog_clusters.config
+END
+wu-blastp.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/wu-blastp.default.config
+END
+wu-tblastn.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/wu-tblastn.default.config
+END
+bsml2fasta.fastamulti.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/bsml2fasta.fastamulti.config
+END
+bsml2fasta.genomicseq.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/bsml2fasta.genomicseq.config
+END
+split_multifasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/split_multifasta.default.config
+END
+xdformat.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/xdformat.default.config
+END
+xdformat.nuc.config
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/xdformat.nuc.config
+END
+jaccard.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/ergatis/!svn/ver/5603/trunk/templates/pipelines/Integrated_JOCs-pangenome_pipeline/jaccard.default.config
+END

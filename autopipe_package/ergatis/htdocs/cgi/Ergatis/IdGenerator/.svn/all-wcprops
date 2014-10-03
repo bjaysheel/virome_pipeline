@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7421/trunk/lib/Ergatis/IdGenerator
+END
+RandomIdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/7421/trunk/lib/Ergatis/IdGenerator/RandomIdGenerator.pm
+END
+Config.pm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6335/trunk/lib/Ergatis/IdGenerator/Config.pm
+END
+IGSIdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6050/trunk/lib/Ergatis/IdGenerator/IGSIdGenerator.pm
+END
+DefaultIdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/6063/trunk/lib/Ergatis/IdGenerator/DefaultIdGenerator.pm
+END
+CloudIdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/6155/trunk/lib/Ergatis/IdGenerator/CloudIdGenerator.pm
+END
+JCVIIdGenerator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/5111/trunk/lib/Ergatis/IdGenerator/JCVIIdGenerator.pm
+END

@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>ergatis</title>
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/config_file.css">
+    <link rel="stylesheet" type="text/css" href="../css/commenting.css">
+    <link rel="stylesheet" type="text/css" href="../css/build_pipeline.css">
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+    <script type='text/javascript' src='../javascript/moo/prototype.lite.js'></script>
+    <script type='text/javascript' src='../javascript/moo/moo.fx.js'></script>
+    <script type='text/javascript' src='../javascript/moo/moo.fx.pack.js'></script>
+    <script type='text/javascript' src='../javascript/Input.js'></script>
+    <script type='text/javascript' src='../javascript/TreeNode.js'></script>
+    <script type='text/javascript' src='../javascript/AjaxQueue.js'></script>
+    <script type='text/javascript' src='../javascript/Component.js'></script>
+    <script type="text/javascript" src="../javascript/commenting.js"></script>
+    <script type='text/javascript' src='../javascript/build_pipeline.js'></script>
+    <script type='text/javascript' src='../javascript/ie_methods.js'></script>
+</head>
+
+<body class='pipelines'>
+
+<div id='page_container'>
+
+<TMPL_INCLUDE NAME="header.tmpl">
+    <div id='add_menu_container'>
+        <h2>add to pipeline</h2>
+        <div id='component_choices'>
+            <h3>
+                new component 
+                <span class='button' onclick='cancelAddMenu("component")'>cancel</span>
+                <span class='button' onclick='viewComponentsByCategory()' id='view_by_category'>view by category</span>
+                <span class='button' onclick='viewComponentsByName()' id='view_by_name'>view by name</span>
+            </h3>
+            <div id='components_by_category'>
+                <TMPL_LOOP NAME=COMPONENT_GROUPS>
+                <div class='component_group' id='group<TMPL_VAR NAME=GROUP_NUM>'>
+                    <TMPL_LOOP NAME=COMPONENT_SECTIONS>
+                    <div class='new_component_class_container'>
+                        <h4><TMPL_VAR NAME=SECTION></h4>
+                        <ul>
+                            <TMPL_LOOP NAME=COMPONENTS>
+                                <li><a onclick="selectComponentConfig('<TMPL_VAR NAME=NAME>')"><TMPL_VAR NAME=NAME></a></li>
+                            </TMPL_LOOP>
+                        </ul>
+                    </div>
+                    </TMPL_LOOP> <!-- end classes loop -->
+                </div>
+                </TMPL_LOOP> <!-- end groups loop -->
+            </div>
+            <div id='components_by_name'>
+                <div class='component_group'>
+                    <div class='new_component_class_container'>
+                        <h4>components by name</h4>
+                        <ul>
+                            <TMPL_LOOP NAME=COMPONENT_NAMES>
+                                <li><a onclick="selectComponentConfig('<TMPL_VAR NAME=NAME>')"><TMPL_VAR NAME=NAME></a></li>
+                            </TMPL_LOOP>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='pipeline_choices'>
+            <h3>project templates <span class='button' onclick='cancelAddMenu("pipeline")'>cancel</span></h3>
+            <ul class='pipeline_template_list' id='project_templates'>
+                <TMPL_LOOP NAME=PROJECT_TEMPLATES>
+                    <TMPL_INCLUDE NAME="pipeline_template_list_element.tmpl">
+                </TMPL_LOOP>
+            </ul>
+<!--
+            <h3>global templates</h3>
+            <div>
+                not yet available
+            </div>
+            <h3>previous pipelines (in this project)</h3>
+            <div>
+                not yet available
+            </div>
+-->
+            <h3>recent pipelines (from all projects)</h3>
+            <ul class='pipeline_template_list' id='recent_pipelines'>
+                <TMPL_LOOP NAME=RECENT_PIPELINES>
+                    <TMPL_INCLUDE NAME="pipeline_template_list_element.tmpl">
+                </TMPL_LOOP>
+            </ul>
+        </div>
+    </div>
+    <div id='pipeline_name_container'>
+        enter a name for this pipeline: <input id='pipeline_name' name='pipeline_name' value=''>
+        <span class=''><a onclick='saveAsProjectTemplate()'>save</a></span>
+        <span class=''><a onclick='hidePipelineNameForm()'>cancel</a></span>
+    </div>
+    <div id='content_container'>
+        <h2>pipeline builder</h2>
+        <div id='input_list_container'>
+            <h3>input</h3>
+            <table id='input_list'>
+                <tr>
+                    <th>label</th>
+                    <th>input</th>
+                    <th class='input_element_type'>type</th>
+                    <th class='action_icons'>&nbsp;</th>
+                </tr>
+                <tr id='no_input_message'>
+                    <td colspan='4'>no inputs defined yet</td>
+                </tr>
+                <tr id='new_input_fields_row'>
+                    <td><input type='text' id='new_label' name='new_label'></td>
+                    <td><input type='text' id='new_input' name='new_input' size='50'></td>
+                    <td class='input_element_type'>
+                        <select id='new_input_type' name='new_input_type'>
+                            <option value='file'>file
+                            <option value='list' selected>list
+                            <option value='directory'>directory
+                        </select>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <div id='input_controls_container'>
+            <a id='start_control' onclick="startNewInput()"><img src='../images/icon_add_round_green.png' alt='add input'>add new input</a>
+            <a id='save_control' onclick="saveNewInput()"><img src='../images/bullet_disk.png' alt='add input'>save new input</a>
+            <a id='cancel_control' onclick="cancelNewInput()"><img src='../images/bullet_delete.png' alt='add input'>cancel</a>
+        </div>
+        <div id='email_notification'>
+            <label for='email_input'>
+                email notification:
+                <span id='add_email' class='email_control'>click to add</span>
+            </label>
+            <input type='text' id='email_input' name='email_input' value='<TMPL_VAR NAME=EMAIL_USER>'>
+            <input type='hidden' id='email_on_default' value='<TMPL_VAR NAME=EMAIL_ON_DEFAULT>'>
+            <span id='save_email' class='email_control'>save</span>
+        </div>
+<TMPL_INCLUDE NAME="commenting.tmpl">
+        <div id='build_area'>
+            <div class='pipeline_marker'>start</div>
+            
+            <div class='serial' id='pipeline_root'>
+                <ul class='add_panel' id='pipeline_root_panel'>
+                    <li class='comp'><a onclick="addComponentStub('pipeline_root')">add component</a></li>
+                    <li class='pipe'><a onclick="viewPipelineAddMenu('pipeline_root')">add pipeline</a></li>
+                    <li class='serial'><a onclick="addSerialSet('pipeline_root')">add serial group</a></li>
+                    <li class='parallel'><a onclick="addParallelSet('pipeline_root')">add parallel group</a></li>
+                    <li class='save_run_pipe disabled'><a id="save_run_pipe" onclick="saveAndRunPipeline()">save and run</a></li>
+                </ul>
+            </div>
+            
+            <div id='end_pipeline_marker' class='pipeline_marker'>end</div>
+        </div>
+        
+    </div> <!-- end content_container -->
+    <!--
+        Everything below is used either for passing data into this page or as
+        containers for submitting data to downstream scripts.  None should be
+        visible to the user unless debugging.
+    -->
+    <form name='pipeline' action='./run_pipeline.cgi' method='POST'>
+        <div id='variables'>
+            <input name='repository_root' id='repository_root' value='<TMPL_VAR NAME=REPOSITORY_ROOT>'>
+            <input name='workflowdocs_dir' id='workflowdocs_dir' value='<TMPL_VAR NAME=WORKFLOWDOCS_DIR>'>
+            <input name='build_directory' id='build_directory' value='<TMPL_VAR NAME=BUILD_DIRECTORY>'>
+            <input name='skip_run' id='skip_run' value='0'>
+            <input name='skip_instantiation' id='skip_instantiation' value='0'>
+            <input name='instantiate' id='instantiate' value='0'>
+            <input name='builder_animations' id='builder_animations' value='<TMPL_VAR NAME=BUILDER_ANIMATIONS>'>
+            <input name='autoload_template' id='autoload_template' value='<TMPL_VAR NAME=AUTOLOAD_TEMPLATE>'>
+            <input name='email_notify' id='email_notify' value=''>
+        </div>
+        <div id='locators'>
+            <input type='text' class='locator' id='pipeline_root_up' name='pipeline_root_up' value=''>
+            <input type='text' class='locator' id='pipeline_root_down' name='pipeline_root_down' value='pipeline_root_panel'>
+            <input type='text' class='locator' id='pipeline_root_panel_up' name='pipeline_root_panel_up' value='pipeline_root'>
+            <input type='text' class='locator' id='pipeline_root_panel_down' name='pipeline_root_panel_down' value=''>
+        </div>
+    </form>
+    <form name='save_project_template' action='./save_pipeline_template.cgi' method='POST'>
+        <input type='hidden' name='input_template' value='<TMPL_VAR NAME=BUILD_DIRECTORY>'>
+        <input type='hidden' name='repository_root' value='<TMPL_VAR NAME=REPOSITORY_ROOT>'>
+        <input type='hidden' name='template_name' value=''>
+    </form>
+</div> <!-- end page_container -->
+<!--
+    the containers below are either used for debugging or are only transitively visible and
+    usually dynamically positioned.
+-->
+<div id='debug_box'>&nbsp;</div>
+<div id='save_progress_label'>pipeline build progress saved</div>
+<div id='user_message_container'></div>
+
+<script>
+<TMPL_LOOP NAME=INPUTSETS>
+            var new_input = new Input( "<TMPL_VAR NAME=NAME>" );
+
+            new_input.input_label = "<TMPL_VAR NAME=NAME>";
+            new_input.input_value = "<TMPL_VAR NAME=VALUE>";
+            new_input.input_type  = "<TMPL_VAR NAME=TYPE>";
+            new_input.input_source = "<TMPL_VAR NAME=SOURCE>";
+
+            new_input.addTo( 'input_list' );
+</TMPL_LOOP>
+updateInputLists();
+</script>
+
+</body>
+
+</html>

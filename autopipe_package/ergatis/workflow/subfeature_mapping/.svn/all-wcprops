@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/subfeature_mapping
+END
+subfeature_mapping-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/subfeature_mapping/subfeature_mapping-master_template.xml
+END
+subfeature_mappingconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/subfeature_mapping/subfeature_mappingconf.ini
+END
+subfeature_mapping-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/2612/trunk/workflow/subfeature_mapping/subfeature_mapping-master.ini
+END

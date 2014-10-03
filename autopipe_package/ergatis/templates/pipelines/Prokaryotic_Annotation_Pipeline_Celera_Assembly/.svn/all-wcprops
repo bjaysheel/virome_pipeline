@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/7549/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Celera_Assembly
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/7547/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Celera_Assembly/pipeline.layout
+END
+celera-assembler.assembly.config
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/ergatis/!svn/ver/7549/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Celera_Assembly/celera-assembler.assembly.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/7548/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Celera_Assembly/pipeline.config
+END
+sff_to_CA.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svnroot/ergatis/!svn/ver/7547/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Celera_Assembly/sff_to_CA.default.config
+END

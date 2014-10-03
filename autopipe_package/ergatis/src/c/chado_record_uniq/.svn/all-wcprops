@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/chado_record_uniq
+END
+Makefile.mk
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/3140/trunk/src/c/chado_record_uniq/Makefile.mk
+END
+chado_record_uniq.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/chado_record_uniq/chado_record_uniq.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3140/trunk/src/c/chado_record_uniq/Makefile
+END

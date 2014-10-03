@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>COGs compute</name>
+        <configMapId>empty</configMapId>
+        <command>
+          <type>RunJavaUnixCommand</type>
+          <name>generate_asmbl_input</name>
+          <configMapId>generate_asmbl_input</configMapId>
+        </command>
+        <command>
+          <type>RunJavaUnixCommand</type>
+          <name>make_asmbl_lookup</name>
+          <configMapId>make_asmbl_lookup</configMapId>
+        </command>
+        <command>
+          <type>RunJavaUnixCommand</type>
+          <name>generate_clusters</name>
+          <configMapId>generate_clusters</configMapId>
+        </command>
+        <command>
+          <type>RunJavaUnixCommand</type>
+          <name>jaccard2fasta</name>
+          <configMapId>jaccard2fasta</configMapId>
+        </command>
+        <command>
+          <type>RunJavaUnixCommand</type>
+          <name>Create fasta list</name>
+          <configMapId>create_fasta_list</configMapId>
+        </command>
+    </commandSet>
+</commandSetRoot>

@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3518/trunk/test_suite/pipeline_templates/pro_test
+END
+legacy2bsml_control_file.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/2991/trunk/test_suite/pipeline_templates/pro_test/legacy2bsml_control_file.txt
+END
+cogs.jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/3518/trunk/test_suite/pipeline_templates/pro_test/cogs.jfcogs.ini
+END
+testing_db_compare.wu-blastp.ini
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.wu-blastp.ini
+END
+bsml2chado.clustalw_jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/3306/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.clustalw_jfcogs.ini
+END
+xdformat.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/pro_test/xdformat.default.ini
+END
+jaccard.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/jaccard.default.ini
+END
+bsml2chado.legacydata.ini
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.legacydata.ini
+END
+testing_db_compare.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.default.ini
+END
+bsml2fasta.single.ini
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/bsml2fasta.single.ini
+END
+testing_db_compare.clustalw_jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.clustalw_jfcogs.ini
+END
+bsml2chado.pe.ini
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/3306/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.pe.ini
+END
+testing_db_compare.legacydata.ini
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.legacydata.ini
+END
+pe.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/ergatis/!svn/ver/3511/trunk/test_suite/pipeline_templates/pro_test/pe.default.ini
+END
+legacy2bsml.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/ergatis/!svn/ver/3500/trunk/test_suite/pipeline_templates/pro_test/legacy2bsml.default.ini
+END
+dbquery.sql.expected.bak
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/pro_test/dbquery.sql.expected.bak
+END
+bsml2fasta.multi.ini
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/bsml2fasta.multi.ini
+END
+dbquery.sql.expected
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/3190/trunk/test_suite/pipeline_templates/pro_test/dbquery.sql.expected
+END
+testing_db_compare.pe.ini
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.pe.ini
+END
+wu-blastp.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/3464/trunk/test_suite/pipeline_templates/pro_test/wu-blastp.default.ini
+END
+clustalw.clustalw_jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/ergatis/!svn/ver/2789/trunk/test_suite/pipeline_templates/pro_test/clustalw.clustalw_jaccard.ini
+END
+clustalw.clustalw_cogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/ergatis/!svn/ver/2789/trunk/test_suite/pipeline_templates/pro_test/clustalw.clustalw_cogs.ini
+END
+pro_test.table.counts.sql.legacydata.expected
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/pro_test.table.counts.sql.legacydata.expected
+END
+testing_die_if_empty.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/3381/trunk/test_suite/pipeline_templates/pro_test/testing_die_if_empty.default.ini
+END
+pro_test.qc.sql.legacydata.expected
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/ergatis/!svn/ver/3350/trunk/test_suite/pipeline_templates/pro_test/pro_test.qc.sql.legacydata.expected
+END
+cogs.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/3518/trunk/test_suite/pipeline_templates/pro_test/cogs.default.ini
+END
+pro_test.table.counts.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/3048/trunk/test_suite/pipeline_templates/pro_test/pro_test.table.counts.sql
+END
+pro_test.qc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/3050/trunk/test_suite/pipeline_templates/pro_test/pro_test.qc.sql
+END
+bsml2chado.clustalw_jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/3306/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.clustalw_jaccard.ini
+END
+pipeline.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/3406/trunk/test_suite/pipeline_templates/pro_test/pipeline.xml
+END
+bsml2chado.clustalw_cogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/3306/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.clustalw_cogs.ini
+END
+clustalw.clustalw_jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/ergatis/!svn/ver/2789/trunk/test_suite/pipeline_templates/pro_test/clustalw.clustalw_jfcogs.ini
+END
+dbquery.sql.bak
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/pro_test/dbquery.sql.bak
+END
+dbquery.sql.legacydata.expected
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/3388/trunk/test_suite/pipeline_templates/pro_test/dbquery.sql.legacydata.expected
+END
+bsml2chado.wu-blastp.ini
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/3306/trunk/test_suite/pipeline_templates/pro_test/bsml2chado.wu-blastp.ini
+END
+dbquery.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/3053/trunk/test_suite/pipeline_templates/pro_test/dbquery.sql
+END
+testing_db_compare.clustalw_jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.clustalw_jaccard.ini
+END
+initdb.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/pro_test/initdb.default.ini
+END
+backupdb.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/2789/trunk/test_suite/pipeline_templates/pro_test/backupdb.default.ini
+END
+testing_db_compare.clustalw_cogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/ergatis/!svn/ver/3081/trunk/test_suite/pipeline_templates/pro_test/testing_db_compare.clustalw_cogs.ini
+END

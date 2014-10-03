@@ -1,0 +1,510 @@
+<p>
+    This document describes the process of creating a new component to run in Ergatis and is intended
+    for developers.  If you just want to run an existing component you're in the wrong place.
+</p>
+<h2>outline</h2>
+<ul>
+    <li>background
+        <ul>
+            <li><a href='#what_is_component'>what is a component?</a></li>
+            <li><a href='#can_my_script_be'>can my script or program become a component?</a></li>
+        </ul>
+    </li>
+    <li>general structure
+        <ul>
+            <li><a href='#typical_component_types'>typical component types</a></li>
+            <li><a href='#workflow_engine_xml'>workflow engine xml</a></li>
+            <li><a href='#component_file_layout'>component file layout</a></li>
+        </ul>
+    </li>
+</ul>
+<a name='what_is_component'></a>
+<h2>what is a component?</h2>
+<p>
+    When you build an analysis pipeline with Ergatis each 'piece' of the pipeline is known as
+    a <span class='term'>component</span>.  Usually this corresponds to some analysis tool, such as blastp, glimmerHMM
+    or clustalw but can also be involved in more mundane tasks such as file format conversion
+    or splitting a multi-fasta file into individual files.  Any executable program or script
+    (or series of them) can become a component in Ergatis, assuming it meets a few easy criteria.
+</p>
+<p>
+    The component is really just a few XML files created to tell Ergatis (and Workflow Engine) 
+    how to run a given script or analysis tool.  When you build a component you define each how
+    each command accepts arguments, the execution order of each command (if there are more than one)
+    and whether each should be run locally or distributed to a compute node.
+</p>
+<p>
+    When you run a pipeline Ergatis uses these component templates to create the full XML used
+    to represent your pipeline.
+</p>
+<a name='can_my_script_be'></a>
+<h2>can my script or program become a component?</h2>
+<p>
+    There are only a few criteria that must be met for a script/program to become an Ergatis
+    component.  These are mostly reasonable limitations of the underlying Workflow Engine but are 
+    pretty intuitive and don't usually cause many problems.
+</p>
+<dl>
+    <dt>path resolution</dt>
+    <dd>
+        <p>
+            This will be true for almost everything, but anything you try to execute must resolve to
+            a file someplace on the file system.  This really only means that you can't execute built-in
+            shell commands such as ls, cd, pwd as steps in an Ergatis component.  Full paths should 
+            always be used.
+        </p>
+    </dd>
+    <dt>return value</dt>
+    <dd>
+        <p>
+            Ergatis tracks each command in your pipeline and displays each possible state, including
+            whether it has completed for failed.  The only way it can do this is by relying on the 
+            return value of the script or program executed.  Following the unix/linux convention, a return
+            value of 0 means success and any other value indicates failure.
+        </p>
+        <p>
+            As an example, this means that if you write a perl script and want to make a component out
+            of it, you need to check and make sure that any error checking you perform in your script
+            should exit like exit(1).  Many people commonly simply print to STDERR followed by an
+            exit() call, which returns 0 by default.  Ergatis would then assume that command was 
+            successful and the next step in the pipeline would be executed.  This would be Very Bad.
+        </p>
+    </dd>
+    <dt>no process forking</dt>
+    <dd>
+        <p>
+            This is more of a best practice than it is a hard rule, but since Ergatis takes care of
+            distributing your analysis sequences or steps across a compute cluster, and your grid
+            management software handles the placement of the job, the script you execute should not
+            fork processes or submit other jobs once placed on a grid slot.  This would cause you to
+            use more slots on a node than expected and wreak havoc on the jobs of others.
+        </p>
+        <p>
+            If you execute any scripts that have multi-processor options, such as blast or hmmpfam, 
+            make sure to hard-code these options to 1 when you build your component.
+        </p>
+    </dd>
+    <dt>environmental variables</dt>
+    <dd>
+        <p>
+            Sending a large environment to be replicated at the execution of each grid job can be
+            troublesome for many grid implementations.  Programs should accept any parameters needed
+            via options passed on the command line rather than reading environmental variables.  Though
+            they <strong>can</strong> be used, Ergatis strips your environment to the bare essentials
+            when sending jobs to the grid.  This hasn't proven to be a problem with most modern applications.
+        </p>
+    </dd>
+</dl>
+<a name='typical_component_types'></a>
+<h2>typical component types</h2>
+<img id='component_structure_types' src='../images/documentation/component_structure_types.png' alt='component structure types'>
+<p>
+    We'll first discuss the general types of components before going into detail about their actual XML markup.  
+    This image illustrates the three main types of components in terms of their structure.
+</p>
+<dl>
+    <dt>non-iterative</dt>
+    <dd>
+        <p>
+            This is the most simple of the component types.  It's composed only a series of specific commands
+            to be executed in serial or parallel.  Examples include formatdb and xdformat.
+        </p>
+    </dd>
+    <dt>single iterator</dt>
+    <dd>
+        <p>
+            By far the most common of the component types, single iterator components have a few (usually local)
+            initial steps to execute followed by a set of commands that must be run on every one of a large
+            set of input files (usually distributed onto grid nodes).  Once this distribution/iteration is 
+            finished a few other steps can be executed.
+        </p>
+        <p>
+            The wu-blastp component is an example of a component with a single iterator.  An <span class='term'>
+            iterator</span>.  If you have 10,000 sequences to blast, for example, this component first creates
+            output and temp directories, then iterates a set of commands over each input sequence file.  Each
+            set of steps within the iterator is usually run in parallel and distributed to a compute grid, but
+            this isn't required.  In the case of blast, the following steps would happen within the iterator 
+            for each input sequence:
+        </p>
+        <ol>
+            <li>perform the blast</li>
+            <li>convert to btab format</li>
+            <li>convert to BSML format</li>
+            <li>store configuration</li>
+            <li>validate BSML</li>
+        </ol>
+        <p>
+            After the iterator is finished and the steps above have been applied to all sequences in the input
+            set any post-iterator commands necessary can be run.  This might include cleaning up temp files
+            or making lists of the output files created.
+        </p>
+    </dd>
+    <dt>multiple iterator</dt>
+    <dd>
+        <p>
+            Though not nearly as common as the other types, a component can be created to have multiple, 
+            separate iterators.  The layout is essentially the same as the single-iterator components, where
+            pre- post- and even inter-iterator commands can be executed.
+        </p>
+    </dd>
+</dl>
+<p>
+    Next we'll talk about how commands that are part of a component are encoded in Workflow XML, then how these
+    are organized into a component.
+</p>
+
+<a name='workflow_engine_xml'></a>
+<h2>Workflow Engine XML</h2>
+<p>
+    The Ergatis interface provides an easy, modular way to build pipelines that are eventually represented in
+    XML format for processing by the <a href='http://sf.net/projects/tigr-workflow'>Workflow Engine</a>.  Each
+    component created is a set of template XML files describing how to run a tool and its associated commands.
+    Once created, the interface uses these templates to build the final XML that can be parsed by Workflow Engine.
+    For full documentation of both Workflow Engine and its XML format, please see the 
+    <a href='http://sf.net/projects/tigr-workflow'>Workflow Engine site</a> on SourceForge.  Here we'll cover the most common aspects of the format, 
+    focusing on how Ergatis uses it to represent pipelines.
+</p>
+
+<p>
+    The content of the actual XML files mimic the typical component steps shown in the image on the right.
+    We'll first consider a simple non-iterative component, which is composed of a series of commands.
+</p>
+<div id='formatdb_xml' class='code_sidenote'>
+    <div class='code_caption'>
+        <span class='caption_title'>Workflow XML</span>: This is an example Workflow XML file 
+        representing two commands to be executed serially.
+    </div>
+    <div class='code_container'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                         xsi:schemaLocation='commandSet.xsd'&gt;
+    &lt;commandSet type="serial"&gt;
+        &lt;state&gt;incomplete&lt;/state&gt;
+        &lt;name&gt;formatdb workflow&lt;/name&gt;
+        &lt;command&gt;
+            &lt;type&gt;RunUnixCommand&lt;/type&gt;
+            &lt;name&gt;create output directory&lt;/name&gt;
+            &lt;state&gt;incomplete&lt;/state&gt;
+            &lt;executable&gt;mkdir&lt;/executable&gt;
+            &lt;arg&gt;-p -m 777 /some/output/directory&lt;/arg&gt;
+        &lt;/command&gt;
+        &lt;command&gt;
+            &lt;type&gt;RunUnixCommand&lt;/type&gt;
+            &lt;name&gt;formatdb&lt;/name&gt;
+            &lt;state&gt;incomplete&lt;/state&gt;
+            &lt;executable&gt;$;FORMATDB_EXEC$;&lt;/executable&gt;
+            &lt;arg&gt;-p F -oT -i somefile.fsa -n /some/output/directory/dbout&lt;/arg&gt;
+        &lt;/command&gt;
+    &lt;/commandSet&gt;
+&lt;/commandSetRoot&gt;
+    </div>
+</div>
+<p>
+    Formatdb is a well-known tool used to index FASTA collections to be searched with NCBI's BLAST suite.  Our
+    execution of formatdb contains two steps:
+</p>
+<ol>
+    <li>mkdir /some/output/directory</li>
+    <li>formatdb -p F -oT -i somefile.fsa -n /some/output/directory/dbout</li>
+</ol>
+<p>
+    You can see from the XML that there is a <span class='xml_element'>commandSetRoot</span> element to 
+    contain everything in the document.  Within it is a <span class='xml_element'>commandSet</span> 
+    element, which can have a <span class='xml_attr'>type</span> attribute value of either serial or 
+    parallel.  In this case the value is 'serial', so Workflow Engine will execute each
+    of the <span class='xml_element'>command</span> elements within the commandSet serially.
+</p>
+<p>
+    Within each <span class='xml_element'>command</span> element are some core attributes, here including 
+    'type', 'name', 'state', 'executable' and 'arg'.  
+</p>
+<dl>
+    <dt>type</dt>
+    <dd>
+        Among other things, this attribute discerns commons to be run locally (RunUnixCommand) from 
+        those to be distributed on a compute grid (RunDistributedCommand).
+    </dd>
+    <dt>name</dt>
+    <dd>
+        The 'name' element can be any string to describe the step of the pipeline and is directly 
+        displayed in the Ergatis interface.  
+    </dd>
+    <dt>state</dt>
+    <dd>
+        This attribute is pretty intuitive and has values like 'incomplete', 'complete', 'unknown',
+        'pending', 'running', 'failed', 'error', etc.  The 'incomplete' state is the default one and
+        indicates a command that hasn't yet been reached in the pipeline.
+    </dd>
+    <dt>executable</dt>
+    <dd>
+        This is the location of the program executed in this step of the pipeline.  These should be
+        full paths to the executable when possible, though entering the name alone is acceptable for
+        built-in OS commands.  Notice in our second command the variable $;FORMATDB_EXEC$;.  This
+        will be replaced automatically at pipeline build time with that value within the component
+        config file.
+    </dd>
+    <dt>arg</dt>
+    <dd>
+        Anything included as the 'arg' value will be passed directly on the command line to the
+        corresponding executable.  Note that this isn't the only way to pass parameters - they can
+        be specified individually with param elements (more on that later.)
+    </dd>
+</dl>
+<p>
+    It's important to remember that these are just the basic elements contained within an Ergatis
+    component.  When Workflow Engine begins to process this file it will add a host of other attributes,
+    mostly for auditing purposes.  These include a unique identifer ('id'), 'startTime', 'endTime', 
+    'retryCount' and more.
+</p>
+<p>
+    The other important element that Ergatis uses is the <span class='xml_element'>fileName</span> element.  Used within a commandSet,
+    it serves as an include to direct Workflow Engine to read commands from within the referenced file
+    once it is reached.  The referenced file is not physically imported; Workflow Engine simply reads it
+    and beings executing commands within it.  Once those are finished, it will return to the next 
+    <span class='xml_element'>command</span> or <span class='xml_element'>commandSet</span> after the 
+    <span class='xml_element'>fileName</span> element.
+</p>
+<p>
+    We'll cover specifics on how Ergatis uses template XML files for Workflow Engine next, but for more
+    documentation on Workflow Engine itself please visit <a href='http://tigr-workflow.sf.net'>SourceForge</a>.
+</p>
+
+<a name='component_file_layout'></a>
+<h2>component file layout</h2>
+<p>
+    Now that we have these fundamentals the creation of a component is relatively easy.  I'm going to try
+    to describe it sufficiently here, but people new to the project have contributed their first component 
+    in just a few hours, while very active developers can toss one together quite a bit faster.
+</p>
+<p>
+    Adding a new component involves the creation of one or two XML files and an INI (config) file.  In
+    practice, we usually copy an existing component with similar structure and modify as needed.  Typing
+    XML from the beginning isn't very efficient, and is even less fun.  With that in mind, let's start
+    with the simplest component type.
+</p>
+
+<h3>non-iterative</h3>
+<p>
+    Non-iterative components are those which simply execute a series of commands.  They are different from
+    iterative components in that the set of commands are not executed repeatedly, once for each input file.
+</p>
+<div id='component_formatdb_xml' class='code_sidenote'>
+    <div class='code_caption'>
+        <span class='caption_title'>formatdb.xml</span>: Template XML file for the formatdb component.
+        Variables within it are replaced by those in formatdb.config
+    </div>
+    <div  class='code_container'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                          xsi:schemaLocation='commandSet.xsd'&gt;
+    &lt;commandSet type="serial"&gt;
+        &lt;state&gt;incomplete&lt;/state&gt;
+        &lt;name&gt;formatdb workflow&lt;/name&gt;
+        &lt;!--Processing--&gt;
+        &lt;command&gt;
+            &lt;type&gt;RunUnixCommand&lt;/type&gt;
+            &lt;name&gt;create output directory&lt;/name&gt;
+            &lt;state&gt;incomplete&lt;/state&gt;
+            &lt;executable&gt;mkdir&lt;/executable&gt;
+            &lt;arg&gt;-p -m 777 $;OUTPUT_DIRECTORY$;&lt;/arg&gt;
+        &lt;/command&gt;
+        &lt;command&gt;
+            &lt;type&gt;RunUnixCommand&lt;/type&gt;
+            &lt;name&gt;formatdb&lt;/name&gt;
+            &lt;state&gt;incomplete&lt;/state&gt;
+            &lt;executable&gt;$;FORMATDB_EXEC$;&lt;/executable&gt;
+            &lt;arg&gt;-p $;PROTEIN$; -oT -i '$;INPUT_FILES$;' 
+                     -n $;OUTPUT_DIRECTORY$;/$;DATABASE_NAME$;&lt;/arg&gt;
+        &lt;/command&gt;
+    &lt;/commandSet&gt;
+&lt;/commandSetRoot&gt;
+    </div>
+</div>
+
+<h4>XML and INI files</h4>
+<p>
+    As an example, we'll look at the 'formatdb' component, which is part of the NCBI BLAST suite and 
+    formats/indexes multi-FASTA files for use with the blastall search tool.  Each non-iterative 
+    component is composed of a minimum of two files, named like those below:
+</p>
+<ul class='file_list'>
+    <li>formatdb.xml</li>
+    <li>formatdb.config</li>
+</ul>
+<p>
+    The 'formatdb.xml' panel on the right shows the actual contents of that file.  It contains the
+    structure of each command that should be run but with some of the actual values encoded as
+    variables (which we'll talk about soon) using syntax like $;THIS$;.
+</p>
+<p>
+    I'll assume that you're familiar with XML formats in general and we won't provide an exhaustive
+    coverage of all the Workflow XML elements here.  All of the elements in this file are contained
+    within the <span class='xml_element'>commandSetRoot</span> element.  Inside that we find a 
+    <span class='xml_element'>commandSet</span>, which can have a <span class='xml_attr'>class</span>
+    value of either 'serial' or 'parallel'.  This value dictates how the <span class='xml_element'>command</span>
+    elements within the <span class='xml_element'>commandSet</span> will be executed.
+</p>
+<p>
+    Each <span class='xml_element'>command</span> has the core attributes we described above such as
+    name, state and type.  Those with a <span class='xml_attr'>type</span> value of 'RunUnixCommand'
+    will be run locally, while 'RunDistributedCommand' will cause the command to be queued onto your
+    grid or cluster.
+</p>
+
+<h4>When should you distribute commands?</h4>
+<p>
+    When writing a new component you should mark any commands within your pipeline as RunDistributedCommand
+    if they will take up any significant amount of resoures or run for longer than a few seconds.
+    This is dependent on each installation site, but usually the Ergatis interface will be running
+    on a single server that submits jobs to a cluster, so you don't want to run too many commands
+    locally (on the webserver) else you'll slow down the interface for everyone else.  Ergatis will
+    automatically change these to RunUnixCommand (local) for any pipelines/components set to run
+    locally (via the grid_enabled option in the ergatis.ini file set to 0 or the NODISTRIB option set 
+    to 1 within any component.)
+</p>
+
+<h4>$;VARIABLES$;</h4>
+<p>
+    You should avoid hard-coding as many values within your XML files as possible.  Instead, they can be
+    made user-configurable by putting them in the component's corresponding config file.  This should 
+    include common parameters, paths to binaries, etc.  It is this config file that is parsed and
+    displayed as a form when users add a component to a pipeline using the interface.  For our example formatdb component, the config 
+    file looks like this:  
+</p>
+<div id='component_formatdb_config' class='code_sidenote'>
+    <div class='code_caption'>
+        <span class='caption_title'>formatdb.config</span>: Configuration INI file for the formatdb component.
+        These variables are used to substitute values within formatdb.xml as the pipeline is built.
+    </div>
+    <div  class='code_container'>
+[interface]
+classification = file / indexing
+
+[parameters]
+;; enter T for protein, F for nucleotide
+$;PROTEIN$; = T
+
+[input]
+;; space-separated list
+$;INPUT_FILES$; = 
+
+[output]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+;; call it whatever you like
+$;DATABASE_NAME$; = db
+
+[component]
+$;COMPONENT_NAME$; = formatdb
+$;DESCRIPTION$; = none
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/workflow/runtime/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;PIPELINE_TOKEN$; = unnamed
+
+;The version,revision,tag here is set by an interpolated CVS tag
+$;VERSION$; = 2.0
+$;RELEASE_TAG$; = $Name$
+$;REVISION$;            = $Revision$
+
+$;TEMPLATE_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.xml
+
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;COMPONENT_XML$; = 
+$;PIPELINE_XML$; = 
+$;PIPELINEID$; = 
+
+[include]
+$;PROJECT_CONFIG$;=
+    </div>
+</div>
+
+<h4>config file sections</h4>
+<p>
+    The configuration files in Ergatis are standard INI files.  These allow for very simple key/value
+    parameters grouped in sections (denoted with [] symbols). We use a format like $;THIS$; for the
+    key portions of each to allow for easy substitution within the component XML files, since pattern
+    is not likely to happen by chance within the XML.  The sections here are standard across most
+    components.
+</p>
+<dl>
+    <dt>interface</dt>
+    <dd>
+        <p>
+            The only section that doesn't use the $;VARIABLE$; key/value scheme, this section currently
+            only has one parameter <span class='config_param'>classification</span>.  This value is only
+            used in the interface when a person is adding a component to a pipeline and is viewing the
+            component list by category.  You can put any value here - if you use a classification value
+            shared by no other components the interface will automatically create a new category.
+        </p>
+    </dd>
+    <dt>parameters</dt>
+    <dd>
+        <p>
+            Here you should put all of the common parameters a user may want to change for your component.
+            One example is E-value cutoff (for BLAST).  In this example, the formatdb binary had a -p
+            option which specifies the type of file.  Instead of exposing all the command-line options
+            to the user, they enter the value in this form and the variable's value is passed to the -p
+            argument specified in the formatdb.xml file.
+        </p>
+    </dd>
+    <dt>input</dt>
+    <dd>
+        <p>
+            This is easy - Here you put whatever variables you need to allow the user to define the
+            input to your component.  Whether you allow a single file, directory or list of files here
+            depends totally on the script or binary you'll be executing.  The formatdb binary accepts
+            a space-separated list of all the files you want to be included for the index it creates,
+            so we write this entry to reflect that.
+        </p>
+    </dd>
+    <dt>output</dt>
+    <dd>
+        <p>
+            As with the input section, you can freely put whatever variables here you need to support
+            your program.  If it creates physical output files, you'll probably need at least
+            $;OUTPUT_DIRECTORY$; and then a corresponding mkdir step within your component.xml file.
+        </p>
+        </p>
+            The only <strong>required key</strong> here is $;OUTPUT_TOKEN$;.  It serves as a label
+            and is used to uniquely identify this component within the pipeline.  If you have a 
+            pipeline with two ncbi-blastp components, for example, and knowing that the component
+            name is part of the output directory structure, you might write output files from multiple
+            component runs in the same output directory.  The interface restricts any given pipeline
+            from having more than one component of the same type with the same output token and, since
+            output token is used as part of the output directory path, you ensure that no two components
+            stomp each other's output.  (see the 
+            <a href='./documentation.cgi?article=directory_structure'>directory structure convention</a>
+            documentation for more information.
+        </p>
+    </dd>
+</dl>
+
+
+
+<!-- this to be removed once the tutorial is complete -->
+<h1>this tutorial is not yet complete</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

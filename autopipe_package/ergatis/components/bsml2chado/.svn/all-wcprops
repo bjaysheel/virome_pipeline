@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7599/trunk/components/bsml2chado
+END
+bsml2chado.collate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/5979/trunk/components/bsml2chado/bsml2chado.collate.xml
+END
+bsml2chado.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6107/trunk/components/bsml2chado/bsml2chado.config
+END
+bsml2chado.sort1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/5979/trunk/components/bsml2chado/bsml2chado.sort1.xml
+END
+bsml2chado.parse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/6013/trunk/components/bsml2chado/bsml2chado.parse.xml
+END
+validate_chado_records.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bsml2chado/validate_chado_records.xml
+END
+bsml2chado.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bsml2chado/bsml2chado.sqlforce.xml
+END
+bsml2chado.load.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bsml2chado/bsml2chado.load.xml
+END
+bsml2chado.sql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bsml2chado/bsml2chado.sql.xml
+END
+validate_chado_records.config
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/5801/trunk/components/bsml2chado/validate_chado_records.config
+END
+bsml2chado.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/7599/trunk/components/bsml2chado/bsml2chado.xml
+END

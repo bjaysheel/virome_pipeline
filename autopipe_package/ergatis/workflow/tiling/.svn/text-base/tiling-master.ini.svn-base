@@ -1,0 +1,73 @@
+[empty]
+
+[create_compute_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;
+
+[create_compute_output]
+;make the output directory
+param.command=mkdir
+arg=-p -m 777 $;OUTPUT_DIRECTORY$;
+
+[fasta_masker_reference]
+;mask non-ATGC nucleotides otherwise nucmer is dumb
+param.command=$;BIN_DIR$;/fasta_masker
+arg=-i $;REFERENCE_FILE$; -o $;TMP_DIR$;/masked_reference.fsa -m
+
+[fasta_masker_query]
+;mask non-ATGC nucleotides otherwise nucmer is dumb
+param.command=$;BIN_DIR$;/fasta_masker
+arg=-i $;QUERY_FILE$; -o $;TMP_DIR$;/masked_query.fsa -m
+
+[nucmer]
+;run nucmer
+param.command=/usr/local/common/nucmer
+;nucmer  [options]  <Reference>  <Query>
+;-p|prefix       Set the prefix of the output files (default "out")
+arg=-p $;OUTPUT_DIRECTORY$;/nucmer $;TMP_DIR$;/masked_reference.fsa $;TMP_DIR$;/masked_query.fsa
+
+[show_tiling]
+;run show tiling
+param.command=/usr/local/common/show-tiling
+arg=-c -v $;TILING_COVERAGE_THRESHOLD$; -i $;TILING_PERCENT_IDENTITY$; -g $;TILING_MAXIMUM_GAP$; $;OUTPUT_DIRECTORY$;/nucmer.delta
+param.stdout=$;OUTPUT_DIRECTORY$;/show_tiling.out
+
+[bsml_encoding]
+;run tiling2bsml
+param.command=$;BIN_DIR$;/tiling2bsml
+param.--tilingPath=$;OUTPUT_DIRECTORY$;/show_tiling.out
+param.--outFile=$;OUTPUT_DIRECTORY$;/tiling.bsml
+;use user-inputted as opposed to temp masked version
+param.--referencePath=$;REFERENCE_FILE$;
+param.--queryPath=$;QUERY_FILE$;
+param.--reference_class=$;REFERENCE_CLASS$;
+param.--query_class=$;QUERY_CLASS$;
+param.--analysis_id=$;NAME$;_analysis
+param.--gzip_output=$;COMPRESS_BSML_OUTPUT$;
+
+[create_bsml_list]
+param.command=$;BIN_DIR$;/create_list_file
+param.--regex=".*.$;NAME$;.bsml"
+param.--directory=$;OUTPUT_DIRECTORY$;
+param.--output_list=$;BSML_OUTPUT_LIST$;
+
+[store_config_params]
+;store parameters associated with analysis in bsml file
+;workflow will pass add'l optional parameters if invoked with LoggedUnixCommand
+;--command-id
+param.command=$;BIN_DIR$;/analysis2bsml
+param.--ergatis_control_file=$;ERGATIS_DIR$;.ini
+param.--conf=$;COMPONENT_CONFIG$;
+;param.--bsml_file=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.bsml
+param.--bsml_file=$;OUTPUT_DIRECTORY$;/tiling.bsml
+param.--componenturl=$;WORKFLOW_REPOSITORY$;/pipeline.xml
+param.--pipelineurl=$;REPOSITORY_ROOT$;/Workflow/pipeline/pipeline$;PIPELINEID$;.xml
+param.--analysis_id=$;NAME$;_analysis
+
+[dtd_validation]
+;perform document schema validation
+param.command=$;BIN_DIR$;/dtdValid.pl
+param.-d=$;SCHEMA_DIR$;/bsml3_1.dtd
+;arg=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.bsml
+arg=$;OUTPUT_DIRECTORY$;/tiling.bsml

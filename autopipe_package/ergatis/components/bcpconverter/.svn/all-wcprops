@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bcpconverter
+END
+bcpconverter.convertbcp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bcpconverter/bcpconverter.convertbcp.xml
+END
+bcpconverter.config
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/5801/trunk/components/bcpconverter/bcpconverter.config
+END
+bcpconverter.convertlargebcp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bcpconverter/bcpconverter.convertlargebcp.xml
+END
+bcpconverter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bcpconverter/bcpconverter.xml
+END

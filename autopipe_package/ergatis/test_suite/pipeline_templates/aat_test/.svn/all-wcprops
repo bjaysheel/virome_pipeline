@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test
+END
+aat_aa.AllGroup.niaa.ini
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/aat_aa.AllGroup.niaa.ini
+END
+adjust_btab_coordinates.rice_TA_alluniq.fasta.ini
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_btab_coordinates.rice_TA_alluniq.fasta.ini
+END
+adjust_gap2_coordinates.rice_TA_alluniq.fasta.ini
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_gap2_coordinates.rice_TA_alluniq.fasta.ini
+END
+pipeline.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/pipeline.xml
+END
+adjust_btab_coordinates.AllGroup.niaa.ini
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_btab_coordinates.AllGroup.niaa.ini
+END
+split_fasta.50k.ini
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/split_fasta.50k.ini
+END
+adjust_bsml_coordinates.rice_TA_alluniq.fasta.ini
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_bsml_coordinates.rice_TA_alluniq.fasta.ini
+END
+aat_na.rice_TA_alluniq.fasta.ini
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/aat_na.rice_TA_alluniq.fasta.ini
+END
+adjust_bsml_coordinates.AllGroup.niaa.ini
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_bsml_coordinates.AllGroup.niaa.ini
+END
+adjust_nap_coordinates.AllGroup.niaa.ini
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/aat_test/adjust_nap_coordinates.AllGroup.niaa.ini
+END

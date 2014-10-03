@@ -1,0 +1,2057 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/ergatis/!svn/ver/7642/trunk/src/perl
+END
+new_id.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/new_id.pl
+END
+gene_boundaries_bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/gene_boundaries_bsml.pl
+END
+clovr_metagenomics_prep.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6829/trunk/src/perl/clovr_metagenomics_prep.pl
+END
+chado2flatfile.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/6842/trunk/src/perl/chado2flatfile.pl
+END
+parse_evidence.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/6295/trunk/src/perl/parse_evidence.pl
+END
+gene_pos_bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/gene_pos_bsml.pl
+END
+pangenome_make_table.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/7483/trunk/src/perl/pangenome_make_table.pl
+END
+sfffile.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/6181/trunk/src/perl/sfffile.pl
+END
+chado_aengine_dumper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6078/trunk/src/perl/chado_aengine_dumper.pl
+END
+bsml_qc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/5993/trunk/src/perl/bsml_qc.pl
+END
+replace_amoscmp_fasta_seqids.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/6305/trunk/src/perl/replace_amoscmp_fasta_seqids.pl
+END
+Create_Qiime_tables.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7100/trunk/src/perl/Create_Qiime_tables.pl
+END
+cufflinks.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/cufflinks.pl
+END
+create_amoscmp_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/6181/trunk/src/perl/create_amoscmp_iterator_list.pl
+END
+phobos2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6218/trunk/src/perl/phobos2bsml.pl
+END
+create_blast_query_view_bcp.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5329/trunk/src/perl/create_blast_query_view_bcp.pl
+END
+evmgff32bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/evmgff32bsml.pl
+END
+antigenic2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/6334/trunk/src/perl/antigenic2bsml.pl
+END
+create_amoscmp_input.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6257/trunk/src/perl/create_amoscmp_input.pl
+END
+bsml2ptt.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/7483/trunk/src/perl/bsml2ptt.pl
+END
+create_update_euk_model_sequences_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_update_euk_model_sequences_iterator_list.pl
+END
+SNP_ExtractFASTA.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/SNP_ExtractFASTA.pl
+END
+create_pairwise_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_pairwise_iterator_list.pl
+END
+merge_lists.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6086/trunk/src/perl/merge_lists.pl
+END
+seg2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/seg2bsml.pl
+END
+transterm2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/transterm2bsml.pl
+END
+create_trivial_scaffold_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_trivial_scaffold_files.pl
+END
+tmhmm2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5991/trunk/src/perl/tmhmm2bsml.pl
+END
+train_for_glimmer3.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/6311/trunk/src/perl/train_for_glimmer3.pl
+END
+pangenome_make_profile.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5984/trunk/src/perl/pangenome_make_profile.pl
+END
+mreps2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mreps2bsml.pl
+END
+bsml2idlookup.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5926/trunk/src/perl/bsml2idlookup.pl
+END
+cat_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5979/trunk/src/perl/cat_files.pl
+END
+sffinfo.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/6157/trunk/src/perl/sffinfo.pl
+END
+insert_pmarks_in_scaffolds.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/7334/trunk/src/perl/insert_pmarks_in_scaffolds.pl
+END
+create_legacy2bsml_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/6024/trunk/src/perl/create_legacy2bsml_iterator_list.pl
+END
+create_pseudomolecules.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/7227/trunk/src/perl/create_pseudomolecules.pl
+END
+replace_config_keys.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6365/trunk/src/perl/replace_config_keys.pl
+END
+fasta2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5323/trunk/src/perl/fasta2bsml.pl
+END
+blastbtab2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/6065/trunk/src/perl/blastbtab2bsml.pl
+END
+submit_for_harvesting.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6336/trunk/src/perl/submit_for_harvesting.pl
+END
+merge_rarefaction_data.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/merge_rarefaction_data.pl
+END
+gff3Valid.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/gff3Valid.pl
+END
+concatenate_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5758/trunk/src/perl/concatenate_files.pl
+END
+count_barcoded_seqs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5670/trunk/src/perl/count_barcoded_seqs.pl
+END
+scp_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7133/trunk/src/perl/scp_files.pl
+END
+mepipe_prepare_input.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mepipe_prepare_input.pl
+END
+lgt_finder.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7441/trunk/src/perl/lgt_finder.pl
+END
+dnadist_worker_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5669/trunk/src/perl/dnadist_worker_wrapper.pl
+END
+predotar2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/predotar2bsml.pl
+END
+mepipe_create_tree.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mepipe_create_tree.pl
+END
+genemarkes2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5989/trunk/src/perl/genemarkes2bsml.pl
+END
+translate_sequence.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7535/trunk/src/perl/translate_sequence.pl
+END
+get_seq_by_metagene.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6305/trunk/src/perl/get_seq_by_metagene.pl
+END
+twinscan2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/twinscan2bsml.pl
+END
+create_mothur_read_otu_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/create_mothur_read_otu_iterator_list.pl
+END
+pangenome_blast_parse.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6126/trunk/src/perl/pangenome_blast_parse.pl
+END
+merge_uchime_ids.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6954/trunk/src/perl/merge_uchime_ids.pl
+END
+fasta2seqlen.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/fasta2seqlen.pl
+END
+create_strictly_paired_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/7474/trunk/src/perl/create_strictly_paired_iterator_list.pl
+END
+pangenome_query_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5534/trunk/src/perl/pangenome_query_list.pl
+END
+genemark2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5919/trunk/src/perl/genemark2bsml.pl
+END
+bowtie.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/7023/trunk/src/perl/bowtie.pl
+END
+panda2genbank.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/panda2genbank.pl
+END
+extract_blast_hits_by_id.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/extract_blast_hits_by_id.pl
+END
+find_homopolymers.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6207/trunk/src/perl/find_homopolymers.pl
+END
+clovr_mapfasta_check.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6852/trunk/src/perl/clovr_mapfasta_check.pl
+END
+create_genome_file_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/6135/trunk/src/perl/create_genome_file_iterator_list.pl
+END
+pe2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pe2bsml.pl
+END
+create_ptools_input_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/6078/trunk/src/perl/create_ptools_input_files.pl
+END
+create_iterator_groups.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_iterator_groups.pl
+END
+tcov2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/tcov2bsml.pl
+END
+nap2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/6000/trunk/src/perl/nap2bsml.pl
+END
+cloVRMapFileCheck.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6830/trunk/src/perl/cloVRMapFileCheck.pl
+END
+predict_prokaryotic_gene_function.pl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5596/trunk/src/perl/predict_prokaryotic_gene_function.pl
+END
+prepare_for_tbl2asn.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6143/trunk/src/perl/prepare_for_tbl2asn.pl
+END
+qiime_to_otulist.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/qiime_to_otulist.pl
+END
+intergenic_analysis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/intergenic_analysis.pl
+END
+snp-add-gene-info.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7635/trunk/src/perl/snp-add-gene-info.pl
+END
+prok_pipeline_check.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/prok_pipeline_check.pl
+END
+pe_fasta_dumper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pe_fasta_dumper.pl
+END
+script_template.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5621/trunk/src/perl/script_template.pl
+END
+SNP_Analysis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/SNP_Analysis.pl
+END
+prepare_for_transterm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/prepare_for_transterm.pl
+END
+screen_seqs_by_ids.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/6375/trunk/src/perl/screen_seqs_by_ids.pl
+END
+btab2taxon.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7297/trunk/src/perl/btab2taxon.pl
+END
+pangenome_make_graphs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6477/trunk/src/perl/pangenome_make_graphs.pl
+END
+get_blast_querynames.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6375/trunk/src/perl/get_blast_querynames.pl
+END
+mothur.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/mothur.pl
+END
+bsml2tbl.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/6069/trunk/src/perl/bsml2tbl.pl
+END
+pipeline_summary.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7639/trunk/src/perl/pipeline_summary.pl
+END
+repeatmasker2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/repeatmasker2bsml.pl
+END
+islandpath2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6353/trunk/src/perl/islandpath2bsml.pl
+END
+genie2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/genie2bsml.pl
+END
+add_pvalue_to_praze_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/6256/trunk/src/perl/add_pvalue_to_praze_output.pl
+END
+aragorn2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/aragorn2bsml.pl
+END
+convert_snp_output_to_clusterer_input.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/convert_snp_output_to_clusterer_input.pl
+END
+pasagff32bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pasagff32bsml.pl
+END
+prokpipe_consistency_checks.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/7592/trunk/src/perl/prokpipe_consistency_checks.pl
+END
+repository_info.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/repository_info.pl
+END
+brcGff3ToBsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/brcGff3ToBsml.pl
+END
+create_pssm_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_pssm_list.pl
+END
+deseq.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/7018/trunk/src/perl/deseq.pl
+END
+reference_genome_match_tiler.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7293/trunk/src/perl/reference_genome_match_tiler.pl
+END
+format_uclust_fasta_ids.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6178/trunk/src/perl/format_uclust_fasta_ids.pl
+END
+bsml2agp.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/bsml2agp.pl
+END
+generate_legacy2bsml_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/generate_legacy2bsml_list.pl
+END
+SnpClusterer
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/2356/trunk/src/perl/SnpClusterer
+END
+adjust_nap_coordinates.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/adjust_nap_coordinates.pl
+END
+create_mothur_unique_seqs_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/create_mothur_unique_seqs_iterator_list.pl
+END
+best_hit.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/best_hit.pl
+END
+collate_counts_by_phenotype.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/7018/trunk/src/perl/collate_counts_by_phenotype.pl
+END
+promote_gene_prediction.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/promote_gene_prediction.pl
+END
+blast2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7511/trunk/src/perl/blast2bsml.pl
+END
+genbank2fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7302/trunk/src/perl/genbank2fasta.pl
+END
+filter_sequences_by_id.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/7585/trunk/src/perl/filter_sequences_by_id.pl
+END
+create_mothur_cluster_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/create_mothur_cluster_iterator_list.pl
+END
+filter_lgt_best_hit.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7295/trunk/src/perl/filter_lgt_best_hit.pl
+END
+move_ber_files_for_manatee.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5897/trunk/src/perl/move_ber_files_for_manatee.pl
+END
+run_velvet_optimiser.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/7550/trunk/src/perl/run_velvet_optimiser.pl
+END
+clusterBsmlPairwiseAlignments.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6371/trunk/src/perl/clusterBsmlPairwiseAlignments.pl
+END
+create_pipeline.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_pipeline.pl
+END
+gap22bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/gap22bsml.pl
+END
+enzyme2obo.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5878/trunk/src/perl/enzyme2obo.pl
+END
+uclust_replicate_removal.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/6471/trunk/src/perl/uclust_replicate_removal.pl
+END
+gff3_attributes.obo
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/1841/trunk/src/perl/gff3_attributes.obo
+END
+make_pathologic_dat_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/6270/trunk/src/perl/make_pathologic_dat_files.pl
+END
+merge_sorted_files.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7245/trunk/src/perl/merge_sorted_files.pl
+END
+berbtab2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7043/trunk/src/perl/berbtab2bsml.pl
+END
+create_mothur_get_oturep_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/create_mothur_get_oturep_iterator_list.pl
+END
+create_chado2bsml_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/6048/trunk/src/perl/create_chado2bsml_iterator_list.pl
+END
+create_samtools_pileup_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/7106/trunk/src/perl/create_samtools_pileup_iterator_list.pl
+END
+create_bowtie_ref_list_from_index_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/6564/trunk/src/perl/create_bowtie_ref_list_from_index_list.pl
+END
+create_fasta_pseudomolecules.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/7027/trunk/src/perl/create_fasta_pseudomolecules.pl
+END
+formatdb_snp.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7474/trunk/src/perl/formatdb_snp.pl
+END
+fetch_genbank.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7227/trunk/src/perl/fetch_genbank.pl
+END
+clovr16S_rdp_tables.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/clovr16S_rdp_tables.pl
+END
+tRNAscan-SE2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/tRNAscan-SE2bsml.pl
+END
+create_nucmer_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6770/trunk/src/perl/create_nucmer_iterator_list.pl
+END
+identify_human_contaminants.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6257/trunk/src/perl/identify_human_contaminants.pl
+END
+MSF2Bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5598/trunk/src/perl/MSF2Bsml.pl
+END
+so.obo
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/1841/trunk/src/perl/so.obo
+END
+join_multifasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/join_multifasta.pl
+END
+hmmpfam32htab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7057/trunk/src/perl/hmmpfam32htab.pl
+END
+prepare_input_for_bowtie.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/7023/trunk/src/perl/prepare_input_for_bowtie.pl
+END
+create_newline_sep_file_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/7105/trunk/src/perl/create_newline_sep_file_iterator_list.pl
+END
+create_mothur_screen_seqs_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/create_mothur_screen_seqs_iterator_list.pl
+END
+clean_fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7184/trunk/src/perl/clean_fasta.pl
+END
+rnammer2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6739/trunk/src/perl/rnammer2bsml.pl
+END
+snap2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7260/trunk/src/perl/snap2bsml.pl
+END
+assign_ec_from_rps.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5565/trunk/src/perl/assign_ec_from_rps.pl
+END
+snoscan2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/snoscan2bsml.pl
+END
+hmmpfam2htab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6331/trunk/src/perl/hmmpfam2htab.pl
+END
+pangenome_merge_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pangenome_merge_results.pl
+END
+run_cmsearch.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6450/trunk/src/perl/run_cmsearch.pl
+END
+make_snp_lists.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/7560/trunk/src/perl/make_snp_lists.pl
+END
+template.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/template.pl
+END
+prepare_ber_extended_nt_db.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/prepare_ber_extended_nt_db.pl
+END
+rna2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/rna2bsml.pl
+END
+run_genemark-es.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5994/trunk/src/perl/run_genemark-es.pl
+END
+multialign2pairwise.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/multialign2pairwise.pl
+END
+trf2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/trf2bsml.pl
+END
+findhomopolymers2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6210/trunk/src/perl/findhomopolymers2bsml.pl
+END
+post_process_annotations.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/7472/trunk/src/perl/post_process_annotations.pl
+END
+run_wf.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/run_wf.pl
+END
+ber_blast_hit_selector.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5899/trunk/src/perl/ber_blast_hit_selector.pl
+END
+lipoprotein_motif.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5760/trunk/src/perl/lipoprotein_motif.pl
+END
+map_clovr_ergatis_comp_config.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6920/trunk/src/perl/map_clovr_ergatis_comp_config.pl
+END
+fuzznuc2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6006/trunk/src/perl/fuzznuc2bsml.pl
+END
+bsml2PEposXML.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/bsml2PEposXML.pl
+END
+cogs_summary.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/cogs_summary.pl
+END
+create_clovrtag_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6313/trunk/src/perl/create_clovrtag_iterator_list.pl
+END
+diff_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/diff_wrapper.pl
+END
+genezilla2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/genezilla2bsml.pl
+END
+mepipe_run_paml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mepipe_run_paml.pl
+END
+process_crossbow_input.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/6251/trunk/src/perl/process_crossbow_input.pl
+END
+concat_and_sort_dnadist_worker_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5748/trunk/src/perl/concat_and_sort_dnadist_worker_output.pl
+END
+analysis2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/analysis2bsml.pl
+END
+parse_for_ncRNAs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/parse_for_ncRNAs.pl
+END
+open_reading_frames.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5304/trunk/src/perl/open_reading_frames.pl
+END
+printmatchgraph.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/printmatchgraph.pl
+END
+create_distributed_iterator_xml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_distributed_iterator_xml.pl
+END
+iprscan2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/iprscan2bsml.pl
+END
+create_map_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6448/trunk/src/perl/create_map_file.pl
+END
+dataprep_dual16S.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7096/trunk/src/perl/dataprep_dual16S.pl
+END
+tophat.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6886/trunk/src/perl/tophat.pl
+END
+panther2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/panther2bsml.pl
+END
+replace_template_keys.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7461/trunk/src/perl/replace_template_keys.pl
+END
+gff2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/6025/trunk/src/perl/gff2bsml.pl
+END
+signalp_graphics_rename.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/signalp_graphics_rename.pl
+END
+gff3_to_fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5703/trunk/src/perl/gff3_to_fasta.pl
+END
+genewise2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5871/trunk/src/perl/genewise2bsml.pl
+END
+appendfile.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6011/trunk/src/perl/appendfile.pl
+END
+filtermummer.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/filtermummer.pl
+END
+fasta_align2Bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/fasta_align2Bsml.pl
+END
+psortb2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/3736/trunk/src/perl/psortb2bsml.pl
+END
+mothur_unique_seq_limit.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6321/trunk/src/perl/mothur_unique_seq_limit.pl
+END
+load_phage_finder.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/load_phage_finder.pl
+END
+qiime_to_mothur_meta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/qiime_to_mothur_meta.pl
+END
+adjust_btab_coordinates.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/adjust_btab_coordinates.pl
+END
+notify_database_users.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/notify_database_users.pl
+END
+CogBsmlLoader.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6132/trunk/src/perl/CogBsmlLoader.pl
+END
+obo_term_count.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/obo_term_count.pl
+END
+glimmer32bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5236/trunk/src/perl/glimmer32bsml.pl
+END
+hmmls2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6007/trunk/src/perl/hmmls2bsml.pl
+END
+augustus2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7589/trunk/src/perl/augustus2bsml.pl
+END
+run_qsub_cmd.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6318/trunk/src/perl/run_qsub_cmd.pl
+END
+fastq_to_CA.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6496/trunk/src/perl/fastq_to_CA.pl
+END
+sff_to_CA.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/6111/trunk/src/perl/sff_to_CA.pl
+END
+snp_verify.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7642/trunk/src/perl/snp_verify.pl
+END
+prepare_paired_ends_for_velvet.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/6366/trunk/src/perl/prepare_paired_ends_for_velvet.pl
+END
+create_metagene_bsml_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/6305/trunk/src/perl/create_metagene_bsml_iterator_list.pl
+END
+phat2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/phat2bsml.pl
+END
+nucmer-snp2merged.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7580/trunk/src/perl/nucmer-snp2merged.pl
+END
+blastbsml2btab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5761/trunk/src/perl/blastbsml2btab.pl
+END
+bsml2featurerelationships.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/6071/trunk/src/perl/bsml2featurerelationships.pl
+END
+snp2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/snp2bsml.pl
+END
+prepare_for_genewise_best_loc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6806/trunk/src/perl/prepare_for_genewise_best_loc.pl
+END
+create_ec_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/4635/trunk/src/perl/create_ec_list.pl
+END
+create_dnadist_control_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5747/trunk/src/perl/create_dnadist_control_file.pl
+END
+create_dnadist_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/5632/trunk/src/perl/create_dnadist_iterator_list.pl
+END
+combine_ncRNA_alignments.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/combine_ncRNA_alignments.pl
+END
+create_islandpath_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/6189/trunk/src/perl/create_islandpath_iterator_list.pl
+END
+velvetg_pre_processing.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/6111/trunk/src/perl/velvetg_pre_processing.pl
+END
+parse_snp_blast.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7474/trunk/src/perl/parse_snp_blast.pl
+END
+create_phage_find_info.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_phage_find_info.pl
+END
+replace_fasta_headers.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6243/trunk/src/perl/replace_fasta_headers.pl
+END
+split_multifasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6575/trunk/src/perl/split_multifasta.pl
+END
+start_site_curation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6543/trunk/src/perl/start_site_curation.pl
+END
+lgt_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7483/trunk/src/perl/lgt_wrapper.pl
+END
+compress_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6701/trunk/src/perl/compress_file.pl
+END
+split_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7411/trunk/src/perl/split_file.pl
+END
+outer_membrane_domain.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/outer_membrane_domain.pl
+END
+run_hmmsearch.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/run_hmmsearch.pl
+END
+quicktree2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/quicktree2bsml.pl
+END
+get_genbank_entries.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6933/trunk/src/perl/get_genbank_entries.pl
+END
+get_seq_by_blastx.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/6305/trunk/src/perl/get_seq_by_blastx.pl
+END
+extract_seq_data_from_snp_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/extract_seq_data_from_snp_output.pl
+END
+fetch_fasta_from_db.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6661/trunk/src/perl/fetch_fasta_from_db.pl
+END
+mummer2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mummer2bsml.pl
+END
+pepstats2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pepstats2bsml.pl
+END
+generate_asmbl_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/generate_asmbl_list.pl
+END
+genbank2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7502/trunk/src/perl/genbank2bsml.pl
+END
+create_multi_file_list_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/7105/trunk/src/perl/create_multi_file_list_file.pl
+END
+targetp2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5441/trunk/src/perl/targetp2bsml.pl
+END
+store_read_dataset_info.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/7020/trunk/src/perl/store_read_dataset_info.pl
+END
+split_fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5999/trunk/src/perl/split_fasta.pl
+END
+runcc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/runcc.pl
+END
+overlap_analysis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7534/trunk/src/perl/overlap_analysis.pl
+END
+get_read_length.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7020/trunk/src/perl/get_read_length.pl
+END
+blast_snp_regions.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7474/trunk/src/perl/blast_snp_regions.pl
+END
+gatekeeper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/gatekeeper.pl
+END
+velvetg_post_processing.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6111/trunk/src/perl/velvetg_post_processing.pl
+END
+blast2btab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6529/trunk/src/perl/blast2btab.pl
+END
+region2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/region2bsml.pl
+END
+ngap.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/4765/trunk/src/perl/ngap.pl
+END
+metagene2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6345/trunk/src/perl/metagene2bsml.pl
+END
+tiling2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/tiling2bsml.pl
+END
+pileup2wig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7013/trunk/src/perl/pileup2wig.pl
+END
+mask_by_analysis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/mask_by_analysis.pl
+END
+add_blast_polypeptide_links.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6109/trunk/src/perl/add_blast_polypeptide_links.pl
+END
+hmmpir2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/hmmpir2bsml.pl
+END
+spin_wait.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/spin_wait.pl
+END
+formatdb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/6926/trunk/src/perl/formatdb.pl
+END
+bsml2fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7535/trunk/src/perl/bsml2fasta.pl
+END
+assign_taxa.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7032/trunk/src/perl/assign_taxa.pl
+END
+bsml2mugsymap.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6851/trunk/src/perl/bsml2mugsymap.pl
+END
+bsml2interevidence_fasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/7253/trunk/src/perl/bsml2interevidence_fasta.pl
+END
+hmmpfam32bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7057/trunk/src/perl/hmmpfam32bsml.pl
+END
+runCA_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6242/trunk/src/perl/runCA_wrapper.pl
+END
+percent_gc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/percent_gc.pl
+END
+bsml2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5432/trunk/src/perl/bsml2legacydb.pl
+END
+auto_gene_curation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/auto_gene_curation.pl
+END
+MSF_domain2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/MSF_domain2bsml.pl
+END
+run_bmtagger.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7568/trunk/src/perl/run_bmtagger.pl
+END
+printrepresentative.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/printrepresentative.pl
+END
+tabula_rasa.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6141/trunk/src/perl/tabula_rasa.pl
+END
+fgenesh2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5386/trunk/src/perl/fgenesh2bsml.pl
+END
+build_supercontig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/build_supercontig.pl
+END
+archive.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/archive.pl
+END
+rotate_molecule.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6916/trunk/src/perl/rotate_molecule.pl
+END
+merge_mothur_chimera_ids.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/6903/trunk/src/perl/merge_mothur_chimera_ids.pl
+END
+hmmpfam2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/6048/trunk/src/perl/hmmpfam2bsml.pl
+END
+RunBestHit.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/RunBestHit.pl
+END
+mummertab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5847/trunk/src/perl/mummertab.pl
+END
+create_download_tag_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/6399/trunk/src/perl/create_download_tag_iterator_list.pl
+END
+sort_snoscan_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/sort_snoscan_output.pl
+END
+trf_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/trf_wrapper.pl
+END
+die_if_empty.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/die_if_empty.pl
+END
+run_phage_finder.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/run_phage_finder.pl
+END
+deprecated_blast2btab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/6439/trunk/src/perl/deprecated_blast2btab.pl
+END
+geneidgff32bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/geneidgff32bsml.pl
+END
+checksum.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/checksum.pl
+END
+bsml2PEmatchXML.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/bsml2PEmatchXML.pl
+END
+bin_and_trim_barcoded_seqs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/6320/trunk/src/perl/bin_and_trim_barcoded_seqs.pl
+END
+create_scaffold_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_scaffold_file.pl
+END
+create_file_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/7543/trunk/src/perl/create_file_iterator_list.pl
+END
+process_crossbow_reference_genome.pl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/6251/trunk/src/perl/process_crossbow_reference_genome.pl
+END
+get_filtered_reads.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7020/trunk/src/perl/get_filtered_reads.pl
+END
+genscan2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5388/trunk/src/perl/genscan2bsml.pl
+END
+lgt_bwa.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/7208/trunk/src/perl/lgt_bwa.pl
+END
+extract_snp_regions.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7642/trunk/src/perl/extract_snp_regions.pl
+END
+filter_blastx_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/6966/trunk/src/perl/filter_blastx_output.pl
+END
+filter_subjects_based_on_align_score.pl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/7032/trunk/src/perl/filter_subjects_based_on_align_score.pl
+END
+ps_scan2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5537/trunk/src/perl/ps_scan2bsml.pl
+END
+CogProteinFasta.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7518/trunk/src/perl/CogProteinFasta.pl
+END
+id_test.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/id_test.pl
+END
+pmarks2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6890/trunk/src/perl/pmarks2bsml.pl
+END
+create_list_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6437/trunk/src/perl/create_list_file.pl
+END
+signalp2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5963/trunk/src/perl/signalp2bsml.pl
+END
+infernal2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5890/trunk/src/perl/infernal2bsml.pl
+END
+glimmerHMM2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5383/trunk/src/perl/glimmerHMM2bsml.pl
+END
+get_seq_included.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6257/trunk/src/perl/get_seq_included.pl
+END
+store_chado_version.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/store_chado_version.pl
+END
+train_for_glimmer3_iteration.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/6346/trunk/src/perl/train_for_glimmer3_iteration.pl
+END
+auto_annotate.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5652/trunk/src/perl/auto_annotate.pl
+END
+annotation_collection_to_bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/7398/trunk/src/perl/annotation_collection_to_bsml.pl
+END
+dnadist_combiner_wrapper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5632/trunk/src/perl/dnadist_combiner_wrapper.pl
+END
+check_file_size.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/check_file_size.pl
+END
+clovr_metagenomics_tsvtables.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/ergatis/!svn/ver/6887/trunk/src/perl/clovr_metagenomics_tsvtables.pl
+END
+create_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5223/trunk/src/perl/create_iterator_list.pl
+END
+observer_script.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/observer_script.pl
+END
+pause.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/pause.pl
+END
+create_table_iterator_list.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5302/trunk/src/perl/create_table_iterator_list.pl
+END
+velveth_post_processing.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6111/trunk/src/perl/velveth_post_processing.pl
+END
+get_resistome_table.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7020/trunk/src/perl/get_resistome_table.pl
+END
+lipop2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6035/trunk/src/perl/lipop2bsml.pl
+END
+validate_clustalw_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/validate_clustalw_output.pl
+END
+gff3_to_annotab.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/5770/trunk/src/perl/gff3_to_annotab.pl
+END
+filter_blast_output.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7020/trunk/src/perl/filter_blast_output.pl
+END
+bepipred2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/6518/trunk/src/perl/bepipred2bsml.pl
+END
+dummy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/dummy.pl
+END
+adjust_gap2_coordinates.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/adjust_gap2_coordinates.pl
+END
+prepfasta4mugsy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6183/trunk/src/perl/prepfasta4mugsy.pl
+END
+pangenome_make_pangenome.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5988/trunk/src/perl/pangenome_make_pangenome.pl
+END
+fasta_masker.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/fasta_masker.pl
+END
+check_logfiles.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/check_logfiles.pl
+END
+adjust_bsml_coordinates.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/adjust_bsml_coordinates.pl
+END
+assign_annotations.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5758/trunk/src/perl/assign_annotations.pl
+END
+prodigal2bsml.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7512/trunk/src/perl/prodigal2bsml.pl
+END
+create_bsml_scaffolds.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5219/trunk/src/perl/create_bsml_scaffolds.pl
+END
+tag_data.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/7236/trunk/src/perl/tag_data.pl
+END

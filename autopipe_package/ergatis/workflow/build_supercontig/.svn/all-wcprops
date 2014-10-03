@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/build_supercontig
+END
+build_supercontig-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/build_supercontig/build_supercontig-master_template.xml
+END
+build_supercontigconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/3462/trunk/workflow/build_supercontig/build_supercontigconf.ini
+END
+build_supercontig-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/3462/trunk/workflow/build_supercontig/build_supercontig-master.ini
+END

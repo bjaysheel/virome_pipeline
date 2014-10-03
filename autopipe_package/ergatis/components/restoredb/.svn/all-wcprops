@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5803/trunk/components/restoredb
+END
+restoredb.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/5803/trunk/components/restoredb/restoredb.sqlforce.xml
+END
+restoredb.sql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5803/trunk/components/restoredb/restoredb.sql.xml
+END
+restoredb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5803/trunk/components/restoredb/restoredb.xml
+END
+restoredb.load_bcp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/ergatis/!svn/ver/5803/trunk/components/restoredb/restoredb.load_bcp.xml
+END
+restoredb.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/5801/trunk/components/restoredb/restoredb.config
+END

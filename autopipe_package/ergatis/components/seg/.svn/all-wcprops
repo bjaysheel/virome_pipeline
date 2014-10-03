@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/4772/trunk/components/seg
+END
+seg.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/4680/trunk/components/seg/seg.config
+END
+seg.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/4772/trunk/components/seg/seg.i1.xml
+END
+seg.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/4638/trunk/components/seg/seg.tmpl
+END
+seg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/4638/trunk/components/seg/seg.xml
+END

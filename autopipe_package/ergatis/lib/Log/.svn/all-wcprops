@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/ergatis/!svn/ver/2859/trunk/lib/Log
+END
+LogSimple.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/2858/trunk/lib/Log/LogSimple.pm
+END
+LogSimpleLogger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/2859/trunk/lib/Log/LogSimpleLogger.pm
+END

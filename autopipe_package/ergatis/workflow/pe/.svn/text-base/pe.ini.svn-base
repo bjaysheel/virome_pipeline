@@ -1,0 +1,61 @@
+;workflow for pe
+[empty]
+
+[make_asmbl_lookup]
+param.command=$;BIN_DIR$;/bsml2idlookup
+param.--bsml_input=$;ITER_FILE_PATH$;
+param.--output=$;TMP_DIR$;/$;ITER_FILE_BASE$;.asmbl.lookup
+arg=-f $;TMP_DIR$;/$;GROUP_NAME$;/fasta.list
+
+[make_pe_match_xml]
+;construct gene match xml
+param.command=$;BIN_DIR$;/bsml2PEmatchXML
+param.--bsml_file='$;MATCH_BSML_FILE$;'
+param.--bsml_list='$;MATCH_BSML_FILE_LIST$;'
+param.--bsml_dir='$;MATCH_BSML_DIRECTORY$;'
+param.--output=$;TMP_DIR$;/$;ITER_FILE_BASE$;.pexml
+param.--scorefield=$;SCOREFIELD$;
+param.--rankfield=$;RANKFIELD$;
+param.--ranktype=$;RANKTYPE$;
+param.--asmbl_lookup=$;TMP_DIR$;/$;ITER_FILE_BASE$;.asmbl.lookup
+
+[peffect]
+;Execute peffect
+param.command=/usr/local/devel/ANNOTATION/shared/bin/linux/peffect
+param.stdin=$;TMP_DIR$;/$;ITER_FILE_BASE$;.pexml
+param.stdout=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;_$;NAME$;.pe
+arg=-f $;TMP_DIR$;/$;DATABASE$;_$;NAME$;.xml
+arg=-w $;WINDOW_SIZE$;
+arg=-g $;GAP_PENALTY$;
+arg=-r $;ORIENTATION_PENALTY$;
+arg=-m $;MIN_MATCHES_PER_WINDOW$;
+arg=-o 3
+
+[pe2bsml]
+;encode PEffect output into BSML doc
+param.command=$;BIN_DIR$;/pe2bsml
+param.--file=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;_$;NAME$;.pe
+param.--bsml_repository=$;BSML_REPOSITORY$;
+param.--output=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;_$;NAME$;.bsml
+param.--num_hits=1
+param.--class=polypeptide
+param.--gzip_output=$;COMPRESS_BSML_OUTPUT$;
+param.--query_file_path=$;ITER_FILE_PATH$;
+
+[store_config_params]
+;store parameters associated with analysis in bsml file
+;workflow will pass add'l optional parameters if invoked with LoggedUnixCommand
+;--command-id
+param.command=$;BIN_DIR$;/analysis2bsml
+param.--ergatis_control_file=$;ERGATIS_DIR$;.ini
+param.--conf=$;COMPONENT_CONFIG$;
+param.--bsml_file=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;_$;NAME$;.bsml
+param.--componenturl=$;WORKFLOW_REPOSITORY$;/pipeline.xml
+param.--pipelineurl=$;REPOSITORY_ROOT$;/Workflow/pipeline/pipeline$;PIPELINEID$;.xml
+param.--analysis_id=$;NAME$;_analysis
+
+[dtd_validation]
+;perform document schema validation
+param.command=$;BIN_DIR$;/dtdValid.pl
+param.-d=$;SCHEMA_DIR$;/bsml3_1.dtd
+arg=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;_$;NAME$;.bsml

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5803/trunk/components/delete_by_bcp
+END
+delete_by_bcp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/5803/trunk/components/delete_by_bcp/delete_by_bcp.xml
+END
+delete_by_bcp.deleterecords.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/5803/trunk/components/delete_by_bcp/delete_by_bcp.deleterecords.xml
+END
+delete_by_bcp.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5801/trunk/components/delete_by_bcp/delete_by_bcp.config
+END
+delete_by_bcp.parse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/5803/trunk/components/delete_by_bcp/delete_by_bcp.parse.xml
+END
+delete_by_bcp.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/5803/trunk/components/delete_by_bcp/delete_by_bcp.sqlforce.xml
+END

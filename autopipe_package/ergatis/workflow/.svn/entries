@@ -1,0 +1,403 @@
+10
+
+dir
+7655
+https://ergatis.svn.sourceforge.net/svnroot/ergatis/trunk/workflow
+https://ergatis.svn.sourceforge.net/svnroot/ergatis
+
+
+
+2008-02-06T16:02:07.796526Z
+5297
+jinman
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c60d6122-3b2e-0410-912d-af40fea696fe
+
+blat
+dir
+
+adjust_nap_coordinates
+dir
+
+region
+dir
+
+tiling
+dir
+
+jaccard
+dir
+
+genie
+dir
+
+muscle
+dir
+
+hmmpir
+dir
+
+generate_bsml2chado_list.pl
+file
+
+
+
+
+2012-04-03T18:11:16.602961Z
+2549ed701d552dd8041d39de33c1ee9f
+2006-10-30T17:58:24.000000Z
+3568
+jorvis
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8183
+
+event.ini
+file
+
+
+
+
+2012-04-03T18:11:16.605037Z
+88fc16bba40e8c2851924831d484c880
+2004-05-18T19:10:34.000000Z
+801
+sundaram
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+601
+
+gff2bsml
+dir
+
+promer
+dir
+
+Attic
+dir
+
+delete_analysis
+dir
+
+pangenome
+dir
+
+database_components
+dir
+
+chado2bsml
+dir
+
+transterm
+dir
+
+copydb
+dir
+
+Sample
+dir
+
+generate_legacy2bsml_list.pl
+file
+
+
+
+
+2012-04-03T18:11:16.606512Z
+b724db73316050f1b4f0a4961720dd88
+2006-10-30T17:58:24.000000Z
+3568
+jorvis
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14947
+
+mreps
+dir
+
+mask_by_analysis
+dir
+
+hmmsmart
+dir
+
+ncbi-blastn
+dir
+
+legacyparafam2bsml
+dir
+
+adjust_gap2_coordinates
+dir
+
+ncbi-blastp
+dir
+
+iprscan
+dir
+
+wu-tblastn
+dir
+
+adjust_bsml_coordinates
+dir
+
+genbank2bsml
+dir
+
+generate_table_list.pl
+file
+
+
+
+
+2012-04-03T18:11:16.607598Z
+886a99c03c0a4ba1b3a0445bbb7dd8aa
+2006-10-30T17:58:24.000000Z
+3568
+jorvis
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7875
+
+hmmtigr
+dir
+
+split_fasta
+dir
+
+wu-tblastx
+dir
+
+generate_legacyparafam2bsml_list.pl
+file
+
+
+
+
+2012-04-03T18:11:16.608875Z
+13577b8d9a605839fe77d9defb6fdefe
+2006-10-30T17:58:24.000000Z
+3568
+jorvis
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9898
+
+statistics2chado
+dir
+
+subfeature_mapping
+dir
+
+ncbi-tblastn
+dir
+
+nucmer
+dir
+
+ncbi-tblastx
+dir
+
+coverage
+dir
+
+bsml2chado_fast
+dir
+
+id_test
+dir
+
+snp
+dir
+
+pe
+dir
+
+legacy2bsml
+dir
+
+shared
+dir
+
+adjust_btab_coordinates
+dir
+
+mepipe
+dir
+
+build_supercontig
+dir
+
+restoredb
+dir
+
+cogs
+dir
+
+obo2chado
+dir
+
+snoscan
+dir
+
+psipred
+dir
+
+hmmsearch
+dir
+
+initdb
+dir
+
+backupdb
+dir
+
+observer_script.props
+file
+
+
+
+
+2012-04-03T18:11:16.610060Z
+80109ef643a55738717cdb23892a1842
+2005-12-12T15:27:01.000000Z
+2184
+sundaram
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6443
+
+tabula_rasa
+dir
+
+bsml2chado
+dir
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/ncbi-tblastx
+END
+ncbi-tblastx-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/3123/trunk/workflow/ncbi-tblastx/ncbi-tblastx-master.ini
+END
+ncbi-tblastx_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/ncbi-tblastx/ncbi-tblastx_template.xml
+END
+ncbi-tblastx.ini
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3006/trunk/workflow/ncbi-tblastx/ncbi-tblastx.ini
+END
+ncbi-tblastx-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/ncbi-tblastx/ncbi-tblastx-master_template.xml
+END
+ncbi-tblastxconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/ncbi-tblastx/ncbi-tblastxconf.ini
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO
+END
+OBOBuilder.pm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/OBOBuilder.pm
+END
+OBOTerm.pm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/OBOTerm.pm
+END
+OBOParser.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/OBOParser.pm
+END
+OBORecord.pm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/OBORecord.pm
+END
+Logger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/Logger.pm
+END
+OBOTypedef.pm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5117/trunk/lib/OBO/OBOTypedef.pm
+END

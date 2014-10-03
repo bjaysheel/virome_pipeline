@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/region
+END
+region.ini
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/3438/trunk/workflow/region/region.ini
+END
+region-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/region/region-master_template.xml
+END
+regionconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3438/trunk/workflow/region/regionconf.ini
+END
+region-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/region/region-master.ini
+END
+region_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/region/region_template.xml
+END

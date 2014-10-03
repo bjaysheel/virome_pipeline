@@ -1,0 +1,19 @@
+;workflow for testing_db_compare
+[empty]
+
+[db_query]
+;Execute the database query script
+param.command=/usr/local/bin/sqsh
+arg=-S $;SERVER$; -D $;DATABASE$; -U $;USERNAME$; -P $;PASSWORD$; -i $;ITER_FILE_PATH$; -o $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.result
+;param.stdout=$;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.raw
+
+[diff]
+;run diff on expected output and query result
+param.command=$;BIN_DIR$;/diff_wrapper
+param.--expected = $;ITER_FILE_PATH$;.$;OUTPUT_TOKEN$;.expected 
+param.--result   = $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.result
+param.stdout     = $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.diff
+param.stderr     = $;OUTPUT_DIRECTORY$;/$;GROUP_NAME$;/$;ITER_FILE_BASE$;.$;NAME$;.diff.stderr
+
+;[process_diff]
+;process the diff file to create summary

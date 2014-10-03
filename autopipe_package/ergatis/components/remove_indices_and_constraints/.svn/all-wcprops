@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/5803/trunk/components/remove_indices_and_constraints
+END
+remove_indices_and_constraints.sql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/ergatis/!svn/ver/5803/trunk/components/remove_indices_and_constraints/remove_indices_and_constraints.sql.xml
+END
+remove_indices_and_constraints.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/ergatis/!svn/ver/5803/trunk/components/remove_indices_and_constraints/remove_indices_and_constraints.xml
+END
+remove_indices_and_constraints.config
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/ergatis/!svn/ver/5801/trunk/components/remove_indices_and_constraints/remove_indices_and_constraints.config
+END

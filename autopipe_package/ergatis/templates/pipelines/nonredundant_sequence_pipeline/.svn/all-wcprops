@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline/pipeline.layout
+END
+pipeline.xml.comment
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline/pipeline.xml.comment
+END
+mummer.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline/mummer.default.config
+END
+mumsgraph.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline/mumsgraph.default.config
+END
+split_multifasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/ergatis/!svn/ver/5847/trunk/templates/pipelines/nonredundant_sequence_pipeline/split_multifasta.default.config
+END

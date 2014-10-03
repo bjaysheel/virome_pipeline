@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="./rss_pipeline_list.cgi">
+    <title>ergatis</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/monitor.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+    <script type='text/javascript' src='../javascript/index.js'></script>
+</head>
+
+<body class='pipelines'>
+
+<div id='page_container'>
+
+<TMPL_INCLUDE NAME="header.tmpl">
+
+    <div id='content_container'>
+
+        <div id='project_list_container'>
+            <h2>project list</h2>
+            <ul id='project_list'>
+            <TMPL_LOOP NAME=REGISTERED_PROJECTS>
+                <li>
+                    <a class='project_link' href='./pipeline_list.cgi?repository_root=<TMPL_VAR NAME=REPOSITORY_ROOT>'><TMPL_VAR NAME=LABEL><span><TMPL_VAR NAME=REPOSITORY_ROOT></span></a>
+                </li>
+            </TMPL_LOOP>
+            </ul>
+        </div>
+        
+        <div id='pipeline_loading_container'>
+            <div>
+                <h2>running pipelines</h2>
+                <img src='../images/progress1.gif' alt='loading'> loading pipeline lists ...
+            </div>
+            
+            <div>
+                <h2>other active pipelines</h2>
+                <img src='../images/progress1.gif' alt='loading'> loading pipeline lists ...
+            </div>
+        </div>
+
+        <!-- this div is populated dynamically, after the page loads -->        
+        <div id='pipeline_lists_container'>
+            <input type='hidden' id='update_cache' value='<TMPL_VAR NAME=UPDATE_CACHE>'>
+        </div>
+
+        <div id='custom_list_container'>
+            <h2>custom pipeline list</h2>
+            <form method='get' action='./pipeline_list.cgi'>
+                <p>
+                    project directory: <input id='repository_root_field' type='text' name='repository_root' value='<TMPL_VAR NAME=DEFAULT_PROJECT_ROOT>'>
+                </p>
+            </form>
+        </div>
+
+    </div> <!-- end content_container -->
+
+</div> <!-- end page_container -->
+
+</body>
+
+</html>

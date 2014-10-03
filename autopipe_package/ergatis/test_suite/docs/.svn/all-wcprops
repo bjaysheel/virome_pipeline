@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3382/trunk/test_suite/docs
+END
+testing_db_compare-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/docs/testing_db_compare-master.ini
+END
+testing_die_if_empty-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/3377/trunk/test_suite/docs/testing_die_if_empty-master.ini
+END
+testing_db_compare_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/docs/testing_db_compare_template.xml
+END
+testing_db_compare.ini
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3382/trunk/test_suite/docs/testing_db_compare.ini
+END
+testing_db_compare-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/docs/testing_db_compare-master_template.xml
+END
+testing_db_compareconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/docs/testing_db_compareconf.ini
+END
+testing_die_if_empty-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/3377/trunk/test_suite/docs/testing_die_if_empty-master_template.xml
+END
+testing_die_if_emptyconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3377/trunk/test_suite/docs/testing_die_if_emptyconf.ini
+END

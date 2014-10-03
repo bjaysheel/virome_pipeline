@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/gff2bsml
+END
+gff2bsml.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3392/trunk/workflow/gff2bsml/gff2bsml.ini
+END
+gff2bsml-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/gff2bsml/gff2bsml-master_template.xml
+END
+gff2bsmlconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/gff2bsml/gff2bsmlconf.ini
+END
+gff2bsml-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/gff2bsml/gff2bsml-master.ini
+END
+gff2bsml_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/gff2bsml/gff2bsml_template.xml
+END

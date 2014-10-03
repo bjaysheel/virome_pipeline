@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/drop_views
+END
+drop_views.ini
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/2841/trunk/workflow/database_components/drop_views/drop_views.ini
+END
+drop_views_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/database_components/drop_views/drop_views_template.xml
+END

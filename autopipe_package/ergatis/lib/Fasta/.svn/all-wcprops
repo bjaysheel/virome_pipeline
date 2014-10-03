@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/ergatis/!svn/ver/5164/trunk/lib/Fasta
+END
+SimpleIndexer.pm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/5164/trunk/lib/Fasta/SimpleIndexer.pm
+END
+FastaIndexedReader.pm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/2336/trunk/lib/Fasta/FastaIndexedReader.pm
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/6977/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/pipeline.layout
+END
+train_for_glimmer3_iteration.train_for_glimmer.config
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/train_for_glimmer3_iteration.train_for_glimmer.config
+END
+translate_sequence.translate_prediction.config
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/translate_sequence.translate_prediction.config
+END
+glimmer3.iter1.config
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/glimmer3.iter1.config
+END
+glimmer3.iter2.config
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/glimmer3.iter2.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/ergatis/!svn/ver/6977/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/pipeline.config
+END
+bsml2fasta.prediction_CDS.config
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/bsml2fasta.prediction_CDS.config
+END
+promote_gene_prediction.promote_prediction.config
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svnroot/ergatis/!svn/ver/6977/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Glimmer_Predictions/promote_gene_prediction.promote_prediction.config
+END

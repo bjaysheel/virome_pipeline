@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>ergatis</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/monitor.css">
+    <link rel="stylesheet" type="text/css" href="css/sourceforge.css">
+</head>
+
+<body class='home'>
+
+<div id='page_container'>
+
+    <div id='page_header'>
+        <div id='quick_links_container'>
+            <ul id='quick_links'>
+                <li><a href='http://www.igs.umaryland.edu'>IGS</a></li>
+                <li class='last'><a href='http://www.sf.net/projects/ergatis'>SF site</a></li>
+            </ul>
+        </div>
+        <div id='title_container'>
+            <span id='page_title'>ergatis</span>
+            <span id='page_slogan'>workflow creation and monitoring interface</span>
+        </div>
+    </div>
+
+    <div id='primary_nav_container'>
+        <ul id='primary_nav_elements'>
+            <li id='nav_home'><a href="index.html">home</a></li>
+            <li id='nav_screenshots'><a href="screenshots.html">screenshots</a></li>
+            <li id='nav_documentation'><a href="documentation.html">documentation</a></li>
+            <li id='nav_download'><a href="download.html">download</a></li>
+        </ul>
+    </div>
+
+    <div id='sub_nav_container'>
+        <ul id='sub_nav_elements'>
+            <li class='last'><a href='index.html'>home</a></li>
+        </ul>
+    </div>
+
+    <div id='content_container'>
+
+        <div id="section1">
+            <h2>documentation</h2>
+            <p>
+                <a href='documentation/install_guide.html'>New install guide available</a>
+            </p>
+            <h2>screenshots</h2>
+	    <p>
+            <a href='screenshots.html'><img id='screen_running_pipeline' src='images/screenshot_running_pipeline_small.png' alt='screenshot - running pipeline' /></a>
+            <div class='figure_caption'>
+                Figure 1.  A view of a running pipeline in Ergatis.  Click to view other screenshots.
+            </div>
+	    </p>
+        </div>
+
+        <div id="section2">
+            <h2>description</h2>
+            <p>
+                Ergatis is a web-based utility that is used to create, run, and monitor reusable computational analysis 
+                pipelines.  It contains pre-built components for common bioinformatics analysis tasks.  These components 
+                can be arranged graphically to form highly-configurable pipelines. Each analysis component supports 
+                multiple output formats, including the <a href='http://www.bsml.org/'>Bioinformatic Sequence Markup 
+                Language (BSML)</a>.  The current implementation includes support for data loading into project databases 
+                following the <a href='http://www.gmod.org/schema/index.shtml'>CHADO schema</a>, a highly normalized, 
+                community-supported schema for storage of biological annotation data.
+            </p>
+            <p>
+                Ergatis uses the <a href='http://sourceforge.net/projects/tigr-workflow'>Workflow engine</a> to process
+                its work on a compute grid.  Workflow provides an <a href='http://www.xml.com/'>XML</a>
+                language and processing engine for specifying the steps of a computational pipeline.  It provides detailed 
+                execution status and logging for process auditing, facilitates error recovery from point of failure, and 
+                is highly scalable with support for distributed computing environments.  The XML format employed enables 
+                commands to be run serially, in parallel, and in any combination or nesting level.
+            </p>
+            <p>
+                This framework has been employed in the annotation of several large, eukaryotic organisms, including 
+                <i>Aedes aegypti</i> and <i>Trichomonas vaginalis</i>. 
+            </p>
+            <h2>development status and availability</h2>
+            <p>
+                This project is functional and is undergoing active development, with most code contributed from users from
+                the <a href='http://igs.umaryland.edu'>Institute for Genome Sciences</a> and the <a href='http://www.jcvi.org'>
+                J. Craig Venter Institute</a>.
+            </p>
+            <p>
+                The version 2.x series of ergatis is currently available.  Click the '<a href='download.html'>download</a>'
+                tab to grab the source files, then have a look at the <a href='documentation/install_guide.html'>installation guide</a>.
+            </p>
+	    <h2>related projects</h2>
+	    <p>
+	    <a href='http://clovr.sf.net' alt='CloVR'><img src='images/CloVR_logo.jpg' border=0 alt='CloVR'> CloVR</a> is a virtual applicance for automated sequence analysis that supports cloud computing platforms, including Amazon EC2. The <a href='https://sourceforge.net/apps/mediawiki/clovr/index.php?title=Download'>CloVR VM</a> includes a dynamically scalable Ergatis installation with Sun Grid Engine.
+	    </p>
+	    <h2>citation</h2>
+	    <p>
+	      Orvis J, Crabtree J, Galens K, Gussman A, Inman JM, Lee E, Nampally S, Riley D, Sundaram JP, Felix V, Whitty B, Mahurkar A, Wortman J, White O, Angiuoli SV. <a href='http://bioinformatics.oxfordjournals.org/cgi/content/abstract/26/12/1488'>Ergatis: A web interface and scalable software system for bioinformatics workflows.</a> <i>Bioinformatics</i>. 2010 Jun 15;26(12).
+	    </p>
+        </div>
+
+    </div> <!-- end content_container -->
+
+    <div id="footer">
+        <div id='official_links'>
+            <a href='http://www.sf.net/projects/ergatis'><img src="http://sourceforge.net/sflogo.php?group_id=59541&amp;type=1" alt='sourceforge'></a>
+            <a href='http://www.opensource.org/'><img src='http://opensource.org/trademarks/open_source_button.png' alt='open source'></a>
+            <a href='http://www.getfirefox.com'><img src='images/official_getfirefox.png' alt='get firefox'></a>
+            <a href='http://www.perl.com'><img src='images/official_perl.png' alt='perl'></a>
+            <img src='images/official_css2.png' alt='css2'>
+        </div>
+        <div id='license'>
+            this project is licensed under the <a href='http://www.opensource.org/licenses/artistic-license.php'>Artistic License</a>.<br>
+            questions should be directed to jorvis AT users.sf.net
+        </div>
+        <div style='clear: both;'>&nbsp;</div>
+    </div>
+
+
+</div> <!-- end page_container -->
+
+</body>
+
+</html>

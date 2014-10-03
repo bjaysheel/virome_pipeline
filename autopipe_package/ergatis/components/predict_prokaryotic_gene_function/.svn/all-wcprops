@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/5803/trunk/components/predict_prokaryotic_gene_function
+END
+predict_prokaryotic_gene_function.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/ergatis/!svn/ver/5803/trunk/components/predict_prokaryotic_gene_function/predict_prokaryotic_gene_function.xml
+END
+predict_prokaryotic_gene_function.config
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/ergatis/!svn/ver/5801/trunk/components/predict_prokaryotic_gene_function/predict_prokaryotic_gene_function.config
+END
+predict_prokaryotic_gene_function.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/ergatis/!svn/ver/5802/trunk/components/predict_prokaryotic_gene_function/predict_prokaryotic_gene_function.tmpl
+END

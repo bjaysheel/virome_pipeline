@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/ergatis/!svn/ver/7540/trunk/src/shell
+END
+htseq_count_reads.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7018/trunk/src/shell/htseq_count_reads.sh
+END
+lgt_bwa_rm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7471/trunk/src/shell/lgt_bwa_rm.sh
+END
+bwa_index.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6891/trunk/src/shell/bwa_index.sh
+END
+create_ber_db.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/ergatis/!svn/ver/6364/trunk/src/shell/create_ber_db.sh
+END
+scripture.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6891/trunk/src/shell/scripture.sh
+END
+lgt_bwa_zip.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7497/trunk/src/shell/lgt_bwa_zip.sh
+END
+sort_sam_by_name.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7018/trunk/src/shell/sort_sam_by_name.sh
+END
+bwa_align.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6891/trunk/src/shell/bwa_align.sh
+END
+pepstats.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5471/trunk/src/shell/pepstats.sh
+END

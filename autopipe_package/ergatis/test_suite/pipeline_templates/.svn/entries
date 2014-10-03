@@ -1,0 +1,55 @@
+10
+
+dir
+7655
+https://ergatis.svn.sourceforge.net/svnroot/ergatis/trunk/test_suite/pipeline_templates
+https://ergatis.svn.sourceforge.net/svnroot/ergatis
+
+
+
+2006-10-11T16:06:30.000000Z
+3518
+bwhitty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c60d6122-3b2e-0410-912d-af40fea696fe
+
+pro_test
+dir
+
+euk_test_nodistrib
+dir
+
+pro_test_no_db
+dir
+
+scott_pipeline
+dir
+
+euk_test
+dir
+
+wait_test
+dir
+
+aat_test
+dir
+
+initdb_test
+dir
+
+pro_test_nodistrib
+dir
+

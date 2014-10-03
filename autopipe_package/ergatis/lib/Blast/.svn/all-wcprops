@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/ergatis/!svn/ver/4633/trunk/lib/Blast
+END
+BlastHitDataType.pm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/2318/trunk/lib/Blast/BlastHitDataType.pm
+END
+NcbiBlastHitDataType.pm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/4633/trunk/lib/Blast/NcbiBlastHitDataType.pm
+END

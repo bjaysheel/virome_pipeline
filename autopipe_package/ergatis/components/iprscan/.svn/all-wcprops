@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5803/trunk/components/iprscan
+END
+iprscan.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/4680/trunk/components/iprscan/iprscan.config
+END
+iprscan.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5803/trunk/components/iprscan/iprscan.i1.xml
+END
+iprscan.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/4131/trunk/components/iprscan/iprscan.tmpl
+END
+iprscan.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/4138/trunk/components/iprscan/iprscan.xml
+END

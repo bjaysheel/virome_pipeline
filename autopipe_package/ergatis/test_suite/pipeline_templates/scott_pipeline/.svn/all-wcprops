@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline
+END
+wu-blastp.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/wu-blastp.default.ini
+END
+clustalw.clustalw_jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/clustalw.clustalw_jaccard.ini
+END
+cogs.jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/cogs.jfcogs.ini
+END
+clustalw.clustalw_cogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/clustalw.clustalw_cogs.ini
+END
+bsml2chado.clustalw_jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.clustalw_jfcogs.ini
+END
+legacy2bsml.gsyn_103.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/legacy2bsml.gsyn_103.ini
+END
+xdformat.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/xdformat.default.ini
+END
+jaccard.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/jaccard.default.ini
+END
+bsml2chado.legacydata.ini
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.legacydata.ini
+END
+cogs.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/cogs.default.ini
+END
+bsml2fasta.single.ini
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2fasta.single.ini
+END
+bsml2chado.pe.ini
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.pe.ini
+END
+legacy2bsml.gymb_2177.ini
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/legacy2bsml.gymb_2177.ini
+END
+bsml2chado.clustalw_jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.clustalw_jaccard.ini
+END
+clustalw.clustalw_jfcogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/clustalw.clustalw_jfcogs.ini
+END
+bsml2chado.clustalw_cogs.ini
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.clustalw_cogs.ini
+END
+pipeline.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/pipeline.xml
+END
+bsml2fasta.multi.ini
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2fasta.multi.ini
+END
+pe.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/pe.default.ini
+END
+bsml2chado.wu-blastp.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/bsml2chado.wu-blastp.ini
+END
+initdb.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/initdb.default.ini
+END
+legacy2bsml.gct_3505.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/legacy2bsml.gct_3505.ini
+END
+backupdb.default.ini
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/backupdb.default.ini
+END
+legacy2bsml.gyma_654.ini
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/ergatis/!svn/ver/2702/trunk/test_suite/pipeline_templates/scott_pipeline/legacy2bsml.gyma_654.ini
+END

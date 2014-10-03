@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/7586/trunk/templates/pipelines/metagenomic_contaminant_screen
+END
+bmtagger.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/ergatis/!svn/ver/7586/trunk/templates/pipelines/metagenomic_contaminant_screen/bmtagger.default.config
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/7586/trunk/templates/pipelines/metagenomic_contaminant_screen/pipeline.layout
+END
+filter_sequences_by_id.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/7586/trunk/templates/pipelines/metagenomic_contaminant_screen/filter_sequences_by_id.default.config
+END

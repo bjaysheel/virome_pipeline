@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/ergatis/!svn/ver/7597/trunk/util
+END
+check_pipeline_template_configs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6275/trunk/util/check_pipeline_template_configs.pl
+END
+uniprot_idmapping_to_mldbm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/6203/trunk/util/uniprot_idmapping_to_mldbm.pl
+END
+chado2flatfile.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7308/trunk/util/chado2flatfile.pl
+END
+create_prok_pipeline_config.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/7002/trunk/util/create_prok_pipeline_config.pl
+END
+reset_command_state_by_name.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/6082/trunk/util/reset_command_state_by_name.pl
+END
+xml_command_summary.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/6807/trunk/util/xml_command_summary.pl
+END
+dump_table.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/7401/trunk/util/dump_table.pl
+END
+build_ergatis.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/7597/trunk/util/build_ergatis.pl
+END
+create_evidence_file_mapping.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/ergatis/!svn/ver/5337/trunk/util/create_evidence_file_mapping.pl
+END
+extract_sequences_by_type.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/7308/trunk/util/extract_sequences_by_type.pl
+END
+chado_aengine_dumper.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/7308/trunk/util/chado_aengine_dumper.pl
+END
+tigrfam_info_to_mldbm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/7021/trunk/util/tigrfam_info_to_mldbm.pl
+END
+example_run_pipeline_from_template.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/ergatis/!svn/ver/6162/trunk/util/example_run_pipeline_from_template.pl
+END
+pipeline_from_template.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5282/trunk/util/pipeline_from_template.pl
+END
+remove_dceSpec.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5292/trunk/util/remove_dceSpec.pl
+END
+run_prok_pipeline.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/7205/trunk/util/run_prok_pipeline.pl
+END
+hmmlib_to_mldbm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/7121/trunk/util/hmmlib_to_mldbm.pl
+END
+read_mldbm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5677/trunk/util/read_mldbm.pl
+END
+download_all_dbs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/7308/trunk/util/download_all_dbs.pl
+END
+create_hmms.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/7121/trunk/util/create_hmms.pl
+END
+enzyme2obo.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/6214/trunk/util/enzyme2obo.pl
+END
+reset_subgroups.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5377/trunk/util/reset_subgroups.pl
+END
+go_mapping_file_to_mldbm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5928/trunk/util/go_mapping_file_to_mldbm.pl
+END
+merge_hmm_libraries.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7350/trunk/util/merge_hmm_libraries.pl
+END
+copy_pipeline.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5288/trunk/util/copy_pipeline.pl
+END
+annotation_tab_file.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/7308/trunk/util/annotation_tab_file.pl
+END
+check_prokpipe_software.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/7387/trunk/util/check_prokpipe_software.pl
+END
+create_release.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6058/trunk/util/create_release.pl
+END

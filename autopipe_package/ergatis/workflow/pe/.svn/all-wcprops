@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/pe
+END
+pe.ini
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/3436/trunk/workflow/pe/pe.ini
+END
+pe-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/pe/pe-master_template.xml
+END
+peconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/3505/trunk/workflow/pe/peconf.ini
+END
+pe-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/3123/trunk/workflow/pe/pe-master.ini
+END
+pe_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/pe/pe_template.xml
+END

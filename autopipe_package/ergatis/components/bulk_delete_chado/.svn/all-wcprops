@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado
+END
+bulk_delete_chado.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/ergatis/!svn/ver/5801/trunk/components/bulk_delete_chado/bulk_delete_chado.config
+END
+bulk_delete_chado.bcpin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.bcpin.xml
+END
+bulk_delete_chado.counts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.counts.xml
+END
+bulk_delete_chado.bcpout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.bcpout.xml
+END
+bulk_delete_chado.views.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.views.xml
+END
+bulk_delete_chado.sqlforce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.sqlforce.xml
+END
+bulk_delete_chado.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5803/trunk/components/bulk_delete_chado/bulk_delete_chado.xml
+END

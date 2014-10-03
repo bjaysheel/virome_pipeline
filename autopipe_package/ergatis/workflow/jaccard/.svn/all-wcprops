@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/jaccard
+END
+jaccard_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/jaccard/jaccard_template.xml
+END
+jaccard.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/2184/trunk/workflow/jaccard/jaccard.ini
+END
+jaccard-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/jaccard/jaccard-master_template.xml
+END
+jaccardconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3370/trunk/workflow/jaccard/jaccardconf.ini
+END
+jaccard-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/2566/trunk/workflow/jaccard/jaccard-master.ini
+END

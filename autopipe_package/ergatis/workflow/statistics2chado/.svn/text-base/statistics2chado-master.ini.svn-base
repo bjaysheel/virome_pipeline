@@ -1,0 +1,97 @@
+;-------------------------------------------------------------------------------------
+;
+; Component: statistics2chado 
+;
+; Author:   Jay Sundaram sundaram@tigr.org
+; 
+; Date:     2005.07.22
+;
+; Purpose:  This workflow is intended to be executed immediately following any
+;           bsml2chado workflow which has loaded analyses into the chado
+;           Computational Analysis Module.
+;
+;
+;           Note that it is only necessary to run this workflow if the particular 
+;           project has a Sybil interface established for the purposes of viewing
+;           the comparative data via HTML.
+;
+;
+; Version:  $Id$
+;
+; CVS:      ergatis/workflow/statistics2chado/statistics2chado-master.ini  
+;
+;-------------------------------------------------------------------------------------
+
+
+
+[empty]
+
+[create_compute_scratch]
+;
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/
+
+[create_compute_output]
+;
+;make the output directory
+param.command=mkdir
+arg=-p -m 777 $;OUTPUT_DIRECTORY$;
+
+[truncate_stats_tables]
+;
+;
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=truncatestatstables
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/truncatestats.log
+param.--debug_level=5
+param.--file=$;WORKFLOWDOCS_DIR$;/truncate_stats_tables.ddl
+
+[populate_stats_tables]
+;
+;
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=populatestatstables
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/populatestats.log
+param.--debug_level=5
+
+[update_stats_tables_statistics]
+;
+;
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=updatestatstables
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/updatestats.log
+param.--debug_level=5
+param.--file=$;WORKFLOWDOCS_DIR$;/update_statistics_stats_tables.ddl
+
+[grant_select_stats_tables]
+;
+;
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=grantselectstats
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/grantselectstats.log
+param.--debug_level=5
+param.--file=$;WORKFLOWDOCS_DIR$;/grant_select_stats_tables.ddl
+
+
+[check_logfiles]
+;
+;
+param.command=$;BIN_DIR$;/check_logfiles
+param.--debug_level=5
+param.--log4perl=$;TMP_DIR$;/check_logfiles.pl.log
+param.--username=$;EMAILUSERNAME$;
+param.--workflow_id=$;REPOSITORY_ROOT$;/Workflow/pipeline/$;PIPELINEID$;/pipeline.xml.instance
+param.--repository=$;WORKFLOW_REPOSITORY$;

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/backupdb
+END
+backupdbconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/2667/trunk/workflow/backupdb/backupdbconf.ini
+END
+backupdb-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3093/trunk/workflow/backupdb/backupdb-master.ini
+END
+backupdb-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/backupdb/backupdb-master_template.xml
+END

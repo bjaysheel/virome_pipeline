@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/ergatis/!svn/ver/5803/trunk/components/backupdb
+END
+backupdb.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5801/trunk/components/backupdb/backupdb.config
+END
+backupdb.backuplargetables.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5803/trunk/components/backupdb/backupdb.backuplargetables.xml
+END
+backupdb.backuptables.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5803/trunk/components/backupdb/backupdb.backuptables.xml
+END
+backupdb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5803/trunk/components/backupdb/backupdb.xml
+END

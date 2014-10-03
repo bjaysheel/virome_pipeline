@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5803/trunk/components/condor_cogs_search
+END
+condor_cogs_search.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/ergatis/!svn/ver/5803/trunk/components/condor_cogs_search/condor_cogs_search.xml
+END
+condor_cogs_search.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/5801/trunk/components/condor_cogs_search/condor_cogs_search.config
+END
+condor_cogs_search.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/5803/trunk/components/condor_cogs_search/condor_cogs_search.i1.xml
+END

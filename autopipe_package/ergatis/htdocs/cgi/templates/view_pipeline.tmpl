@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+    <title><TMPL_VAR NAME=PAGE_TITLE></title>
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/monitor.css">
+    <link rel="stylesheet" type="text/css" href="../css/commenting.css">
+    <link rel="stylesheet" type="text/css" href="../css/view_pipeline.css">
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/spin.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+    <script type="text/javascript" src="../javascript/commenting.js"></script>
+    <script type="text/javascript" src="../javascript/view_pipeline.js"></script>
+</head>
+
+<body class='pipelines'>
+
+<div id='page_container'>
+
+<TMPL_INCLUDE NAME="header.tmpl">
+
+    <div id="boxes">
+        <div id="dialog" class="window">
+            <h3 class='reset-warning'>component reset verification</h3>
+            <p>Are you sure you want to reset this component? Please be aware that reseting a component will <span id='delete'>delete all</span> current output.</p>
+            <TMPL_IF NAME="LOGGED_IN">
+	    <TMPL_ELSE>
+	    	<p class='reset-warning'>You are currently not logged into Ergatis. This may cause issues when resetting a component</p>
+            </TMPL_IF>
+            <div class='actions'>
+                <a id='action_yes'>Yes</a>
+                <a class='close'>No</a>
+            </div>
+            <div id="spinner"></div>
+        </div>
+    </div>
+
+    <div id='info_container'>
+<TMPL_INCLUDE NAME="pipeline_summary.tmpl">
+    </div>
+
+    <div id='content_container'>
+
+        <div class='timer' id='pipeline_timer_label'></div>
+<TMPL_INCLUDE NAME="commenting.tmpl">
+        <div class='pipeline_marker'>start</div>
+        
+<TMPL_VAR NAME=COMPONENT_HTML>
+    
+        <div class='pipeline_marker'>end</div>
+
+    </div> <!-- end content_container -->
+
+</div> <!-- end page_container -->
+<div id='user_message_container'></div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/SnpClusterer
+END
+SnpClusterer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/SnpClusterer.hpp
+END
+SnpClustererMain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/SnpClusterer/SnpClustererMain.cpp
+END
+GraphAlgorithms.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/GraphAlgorithms.hpp
+END
+SnpDataType.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/SnpDataType.hpp
+END
+Makefile.mk
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/Makefile.mk
+END
+Graph.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/Graph.hpp
+END
+StringTokenizer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/SnpClusterer/StringTokenizer.hpp
+END
+SnpClusterer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/SnpClusterer/SnpClusterer.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/3141/trunk/src/c/SnpClusterer/Makefile
+END
+SnpDataType.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5823/trunk/src/c/SnpClusterer/SnpDataType.cpp
+END

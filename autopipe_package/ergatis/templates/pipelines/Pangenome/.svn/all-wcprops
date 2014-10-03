@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5517/trunk/templates/pipelines/Pangenome
+END
+pangenome.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/pangenome.default.config
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/pipeline.layout
+END
+xdformat.pepdb.config
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/xdformat.pepdb.config
+END
+pipeline.xml.comment
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/5517/trunk/templates/pipelines/Pangenome/pipeline.xml.comment
+END
+wu-blastp.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/wu-blastp.default.config
+END
+wu-tblastn.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/wu-tblastn.default.config
+END
+split_multifasta.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/split_multifasta.default.config
+END
+xdformat.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/xdformat.default.config
+END
+xdformat.nuc.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/ergatis/!svn/ver/5516/trunk/templates/pipelines/Pangenome/xdformat.nuc.config
+END

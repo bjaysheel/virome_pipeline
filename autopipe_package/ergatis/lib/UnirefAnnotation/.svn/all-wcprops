@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/ergatis/!svn/ver/7480/trunk/lib/UnirefAnnotation
+END
+Database.pm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/7314/trunk/lib/UnirefAnnotation/Database.pm
+END
+NestedDB.pm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/7480/trunk/lib/UnirefAnnotation/NestedDB.pm
+END
+Lookup.pm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7314/trunk/lib/UnirefAnnotation/Lookup.pm
+END
+DBUtil.pm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/6717/trunk/lib/UnirefAnnotation/DBUtil.pm
+END

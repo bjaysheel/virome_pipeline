@@ -1,0 +1,14 @@
+<html>
+<body>
+
+<strong>Hi [% first_name %]</strong>,
+
+<p>
+It would appear there was an error with rsync at $ [% date_time %]. You'll want to take a look at this.
+</p>
+
+<p>
+Thank you!
+</p>
+</body>
+</html>

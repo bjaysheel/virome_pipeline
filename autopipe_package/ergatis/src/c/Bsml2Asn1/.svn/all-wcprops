@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1
+END
+Bsml2Asn1Converter.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Bsml2Asn1Converter.hpp
+END
+Bsml2Asn1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Bsml2Asn1.cpp
+END
+FastaIndexer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/FastaIndexer.hpp
+END
+Registry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Registry.cpp
+END
+Makefile.builddir
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Makefile.builddir
+END
+Bsml2Asn1Converter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Bsml2Asn1Converter.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Makefile
+END
+FastaIndexer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/FastaIndexer.cpp
+END
+Registry.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3309/trunk/src/c/Bsml2Asn1/Registry.hpp
+END

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>ergatis - archive/delete a pipeline</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <!-- functionality -->
+    <script type='text/javascript' src='../javascript/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='../javascript/common.js'></script>
+    <script type='text/javascript' src='../javascript/archive_pipeline.js'></script>
+</head>
+
+<body class='pipelines'>
+
+<div id='page_container'>
+
+<TMPL_INCLUDE NAME="header.tmpl">
+    <!-- Hidden input needed for our redirect to the pipeline list page-->
+    <input id="pipeline_list_input" type="hidden" value="<TMPL_VAR NAME=PIPELINE_LIST_URL>" />
+
+    <div id='content_container'>
+        <h2><TMPL_VAR NAME=MESSAGE_HEADER></h2>
+        <p>
+            <TMPL_VAR NAME=MESSAGE>
+        </p>
+        <p>
+            Redirecting to pipeline list in <b id="redirect_count">5</b> seconds...
+        </p>
+    </div>
+
+</div>
+
+</body>
+
+</html>

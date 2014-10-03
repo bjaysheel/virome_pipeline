@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/5803/trunk/components/panther
+END
+panther.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5803/trunk/components/panther/panther.xml
+END
+panther.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5801/trunk/components/panther/panther.config
+END
+panther.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/5803/trunk/components/panther/panther.i1.xml
+END
+panther.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5802/trunk/components/panther/panther.tmpl
+END

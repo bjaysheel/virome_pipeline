@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa
+END
+bwa_index.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_index.xml
+END
+bwa_align.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_align.xml
+END
+bwa_index.config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_index.config
+END
+bwa_align.config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_align.config
+END
+bwa_index.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_index.i1.xml
+END
+bwa_align.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/6891/trunk/components/bwa/bwa_align.i1.xml
+END

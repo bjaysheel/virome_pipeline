@@ -1,0 +1,100 @@
+10
+
+dir
+7655
+https://ergatis.svn.sourceforge.net/svnroot/ergatis/trunk/templates/pipelines
+https://ergatis.svn.sourceforge.net/svnroot/ergatis
+
+
+
+2012-03-23T19:33:40.795163Z
+7644
+sagrawal9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c60d6122-3b2e-0410-912d-af40fea696fe
+
+NonPseudo_Prodigal_Load_Pipeline
+dir
+
+Pseudo_Prodigal_NonLoad_Pipeline
+dir
+
+Prokaryotic_Annotation_Pipeline_Chado_Loading
+dir
+
+metagenomic_contaminant_screen
+dir
+
+skirret
+dir
+
+NonPseudo_Glimmer_NonLoad_Pipeline
+dir
+
+Prokaryotic_Annotation_Pipeline_RNA_Predictions
+dir
+
+NonPseudo_Prodigal_NonLoad_Pipeline
+dir
+
+Prokaryotic_Annotation_Pipeline_Celera_Assembly
+dir
+
+Pseudo_Glimmer_Load_Pipeline
+dir
+
+Prokaryotic_Annotation_Pipeline_Input_Processing
+dir
+
+Prokaryotic_Annotation_Pipeline_Gene_Annotations
+dir
+
+Integrated_JOCs-pangenome_pipeline
+dir
+
+snp_verification
+dir
+
+Pseudo_Prodigal_Load_Pipeline
+dir
+
+Prokaryotic_Annotation_Pipeline_Glimmer_Predictions
+dir
+
+Prokaryotic_Annotation_Pipeline_Pseudomolecule_Generation
+dir
+
+Prokaryotic_Annotation_Pipeline_Velvet_Assembly
+dir
+
+Prokaryotic_Annotation_Pipeline_Prodigal_Predictions
+dir
+
+Pangenome
+dir
+
+NonPseudo_Glimmer_Load_Pipeline
+dir
+
+Pseudo_Glimmer_NonLoad_Pipeline
+dir
+
+nonredundant_sequence_pipeline
+dir
+
+JOCs_comparative_pipeline
+dir
+

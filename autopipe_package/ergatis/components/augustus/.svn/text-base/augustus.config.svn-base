@@ -1,0 +1,67 @@
+[interface]
+classification = feature prediction / genes
+
+[parameters]
+$;CDS$; = on
+;; this field is required
+$;SPECIES$; =
+$;SPLIT_SIZE$; = 350000
+;; strand values: both, forward, backward
+$;STRAND$; = both
+;; genemodel values: partial, complete, atleastone, exactlyone
+$;GENEMODEL$; = partial
+;; The maximum number of tracks when displayed in a genome browser.
+$;MAXTRACKS$; =
+;; Extrinsic Config File
+$;EXTRINSIC_CONFIG_FILE$; = $;AUGUSTUS_CONFIG_PATH$;/extrinsic/extrinsic.cfg
+;; path to the augustus executable.  this is configurable because
+;; Mario has created different versions for different projects.
+$;AUGUSTUS_CONFIG_PATH$;=$;AUGUSTUS_DIR$;/config
+$;AUGUSTUS_BINARY_PATH$;=$;AUGUSTUS_DIR$;/bin/augustus
+
+;; Paramaters that are truly optional go here.  For example, put --hintsfile=/path/to/my.hintsfile
+;; here to use one.
+$;OTHER_OPTS$; =
+
+[input]
+$;INPUT_FILE_LIST$; = 
+$;INPUT_FILE$; = 
+$;INPUT_DIRECTORY$; = 
+;; the following is only used when iterating over an INPUT_DIRECTORY
+$;INPUT_EXTENSION$; = fsa
+
+[output]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.bsml.list
+$;RAW_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;COMPONENT_NAME$;.raw.list
+
+[component]
+$;COMPONENT_NAME$; = augustus
+$;DESCRIPTION$; = none
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/workflow/runtime/$;COMPONENT_NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;PIPELINE_TOKEN$; = unnamed
+
+;The version,revision,tag here is set by an interpolated CVS tag
+$;VERSION$; = 2.0
+$;RELEASE_TAG$; = $Name$
+$;REVISION$;            = $Revision$
+
+$;TEMPLATE_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.xml
+$;ITERATOR1$; = i1
+$;ITERATOR1_XML$; = $;DOCS_DIR$;/$;COMPONENT_NAME$;.$;ITERATOR1$;.xml
+
+;Distributed options
+$;GROUP_COUNT$; = 150
+$;NODISTRIB$; = 0
+
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;COMPONENT_XML$; = 
+$;PIPELINE_XML$; = 
+$;PIPELINEID$; = 
+
+[include]
+$;PROJECT_CONFIG$;=
+
+

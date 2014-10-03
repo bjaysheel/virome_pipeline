@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test
+END
+id_testconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test/id_testconf.ini
+END
+id_test-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test/id_test-master.ini
+END
+id_test_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test/id_test_template.xml
+END
+id_test.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test/id_test.ini
+END
+id_test-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/3828/trunk/workflow/id_test/id_test-master_template.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/7092/trunk/components/start_site_curation
+END
+start_site_curation.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/ergatis/!svn/ver/5802/trunk/components/start_site_curation/start_site_curation.tmpl
+END
+start_site_curation.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/ergatis/!svn/ver/7092/trunk/components/start_site_curation/start_site_curation.xml
+END
+start_site_curation_distributed.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/ergatis/!svn/ver/6543/trunk/components/start_site_curation/start_site_curation_distributed.xml
+END
+start_site_curation.config
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/6543/trunk/components/start_site_curation/start_site_curation.config
+END
+start_site_curation.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/ergatis/!svn/ver/6528/trunk/components/start_site_curation/start_site_curation.i1.xml
+END

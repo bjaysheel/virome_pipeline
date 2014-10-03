@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_fasta
+END
+validate_fasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_fasta/validate_fasta.xml
+END
+validate_fasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/5801/trunk/components/validate_fasta/validate_fasta.config
+END
+validate_fasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/ergatis/!svn/ver/5803/trunk/components/validate_fasta/validate_fasta.i1.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/ergatis/!svn/ver/6318/trunk/lib/GFF3
+END
+GFF3Record.pm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6036/trunk/lib/GFF3/GFF3Record.pm
+END
+GTFBuilder.pm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/5882/trunk/lib/GFF3/GTFBuilder.pm
+END
+GFF3Builder.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/6318/trunk/lib/GFF3/GFF3Builder.pm
+END
+GTFRecord.pm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/ergatis/!svn/ver/5882/trunk/lib/GFF3/GTFRecord.pm
+END
+Logger.pm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/ergatis/!svn/ver/4647/trunk/lib/GFF3/Logger.pm
+END

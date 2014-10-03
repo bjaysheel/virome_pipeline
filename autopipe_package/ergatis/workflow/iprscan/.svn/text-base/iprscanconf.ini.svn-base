@@ -1,0 +1,39 @@
+#configuration file for the iprscan workflow
+
+[parameters iprscan]
+;; n for dna/rna, p for protein
+$;SEQ_TYPE$; = p
+
+[input iprscan]
+$;INPUT_FILE_LIST$; = 
+$;INPUT_FILE$; = 
+$;INPUT_DIRECTORY$; = 
+$;INPUT_EXTENSION$; = fsa
+
+[output iprscan]
+$;OUTPUT_TOKEN$; = default
+$;OUTPUT_DIRECTORY$; = $;REPOSITORY_ROOT$;/output_repository/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;RAW_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.raw.list
+$;BSML_OUTPUT_LIST$; = $;OUTPUT_DIRECTORY$;/$;NAME$;.bsml.list
+$;COMPRESS_BSML_OUTPUT$; = 0
+
+[workflowdocs iprscan]
+$;VERSION$; = $Name$
+$;REVISION$;            = $Revision$
+$;TAG$;                 = $Name$
+
+$;NAME$; = iprscan 
+$;MASTER_TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/iprscan-master.ini
+$;MASTER_TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/iprscan-master_template.xml
+$;TEMPLATE_INI$; = $;WORKFLOWDOCS_DIR$;/iprscan.ini
+$;TEMPLATE_XML$; = $;WORKFLOWDOCS_DIR$;/iprscan_template.xml
+$;WORKFLOW_REPOSITORY$; = $;REPOSITORY_ROOT$;/Workflow/$;NAME$;/$;PIPELINEID$;_$;OUTPUT_TOKEN$;
+$;GROUP_COUNT$; = 150
+;the following keys are replaced at runtime by the invocation script
+$;COMPONENT_CONFIG$; = 
+$;NODISTRIB$;            = 0
+
+[include iprscan]
+$;SHARED_CONFIG$;=
+
+#see file sharedconf.ini for additional configuration settings

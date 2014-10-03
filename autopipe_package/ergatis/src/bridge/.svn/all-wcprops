@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/ergatis/!svn/ver/6854/trunk/src/bridge
+END
+load_multi_aat_data.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/2332/trunk/src/bridge/load_multi_aat_data.pl
+END
+move_wublastp_nr_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/6854/trunk/src/bridge/move_wublastp_nr_results.pl
+END
+Extract_Asmbls_for_workflow.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/1695/trunk/src/bridge/Extract_Asmbls_for_workflow.pl
+END
+iprscan2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/4558/trunk/src/bridge/iprscan2legacydb.pl
+END
+Move_Workflow_Assembly_Searches.pl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/ergatis/!svn/ver/2807/trunk/src/bridge/Move_Workflow_Assembly_Searches.pl
+END
+move_genewise_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/ergatis/!svn/ver/4544/trunk/src/bridge/move_genewise_results.pl
+END
+Extract_Sequences_for_BER_Workflow.pl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/2847/trunk/src/bridge/Extract_Sequences_for_BER_Workflow.pl
+END
+Extract_Models_for_WorkFlow.pl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/2635/trunk/src/bridge/Extract_Models_for_WorkFlow.pl
+END
+merge_twinscan_raw.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/ergatis/!svn/ver/5057/trunk/src/bridge/merge_twinscan_raw.pl
+END
+panther2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2907/trunk/src/bridge/panther2legacydb.pl
+END
+move_ber_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2885/trunk/src/bridge/move_ber_results.pl
+END
+genewise2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/5713/trunk/src/bridge/genewise2legacydb.pl
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/ergatis/!svn/ver/1952/trunk/src/bridge/README
+END
+targetp2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/5575/trunk/src/bridge/targetp2legacydb.pl
+END
+Batch_AAT_Wrap_Move.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/ergatis/!svn/ver/3147/trunk/src/bridge/Batch_AAT_Wrap_Move.pl
+END
+move_repeatmasker_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/4090/trunk/src/bridge/move_repeatmasker_results.pl
+END
+tRNAscan-SE2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/3150/trunk/src/bridge/tRNAscan-SE2legacydb.pl
+END
+move_hmmpfam_results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/6307/trunk/src/bridge/move_hmmpfam_results.pl
+END
+predotar2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/ergatis/!svn/ver/2679/trunk/src/bridge/predotar2legacydb.pl
+END
+repeat2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/ergatis/!svn/ver/5774/trunk/src/bridge/repeat2legacydb.pl
+END
+wu-blast_btab2legacy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/ergatis/!svn/ver/5556/trunk/src/bridge/wu-blast_btab2legacy.pl
+END
+tmhmm2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/ergatis/!svn/ver/3219/trunk/src/bridge/tmhmm2legacydb.pl
+END
+Move_Workflow_Transcr_Level_Searches.pl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/ergatis/!svn/ver/2807/trunk/src/bridge/Move_Workflow_Transcr_Level_Searches.pl
+END
+ngap2legacydb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/ergatis/!svn/ver/3917/trunk/src/bridge/ngap2legacydb.pl
+END
+move_niaa_blastp.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/ergatis/!svn/ver/2889/trunk/src/bridge/move_niaa_blastp.pl
+END
+Move_Workflow_InterPro_Results.pl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/ergatis/!svn/ver/2807/trunk/src/bridge/Move_Workflow_InterPro_Results.pl
+END

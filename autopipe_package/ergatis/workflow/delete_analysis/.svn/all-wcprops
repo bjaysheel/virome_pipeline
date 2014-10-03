@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/delete_analysis
+END
+delete_analysis-master_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/ergatis/!svn/ver/3551/trunk/workflow/delete_analysis/delete_analysis-master_template.xml
+END
+delete_analysisconf.ini
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/ergatis/!svn/ver/2671/trunk/workflow/delete_analysis/delete_analysisconf.ini
+END
+delete_analysis-master.ini
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/ergatis/!svn/ver/2931/trunk/workflow/delete_analysis/delete_analysis-master.ini
+END

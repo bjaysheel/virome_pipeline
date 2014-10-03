@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/ergatis/!svn/ver/7590/trunk/lib/TIGR
+END
+FASTAgrammar.pm
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/ergatis/!svn/ver/5353/trunk/lib/TIGR/FASTAgrammar.pm
+END
+Foundation.pm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/7410/trunk/lib/TIGR/Foundation.pm
+END
+FASTAiterator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/ergatis/!svn/ver/5353/trunk/lib/TIGR/FASTAiterator.pm
+END
+FASTAwriter.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5353/trunk/lib/TIGR/FASTAwriter.pm
+END
+FASTArecord.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5353/trunk/lib/TIGR/FASTArecord.pm
+END
+FASTAreader.pm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/ergatis/!svn/ver/5353/trunk/lib/TIGR/FASTAreader.pm
+END

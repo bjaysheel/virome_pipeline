@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/ergatis/!svn/ver/6979/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions
+END
+pipeline.layout
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/pipeline.layout
+END
+translate_sequence.translate_prediction.config
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/translate_sequence.translate_prediction.config
+END
+prodigal.default.config
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/prodigal.default.config
+END
+pipeline.config
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/ergatis/!svn/ver/6979/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/pipeline.config
+END
+bsml2fasta.prediction_CDS.config
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svnroot/ergatis/!svn/ver/6923/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/bsml2fasta.prediction_CDS.config
+END
+promote_gene_prediction.promote_prediction.config
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svnroot/ergatis/!svn/ver/6979/trunk/templates/pipelines/Prokaryotic_Annotation_Pipeline_Prodigal_Predictions/promote_gene_prediction.promote_prediction.config
+END

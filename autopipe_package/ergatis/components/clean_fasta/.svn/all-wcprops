@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/ergatis/!svn/ver/6818/trunk/components/clean_fasta
+END
+clean_fasta.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/ergatis/!svn/ver/6794/trunk/components/clean_fasta/clean_fasta.xml
+END
+clean_fasta.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6818/trunk/components/clean_fasta/clean_fasta.config
+END
+clean_fasta.i1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/ergatis/!svn/ver/6794/trunk/components/clean_fasta/clean_fasta.i1.xml
+END
+clean_fasta.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/ergatis/!svn/ver/6794/trunk/components/clean_fasta/clean_fasta.tmpl
+END

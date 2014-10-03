@@ -1,0 +1,729 @@
+[empty]
+
+[create_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/REPLACEMENT
+
+[create_cache_dir]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/cache_dir
+
+[create_dupdir]
+;
+; make output directory for all of the duplication direct
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir
+
+[create_final_dir]
+;
+; make output directory for all of the duplication direct
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/final
+
+[create_component_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/component
+
+[create_rel_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/rel
+
+[create_ec_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/ec
+
+[create_ard_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/ard
+
+[create_evidence_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/evidence
+
+[create_goprop_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/goprop
+
+[create_tigr_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/tigr
+
+[create_tigr_schemas_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/tigr_schemas
+
+[create_anno_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/anno
+
+[create_annflg_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/annflg
+
+[create_gff3_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/gff3
+
+[create_so_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/so
+
+[create_so_aux_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/so_aux
+
+[create_go_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/go
+
+[create_output_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/dupdir/output
+
+[create_final_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/final
+
+[revoke_public]
+; Revoke access to all users
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=revokeallpublic
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/revoke.log
+param.--file=$;WORKFLOWDOCS_DIR$;/revoke_all_public.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.revoke.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.revoke.stderr
+
+[unpartition]
+; Unpartition tables dbxref, feature, featureprop, featureloc, analysisfeature
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=unpartitiontables
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/unpartition.log
+param.--file=$;WORKFLOWDOCS_DIR$;/unpartition_tables.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.unpartition.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.unpartition.stderr
+
+[drop_all_tables]
+; drop all tables
+param.command=$;BIN_DIR$;/dropchadoobjects
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--object_type=tables
+param.--logfile=$;WORKFLOW_REPOSITORY$;/dropchadotables.pl.log
+param.stdout=$;TMP_DIR$;/dropchadotables.stdout
+param.stderr=$;TMP_DIR$;/dropchadotables.stderr
+
+[drop_all_chado_mart_views]
+; drop all chado_mart views
+param.command=$;BIN_DIR$;/dropchadoobjects
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--object_type=views
+param.--logfile=$;WORKFLOW_REPOSITORY$;/dropchadoviews.pl.log
+param.stdout=$;TMP_DIR$;/dropchadoviews.stdout
+param.stderr=$;TMP_DIR$;/dropchadoviews.stderr
+
+[create_all_tables]
+; create all tables
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=createtables
+param.--server=$;SERVER$;
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/createtables.log
+param.--file=$;WORKFLOWDOCS_DIR$;/create_tables.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.createtables.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.createtables.stderr
+
+[create_all_chado_mart_views]
+; create all chado_mart views
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--action=create_chado_mart_views
+param.--server=$;SERVER$;
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/createchadomartviews.log
+param.--file=$;WORKFLOWDOCS_DIR$;/create_views.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.createchadomartviews.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.createchadomartviews.stderr
+
+[partition]
+; Partition tables dbxref, feature, featureprop, featureloc, analysisfeature
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=partitiontables
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/partition.log
+param.--file=$;WORKFLOWDOCS_DIR$;/partition_tables.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.partition.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.partition.stderr
+
+[drop_indexes1]
+; Drop all indexes and constraints in the chado database
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=dropindexes
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/drop_index1.log
+param.--file=$;WORKFLOWDOCS_DIR$;/drop_indexes.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.dropindex1.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.dropindex1.stderr
+
+[load_pub_table]
+param.command=$;BIN_DIR$;/chadoloader
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--bcpmode=in
+param.--batchsize=3000
+param.--logfile=$;WORKFLOW_REPOSITORY$;/load.stable.tables.log
+param.--infile=$;WORKFLOWDOCS_DIR$;/pub.out
+param.--abort=1
+param.--debug_level=5
+param.stdout=$;WORKFLOW_REPOSITORY$;/load.stable.tables.stats
+param.stderr=$;WORKFLOW_REPOSITORY$;/load.stable.tables.stderr
+
+[parse_rel_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/relationship.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.rel.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/rel
+param.--cache_dir=$;TMP_DIR$;/rel
+param.stdout=$;TMP_DIR$;/obo2chado.rel.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.rel.stderr
+
+[load_rel_onto]
+param.command=$;BIN_DIR$;/chadoloader
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--bcpmode=in
+param.--batchsize=3000
+param.--logfile=$;WORKFLOW_REPOSITORY$;/load.rel.log
+param.--directory=$;TMP_DIR$;/rel
+param.stdout=$;WORKFLOW_REPOSITORY$;/load.rel.stats
+param.--abort=1
+param.--debug_level=5
+
+[rebuild_indexes1]
+; Rebuild all indexes and constraints in the chado database once BCP has completed
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=createindexes
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/create_index1.log
+param.stdout=$;TMP_DIR$;/sql2Chado.createindex1.stdout
+param.--file=$;WORKFLOWDOCS_DIR$;/create_indexes.ddl
+
+[cache_queries]
+param.command=$;BIN_DIR$;/queries2Chado
+param.database=$;DATABASE$;
+param.server=$;SERVER$;
+param.username=chado_admin
+param.password=chado_admin99
+param.debug_level=$;DEBUG$;
+param.log4perl=$;WORKFLOW_REPOSITORY$;/queries2Chado.pl.log
+param.cache_dir=$;TMP_DIR$;/cache_dir
+param.ontology=1
+;param.--setreadonly=1
+
+[parse_anno_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/annotation_attributes.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.anno.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/anno
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.anno.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.anno.stderr
+
+[parse_annflg_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/annotation_flags.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.annflg.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/annflg
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.annflg.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.annflg.stderr
+
+[parse_gff3_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/gff3_attributes.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.gff3.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/gff3
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.gff3.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.gff3.stderr
+
+[parse_comp_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/component.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.component.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/component
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.component.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.component.stderr
+
+[parse_output_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/output.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.output.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/output
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.output.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.output.stderr
+
+[parse_ec_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/ec.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.ec.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/ec
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.ec.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.ec.stderr
+
+[parse_ard_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/ard.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.ard.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/ard
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.ard.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.ard.stderr
+
+[parse_evidence_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/evidence_code.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.evidence.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/evidence
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.evidence.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.evidence.stderr
+
+[parse_go_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/go.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.go.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/go
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.go.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.go.stderr
+
+[parse_tigr_schemas_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/tigr_schemas.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.tigr_schemas.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/tigr_schemas
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.tigr_schemas.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.tigr_schemas.stderr
+
+[parse_go_properties_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/go_properties.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.goprop.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/goprop
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.goprop.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.goprop.stderr
+
+[parse_so_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/so.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.so.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/so
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.so.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.so.stderr
+
+[parse_aux_so_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/so.aux.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.so_aux.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/so_aux
+param.--cache_dir=$;TMP_DIR$;/so_aux
+param.stdout=$;TMP_DIR$;/obo2chado.so_aux.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.so_aux.stderr
+
+[parse_tigr_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/TIGR_roles.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.tigr.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/dupdir/tigr
+param.--cache_dir=$;TMP_DIR$;/cache_dir
+param.--checksum_placeholders=1
+param.stdout=$;TMP_DIR$;/obo2chado.tigr.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.tigr.stderr
+
+[collate_all_bcp_files_db]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name db.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/db.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/db.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/db.stdout
+
+[collate_all_bcp_files_dbxref]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name dbxref.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/dbxref.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/dbxref.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/dbxref.stdout
+
+[collate_all_bcp_files_dbxrefprop]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name dbxrefprop.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/dbxrefprop.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/dbxrefprop.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/dbxrefprop.stdout
+
+[collate_all_bcp_files_pub]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name pub.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/pub.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/pub.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/pub.stdout
+
+[collate_all_bcp_files_cv]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cv.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cv.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cv.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cv.stdout
+
+[collate_all_bcp_files_cvterm]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvterm.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvterm.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvterm.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvterm.stdout
+
+[collate_all_bcp_files_cvterm_dbxref]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvterm_dbxref.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvterm_dbxref.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvterm_dbxref.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvterm_dbxref.stdout
+
+[collate_all_bcp_files_cvterm_relationship]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvterm_relationship.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvterm_relationship.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvterm_relationship.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvterm_relationship.stdout
+
+[collate_all_bcp_files_cvtermsynonym]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvtermsynonym.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvtermsynonym.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvtermsynonym.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvtermsynonym.stdout
+
+[collate_all_bcp_files_cvtermpath]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvtermpath.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvtermpath.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvtermpath.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvtermpath.stdout
+
+[collate_all_bcp_files_cvtermprop]
+param.command=/usr/bin/find
+arg=$;TMP_DIR$;/dupdir/ -name cvtermprop.out -type f -exec cat {} \; | $;BIN_DIR$;/chado_record_uniq -o $;TMP_DIR$;/final/cvtermprop.out
+param.stderr=$;WORKFLOW_REPOSITORY$;/cvtermprop.stderr
+param.stdout=$;WORKFLOW_REPOSITORY$;/cvtermprop.stdout
+
+[insert_serial_identifiers]
+;
+;
+param.command=$;BIN_DIR$;/insert_serial_identifiers
+param.--username        = chado_admin
+param.--password        = chado_admin99
+param.--database        = $;DATABASE$;
+param.--server          = $;SERVER$;
+param.--outdir          = $;OUTPUT_DIRECTORY$;
+param.--input_directory = $;TMP_DIR$;/final
+param.--log4perl        = $;WORKFLOW_REPOSITORY$;/insert_serial_identifiers.pl.log
+param.--cachefile       = $;TMP_DIR$;/insert_serial_identifiers.cch
+param.stdout            = $;WORKFLOW_REPOSITORY$;/insert_serial_identifiers.stdout
+param.stderr            = $;WORKFLOW_REPOSITORY$;/insert_serial_identifiers.stderr
+dceSpec.os = linux
+
+[drop_indexes2]
+;
+; Drop all indexes and constraints in the chado database to facilitate fast BCP
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=dropindexes
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/dropindex2.log
+param.testmode=0
+param.indexmanip=1
+param.--debug_level=5
+param.--file=$;WORKFLOWDOCS_DIR$;/drop_indexes.ddl
+param.stdout=$;WORKFLOW_REPOSITORY$;/sql2chado.dropindexes2.stdout
+param.stderr=$;WORKFLOW_REPOSITORY$;/sql2chado.dropindexes2.stderr
+
+[load_tables]
+;
+param.command=$;BIN_DIR$;/chadoloader
+param.username=chado_admin
+param.password=chado_admin99
+param.database=$;DATABASE$;
+param.server=$;SERVER$;
+param.bcpmode=in
+param.batchsize=30000
+param.logfile=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.log
+param.directory=$;OUTPUT_DIRECTORY$;
+param.abort=1
+param.debug_level=5
+param.ignore_empty_bcp=1
+param.stdout=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.stdout
+param.stderr=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.stderr
+
+[rebuild_indexes2]
+;
+; Rebuild all indexes and constraints in the chado database once BCP has completed
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=createindexes
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/createindex2.log
+param.testmode=0
+param.indexmanip=1
+param.--debug_level=5
+param.--file=$;WORKFLOWDOCS_DIR$;/create_indexes.ddl
+param.stdout=$;WORKFLOW_REPOSITORY$;/sql2chado.rebuildindexes2.stdout
+param.stderr=$;WORKFLOW_REPOSITORY$;/sql2chado.rebuildindexes2.stderr
+
+[load_aux_so_onto]
+;
+;
+param.command=$;BIN_DIR$;/chadoloader
+param.username=chado_admin
+param.password=chado_admin99
+param.database=$;DATABASE$;
+param.server=$;SERVER$;
+param.bcpmode=in
+param.batchsize=30000
+param.--server=$;SERVER$;
+param.logfile=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.aux_so.log
+param.directory=$;TMP_DIR$;/so_aux
+param.abort=1
+param.debug_level=5
+param.stdout=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.aux_so.stdout
+param.stderr=$;WORKFLOW_REPOSITORY$;/chadoloader.pl.aux_so.stderr
+
+[grant_public]
+param.command=$;BIN_DIR$;/sql2Chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--action=grantallpublic
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/grant.log
+param.--file=$;WORKFLOWDOCS_DIR$;/grant_all_public.ddl
+param.stdout=$;TMP_DIR$;/sql2Chado.grant.stdout
+param.stderr=$;TMP_DIR$;/sql2Chado.grant.stderr
+
+[check_logfiles]
+param.command=$;BIN_DIR$;/check_logfiles
+param.--debug_level=5
+param.--log4perl=$;TMP_DIR$;/check_logfiles.pl.log
+param.--username='$;EMAIL$;'
+param.--workflow_id=$;REPOSITORY_ROOT$;/Workflow/pipeline/$;PIPELINEID$;/pipeline.xml.instance
+param.--repository=$;WORKFLOW_REPOSITORY$;
+param.--project=$;DATABASE$;
+param.--component=$;NAME$;
+
+[create_rel_aux_scratch]
+;make the scratch space
+param.command=mkdir
+arg=-p -m 777 $;TMP_DIR$;/aux_rel
+
+[parse_aux_rel_onto]
+param.command=$;BIN_DIR$;/obo2chado
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--ontdoc=$;WORKFLOWDOCS_DIR$;/relationship.aux.obo
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/obo2chado.aux_rel.log
+param.--debug_level=$;DEBUG$;
+param.--outdir=$;TMP_DIR$;/aux_rel
+param.--cache_dir=$;TMP_DIR$;/aux_rel
+param.stdout=$;TMP_DIR$;/obo2chado.aux_rel.stdout
+param.stderr=$;TMP_DIR$;/obo2chado.aux_rel.stderr
+
+[load_aux_rel_onto]
+param.command=$;BIN_DIR$;/chadoloader
+param.--username=chado_admin
+param.--password=chado_admin99
+param.--database=$;DATABASE$;
+param.--server=$;SERVER$;
+param.--bcpmode=in
+param.--batchsize=3000
+param.--logfile=$;WORKFLOW_REPOSITORY$;/load.aux_rel.log
+param.--directory=$;TMP_DIR$;/aux_rel
+param.--abort=1
+param.--debug_level=5
+param.stdout=$;WORKFLOW_REPOSITORY$;/load.aux_rel.stats
+param.stderr=$;WORKFLOW_REPOSITORY$;/load.aux_rel.stderr
+
+[create_database_lockfile]
+;
+; create database lock file in the repository root to traffic/prevent other
+; database manipulating workflows from accessing the same database at the same time
+param.command=$;BIN_DIR$;/gatekeeper
+param.database=$;DATABASE$;
+param.username=$;EMAIL$;
+param.component=$;NAME$;
+param.log4perl=$;WORKFLOW_REPOSITORY$;/gatekeeper.create.log
+param.action=create
+param.repository=$;REPOSITORY_ROOT$;/workflow/lock_files
+param.pipeline=$;REPOSITORY_ROOT$;/Workflow/pipeline/$;PIPELINEID$;/pipeline.xml.instance
+
+
+[remove_database_lockfile]
+;
+; remove database lock file from the repository root which was to traffic/prevent other
+; database manipulating workflows from accessing the same database at the same time
+param.command=$;BIN_DIR$;/gatekeeper
+param.database=$;DATABASE$;
+param.username=$;EMAIL$;
+param.component=$;NAME$;
+param.log4perl=$;WORKFLOW_REPOSITORY$;/gatekeeper.remove.log
+param.action=remove
+param.repository=$;REPOSITORY_ROOT$;/workflow/lock_files
+param.pipeline=$;REPOSITORY_ROOT$;/Workflow/pipeline/$;PIPELINEID$;/pipeline.xml.instance
+
+[store_chado_version]
+;
+param.command=$;BIN_DIR$;/store_chado_version
+param.--database=$;DATABASE$;
+param.--log4perl=$;WORKFLOW_REPOSITORY$;/store_chado_version.log
+param.--debug=$;DEBUG$;
+param.--bin_dir=$;BIN_DIR$;
+param.--workflow=$;WORKFLOW_REPOSITORY$;
+param.--username=chado_admin
+param.--password=chado_admin99
+param.stdout=$;REPOSITORY_ROOT$;/store_chado_version.stdout
+param.stderr=$;REPOSITORY_ROOT$;/store_chado_version.stderr
+

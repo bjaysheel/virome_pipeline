@@ -1,0 +1,13 @@
+<div id='comment_container'>
+    <form name='comment_form'>
+        <label for='comment'>
+            pipeline comment: 
+            <span class='comment_control' id='comment_add'>click to add</span>
+            <span class='comment_control' id='comment_save'>save</span>
+            <span class='comment_control' id='comment_cancel'>cancel</span>
+        </label>
+        <textarea name='comment' id='comment' cols='10' rows='5'></textarea>
+        <input type='hidden' name='comment_file' value='<TMPL_VAR NAME=PIPELINE_COMMENT_FILE>'>
+        <div id='comment_shadow'><TMPL_VAR NAME=PIPELINE_COMMENT></div>
+    </form>
+</div>
