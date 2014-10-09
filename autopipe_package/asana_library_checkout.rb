@@ -33,7 +33,6 @@ end
 tasks = virome_queue_proid.tasks
 tasks.each do |task|
   c = Curl.get("https://app.asana.com/api/1.0/tasks/#{task.id}?opt_fields=tags,completed,notes")
-  # puts "#{task.id}\t#{task.name}"
   c.http_auth_types = :basic
   c.username = api_key
   c.password = ''
@@ -46,11 +45,12 @@ tasks.each do |task|
         library = library.sub(/./, '')
         file = c.body_str.split(",")[1].split(/"/)[3].split('\n')[0]
         asm = c.body_str.split(",")[1].split(/"/)[3].split('\n')[1]
-        puts "User = #{user}"
-        puts "Library = #{library}"
-        puts "File = #{file}"
-        puts "Asm = #{asm}"
-        
+        ## PASS INFO TO PERL ##
+        # add_run_tag = `curl -u #{api_key}: https://app.asana.com/api/1.0/tasks/#{task.id}/addTag -d "tag=#{queue_tags["RUNNING"]}" > /dev/null 2> /dev/null`
+        # puts "User = #{user}"
+        # puts "Library = #{library}"
+        # puts "File = #{file}"
+        # puts "Asm = #{asm}"
         break
       end
     end
