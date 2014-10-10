@@ -10,13 +10,9 @@
             <state>incomplete</state>
             <name>reset-processing-db.default</name>
         </commandSet>
-	<commandSet type="serial">
-            <state>incomplete</state>
-            <name>fastq2fastaqual.default</name>
-        </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
-            <name>QC_filter.default</name>
+            <name>fasta_size_filter.default</name>
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
@@ -28,13 +24,27 @@
         </commandSet>
         <commandSet type="parallel">
             <state>incomplete</state>
+	    <commandSet type="serial">
+	        <state>incomplete</state>
+                <commandSet type="serial">
+                    <state>incomplete</state>
+                    <name>ncbi-blastn-plus.univec</name>
+                </commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>btab2viromebtab.univec</name>
+		</commandSet>
+	    </commandSet>
             <commandSet type="serial">
                 <state>incomplete</state>
-                <name>ncbi-blastn.univec</name>
-            </commandSet>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>ncbi-blastn.rna</name>
+                <commandSet type="serial">
+                    <state>incomplete</state>
+                    <name>ncbi-blastn-plus.rna</name>
+                </commandSet>
+                <commandSet type="serial">
+                    <state>incomplete</state>
+                    <name>btab2viromebtab.rna</name>
+                </commandSet>
             </commandSet>
         </commandSet>
         <commandSet type="serial">
@@ -145,6 +155,14 @@
             <state>incomplete</state>
             <name>mga2seq_pep.default</name>
         </commandSet>
+	<commandSet type="serial">
+            <state>incomplete</state>
+            <name>concatenate_files.mga</name>
+        </commandSet>
+	<commandSet type="serial">
+            <state>incomplete</state>
+            <name>split_multifasta.orf</name>
+        </commandSet>
         <commandSet type="parallel">
             <state>incomplete</state>
             <commandSet type="serial">
@@ -207,7 +225,11 @@
                 <state>incomplete</state>
                 <commandSet type="serial">
                     <state>incomplete</state>
-                    <name>ncbi-blastp.uniref</name>
+                    <name>ncbi-blastp-plus.uniref</name>
+                </commandSet>
+                <commandSet type="serial">
+		    <state>incomplete</state>
+                    <name>btab2viromebtab.uniref</name>
                 </commandSet>
                 <commandSet type="serial">
                     <state>incomplete</state>
@@ -217,24 +239,16 @@
                     <state>incomplete</state>
                     <name>blast-result-prep.uniref</name>
                 </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>concatenate_files.uniref</name>
-                </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>split-tab-output.uniref</name>
-                </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>db-upload.uniref</name>
-                </commandSet>
             </commandSet>
             <commandSet type="serial">
                 <state>incomplete</state>
                 <commandSet type="serial">
                     <state>incomplete</state>
-                    <name>ncbi-blastp.mgol</name>
+                    <name>ncbi-blastp-plus.mgol</name>
+                </commandSet>
+                <commandSet type="serial">
+		    <state>incomplete</state>
+                    <name>btab2viromebtab.mgol</name>
                 </commandSet>
                 <commandSet type="serial">
                     <state>incomplete</state>
@@ -248,27 +262,15 @@
                     <state>incomplete</state>
                     <name>blast-result-prep.mgol</name>
                 </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>concatenate_files.mgol</name>
-                </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>split-tab-output.mgol</name>
-                </commandSet>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>db-upload.mgol-blast</name>
-                </commandSet>
             </commandSet>
         </commandSet>
 	<commandSet type="serial">
-            <state>incomplete</state>
-            <name>tie_seq_id.default</name>
-        </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
-            <name>inspector.default</name>
+                    <state>incomplete</state>
+                    <name>concatenate_files.blastp</name>
+                </commandSet>
+	<commandSet type="serial">	
+                    <state>incomplete</state>
+                    <name>db-upload.blastp</name>
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
