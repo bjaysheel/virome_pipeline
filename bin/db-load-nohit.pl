@@ -135,7 +135,7 @@ foreach my $lib (@libArray) {
 	#open orf file and get all ids.
 	my $fileLoc = "/diag/projects/virome/virome-cache-files/idFiles";
 	open( ORF, "<", $fileLoc . "/" . $orf_file )
-	  or die("Could not open file $orf_file\n");
+	  or die("Could not open file $orf_file\n\n $fileLoc/$orf_file\n");
 
 	my $orfs = <ORF>;
 	my @ids  = split( /,/, $orfs );

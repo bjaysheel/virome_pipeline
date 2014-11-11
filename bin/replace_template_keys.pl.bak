@@ -3,17 +3,13 @@
 eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
     if 0; # not running under some shell
 
-# eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-#     if 0; # not running under some shell
-
 #Create a complete workflow XML file (--output_xml) from a template
 #XML file (--template_xml) that contains a set of placeholders/keys.
 #The config file --component_conf provides a list of key=value pairs.
 #Each key found in the template file is replaced by its corresponding
 #value from the config file
 
-# use lib (@INC,$ENV{"PERL_MOD_DIR"});
-use lib ($ENV{"PERL_MOD_DIR"});
+use lib (@INC,$ENV{"PERL_MOD_DIR"});
 use strict;
 use Config::IniFiles;
 use Ergatis::Logger;
@@ -28,9 +24,6 @@ use XML::LibXML;
 my %options;
 my $delimeter = '$;';
 my $SKIPTAG='$;SKIP_WF_COMMAND$;';
-## TODO: Figure out a better way to do this mapping
-my $dce_param_map = { 'OS' => "OS", 'EXECUTION_HOST' => "executionHost", 
-                      'WORKINGDIR' => "workingDir", 'reqStartTime' => "reqStartTime" };
 my $results = GetOptions (\%options, 
 			  'keys=s',
 			  #opts for replacing keys in a single template file
@@ -70,7 +63,7 @@ if (exists $options{'iterator_list'}) {
     }
     
     if (! -d $options{'output_dir'}) {
-        logger->logdie("$options{'output_dir'} is not a valid output directory");
+        $logger->logdie("$options{'output_dir'} is not a valid output directory");
     }
     
     $options{'output_dir'} .= "/" if ($options{'output_dir'} !~ /\/$/);
@@ -105,8 +98,7 @@ if (exists $options{'iterator_list'}) {
     }
     
     if ( $options{output_xml} =~ /\.gz$/ ) {
-        open (FILE, "| /bin/gzip -c > $options{output_xml}" ) or $logger->logdie("Can't open file $options{'output_xml'}");
-	# open(FILE, ">:gzip", $options{output_xml} ) or $logger->logdie("Can't open file $options{'output_xml'}");
+        open(FILE, ">:gzip", $options{output_xml} ) or $logger->logdie("Can't open file $options{'output_xml'}");
     } else {
         open FILE, ">$options{'output_xml'}" or $logger->logdie("Can't open file $options{'output_xml'}");
     }
@@ -120,14 +112,28 @@ if (exists $options{'iterator_list'}) {
     for(my $i=0;$i<@iterator_output_list;$i++){
         my $file = $iterator_output_list[$i];
         my $name = $iteratorconf->{$iteratorconf->{$iterator_list_key}->[$i]}->[$i] || '';
-        print FILE "<commandSet type=\"$cstype\">
-                     <name>$name</name>
-                     <state>incomplete</state>
-                     <id>$i</id>
+        print FILE "<commandSet type=\"$cstype\">                                                     
+                     <name>$name</name>                                                               
+                     <state>incomplete</state>                                                        
+                     <id>$i</id>                                                                      
                      <fileName>$file</fileName>\n";
 
-        print FILE get_dce_spec_parameters($cfg);
+        # print FILE "<commandSet type=\"$cstype\">
+        #              <name>$name</name>
+        #              <state>incomplete</state>
+        #              <id>$i</id>
+        #              <fileName>$file</fileName>
+        #              <dceSpec type=\"sge\">
+        #                 <OS>linux</OS>\n";
+        #TODO replace with import of DCE spec to allow for addl options
+        if ( $cfg->val( 'project', '$;PROJECT_CODE$;' ) ) {
+            print FILE "                        <group>", $cfg->val( 'project', '$;PROJECT_CODE$;' ), "</group>\n"; 
+        }
+        
+	print FILE get_dce_spec_parameters($cfg);
         print FILE " </commandSet>\n";
+        # print FILE " </dceSpec>
+        #             </commandSet>\n";
     }
     print FILE "</commandSet>
                </commandSetRoot>\n";
@@ -183,7 +189,7 @@ sub get_dce_spec_parameters {
     if ($dce_block !~ /<group>.+<\/group>/ && 
         $cfg->val('project', '$;PROJECT_CODE$;')) {
         $dce_block .= "<group>" . $cfg->val('project', '$;PROJECT_CODE$;') . 
-                      "</group>\n";
+	    "</group>\n";
     }
 
     $dce_block .= "</dceSpec>\n";
@@ -252,8 +258,7 @@ sub replacekeys{
     open( INPUTFILE, "$inputfile" ) or $logger->logdie("Could not open input template file $inputfile");
     
     if ( $outputfile =~ /\.gz$/ ) {
-	open (OUTPUTFILE, "| /bin/gzip -c > $outputfile" ) or $logger->logdie("Could not open output template file $outputfile: $!");
-        # open( OUTPUTFILE, ">:gzip", $outputfile) or $logger->logdie("Could not open output template file $outputfile: $!");
+        open( OUTPUTFILE, ">:gzip", $outputfile) or $logger->logdie("Could not open output template file $outputfile: $!");
     } else {
         open( OUTPUTFILE, "+>$outputfile") or $logger->logdie("Could not open output template file $outputfile: $!");
     }
@@ -283,7 +288,8 @@ sub replacekeys{
 	}
 	if($run_dist_cmd_flag && $line =~ /\<\/command\>/ ) {
 	    my $group = &replaceval('$;PROJECT_CODE$;',$subs);
-        my $new_line = get_dce_spec_parameters($cfg) . $line;
+	    my $new_line = get_dce_spec_parameters($cfg) . $line;
+            # my $new_line = "        <dceSpec type=\"sge\">\n            <group>$group</group>\n        </dceSpec>\n$line";
 	    $line = $new_line;
 	    $run_dist_cmd_flag = 0;
 	}
@@ -416,7 +422,9 @@ sub import_xml{
 	    $run_dist_cmd_flag = 0;
 	}
 	if($run_dist_cmd_flag && $line =~ /\<\/command\>/ ) {
-        my $new_line = get_dce_spec_parameters($cfg) . $line;
+	    # my $group = &replaceval('$;PROJECT_CODE$;',$subs);
+	    # my $new_line = "        <dceSpec type=\"sge\">\n            <group>$group</group>\n        </dceSpec>\n$line";
+	    my $new_line = get_dce_spec_parameters($cfg) . $line;
 	    $line = $new_line;
 	    $run_dist_cmd_flag = 0;
 	}

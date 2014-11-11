@@ -160,7 +160,7 @@ foreach my $lib (@libArray){
 		}
 
 		print "\t\tWriting xDoc file\n";
-		open (FHD, ">", $options{outdir} ."/xDocs/". $n."_XMLDOC_".$lib.".xml") or die "Can not write to file $!";
+		open (FHD, ">", $options{outdir} ."/xDocs/". $n."_XMLDOC_".$lib.".xml") or die "Can not write to file: " . ">", $options{outdir} ."/xDocs/". $n."_XMLDOC_".$lib.".xml";
 		print FHD "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		print FHD "<root>\n";
 		print FHD $xDoc;
