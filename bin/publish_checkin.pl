@@ -102,12 +102,6 @@ else {
     die "\n\n Cannot determine the root given the processing_db: $processing_db\n\n";
 }
 
-my @Tables = ("blastn","sequence","sequence_relationship","statistics","tRNA","blastp");
-foreach my $table (@Tables) {
-    print `mysql $server -udnasko -hvirome-db.igs.umaryland.edu -pdnas_76 <$root/mysqldumps/$library_id-$user/$table.sql`;
-    print "mysql $server -udnasko -hvirome-db.igs.umaryland.edu -pdnas_76 <$root/mysqldumps/$library_id-$user/$table.sql\n";
-}
-
 ## Everything is uploaded to live site, just need to update a couple of SQL tables
 my $update_sql = qq/UPDATE library SET progress = "complete" WHERE id = ?/;
 my $sth_update = $dbh->prepare($update_sql);
@@ -133,4 +127,10 @@ $rev =~ s/^......//;
 $date_time = scalar reverse($rev);
 $sth_complete->execute($date_time,$library_id);
 
+
+my @Tables = ("blastn","sequence","sequence_relationship","statistics","tRNA","blastp");
+foreach my $table (@Tables) {
+    print `mysql $server -udnasko -hvirome-db.igs.umaryland.edu -pdnas_76 <$root/mysqldumps/$library_id-$user/$table.sql`;
+    print "mysql $server -udnasko -hvirome-db.igs.umaryland.edu -pdnas_76 <$root/mysqldumps/$library_id-$user/$table.sql\n";
+}
 exit 0;
