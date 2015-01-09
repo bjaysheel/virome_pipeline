@@ -2,12 +2,12 @@
 
 =head1 NAME
 
-virome_454_fasta_run_pipeline.pl - A script allowing VIROME-Ergatis pipeline instantiation
+virome_sanger_anyAssembled_run_pipeline.pl - A script allowing VIROME-Ergatis pipeline instantiation
 and execution via the API.
 
 =head1 SYNOPSIS
 
-USAGE: virome_454_fasta_run_pipeline.pl 
+USAGE: virome_sanger_anyAssembled_run_pipeline.pl
             --template_directory=/path/to/some_dir/
             --repository_root=/path/to/project_dir
             --id_repository=/path/to/foo/id_repository

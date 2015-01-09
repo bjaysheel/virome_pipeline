@@ -7,7 +7,7 @@ and execution via the API.
 
 =head1 SYNOPSIS
 
-USAGE: virome_454_fasta_run_pipeline.pl 
+USAGE: virome_sanger_fastq_assembled_run_pipeline.pl
             --template_directory=/path/to/some_dir/
             --repository_root=/path/to/project_dir
             --id_repository=/path/to/foo/id_repository
@@ -177,7 +177,7 @@ $fastq2fastaqual_config->setval('input', '$;QUAL_OUT$;', $output_qual );
 $fastq2fastaqual_config->RewriteConfig();
 
 ## split_multifasta (if needed)
-if ($sequences < 75) {
+if ($sequences < 50) {
     my $split_multifasta_config = new Ergatis::ConfigFile(
 	-file => "$options{repository_root}/workflow/runtime/split_multifasta/" . $pipeline->id . "_default/split_multifasta.default.user.config");
     $split_multifasta_config->setval('parameters', '$;TOTAL_FILES$;', $sequences );

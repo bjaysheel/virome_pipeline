@@ -44,13 +44,16 @@ tasks.each do |task|
         library = task.name.split(" ::")[1]
         library = library.sub(/./, '')
         file = c.body_str.split(",")[1].split(/"/)[3].split('\n')[0]
-        asm = c.body_str.split(",")[1].split(/"/)[3].split('\n')[1]
+        asm  = c.body_str.split(",")[1].split(/"/)[3].split('\n')[1]
+        seqs = c.body_str.split(",")[1].split(/"/)[3].split('\n')[2]
+        seqs = seqs.sub(/.* /, '')
         ## PASS INFO TO PERL ##
         # add_run_tag = `curl -u #{api_key}: https://app.asana.com/api/1.0/tasks/#{task.id}/addTag -d "tag=#{queue_tags["RUNNING"]}" > /dev/null 2> /dev/null`
-        # puts "User = #{user}"
-        # puts "Library = #{library}"
-        # puts "File = #{file}"
-        # puts "Asm = #{asm}"
+        puts "User = #{user}"
+        puts "Library = #{library}"
+        puts "File = #{file}"
+        puts "Asm = #{asm}"
+        puts "Seqs = #{seqs}"
         break
       end
     end

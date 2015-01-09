@@ -32,18 +32,18 @@ my $ergatis_ini = "/var/www/html/cgi/ergatis.ini";
 my $id_repository = "/diag/projects/virome/workflow/project_id_repository/";
 
 ## Perform the rsync with VIROME server at Delaware
-print `rsync -zar --delete --exclude=/.* dnasko\@virome.dbi.udel.edu:/Volumes/sputnik/VIROME-USER-LIBRARIES/ /diag/projects/virome/user_metagenomes/ 2> $stderr_file`;
-my $stderr_size = -s $stderr_file;
+# print `rsync -zar --delete --exclude=/.* dnasko\@virome.dbi.udel.edu:/Volumes/sputnik/VIROME-USER-LIBRARIES/ /diag/projects/virome/user_metagenomes/ 2> $stderr_file`;
+# my $stderr_size = -s $stderr_file;
 
 print " rsync complete . . .\n";
 
-unless ( $stderr_size == 0 ) {     ## If rsync throws an error, email dan.nasko@gmail.com
-    print `ssh dnasko\@virome.dbi.udel.edu /Users/dnasko/automated_pipeline_package/rsync_email.pl`;
-    print `date >> $stderr_log`;
-    print `cat $stderr_file >> $stderr_log`;
-    print `rm $stderr_file`;
-    print `touch $stderr_file`;
-}
+# unless ( $stderr_size == 0 ) {     ## If rsync throws an error, email dan.nasko@gmail.com
+#     print `ssh dnasko\@virome.dbi.udel.edu /Users/dnasko/automated_pipeline_package/rsync_email.pl`;
+#     print `date >> $stderr_log`;
+#     print `cat $stderr_file >> $stderr_log`;
+#     print `rm $stderr_file`;
+#     print `touch $stderr_file`;
+# }
 
 ## Attempt to checkout a processing database and instantiate
 ##  a pipeline
@@ -61,6 +61,8 @@ my $live_user = q|dnasko|;
 my $live_pwd = q|dnas_76|;
 my $lv_dbh = DBI->connect("DBI:mysql:database=$live_db;host=$live_host",
 			  "$live_user", "$live_pwd",{PrintError=>1, RaiseError =>1, AutoCommit =>1}) || die print STDERR("\nCould not open db connection\n");
+print " Connected to MySQL\n";
+
 ## Setup MySQL Queries
 my $available_db_sql = qq|SELECT min(database_id) FROM processing_db_checkout WHERE status = "AVAILABLE"|;
      my $sth_avail = $lv_dbh->prepare($available_db_sql);
@@ -82,6 +84,7 @@ $sth_avail->execute();
 while (@RESULTS = $sth_avail->fetchrow_array) {
     $available_database = $RESULTS[0];
 }
+print " Found an available processing database\n";
 
 ## If there is one . . . 
 if ($available_database == 1 || $available_database == 2 || $available_database == 3 || $available_database == 4 || $available_database == 5) {
@@ -91,6 +94,7 @@ if ($available_database == 1 || $available_database == 2 || $available_database 
 	$sth_update->execute($available_database);                          ## Check out that database
 	$sth_get->execute($next_library_id);                                ## Gather more information on that library
 	my ($lib_name,$lib_user,$lib_fileName,$sequences) = $sth_get->fetchrow_array();
+	print " library name: $lib_name\n library user: $lib_user\n lib filename = $lib_fileName\n";
 	$lib_fileName = "/diag/projects/virome/user_metagenomes" . $lib_fileName;
 #       print "\n\n $available_database\t$lib_name\t$lib_user\t$lib_fileName\t$sequences\n\n";
 	$sth_lib->execute($lib_name,$lib_user);
@@ -103,7 +107,7 @@ if ($available_database == 1 || $available_database == 2 || $available_database 
 	$sth_assembled->execute($virome_lib_id);
         my ($asm_flag,$file_type) = $sth_assembled->fetchrow_array();
         ## If assembled
-	if ($asm_flag == 1 || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i) {
+	if ($asm_flag == 1 || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i || $lib_seqmethod =~ m/ion torrent/i) {
 	    if ($file_type =~ m/FASTA/i){
 		$template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 		$instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
