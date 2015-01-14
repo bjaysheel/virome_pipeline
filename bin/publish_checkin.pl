@@ -7,12 +7,18 @@ publish_checkin.pl - Pushes the outputs of virome pipeline to the site.
 =head1 SYNOPSIS
 
 USAGE: archiver_and_dumper.pl
-            --info=/Path/to/library.txt
+            --info=/Path/to/library.txt --mgol="MGOL_VERSION" --uniref="UNIREF_VERSION"
                                                                                                                                                                                                                                             
 =head1 OPTIONS                                                                                                                                                                                                                              
                                                                                                                                                                                                                                             
 B<--info,-i>
     Thie library info file
+
+B<--mgol,-m>
+    The mgol version
+
+B<--uniref,-u>
+    The uniref version
 
 B<--help,-h>                                                                                                                                                                                                                                
     This help message                                                                                                                                                                                                                       
@@ -45,11 +51,13 @@ use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
 use UTILS_V;
 
-my ($info);
+my ($info,$mgol,$uniref);
 my %options = ();
 my $results = GetOptions (\%options,
                           'info|i=s'	=>	\$info,
-                          'help|h') || pod2usage();
+                          'mgol|m=s'    =>      \$mgol,
+			  'uniref|u=s'  =>      \$uniref,
+			  'help|h') || pod2usage();
 
 ## display documentation                                                                                                                                                                                                                    
 if( $options{'help'} ){
@@ -58,6 +66,8 @@ if( $options{'help'} ){
 
 ## make sure everything passed was peachy
 pod2usage( -msg  => "ERROR!  Required argument -i not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $info);
+pod2usage( -msg  => "ERROR!  Required argument -mgol not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $mgol);
+pod2usage( -msg  => "ERROR!  Required argument -uniref not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $uniref);
 
 ## MySQL Server information
 my $db_name = "virome";
@@ -127,6 +137,12 @@ $rev =~ s/^......//;
 $date_time = scalar reverse($rev);
 $sth_complete->execute($date_time,$library_id);
 
+my $mgol_sql = qq/UPDATE library SET mgolVersion = "$mgol" WHERE id = ?/;
+my $sth_mgol = $dbh->prepare($mgol_sql);
+my $uniref_sql = qq/UPDATE library SET fxndbLookupVersion = "$uniref" WHERE id = ?/;
+my $sth_uniref = $dbh->prepare($uniref_sql);
+$sth_mgol->execute($library_id);
+$sth_uniref->execute($library_id);
 
 my @Tables = ("blastn","sequence","sequence_relationship","statistics","tRNA","blastp");
 foreach my $table (@Tables) {
