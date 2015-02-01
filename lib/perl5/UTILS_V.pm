@@ -259,7 +259,8 @@ sub set_db_params{
     }elsif ($env =~ /diagx/i){
         $self->{db_user} = q|dnasko|;
         $self->{db_pass} = q|dnas_76|;
-        $self->{db_name} = q|uniref_lookup|;
+        $self->{db_name} = q|virome|;
+        #$self->{db_name} = q|uniref_lookup|;
         $self->{db_host} = q|virome-db.igs.umaryland.edu|;
         $self->{v_host} = q|virome-db.igs.umaryland.edu|;
         $self->{v_name} = q|virome|;

@@ -240,8 +240,8 @@ foreach my $libId (@libArray) {
 							   and 	b.sys_topHit=1
 							   and  s.deleted=0
 							   and  b.deleted=0
-							  GROUP BY b.sequenceId, b.database_name
-							  ORDER BY db_ranking_code desc};
+							  GROUP BY b.sequenceId
+							  ORDER BY b.sequenceId, db_ranking_code desc};
    my $top_hits_qry = $dbh->prepare($top_hits_stmt);
    $top_hits_qry->execute($libId);
 

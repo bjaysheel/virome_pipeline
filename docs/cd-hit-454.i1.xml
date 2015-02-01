@@ -8,7 +8,7 @@
             <name>cd-hit-454</name>
             <state>incomplete</state>
             <executable>$;CD_HIT_454_EXEC$;</executable>
-            <arg>-i $;I_FILE_PATH$; -c $;THRESHOLD$; -n $;WORD_LENGTH$; -M $;MAX_MEMORY$; -b $;ALIGN_BANDWIDTH$; -aL $;ALIGN_COV_LONG$; -AL $;ALIGN_COV_CTRL_LONG$; -aS $;ALIGN_COV_SHORT$; -AS $;ALIGN_COV_CTRL_SHORT$;  -B $;STORE$; -g $;DEF_ALGO$; -D $;MAX_INDEL$;   -o $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.fsa</arg>
+            <arg>-i $;I_FILE_PATH$; -c $;THRESHOLD$; -n $;WORD_LENGTH$; -M $;MAX_MEMORY$; -T 0 -b $;ALIGN_BANDWIDTH$; -aL $;ALIGN_COV_LONG$; -AL $;ALIGN_COV_CTRL_LONG$; -aS $;ALIGN_COV_SHORT$; -AS $;ALIGN_COV_CTRL_SHORT$;  -B $;STORE$; -g $;DEF_ALGO$; -D $;MAX_INDEL$;   -o $;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.$;COMPONENT_NAME$;.fsa</arg>
             <param>
                 <key>stderr</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;I_FILE_BASE$;.stderr</value>

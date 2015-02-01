@@ -182,6 +182,7 @@ else {
 
 # ";
     my $file_type = "fasta";
+    if ($filename =~ m/\.fastq/ || $filename =~ m/\.fq/) { $file_type = "fastq"; }
     my $asm_flag  = $asm;
     ## If assembled
     if ($asm_flag eq "TRUE" || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i || $lib_seqmethod =~ m/ion torrent/i) {
@@ -194,7 +195,7 @@ else {
 	    $instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ m/454/ || $asm_flag eq "FALSE" && $lib_seqmethod =~ /other/i) {
+    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ m/454/) {
 	if ($file_type =~ m/FASTA/i){
 	    $template_directory= $template_directory ."454-fasta-unassembled";
 	    $instantiator_script = "virome_454_fasta_unassembled_run_pipeline.pl ";
@@ -207,6 +208,16 @@ else {
 	    $template_directory= $template_directory ."454-fastq-unassembled";
 	    $instantiator_script = "virome_454_fastq_unassembled_run_pipeline.pl ";
 	}
+    }
+    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ /other/i) {
+	if ($file_type =~ m/FASTA/i){
+            $template_directory = $template_directory . "/sanger-anyAssembled-fasta";
+            $instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
+        }
+        elsif ($file_type =~ m/FASTQ/i){
+            $template_directory = $template_directory . "/sanger-anyAssembled-fastq";
+            $instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
+        }
     }
     else {   die "\n\n Error: I cannot tell if this library was or wasn't assembled\n\n"}
     
