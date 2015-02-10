@@ -144,7 +144,7 @@ my $available_db_sql = qq|SELECT min(database_id) FROM processing_db_checkout WH
      my $sth_avail = $lv_dbh->prepare($available_db_sql);
 my $update_available_sql = qq|UPDATE processing_db_checkout SET status = "checked-out" WHERE database_id = ?|;
      my $sth_update = $lv_dbh->prepare($update_available_sql);
-my $lib_info_sql = qq|SELECT id, environment, server, seqMethod FROM library WHERE name = ? AND user = ?|;
+my $lib_info_sql = qq|SELECT id, environment, server, seqMethod FROM library WHERE name = ? AND user = ? AND progress = "standby";|;
      my $sth_lib = $lv_dbh->prepare($lib_info_sql);
 # my $assembled = qq|SELECT assembled, file_type FROM lib_summary WHERE libraryId = ?|;
 #      my $sth_assembled = $lv_dbh->prepare($assembled);
@@ -209,7 +209,7 @@ else {
 	    $instantiator_script = "virome_454_fastq_unassembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ /other/i) {
+    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ /other/i && $lib_seqmethod =~ /illumina/i) {
 	if ($file_type =~ m/FASTA/i){
             $template_directory = $template_directory . "/sanger-anyAssembled-fasta";
             $instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";

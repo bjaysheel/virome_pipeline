@@ -256,7 +256,7 @@
                 </commandSet>
                 <commandSet type="serial">
                     <state>incomplete</state>
-                    <name>btabTrim.btab</name>
+                    <name>btabTrimMGOL.default</name>
                 </commandSet>
                 <commandSet type="serial">
                     <state>incomplete</state>

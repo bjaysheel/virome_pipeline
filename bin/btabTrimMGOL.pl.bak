@@ -96,44 +96,47 @@ $sizeLim=$options{'number'};
 my $inputfile=$options{'btab_file_path'};
 my $outputfile=$options{'output'};
 my %lib;
-my @hold;
-my $previous;
+my %hold;
+my $sub;
 
 open(DAT, $inputfile) || die $logger->logdie("Could not open input file $inputfile");
 open(OUT, "> $outputfile") || die $logger->logdie("Could not open output file $outputfile");
-while(<DAT>) {
-    chomp;
-    my @fields = split(/\t/, $_);
-    my $query   = $fields[0];
-    my $subject = $fields[4];
-    $subject =~ m/^(...)/;
-    my $prefix  = $1;
-    if ( $previous && $previous eq $query ) {
-	unless (exists $lib{$prefix}) {
-	    $lib{$prefix} = 1;
-	    push(@hold, $_);
+
+while(<DAT>)
+{	chomp;
+	my @temp=split(/\t/,$_);
+	my $clib;
+	if ($temp[15] =~ /^\(/)
+	{	$clib=substr($temp[5],0,3);
 	}
-    }
-    elsif ( $previous && $previous ne $query ) {
-	foreach my $i (@hold) {
-	    print OUT $i . "\n";
+	else
+	{	$clib=$temp[15];
 	}
-	@hold = ();
-	foreach my $i (keys %lib) { delete $lib{$i}; }
-	$lib{$prefix} = 1;
-	push(@hold,$_);
-    }
-    else {
-	$lib{$prefix} = 1;
-	push(@hold,$_);
-    }
-    $previous = $query;
+	if ($sub && $sub eq $temp[0])
+	{	if (! $lib{$clib})
+		{	$hold{$clib}=$_;
+			$lib{$clib}++;	
+		}
+		else
+		{	$lib{$clib}++;
+		}
+	}
+	else
+	{	foreach my $tmp (keys %lib)
+		{	print OUT "$hold{$tmp}\t$lib{$tmp}\n";
+		}
+		$sub=$temp[0];
+		undef %lib;
+		undef %hold;
+		$hold{$clib}=$_;
+		$lib{$clib}++;
+	}
 }
+foreach my $tmp (keys %lib)
+{	print OUT "$hold{$tmp}\t$lib{$tmp}\n";
+}
+
+
 close(DAT);
 close(OUT);
 
-foreach my $i (@hold) {
-    print OUT $i . "\n";
-}
-
-exit 0;
