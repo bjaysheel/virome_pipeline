@@ -207,7 +207,7 @@ sub freq_cal
 	my $seq_name = shift;
 
 	my $len = length($seq);
-
+	$seq =~ s/X//gi;
 	if ($seq =~ m/[^ATCGNRYSWKMBDHV]/i) {
 		print STDERR "Invalid base(s) in $seq_name";
 	    exit(259);

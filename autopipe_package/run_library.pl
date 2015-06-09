@@ -209,15 +209,17 @@ else {
 	    $instantiator_script = "virome_454_fastq_unassembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ /other/i && $lib_seqmethod =~ /illumina/i) {
-	if ($file_type =~ m/FASTA/i){
-            $template_directory = $template_directory . "/sanger-anyAssembled-fasta";
-            $instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
-        }
-        elsif ($file_type =~ m/FASTQ/i){
-            $template_directory = $template_directory . "/sanger-anyAssembled-fastq";
-            $instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
-        }
+    elsif ($asm_flag eq "FALSE") {
+	if ($lib_seqmethod =~ /other/i || $lib_seqmethod =~ /illumina/i) {
+	    if ($file_type =~ m/FASTA/i){
+		$template_directory = $template_directory . "/sanger-anyAssembled-fasta";
+		$instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
+	    }
+	    elsif ($file_type =~ m/FASTQ/i){
+		$template_directory = $template_directory . "/sanger-anyAssembled-fastq";
+		$instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
+	    }
+	}
     }
     else {   die "\n\n Error: I cannot tell if this library was or wasn't assembled\n\n"}
     

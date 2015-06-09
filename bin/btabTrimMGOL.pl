@@ -105,7 +105,7 @@ while(<DAT>) {
     chomp;
     my @fields = split(/\t/, $_);
     my $query   = $fields[0];
-    my $subject = $fields[4];
+    my $subject = $fields[5];
     $subject =~ m/^(...)/;
     my $prefix  = $1;
     if ( $previous && $previous eq $query ) {
@@ -130,10 +130,9 @@ while(<DAT>) {
     $previous = $query;
 }
 close(DAT);
-close(OUT);
 
 foreach my $i (@hold) {
     print OUT $i . "\n";
 }
-
+close(OUT);
 exit 0;
