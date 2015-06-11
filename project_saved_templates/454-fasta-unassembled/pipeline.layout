@@ -8,7 +8,7 @@
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
-            <name>reset-processing-db.default</name>
+            <name>reset_db.default</name>
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
@@ -310,11 +310,11 @@
         </commandSet>
 	<commandSet type="serial">
             <state>incomplete</state>
-            <name>archiver_and_dumper.default</name>
+            <name>dump_db.default</name>
         </commandSet>
 	<commandSet type="serial">
             <state>incomplete</state>
-            <name>publish_checkin.default</name>
+            <name>transfer_checkin.default</name>
         </commandSet>
     </commandSet>
 </commandSetRoot>

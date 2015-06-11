@@ -116,8 +116,8 @@ else {
 #my @tables = ('blastn','blastp','blastx','sequence','orf','statistics','tRNA', 'sequence_relationship');
 my @tables = ('blastn','blastp','sequence','statistics','tRNA', 'sequence_relationship');
 print STDOUT " Hey Dan: $lv_db_name\n\n";
-my $lv_dbh = DBI->connect("DBI:mysql:database=$lv_db_name;host=$lv_db_host",
-    "$lv_db_user", "$lv_db_pass",{PrintError=>1, RaiseError =>1, AutoCommit =>1});
+# my $lv_dbh = DBI->connect("DBI:mysql:database=$lv_db_name;host=$lv_db_host",
+#    "$lv_db_user", "$lv_db_pass",{PrintError=>1, RaiseError =>1, AutoCommit =>1});
 
 my $stg_dbh = DBI->connect("DBI:mysql:database=$stg_db_name;host=$stg_db_host",
                 "$stg_db_user", "$stg_db_pass",{PrintError=>1, RaiseError =>1, AutoCommit =>1});

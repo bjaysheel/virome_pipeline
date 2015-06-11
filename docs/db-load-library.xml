@@ -24,7 +24,7 @@
             <name>db-load-library</name>
             <state>incomplete</state>
             <executable>$;DBLOAD_LIBRARY_EXEC$;</executable>
-            <arg>-i $;ID$; -u $;USER_NAME$; -o $;OUTPUT_DIRECTORY$; -e $;LOCATION$;</arg>
+            <arg>-i $;ID$; -p $;PREFIX$; --name="$;LIB_NAME$;" -o $;OUTPUT_DIRECTORY$; -e $;LOCATION$;</arg>
 	    <param>
 		<key>stdout</key>
 		<value>$;TMP_DIR$;/db-load-library.stdout</value>

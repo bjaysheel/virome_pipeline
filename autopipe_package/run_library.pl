@@ -10,7 +10,7 @@ run_library.pl -- Use info from Asana and run a library!
 
 =head1 SYNOPSIS
 
- run_library.pl --name="Metagenome name!" --user=dnasko --asm=0 --seqs=60000
+ run_library.pl --name="Metagenome name!" --prefix=PRF --asm=0 --seqs=60000 --id=123
                      [--help] [--manual]
 
 =head1 DESCRIPTION
@@ -25,11 +25,15 @@ run_library.pl -- Use info from Asana and run a library!
 
 =item B<-n, --name>=NAME
 
-Input library name. (Required) 
+Input library name. (Required)
 
-=item B<-u, --user>=NAME
+=item B<-i, --id>=INT
 
-Input user name. (Required) 
+Input library ID. (Required)
+
+=item B<-p, --prefix>=NAME
+
+Prefix. (Required) 
 
 =item B<-f, --filename>=FILENAME
 
@@ -88,15 +92,17 @@ use Pod::Usage;
 use DBI;
 
 #ARGUMENTS WITH NO DEFAULT
-my($name,$username,$seqs,$filename,$help,$manual);
+my($id,$name,$prefix,$seqs,$filename,$four54,$help,$manual);
 my $asm = "FALSE";
 
 GetOptions (
                          "n|name=s"     => \$name,
-                         "u|username=s" => \$username,
+                         "i|id=i"       => \$id,
+                         "p|prefix=s"   => \$prefix,
                          "a|asm=s"      => \$asm,
                          "s|seqs=i"     => \$seqs,
                          "f|filename=s" => \$filename,
+                         "v|four54"     => \$four54,
                          "h|help"       => \$help,
                          "m|manual"     => \$manual );
 
@@ -104,9 +110,10 @@ GetOptions (
 pod2usage(-verbose => 2)  if ($manual);
 pod2usage( {-exitval => 0, -verbose => 2, -output => \*STDERR} )  if ($help);
 pod2usage( -msg  => "\n\n ERROR!  Required argument --name not found.\n\n", -exitval => 2, -verbose => 1)      if (! $name     );
-pod2usage( -msg  => "\n\n ERROR!  Required argument --username not found.\n\n", -exitval => 2, -verbose => 1)  if (! $username );
+pod2usage( -msg  => "\n\n ERROR!  Required argument --prefix not found.\n\n", -exitval => 2, -verbose => 1)  if (! $prefix );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --seqs not found.\n\n", -exitval => 2, -verbose => 1)      if (! $seqs     );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --filename not found.\n\n", -exitval => 2, -verbose => 1)  if (! $filename );
+pod2usage( -msg  => "\n\n ERROR!  Required argument --id not found.\n\n", -exitval => 2, -verbose => 1)      if (! $id     );
 
 ## GLOBAL VARIABLES
 my $root = '/diag/projects/virome/automated_pipeline_package/';
@@ -115,6 +122,7 @@ my $stderr_log = $root . 'logs/rsync.log';
 my $checkout_log = $root . 'logs/checkout.log';
 my @RESULTS;
 my ($lib_name,$lib_user,$lib_env,$lib_server,$file_type,$lib_seqmethod,$virome_lib_id);
+$virome_lib_id=$id;
 my $available_database = '';
 my $instantiator_script = '';
 my $instant_dir = "/diag/projects/virome/automated_pipeline_package/ergatis/util/";
@@ -144,8 +152,8 @@ my $available_db_sql = qq|SELECT min(database_id) FROM processing_db_checkout WH
      my $sth_avail = $lv_dbh->prepare($available_db_sql);
 my $update_available_sql = qq|UPDATE processing_db_checkout SET status = "checked-out" WHERE database_id = ?|;
      my $sth_update = $lv_dbh->prepare($update_available_sql);
-my $lib_info_sql = qq|SELECT id, environment, server, seqMethod FROM library WHERE name = ? AND user = ? AND progress = "standby";|;
-     my $sth_lib = $lv_dbh->prepare($lib_info_sql);
+# my $lib_info_sql = qq|SELECT id, environment, server, seqMethod FROM library WHERE name = ? AND user = ? AND progress = "standby";|;
+#      my $sth_lib = $lv_dbh->prepare($lib_info_sql);
 # my $assembled = qq|SELECT assembled, file_type FROM lib_summary WHERE libraryId = ?|;
 #      my $sth_assembled = $lv_dbh->prepare($assembled);
 
@@ -165,13 +173,13 @@ unless ($available_database == 1 || $available_database == 2 || $available_datab
 else {
     $sth_update->execute($available_database);                          ## Check out that database
     $filename = "/diag/projects/virome/user_metagenomes/" . $filename;
-    $sth_lib->execute($name,$username);
-    while(@RESULTS = $sth_lib->fetchrow_array) {
-	$virome_lib_id = $RESULTS[0];
-	$lib_env = $RESULTS[1];
-	$lib_server = $RESULTS[2];
-	$lib_seqmethod = $RESULTS[3];
-    }
+    # $sth_lib->execute($name,$username);
+    # while(@RESULTS = $sth_lib->fetchrow_array) {
+    # 	$virome_lib_id = $RESULTS[0];
+    # 	$lib_env = $RESULTS[1];
+    # 	$lib_server = $RESULTS[2];
+    # 	$lib_seqmethod = $RESULTS[3];
+    # }
 #     print "
 # lib name      = $name
 # username      = $username
@@ -185,7 +193,7 @@ else {
     if ($filename =~ m/\.fastq/ || $filename =~ m/\.fq/) { $file_type = "fastq"; }
     my $asm_flag  = $asm;
     ## If assembled
-    if ($asm_flag eq "TRUE" || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i || $lib_seqmethod =~ m/ion torrent/i) {
+    if ($asm_flag eq "TRUE" ) {
 	if ($file_type =~ m/FASTA/i){
 	    $template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 	    $instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
@@ -195,7 +203,7 @@ else {
 	    $instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE" && $lib_seqmethod =~ m/454/) {
+    elsif ($asm_flag eq "FALSE" && $four54 ) {
 	if ($file_type =~ m/FASTA/i){
 	    $template_directory= $template_directory ."454-fasta-unassembled";
 	    $instantiator_script = "virome_454_fasta_unassembled_run_pipeline.pl ";
@@ -210,7 +218,6 @@ else {
 	}
     }
     elsif ($asm_flag eq "FALSE") {
-	if ($lib_seqmethod =~ /other/i || $lib_seqmethod =~ /illumina/i) {
 	    if ($file_type =~ m/FASTA/i){
 		$template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 		$instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
@@ -219,7 +226,6 @@ else {
 		$template_directory = $template_directory . "/sanger-anyAssembled-fastq";
 		$instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
 	    }
-	}
     }
     else {   die "\n\n Error: I cannot tell if this library was or wasn't assembled\n\n"}
     
@@ -232,7 +238,7 @@ else {
 	. " --fasta="             . $filename
 	. " --library_id="        . $virome_lib_id
 	. " --database=diag"      . $available_database
-	. " --username="          . $username
+	. " --prefix="            . $prefix
 	. " --sequences="         . $seqs
 	;
     print `$instantiate`;

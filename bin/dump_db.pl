@@ -9,6 +9,9 @@ dump_db.pl - Dumps the contents of a database into a directory full of table tab
 USAGE: dump_db.pl
             --info=/Path/to/library.txt
             --outdir=/Path/to/outdir
+            --mgol="MGOL_VERSION"
+            --uniref="UNIREF_VERSION"
+            --pipeline="PIPELINE_VERSION"
 
 =head1 OPTIONS
 
@@ -17,6 +20,15 @@ B<--info,-i>
 
 B<--outdir,-o>
     The output directory
+
+B<--mgol,-m>
+    The MgOl BLAST DB version
+
+B<--uniref,-u>
+    The UniRef BLAST DB version
+
+B<--pipeline,-p>
+    The pipeline version
 
 B<--help,-h>
     This help message
@@ -46,11 +58,14 @@ use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
 use UTILS_V;
 
-my ($info,$outdir);
+my ($info,$outdir,$mgol,$uniref,$pipeline);
 my %options = ();
 my $results = GetOptions (\%options,
                           'info|i=s'	=>	\$info,
 			  'outdir|o=s'  =>      \$outdir,
+			  'mgol|m=s'    =>      \$mgol,
+			  'uniref|u=s'  =>      \$uniref,
+			  'pipeline|p=s'=>      \$pipeline,
 			  'help|h') || pod2usage();
 
 ## display documentation                                                                                                                                                                                                                    
@@ -152,6 +167,21 @@ print `mkdir $outdir/../$library_id/xDocs`;
 print `mkdir $outdir/../$library_id/idFiles`;
 print `cp /diag/projects/virome/virome-cache-files/xDocs/*_$library_id.xml $outdir/../$library_id/xDocs`;
 print `cp /diag/projects/virome/virome-cache-files/idFiles/*_$library_id.txt $outdir/../$library_id/idFiles`;
+
+#####################################################################
+## Print out the version control info to the version_info.txt file ##
+#####################################################################
+
+open(OUT,">$outdir/../$library_id/version_info.txt") || die "\n Cannot open the file: $outdir/../$library_id/version_info.txt\n";
+print OUT "fxndbLookupVersion\t" . $uniref . "\n";
+print OUT "mgolVersion\t" . $mgol . "\n";
+print OUT "pipelineVersion\t" . $pipeline . "\n";
+close(OUT);
+
+#########################
+## Create the Tar Ball ##
+#########################
+if (-e "$outdir/../$library_id.tar.gz" ) { print `rm $outdir/../$library_id.tar.gz`; }
 print `tar -czvf $outdir/../$library_id.tar.gz --directory=$outdir/../ $library_id`;
 
 exit 0;
