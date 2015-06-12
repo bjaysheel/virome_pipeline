@@ -230,6 +230,9 @@ while (<DAT>){
     my @info = split (/\t/, $line);
     my $sequenceId = $utils->get_sequenceId($info[0]);
 
+    #print $sequenceId."\t".$info[0]."\n";
+    #exit();
+
     #update on 10/6/10 by Jaysheel, assuming that input comes from
     #clean_expand_btab.pl file. Which will format ncbi-blast btab file
     #to proper standard for virome blastx/n/p tables.

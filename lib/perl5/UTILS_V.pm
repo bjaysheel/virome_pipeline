@@ -174,7 +174,7 @@ sub get_libraryId_from_list_file{
         my @info = split(/\t/,$line);
         if ($info[2] =~ /$prefix/i){
             $libraryId = $info[0];
-	    last;
+	        last;
         }
     }
     

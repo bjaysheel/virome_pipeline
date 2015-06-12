@@ -103,7 +103,7 @@ if ($options{table} =~ /sequence/i){
     $sel_qry = qq{SELECT s.id, s.libraryId, s.name, s.header
 				  FROM sequence s
 				  WHERE s.libraryId=?
-					and (s.typeId = 1 or s.typeId = 3)
+					and s.typeId != 4
 					and s.deleted=0};
 }
 

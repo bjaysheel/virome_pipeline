@@ -107,50 +107,6 @@
                 <name>db-upload.rna</name>
             </commandSet>
         </commandSet>
-        <commandSet type="parallel">
-            <state>incomplete</state>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>tRNAScan-prep.default</name>
-            </commandSet>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>blast-result-prep.default</name>
-            </commandSet>
-        </commandSet>
-        <commandSet type="parallel">
-            <state>incomplete</state>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>concatenate_files.trna</name>
-            </commandSet>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>concatenate_files.rna-blast</name>
-            </commandSet>
-        </commandSet>
-        <commandSet type="parallel">
-            <state>incomplete</state>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>split-tab-output.trna-prep</name>
-            </commandSet>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>split-tab-output.rna-blast-prep</name>
-            </commandSet>
-        </commandSet>
-        <commandSet type="parallel">
-            <state>incomplete</state>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>db-upload.trna</name>
-            </commandSet>
-            <commandSet type="serial">
-                <state>incomplete</state>
-                <name>db-upload.rna-blast</name>
-            </commandSet>
-        </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
             <name>metagene.default</name>
@@ -211,6 +167,50 @@
 	<commandSet type="serial">
             <state>incomplete</state>
             <name>db-to-lookup.seq-lookup</name>
+        </commandSet>
+	<commandSet type="parallel">
+            <state>incomplete</state>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>tRNAScan-prep.default</name>
+            </commandSet>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>blast-result-prep.default</name>
+            </commandSet>
+        </commandSet>
+        <commandSet type="parallel">
+            <state>incomplete</state>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>concatenate_files.trna</name>
+            </commandSet>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>concatenate_files.rna-blast</name>
+            </commandSet>
+        </commandSet>
+	<commandSet type="parallel">
+            <state>incomplete</state>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>split-tab-output.trna-prep</name>
+            </commandSet>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>split-tab-output.rna-blast-prep</name>
+            </commandSet>
+        </commandSet>
+        <commandSet type="parallel">
+            <state>incomplete</state>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>db-upload.trna</name>
+            </commandSet>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <name>db-upload.rna-blast</name>
+            </commandSet>
         </commandSet>
         <commandSet type="parallel">
             <state>incomplete</state>

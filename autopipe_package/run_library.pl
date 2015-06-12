@@ -10,7 +10,7 @@ run_library.pl -- Use info from Asana and run a library!
 
 =head1 SYNOPSIS
 
- run_library.pl --name="Metagenome name!" --prefix=PRF --asm=0 --seqs=60000 --id=123
+ run_library.pl --name="Metagenome name!" --prefix=PRF --asm=0 --seqs=60000 --id=123 --technology=illumina
                      [--help] [--manual]
 
 =head1 DESCRIPTION
@@ -42,6 +42,10 @@ The path to the file for the next library. (Required)
 =item B<-a, --asm>
 
 Flag to indicate if assembled (default=NOT assembled)
+
+=item B<-t, --technology>=TECH
+
+Sequencing technology. (illumina, 454, sanger, pacbio, ion torrent)
 
 =item B<-s, --seqs>=INT
 
@@ -92,17 +96,15 @@ use Pod::Usage;
 use DBI;
 
 #ARGUMENTS WITH NO DEFAULT
-my($id,$name,$prefix,$seqs,$filename,$four54,$help,$manual);
-my $asm = "FALSE";
-
+my($id,$name,$prefix,$seqs,$filename,$technology,$asm,$help,$manual);
 GetOptions (
                          "n|name=s"     => \$name,
                          "i|id=i"       => \$id,
                          "p|prefix=s"   => \$prefix,
-                         "a|asm=s"      => \$asm,
+                         "a|asm"        => \$asm,
                          "s|seqs=i"     => \$seqs,
                          "f|filename=s" => \$filename,
-                         "v|four54"     => \$four54,
+                         "t|technology=s" => \$technology,
                          "h|help"       => \$help,
                          "m|manual"     => \$manual );
 
@@ -114,6 +116,10 @@ pod2usage( -msg  => "\n\n ERROR!  Required argument --prefix not found.\n\n", -e
 pod2usage( -msg  => "\n\n ERROR!  Required argument --seqs not found.\n\n", -exitval => 2, -verbose => 1)      if (! $seqs     );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --filename not found.\n\n", -exitval => 2, -verbose => 1)  if (! $filename );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --id not found.\n\n", -exitval => 2, -verbose => 1)      if (! $id     );
+pod2usage( -msg  => "\n\n ERROR!  Required argument --technology not found.\n\n", -exitval => 2, -verbose => 1)      if (! $technology     );
+$technology = lc($technology);
+my %ValidPlatforms = ('illumina' => 1, '454' => 1, 'pacbio' => 1, 'ion torrent' => 1, 'sanger' => 1);
+unless (exists $ValidPlatforms{$technology}) { die " Error: The sequencing technology provded is not valid: $technology\n\n"; }
 
 ## GLOBAL VARIABLES
 my $root = '/diag/projects/virome/automated_pipeline_package/';
@@ -191,9 +197,9 @@ else {
 # ";
     my $file_type = "fasta";
     if ($filename =~ m/\.fastq/ || $filename =~ m/\.fq/) { $file_type = "fastq"; }
-    my $asm_flag  = $asm;
+
     ## If assembled
-    if ($asm_flag eq "TRUE" ) {
+    if ( $asm ) {
 	if ($file_type =~ m/FASTA/i){
 	    $template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 	    $instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
@@ -203,7 +209,7 @@ else {
 	    $instantiator_script = "virome_sanger_fastq_assembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE" && $four54 ) {
+    elsif ( $technology eq "454" ) {
 	if ($file_type =~ m/FASTA/i){
 	    $template_directory= $template_directory ."454-fasta-unassembled";
 	    $instantiator_script = "virome_454_fasta_unassembled_run_pipeline.pl ";
@@ -217,7 +223,7 @@ else {
 	    $instantiator_script = "virome_454_fastq_unassembled_run_pipeline.pl ";
 	}
     }
-    elsif ($asm_flag eq "FALSE") {
+    elsif ( ! $asm ) {
 	    if ($file_type =~ m/FASTA/i){
 		$template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 		$instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";

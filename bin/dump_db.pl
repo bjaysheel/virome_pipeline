@@ -142,37 +142,37 @@ if (exists $processing_databases{$processing_db}) {
     $stg_db_name = $processing_databases{$processing_db};
 }
 else { die "\n Invalid staging database provided: $processing_db\n"; }
-print `mkdir $outdir/../$library_id`;
+print `mkdir $outdir/../$prefix`;
 
 foreach my $table (@tables) {
-    print `mysql $stg_db_name -udnasko -hdnode001.igs.umaryland.edu -pdnas_76 -e"SELECT * FROM $table" > $outdir/../$library_id/$table.tab`;
+    print `mysql $stg_db_name -udnasko -hdnode001.igs.umaryland.edu -pdnas_76 -e"SELECT * FROM $table" > $outdir/../$prefix/$table.tab`;
     open(TMP,">$outdir/$table.tab2") || die "\n cannot write to: $outdir/$table.tab2\n";
     print TMP "#";
-    open(IN,"<$outdir/../$library_id/$table.tab") || die "\n Cannot open: $outdir/../$library_id/$table.tab\n";
+    open(IN,"<$outdir/../$prefix/$table.tab") || die "\n Cannot open: $outdir/../$prefix/$table.tab\n";
     while(<IN>) {
 	chomp;
 	print TMP $_ . "\n";
     }
     close(TMP);
     close(IN);
-    print `mv $outdir/$table.tab2 $outdir/../$library_id/$table.tab`;
-    my $lines = `grep -c "^" $outdir/../$library_id/$table.tab`; chomp($lines);
+    print `mv $outdir/$table.tab2 $outdir/../$prefix/$table.tab`;
+    my $lines = `grep -c "^" $outdir/../$prefix/$table.tab`; chomp($lines);
     if ($lines == 1) {
-	print `rm $outdir/../$library_id/$table.tab`;
-	print `touch $outdir/../$library_id/$table.tab`;
+	print `rm $outdir/../$prefix/$table.tab`;
+	print `touch $outdir/../$prefix/$table.tab`;
     }
 }
 
-print `mkdir $outdir/../$library_id/xDocs`;
-print `mkdir $outdir/../$library_id/idFiles`;
-print `cp /diag/projects/virome/virome-cache-files/xDocs/*_$library_id.xml $outdir/../$library_id/xDocs`;
-print `cp /diag/projects/virome/virome-cache-files/idFiles/*_$library_id.txt $outdir/../$library_id/idFiles`;
+print `mkdir $outdir/../$prefix/xDocs`;
+print `mkdir $outdir/../$prefix/idFiles`;
+print `cp /diag/projects/virome/virome-cache-files/xDocs/*_$library_id.xml $outdir/../$prefix/xDocs`;
+print `cp /diag/projects/virome/virome-cache-files/idFiles/*_$library_id.txt $outdir/../$prefix/idFiles`;
 
 #####################################################################
 ## Print out the version control info to the version_info.txt file ##
 #####################################################################
 
-open(OUT,">$outdir/../$library_id/version_info.txt") || die "\n Cannot open the file: $outdir/../$library_id/version_info.txt\n";
+open(OUT,">$outdir/../$prefix/version_info.txt") || die "\n Cannot open the file: $outdir/../$prefix/version_info.txt\n";
 print OUT "fxndbLookupVersion\t" . $uniref . "\n";
 print OUT "mgolVersion\t" . $mgol . "\n";
 print OUT "pipelineVersion\t" . $pipeline . "\n";
@@ -181,7 +181,7 @@ close(OUT);
 #########################
 ## Create the Tar Ball ##
 #########################
-if (-e "$outdir/../$library_id.tar.gz" ) { print `rm $outdir/../$library_id.tar.gz`; }
-print `tar -czvf $outdir/../$library_id.tar.gz --directory=$outdir/../ $library_id`;
+if (-e "$outdir/../$prefix.tar.gz" ) { print `rm $outdir/../$prefix.tar.gz`; }
+print `tar -czvf $outdir/../$prefix.tar.gz --directory=$outdir/../ $prefix`;
 
 exit 0;

@@ -65,6 +65,7 @@ my $dbh = DBI->connect("DBI:mysql:database=".$db_name.";host=".$db_host, $db_use
 my $select_sql = qq/SELECT `user` FROM library WHERE id = ? ;/;
 my $sth_select = $dbh->prepare($select_sql);
 
+
 ############################################
 ## Gather some information on the library ##
 ############################################
@@ -93,6 +94,8 @@ $sth_select->execute ($library_id);
 while (@row = $sth_select->fetchrow_array) {
     $user = $row[0];
 }
+$dbh->disconnect;
+
 print "User      = $user\n";
 if ($processing_db =~ m/diag/) {
     $root = "/diag/projects/virome/";
@@ -105,6 +108,15 @@ else {
 ## Secure copy the tar ball from dump_db to sipho.dbi.udel.edu ##
 #################################################################
 # print `scp /diag/projects/virome/output_repository/dump_db/$library_id.tar.gz dnasko@sipho.dbi.udel.edu:/data/diag_libraries`;
-print `ssh fnode1 scp /diag/projects/virome/output_repository/dump_db/$library_id.tar.gz dnasko\@sipho.dbi.udel.edu:/data/diag_libraries`;
+print `ssh fnode1 scp /diag/projects/virome/output_repository/dump_db/$prefix.tar.gz dnasko\@sipho.dbi.udel.edu:/data/diag_libraries`;
+
+###########################################################################
+## Update the processing checkout table to check in the current database ##
+###########################################################################
+$dbh = DBI->connect("DBI:mysql:database=".$db_name.";host=".$db_host, $db_user, $db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});
+my $check_sql = qq/UPDATE processing_db_checkout SET status = "AVAILABLE" WHERE database_id = ?/;
+my $sth_check = $dbh->prepare($check_sql);
+$sth_check->execute ($processing_db);
+$dbh->disconnect;
 
 exit 0;

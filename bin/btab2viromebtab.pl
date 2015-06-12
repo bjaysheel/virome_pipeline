@@ -10,7 +10,7 @@ btab2viromebtab.pl -- converts btab files
 
 =head1 SYNOPSIS
 
- btab2viromebtab.pl --input /path/to/file.btab --prefix=base_name --outdir=/path/to/outdir/
+ btab2viromebtab.pl --input /path/to/file.btab --prefix=base_name --outdir=/path/to/outdir/ --algorithm=BLASTN
                      [--help] [--manual]
 
 =head1 DESCRIPTION
@@ -160,13 +160,25 @@ while(<IN>) {
     chomp;
     my @A = split(/\t/, $_);
     my $pvalue = 1-($e**(-1*$A[15]));
-    print OUT $A[0] . "\t" . $date . "\t" . $A[1] . "\t" .
-	$algorithm . "\t" . $database . "\t" . $A[2] . "\t" .
-	$A[3] . "\t" . $A[4] ."\t" . $A[5] ."\t" . $A[6] ."\t" .
-	$A[7] ."\t" . $A[8] ."\t" . $A[9] ."\t" . $A[10] ."\t" .
-	"NULL" . "\t" . $A[11] ."\t" . $A[12] ."\t" . $A[13] ."\t" .
-	$A[14] ."\t" . $A[15] ."\t" . $pvalue . "\n";
-    
+    if ($algorithm =~ m/blastp/i) {
+	print OUT $A[0] . "\t" . $date . "\t" . $A[1] . "\t" .
+	    $algorithm . "\t" . $database . "\t" . $A[2] . "\t" .
+	    $A[3] . "\t" . $A[4] ."\t" . $A[5] ."\t" . $A[6] ."\t" .
+	    $A[7] ."\t" . $A[8] ."\t" . $A[9] ."\t" . $A[10] ."\t" .
+	    "NULL" . "\t" . $A[11] ."\t" . $A[12] ."\t" . $A[13] ."\t" .
+	    $A[14] ."\t" . $A[15] ."\t" . $pvalue . "\n";
+    }
+    elsif ($algorithm =~ m/blastn/i) {
+	print OUT $A[0] . "\t" . $A[1] . "\t" .
+	    $algorithm . "\t" . $database . "\t" . $A[2] . "\t" .
+	    $A[3] . "\t" . $A[4] ."\t" . $A[5] ."\t" . $A[6] ."\t" .
+	    $A[7] ."\t" . $A[8] ."\t" . $A[9] ."\t" . $A[10] ."\t" .
+	    $A[11] ."\t" . $A[12] ."\t" . $A[13] ."\t" .
+	    $A[14] ."\t" . $A[15] ."\t" . $pvalue . "\n";
+    }
+    else {
+	die "\n Error: The algorithm you supplied is neither BLASTp nor, BLASTn\n\n";
+    }
 }
 close(OUT);
 close(IN);
