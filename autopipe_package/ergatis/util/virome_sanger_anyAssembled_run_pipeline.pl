@@ -15,7 +15,7 @@ USAGE: virome_sanger_anyAssembled_run_pipeline.pl
             --fasta=/path/to/file.fasta
             --library_id=123
             --sequences=50000
-            --username=ewommack
+            --prefix=PRF
             --database=diag1
             
 
@@ -43,8 +43,8 @@ B<--fasta,-f>
 B<--library_id,-y>
     The library ID
 
-B<--username,-u>
-    Username of the user who owns this library
+B<--prefix,-p>
+    Prefix of the library.
 
 B<--database,-d>
     Database which this run will occur
@@ -98,7 +98,7 @@ use Ergatis::SavedPipeline;
 my %options = ();
 my $results = GetOptions (\%options,
 			  'database|d=s',
-			  'username|u=s',
+			  'prefix|p=s',
 			  'library_id|y=i',
                           'fasta|f=s',
 			  'sequences|s=i',
@@ -130,7 +130,7 @@ if (defined $options{log}) {
 my $fasta = $options{'fasta'};
 my $database = $options{'database'};
 my $library_id = $options{'library_id'};
-my $username = $options{'username'};
+my $prefix = $options{'prefix'};
 my $sequences = $options{'sequences'};
 
 my $template = Ergatis::SavedPipeline->new( 
@@ -148,14 +148,14 @@ my $db_load_library_config = new Ergatis::ConfigFile(
     );
 $db_load_library_config->setval( 'parameter', '$;LOCATION$;', $database);
 $db_load_library_config->RewriteConfig();
-$db_load_library_config->setval( 'parameter', '$;USER_NAME$;', $username);
+$db_load_library_config->setval( 'parameter', '$;PREFIX$;', $prefix);
 $db_load_library_config->RewriteConfig();
 $db_load_library_config->setval( 'parameter', '$;ID$;', $library_id);
 $db_load_library_config->RewriteConfig();
 
 ## reset-processing-db
 my $reset_proc_db_config = new Ergatis::ConfigFile(
-    -file => "$options{repository_root}/workflow/runtime/reset-processing-db/" . $pipeline->id . "_default/reset-processing-db.default.user.config");
+    -file => "$options{repository_root}/workflow/runtime/reset_db/" . $pipeline->id . "_default/reset_db.default.user.config");
 $reset_proc_db_config->setval('parameter', '$;LOCATION$;', $database );
 $reset_proc_db_config->RewriteConfig();
 
@@ -166,7 +166,7 @@ $fasta_size_filter_config->setval('input', '$;INPUT_FILE$;', $fasta );
 $fasta_size_filter_config->RewriteConfig();
 
 ## split_multifasta (if needed)
-if ($sequences < 50) {
+if ($sequences < 20) {
     my $split_multifasta_config = new Ergatis::ConfigFile(
 	-file => "$options{repository_root}/workflow/runtime/split_multifasta/" . $pipeline->id . "_default/split_multifasta.default.user.config");
     $split_multifasta_config->setval('parameters', '$;TOTAL_FILES$;', $sequences );
@@ -186,25 +186,6 @@ foreach my $component (@LOCATION) {
     $location_update->setval('parameter', '$;LOCATION$;', $database );
     $location_update->RewriteConfig();
 }
-
-## inspector
-#my $inspector_config = new Ergatis::ConfigFile(
-#    -file => "$options{repository_root}/workflow/runtime/inspector/" . $pipeline->id . "_default/inspector.default.user.config");
-#my $db_number = $database;
-#$db_number =~ s/diag//;
-#$db_number = "virome_processing_" . $db_number;
-#$inspector_config->setval('parameter', '$;LOCATION$;', $db_number );
-#$inspector_config->RewriteConfig();
-
-## archiver_and_dumper
-my $archiver_and_dumper_config = new Ergatis::ConfigFile(
-    -file => "$options{repository_root}/workflow/runtime/archiver_and_dumper/" . $pipeline->id . "_default/archiver_and_dumper.default.user.config");
-$archiver_and_dumper_config->setval('parameter', '$;LOCATION$;', $database );
-$archiver_and_dumper_config->RewriteConfig();
-$archiver_and_dumper_config->setval('parameter', '$;USER_NAME$;', $username);
-$archiver_and_dumper_config->RewriteConfig();
-$archiver_and_dumper_config->setval('parameter', '$;ID$;', $library_id);
-$archiver_and_dumper_config->RewriteConfig();
 
 ## Get ready to rumble . . .
 
@@ -231,7 +212,7 @@ sub check_parameters {
     my $options = shift;
     
     ## make sure required arguments were passed
-    my @required = qw( template_directory repository_root id_repository ergatis_ini fasta username library_id database sequences);
+    my @required = qw( template_directory repository_root id_repository ergatis_ini fasta prefix library_id database sequences);
     for my $option ( @required ) {
         unless  ( defined $$options{$option} ) {
             die "--$option is a required option";

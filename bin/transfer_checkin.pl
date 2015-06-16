@@ -114,6 +114,7 @@ print `ssh fnode1 scp /diag/projects/virome/output_repository/dump_db/$prefix.ta
 ## Update the processing checkout table to check in the current database ##
 ###########################################################################
 $dbh = DBI->connect("DBI:mysql:database=".$db_name.";host=".$db_host, $db_user, $db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});
+$processing_db =~ s/^diag//; ## need to do this for the SQL table.
 my $check_sql = qq/UPDATE processing_db_checkout SET status = "AVAILABLE" WHERE database_id = ?/;
 my $sth_check = $dbh->prepare($check_sql);
 $sth_check->execute ($processing_db);
