@@ -48,7 +48,7 @@ tasks.each do |task|
         seqs = c.body_str.split(",")[1].split(/"/)[3].split('\n')[2]
         seqs = seqs.sub(/.* /, '')
         ## PASS INFO TO PERL ##
-        # add_run_tag = `curl -u #{api_key}: https://app.asana.com/api/1.0/tasks/#{task.id}/addTag -d "tag=#{queue_tags["RUNNING"]}" > /dev/null 2> /dev/null`
+        add_run_tag = `curl -u #{api_key}: https://app.asana.com/api/1.0/tasks/#{task.id}/addTag -d "tag=#{queue_tags["RUNNING"]}" > /dev/null 2> /dev/null`
         puts "User = #{user}"
         puts "Library = #{library}"
         puts "File = #{file}"

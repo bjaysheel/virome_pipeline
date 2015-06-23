@@ -173,9 +173,11 @@ print `cp /diag/projects/virome/virome-cache-files/idFiles/*_$library_id.txt $ou
 #####################################################################
 
 open(OUT,">$outdir/../$prefix/version_info.txt") || die "\n Cannot open the file: $outdir/../$prefix/version_info.txt\n";
-print OUT "fxndbLookupVersion\t" . $uniref . "\n";
-print OUT "mgolVersion\t" . $mgol . "\n";
-print OUT "pipelineVersion\t" . $pipeline . "\n";
+print OUT "fxndbLookupVersion=" . $uniref . "\n";
+print OUT "mgolVersion=" . $mgol . "\n";
+print OUT "pipelineVersion=" . $pipeline . "\n";
+print OUT "prefix=" . $prefix . "\n";
+print OUT "id=" . $library_id . "\n";
 close(OUT);
 
 #########################
