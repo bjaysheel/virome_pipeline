@@ -238,6 +238,10 @@ if ($options{'input_file'} =~ /\.(gz|gzip)$/) {
 ## number of sequences in the input file.
 my $seq_count = 0;
 
+## Check that there are enough sequecnes for the desired split DJN 16Jul2015
+my $num_seqs = `egrep -c "^>" $options{'input_file'}`; chomp($num_seqs);
+if ($options{total_files} > $num_seqs) { $options{total_files} = $num_seqs; }
+
 ## if we instead want to split sequences into a maximum number of files
 ## we need to do some hacky calculations here and reset seqs_per_file
 $options{seqs_per_file} = &set_seqs_per_total_files(\$sfh, $options{total_files}) if ( defined($options{total_files}) && $options{total_files} ne "" );

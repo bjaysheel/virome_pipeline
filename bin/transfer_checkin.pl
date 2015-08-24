@@ -108,7 +108,8 @@ else {
 ## Secure copy the tar ball from dump_db to sipho.dbi.udel.edu ##
 #################################################################
 # print `scp /diag/projects/virome/output_repository/dump_db/$library_id.tar.gz dnasko@sipho.dbi.udel.edu:/data/diag_libraries`;
-print `ssh fnode1 scp /diag/projects/virome/output_repository/dump_db/$prefix.tar.gz dnasko\@sipho.dbi.udel.edu:/data/diag_libraries`;
+print `ssh fnode1 scp /diag/projects/virome/output_repository/dump_db/$prefix.tar.gz biohen.dbi.udel.edu:/opt/virome`;
+print `ssh fnode1 ssh biohen.dbi.udel.edu '/opt/virome/bin/virome-analysis-transfer.sh $prefix.tar.gz'`;
 
 ###########################################################################
 ## Update the processing checkout table to check in the current database ##

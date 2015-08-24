@@ -1,3 +1,5 @@
+![Alt text](./images/virome_logo.png "VIROME")
+
 VIROME Ergatis Pipeline
 =======================
 

@@ -111,7 +111,12 @@ if (length($sel_qry)){  #table info is passed and expected
     if ($libraryId > 0){  # check for validity of library id
         my $dbh = DBI->connect("DBI:mysql:database=".$utils->db_name.";host=".$utils->db_host,
                   $utils->db_user, $utils->db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});
-
+	
+	print STDOUT "\n DEBUG: Trying to write to this file:\n\n";
+	print STDOUT $options{outdir}."/".$options{table}."_".$libraryId.".ldb" . "\n";
+	print STDOUT "\noutdir = $options{outdir}\n";
+	print STDOUT "table = $options{table}\n";
+	print STDOUT "library id = $libraryId\n\n";
 		my $filename = $options{outdir}."/".$options{table}."_".$libraryId.".ldb";
 
 		# remove file if it already exists;

@@ -75,8 +75,9 @@ if( $options{'help'} ){
 
 my $inFasta = $options{fasta}; # get the file name, somehow 
 my $minLength = $options{minlen};
-
-my $in = Bio::SeqIO->new(-file => "$inFasta", -format => 'fasta');
+my $in;
+if ( $inFasta =~ m/\.gz$/) {    $in = Bio::SeqIO->new(-file => "gunzip -c $inFasta |", -format => 'fasta'); }
+else { $in = Bio::SeqIO->new(-file => "$inFasta", -format => 'fasta'); }
 
 my %seq_hash;
 my $seq_num = 0;

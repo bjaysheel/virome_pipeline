@@ -139,7 +139,11 @@ my $id_repository = "/diag/projects/virome/workflow/project_id_repository/";
 
 print " rsync'ing with sipho.dbi.udel.edu . . .\n";
 ## Perform the rsync with VIROME server at Delaware
-print `rsync -zar --delete --exclude=/.* dnasko\@sipho.dbi.udel.edu:/data/virome_user_libraries/ /diag/projects/virome/user_metagenomes/ 2> $stderr_file`;
+print `rsync -zar --delete --exclude=/.* sipho.dbi.udel.edu:/data/virome_user_libraries/ /diag/projects/virome/user_metagenomes/ 2> $stderr_file`;
+## Alter permissions after
+print `for i in \`find /diag/projects/virome/user_metagenomes -type d -print\`; do chmod 775 \$i 2> /dev/null; chgrp virome \$i 2> /dev/null; done;`;
+print `for i in \`find /diag/projects/virome/user_metagenomes -type f  -print\`; do chmod 664 \$i 2> /dev/null; chgrp virome \$i 2> /dev/null; done;`;
+
 # my $stderr_size = -s $stderr_file;
 print "\t[ rsync complete ]\n";
 
