@@ -34,6 +34,10 @@ Overview of Contents
 | /software                | Locally installed software for VIROME
 | sofware.config           | Ergatis software config file
 
+Funding
+-------
+
 ![Alt text](./images/moore_logo.jpg "GBMF")
+![Alt text](./images/nsf_logo.jpg "NSF")
 
 *Rev 02 Oct 2015 DJN*
