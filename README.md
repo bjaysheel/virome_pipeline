@@ -37,6 +37,6 @@ Overview of Contents
 Funding
 -------
 
-![Alt text](./images/funding.png "Funding")
+![Alt text](./images/gbmf_nsf.png.png "Funding")
 
 *Rev 02 Oct 2015 DJN*
