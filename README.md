@@ -34,4 +34,6 @@ Overview of Contents
 | /software                | Locally installed software for VIROME
 | sofware.config           | Ergatis software config file
 
-*Rev 24 Aug 2015 DJN*
+![Alt text](./images/moore_logo.jpg "GBMF")
+
+*Rev 02 Oct 2015 DJN*
