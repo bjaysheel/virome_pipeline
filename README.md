@@ -37,6 +37,6 @@ Overview of Contents
 Funding
 -------
 
-![Alt text](./images/funding.jpg "Funding")
+![Alt text](./images/funding.png "Funding")
 
 *Rev 02 Oct 2015 DJN*
