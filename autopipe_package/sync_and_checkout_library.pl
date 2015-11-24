@@ -107,7 +107,7 @@ if ($available_database == 1 || $available_database == 2 || $available_database 
 	$sth_assembled->execute($virome_lib_id);
         my ($asm_flag,$file_type) = $sth_assembled->fetchrow_array();
         ## If assembled
-	if ($asm_flag == 1 || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i || $lib_seqmethod =~ m/ion torrent/i) {
+	if ($asm_flag == 1 || $lib_seqmethod =~ m/sanger/i || $lib_seqmethod =~ m/illumina/i || $lib_seqmethod =~ m/pacbio/i || $lib_seqmethod =~ m/ion/i || $lib_seqmethod =~ m/other/i) {
 	    if ($file_type =~ m/FASTA/i){
 		$template_directory = $template_directory . "/sanger-anyAssembled-fasta";
 		$instantiator_script = "virome_sanger_anyAssembled_run_pipeline.pl ";
