@@ -1,9 +1,0 @@
-#archive_verification_dialogue,
-#temp_archive_verification_dialogue,
-#delete_dialogue {
-    display: none;
-}
-
-ul#archive_choices {
-    list-style-image: url('../images/link.gif');
-}

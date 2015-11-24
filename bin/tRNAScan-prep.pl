@@ -135,7 +135,7 @@ while (<DAT>){
       $info[4] =~ s/\$([a-z])/\u$1/ig;
 	  $info[4] =~ s/pse/Pseudo/i;
 	  $info[4] =~ s/und/Undef/i;
-	  
+
       print OUT join("\t",$utils->trim($sequenceId), $utils->trim($info[1]), $utils->trim($info[2]), $utils->trim($info[3]),
 			   $utils->trim($info[4]), $utils->trim($info[5]), $utils->trim($info[6]), $utils->trim($info[7]), $utils->trim($info[8]))."\n";
     }
