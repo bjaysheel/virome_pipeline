@@ -1,5 +1,0 @@
-int FIRST_GO_ROUND=0;
-
-bool FAMILY_MODE = FALSE;
-bool OUTPUT_TO_FILE = FALSE;
-string OUTFILE;
