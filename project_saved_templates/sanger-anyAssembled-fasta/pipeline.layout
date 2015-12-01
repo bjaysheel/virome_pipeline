@@ -49,10 +49,6 @@
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
-            <name>clean_expand_btab.rna</name>
-        </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
             <name>rRNA-scrub.default</name>
         </commandSet>
         <commandSet type="parallel">
@@ -268,7 +264,7 @@
                     <state>incomplete</state>
                     <name>concatenate_files.blastp</name>
                 </commandSet>
-	<commandSet type="serial">	
+	<commandSet type="serial">
                     <state>incomplete</state>
                     <name>db-upload.blastp</name>
         </commandSet>

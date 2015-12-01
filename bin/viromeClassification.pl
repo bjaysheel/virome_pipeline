@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    viromeClassification.pl
@@ -38,6 +38,7 @@ B<--help,-h>
 =cut
 
 use strict;
+use warnings;
 use IO::File;
 use POSIX qw/ceil/;
 use DBI;
@@ -91,37 +92,38 @@ timer(); #call timer to see when process started.
 
 my $lib_sel = $dbh0->prepare(q{SELECT id FROM library WHERE deleted=0 and server=?});
 
-my $stat_sel = $dbh->prepare(q{SELECT	s.read_cnt,s.read_mb,s.complete_cnt,
-					s.complete_mb,s.complete_id,s.incomplete_cnt,
-					s.incomplete_mb,s.incomplete_id,s.lackstop_cnt,
-					s.lackstop_mb,s.lackstop_id,s.lackstart_cnt,
-					s.lackstart_mb,s.lackstart_id,s.archaea_cnt,
-					s.archaea_mb,s.archaea_id,s.bacteria_cnt,
-					s.bacteria_mb,s.bacteria_id,s.phage_cnt,
-					s.phage_mb,s.phage_id,s.tRNA_cnt,
-					s.tRNA_id,s.rRNA_cnt,s.rRNA_id,s.orfan_cnt,
-					s.orfan_id,s.allviral_cnt,s.allviral_id,
-					s.topviral_cnt,s.topviral_id,
-					s.allmicrobial_cnt,s.allmicrobial_id,
-					s.topmicrobial_cnt,s.topmicrobial_id,
-					s.fxn_cnt,s.fxn_id,
-					s.unassignfxn_cnt,s.unassignfxn_id,
-					s.libraryId
-				FROM	statistics s
-				WHERE	s.deleted = 0
-					and s.libraryId = ?});
+#s.archaea_mb,s.archaea_id,s.bacteria_cnt,
+#s.bacteria_mb,s.bacteria_id,s.phage_cnt,
+#s.phage_mb,s.phage_id,s.tRNA_cnt,
 
-my $mgol_sel = $dbh->prepare(q{SELECT	distinct (b.sequenceId), b.hit_name
-				FROM	blastp b
-					INNER JOIN
-					sequence s on s.id=b.sequenceId
-				WHERE	b.e_value < 0.001
-					and s.libraryId = ?
-					and b.deleted = 0
-					and s.deleted = 0
-					and b.sys_topHit=1
-					and b.database_name = 'METAGENOMES'
-				ORDER BY b.sequenceId, b.hit_name});
+my $stat_sel = $dbh->prepare(q{SELECT s.read_cnt,s.read_mb,s.complete_cnt,
+                                s.complete_mb,s.complete_id,s.incomplete_cnt,
+            					s.incomplete_mb,s.incomplete_id,s.lackstop_cnt,
+            					s.lackstop_mb,s.lackstop_id,s.lackstart_cnt,
+            					s.lackstart_mb,s.lackstart_id,s.archaea_cnt,
+            					s.tRNA_id,s.rRNA_cnt,s.rRNA_id,s.orfan_cnt,
+            					s.orfan_id,s.allviral_cnt,s.allviral_id,
+            					s.topviral_cnt,s.topviral_id,
+            					s.allmicrobial_cnt,s.allmicrobial_id,
+            					s.topmicrobial_cnt,s.topmicrobial_id,
+            					s.fxn_cnt,s.fxn_id,
+            					s.unassignfxn_cnt,s.unassignfxn_id,
+            					s.libraryId
+            				FROM	statistics s
+            				WHERE	s.deleted = 0
+            					and s.libraryId = ?});
+
+my $mgol_sel = $dbh->prepare(q{SELECT distinct (b.sequenceId), b.hit_name
+            				FROM	blastp b
+            					INNER JOIN
+            					sequence s on s.id=b.sequenceId
+            				WHERE	b.e_value < 0.001
+            					and s.libraryId = ?
+            					and b.deleted = 0
+            					and s.deleted = 0
+            					and b.sys_topHit=1
+            					and b.database_name = 'METAGENOMES'
+            				ORDER BY b.sequenceId, b.hit_name});
 
 
 my $rslt = '';
@@ -139,15 +141,15 @@ if ($options{library} <= 0){
     push @libArray, $options{library};
 }
 
-foreach my $lib (@libArray){
+foreach my $lib (@libArray) {
     print "\nProcessing library $lib\n";
 
     my $xml_file = "VIRClass_XMLDOC_".$lib.".xml";
     my $db_file = "DBBreakdown_XMLDOC_".$lib.".xml";
     my $db_id_file = "DBBreakdown_IDDOC_".$lib.".xml";
 
-    my $xml_out = new IO::File(">".$file_loc."/xDocs/".$xml_file)
-	or die "Could not open file ".$file_loc."/xDocs/".$xml_file." to write\n";
+    my $xml_out = new IO::File(">${file_loc}/xDocs/${xml_file}")
+	   or die "Could not open file ${file_loc}/xDocs/${xml_file} to write\n";
 
     my $xml_writer = new XML::Writer(OUTPUT=>$xml_out);
     $xml_writer->xmlDecl("UTF-8");
@@ -157,48 +159,48 @@ foreach my $lib (@libArray){
     my $rslt = $stat_sel->fetchall_arrayref({});
     my $fxnStruct;
 
-    foreach my $rec (@$rslt){
-	my $tag=1;
-	my $total = $rec->{'tRNA_cnt'} + $rec->{'rRNA_cnt'} + $rec->{'fxn_cnt'} +
-		    $rec->{'unassignfxn_cnt'} + $rec->{'topviral_cnt'} +
-		    $rec->{'allviral_cnt'} + $rec->{'topmicrobial_cnt'} +
-		    $rec->{'allmicrobial_cnt'} + $rec->{'orfan_cnt'};
+    foreach my $rec (@$rslt) {
+        my $tag=1;
+        my $total = $rec->{'tRNA_cnt'} + $rec->{'rRNA_cnt'} + $rec->{'fxn_cnt'} +
+        	    $rec->{'unassignfxn_cnt'} + $rec->{'topviral_cnt'} +
+        	    $rec->{'allviral_cnt'} + $rec->{'topmicrobial_cnt'} +
+        	    $rec->{'allmicrobial_cnt'} + $rec->{'orfan_cnt'};
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'tRNA',
-					'CAT'=>'tRNA',
-					'VALUE'=>($rec->{'tRNA_cnt'} > 0) ? ceil(($rec->{'tRNA_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'tRNA',
+        				'CAT'=>'tRNA',
+        				'VALUE'=>($rec->{'tRNA_cnt'} > 0) ? ceil(($rec->{'tRNA_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'rRNA',
-					'CAT'=>'rRNA',
-					'VALUE'=>($rec->{'rRNA_cnt'} > 0) ? ceil(($rec->{'rRNA_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'rRNA',
+        				'CAT'=>'rRNA',
+        				'VALUE'=>($rec->{'rRNA_cnt'} > 0) ? ceil(($rec->{'rRNA_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Possible functional protein',
-					'CAT'=>'fxn',
-					'VALUE'=>($rec->{'fxn_cnt'} > 0) ? ceil(($rec->{'fxn_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Possible functional protein',
+        				'CAT'=>'fxn',
+        				'VALUE'=>($rec->{'fxn_cnt'} > 0) ? ceil(($rec->{'fxn_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Unassignfxn protein',
-					'CAT'=>'unassignfxn',
-					'VALUE'=>($rec->{'unassignfxn_cnt'} > 0) ? ceil(($rec->{'unassignfxn_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Unassignfxn protein',
+        				'CAT'=>'unassignfxn',
+        				'VALUE'=>($rec->{'unassignfxn_cnt'} > 0) ? ceil(($rec->{'unassignfxn_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Top-hit viral',
-					'CAT'=>'topviral',
-					'VALUE'=>($rec->{'topviral_cnt'} > 0) ? ceil(($rec->{'topviral_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Top-hit viral',
+        				'CAT'=>'topviral',
+        				'VALUE'=>($rec->{'topviral_cnt'} > 0) ? ceil(($rec->{'topviral_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Viral only',
-					'CAT'=>'allviral',
-					'VALUE'=>($rec->{'allviral_cnt'} > 0) ? ceil(($rec->{'allviral_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Viral only',
+        				'CAT'=>'allviral',
+        				'VALUE'=>($rec->{'allviral_cnt'} > 0) ? ceil(($rec->{'allviral_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Top-hit microbial',
-					'CAT'=>'topmicrobial',
-					'VALUE'=>($rec->{'topmicrobial_cnt'} > 0) ? ceil(($rec->{'topmicrobial_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Top-hit microbial',
+        				'CAT'=>'topmicrobial',
+        				'VALUE'=>($rec->{'topmicrobial_cnt'} > 0) ? ceil(($rec->{'topmicrobial_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Microbial only',
-					'CAT'=>'allmicrobial',
-					'VALUE'=>($rec->{'allmicrobial_cnt'} > 0) ? ceil(($rec->{'allmicrobial_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'Microbial only',
+        				'CAT'=>'allmicrobial',
+        				'VALUE'=>($rec->{'allmicrobial_cnt'} > 0) ? ceil(($rec->{'allmicrobial_cnt'}/$total)*100) : 0);
 
-	$xml_writer->emptyTag("CATEGORY", 'LABEL'=>'ORFan',
-					'CAT'=>'orfan',
-					'VALUE'=>($rec->{'orfan_cnt'} > 0) ? ceil(($rec->{'orfan_cnt'}/$total)*100) : 0);
+        $xml_writer->emptyTag("CATEGORY", 'LABEL'=>'ORFan',
+        				'CAT'=>'orfan',
+        				'VALUE'=>($rec->{'orfan_cnt'} > 0) ? ceil(($rec->{'orfan_cnt'}/$total)*100) : 0);
     }
 
     my $bothList = '';
@@ -209,9 +211,10 @@ foreach my $lib (@libArray){
     my $uniCount = 0;
 
     #get uniref/fxnal ids.
-    open (DAT, $file_loc."/idFiles/fxnIdList_".$lib.".txt")
-	or die "Could not open file ".$file_loc."/idFiles/fxnIdList_".$lib.".txt";
+    open (DAT, "<", "${file_loc}/idFiles/fxnIdList_${lib}.txt")
+    	or die "Could not open file ${file_loc}/idFiles/fxnIdList_${lib}.txt";
     my @data = <DAT>;
+    close(DAT);
 
     my @fxnIds = split(/,/,$data[0]);
 
@@ -223,13 +226,13 @@ foreach my $lib (@libArray){
 			$uniList .= $id_1.',';
 		}
     }
-    close(DAT);
 
     #get unclassified id's and add
-    open (DAT, $file_loc."/idFiles/unClassIdList_".$lib.".txt")
-	or die "Could not open file ".$file_loc."/idFiles/unClassIdList_".$lib.".txt";
+    open (DAT, "<", "${file_loc}/idFiles/unClassIdList_${lib}.txt")
+	   or die "Could not open file ${file_loc}/idFiles/unClassIdList_${lib}.txt";
     undef @data;
     @data = <DAT>;
+    close(DAT);
 
     my @unassIds = split(/,/,$data[0]);
 
@@ -241,17 +244,16 @@ foreach my $lib (@libArray){
 			$uniList .= $id_2.',';
 		}
     }
-    close(DAT);
 
     #get orfan ids
-    open (DAT, $file_loc."/idFiles/orfanList_".$lib.".txt")
-	or die "Could not open file ".$file_loc."/idFiles/orfanList_".$lib.".txt";
+    open (DAT, "<", "${file_loc}/idFiles/orfanList_${lib}.txt")
+	   or die "Could not open file ${file_loc}/idFiles/orfanList_${lib}.txt";
     undef @data;
     @data = <DAT>;
+    close(DAT);
 
     my @orfIds = split(/,/,$data[0]);
     my $orfList = $data[0];
-    close(DAT);
 
     #get mgol ids. and sort out which seq exist in both uniref and mgol
     $mgol_sel->execute($lib) or die $dbh->errstr;
@@ -271,8 +273,8 @@ foreach my $lib (@libArray){
     $uniList =~ s/,$//;
 
     #write out xml for db breakdown.
-    my $db_out = new IO::File(">".$file_loc."/xDocs/".$db_file)
-	or die "Could not open file ".$file_loc."/xDocs/".$db_file." to write\n";
+    my $db_out = new IO::File(">${file_loc}/xDocs/${db_file}")
+	   or die "Could not open file ${file_loc}/xDocs/${db_file} to write\n";
 
     $xml_writer->endTag("root");
     $xml_writer->end();
@@ -300,8 +302,8 @@ foreach my $lib (@libArray){
 				     'IDFNAME'=>$db_id_file);
 
     #write out db ids breakdown.
-    my $db_id_out = new IO::File(">".$file_loc."/xDocs/".$db_id_file)
-	or die "Could not open file ".$file_loc."/xDocs/".$db_id_file." to write\n";
+    my $db_id_out = new IO::File(">${file_loc}/xDocs/${db_id_file}")
+	   or die "Could not open file ${file_loc}/xDocs/${db_id_file} to write\n";
 
     $db_writer->endTag("root");
     $db_writer->end();

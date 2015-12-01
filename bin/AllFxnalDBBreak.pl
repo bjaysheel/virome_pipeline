@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    libraryHistorgram.pl
@@ -42,8 +42,9 @@ B<--help,-h>
 
 =cut
 
-use IO::File;
 use strict;
+use warnings;
+use IO::File;
 use DBI;
 use LIBInfo;
 use UTILS_V;
@@ -96,13 +97,13 @@ timer(); #call timer to see when process started.
 my $lib_sel = $dbh0->prepare(q{SELECT id FROM library WHERE deleted=0 and server=?});
 
 my $blst_sel = $dbh->prepare(q{SELECT DISTINCT b.sequenceId
-							 FROM blastp b RIGHT JOIN sequence s on b.sequenceId=s.id
-					WHERE 	b.e_value < 0.001
-						and s.libraryId=?
-						and b.database_name = ?
-						and b.fxn_topHit=1
-					and b.deleted=0 and s.deleted=0
-			       ORDER BY sequenceId});
+							FROM blastp b RIGHT JOIN sequence s on b.sequenceId=s.id
+        					WHERE 	b.e_value < 0.001
+        						and s.libraryId=?
+        						and b.database_name = ?
+        						and b.fxn_topHit=1
+        					and b.deleted=0 and s.deleted=0
+        			       ORDER BY sequenceId});
 
 my $rslt = '';
 my @libArray;
@@ -125,10 +126,10 @@ foreach my $lib (@libArray){
     my $id_file = "FXNAL_OVERVIEW_IDDOC_".$lib.".xml";
     my $tag_num = 1;
 
-    my $xml_out = new IO::File(">".$file_loc."/xDocs/".$xml_file)
-		    or die "Could not open file ".$file_loc."/xDocs/".$xml_file." to write\n";
-    my $id_out = new IO::File(">".$file_loc."/xDocs/".$id_file)
-		    or die "Could not open file ".$file_loc."/xDocs/".$id_file." to write\n";
+    my $xml_out = new IO::File(">${file_loc}/xDocs/${xml_file}")
+		    or die "Could not open file ${file_loc}/xDocs/${xml_file} to write\n";
+    my $id_out = new IO::File(">${file_loc}/xDocs/${id_file}")
+		    or die "Could not open file ${file_loc}/xDocs/${id_file} to write\n";
 
     my $xml_writer = new XML::Writer(OUTPUT=>$xml_out);
     my $id_writer = new XML::Writer(OUTPUT=>$id_out);
@@ -173,20 +174,20 @@ sub check_parameters {
     # if library list file or library file has been specified
     # get library info. server, id and library name.
     if ((defined $options{input}) && (length($options{input}))){
-      $libObject = $libinfo->getLibFileInfo($options{input});
-      $flag = 1;
+        $libObject = $libinfo->getLibFileInfo($options{input});
+        $flag = 1;
     }
 
     # if server is not specifed and library file is not specifed show error
     if (!$options{server} && !$flag){
-      pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
-      exit(-1);
+        pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
+        exit(-1);
     }
 
     # if exec env is not specified show error
     unless ($options{env}) {
-      pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
-      exit(-1);
+        pod2usage({-exitval => 2,  -message => "error message", -verbose => 1, -output => \*STDERR});
+        exit(-1);
     }
 
     # if no library info set library to -1;
@@ -224,22 +225,22 @@ sub getNodeFor {
     $blst_sel->execute($lib,$db);
     my $rslt = $blst_sel->fetchall_arrayref({});
 
-    if (@{$rslt} > 0){
-	my $idList = '';
-	my $count = 0+@{$rslt};
+    if (@{$rslt} > 0) {
+        my $idList = '';
+        my $count = 0+@{$rslt};
 
-	foreach my $row (@$rslt) {
-	    $idList .= $row->{sequenceId} . ",";
-	}
+        foreach my $row (@$rslt) {
+            $idList .= $row->{sequenceId} . ",";
+        }
 
-	$idList =~ s/,$//;
+        $idList =~ s/,$//;
 
-	if ($db eq 'UNIREF100P'){
-	    $db = 'GO';
-	}
+        if ($db eq 'UNIREF100P'){
+            $db = 'GO';
+        }
 
-	$xw->emptyTag("CATEGORY", 'LABEL'=>$db, 'VALUE'=>$count, 'TAG'=>'TAG_'.$tag, 'IDFNAME'=>$fname);
-	$iw->emptyTag("TAG_".$tag, 'IDLIST'=>$idList);
+        $xw->emptyTag("CATEGORY", 'LABEL'=>$db, 'VALUE'=>$count, 'TAG'=>'TAG_'.$tag, 'IDFNAME'=>$fname);
+        $iw->emptyTag("TAG_".$tag, 'IDLIST'=>$idList);
     }
 
     return $xw, $iw, $tag+1;

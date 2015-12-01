@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    viromeTaxonomyXML.pl
@@ -43,6 +43,7 @@ B<--help,-h>
 =cut
 
 use strict;
+use warnings;
 use IO::File;
 use POSIX qw/ceil/;
 use DBI;
@@ -97,26 +98,26 @@ timer(); #call timer to see when process started.
 
 my $lib_sel = $dbh0->prepare(q{SELECT id FROM library WHERE deleted=0 and server=?});
 
-my $tax_sel = $dbh->prepare(q{SELECT	b.domain,
-					b.kingdom,
-					b.phylum,
-					b.class,
-					b.order,
-					b.family,
-					b.genus,
-					b.species,
-					b.organism,
-					b.sequenceId
-				FROM	blastp b
-				    RIGHT JOIN
-					sequence s on b.sequenceId=s.id
-				WHERE	b.deleted=0
-					and s.deleted=0
-					and b.sys_topHit=1
-					and b.e_value <= 0.001
-					and b.database_name = 'UNIREF100P'
-					and s.libraryId = ?
-				ORDER BY b.domain,b.kingdom,b.phylum,b.class,b.order,b.family,b.genus,b.species});
+my $tax_sel = $dbh->prepare(q{SELECT b.domain,
+        					b.kingdom,
+        					b.phylum,
+        					b.class,
+        					b.order,
+        					b.family,
+        					b.genus,
+        					b.species,
+        					b.organism,
+        					b.sequenceId
+        				FROM	blastp b
+        				    RIGHT JOIN
+        					sequence s on b.sequenceId=s.id
+        				WHERE	b.deleted=0
+        					and s.deleted=0
+        					and b.sys_topHit=1
+        					and b.e_value <= 0.001
+        					and b.database_name = 'UNIREF100P'
+        					and s.libraryId = ?
+        				ORDER BY b.domain,b.kingdom,b.phylum,b.class,b.order,b.family,b.genus,b.species});
 
 my $rslt = '';
 my @libArray;
@@ -161,7 +162,7 @@ foreach my $lib (@libArray){
 		} elsif (!length($rec->{'organism'})){
 		    $rec->{'organism'} = "UNKNOWN ORGANISM";
 		}
-	
+
 		$tStruct = createStruct($tStruct, $rec, $rec->{'sequenceId'});
     }
 
@@ -170,8 +171,8 @@ foreach my $lib (@libArray){
     my $xml_file = "TAXONOMY_XMLDOC_".$lib.".xml";
     my $id_file = "TAXONOMY_IDDOC_".$lib.".xml";
 
-    my $xml_out = new IO::File(">".$file_loc."/xDocs/".$xml_file) or die "Could not open file ".$file_loc."/xDocs/".$xml_file." to write\n";
-    my $id_out = new IO::File(">".$file_loc."/xDocs/".$id_file) or die "Could not open file ".$file_loc."/xDocs/".$id_file." to write\n";
+    my $xml_out = new IO::File(">${file_loc}/xDocs/${xml_file}") or die "Could not open file ${file_loc}/xDocs/${xml_file} to write\n";
+    my $id_out = new IO::File(">${file_loc}/xDocs/${id_file}") or die "Could not open file ${file_loc}/xDocs/${id_file} to write\n";
 
     my $xml_writer = new XML::Writer(OUTPUT=>$xml_out);
     my $id_writer = new XML::Writer(OUTPUT=>$id_out);

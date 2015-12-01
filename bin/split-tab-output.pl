@@ -1,9 +1,5 @@
 #!/usr/bin/perl
 
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
-
 =head1 NAME
 
 split-tab-output.pl: split tab output created for mysql upload
@@ -29,7 +25,7 @@ B<--outdir, -o>
 
 B<--prefix, -p>
     prefix file name
-    
+
 B<--numSplit, -s>
     no of splits to create
 
@@ -69,10 +65,10 @@ BEGIN {
 my %options = ();
 my $results = GetOptions (\%options,
                           'input|i=s',
-			  'outdir|o=s',
-			  'prefix|p=s',
-			  'numSplit|s=s',
-			  'log|l=s',
+                          'outdir|o=s',
+                          'prefix|p=s',
+                          'numSplit|s=s',
+                          'log|l=s',
                           'debug|d=s',
                           'help|h') || pod2usage();
 
@@ -91,17 +87,17 @@ if( $options{'help'} ){
 &check_parameters(\%options);
 
 unless(-s $options{input} > 0){
-  print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
-  $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
-  exit(0);
+    print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
+    $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
+    exit(0);
 }
 
 my $cmd = "cat $options{input} | wc -l";
 my $total_lines = `$cmd`;
 
 if ($total_lines <= 0){
-  print STDERR "Cannot determin number of lines in input file $options{input}\n";
-  exit(-1);
+    print STDERR "Cannot determin number of lines in input file $options{input}\n";
+    exit(-1);
 }
 
 my $perFile = ceil($total_lines/$options{numSplit});
@@ -121,9 +117,9 @@ while (my $file = readdir(DIR)) {
 }
 
 if (( $? >> 8 ) != 0 ){
-  print STDERR "command failed: $!\n";
-  print STDERR $cmd."\n";
-  exit($?>>8);
+    print STDERR "command failed: $!\n";
+    print STDERR $cmd."\n";
+    exit($?>>8);
 }
 
 exit(0);

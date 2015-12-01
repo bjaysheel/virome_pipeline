@@ -1,8 +1,4 @@
-#!/usr/bin/perl -w
-
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
+#!/usr/bin/perl
 
 =head1 NAME
 
@@ -55,6 +51,7 @@ This script is used to upload info into db.
 =cut
 
 use strict;
+use warnings;
 use DBI;
 use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
@@ -91,9 +88,9 @@ if( $options{'help'} ){
 
 # check if the file is empty.
 unless(-s $options{input} > 0){
-  print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
-  $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
-  exit(0);
+    print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
+    $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
+    exit(0);
 }
 
 ###############################################################################

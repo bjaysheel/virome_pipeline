@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    libraryHistorgram.pl
@@ -43,8 +43,9 @@ B<--help,-h>
 
 =cut
 
-use IO::File;
 use strict;
+use warnings;
+use IO::File;
 use DBI;
 use LIBInfo;
 use UTILS_V;
@@ -293,7 +294,7 @@ sub binGC {
 sub printXML {
     my ($lib, $type, $arr) = @_;
 
-    my $filename = $file_loc . "/".$type."_HISTOGRAM_".$lib.".xml"; 
+    my $filename = $file_loc . "/".$type."_HISTOGRAM_".$lib.".xml";
 
     my $output = new IO::File(">$filename") or die "Could not open file $filename to write\n";
     my $writer = new XML::Writer(OUTPUT=>$output);

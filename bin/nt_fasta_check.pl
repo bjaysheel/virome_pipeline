@@ -1,13 +1,5 @@
 #!/usr/bin/perl
 
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
-use lib (@INC,$ENV{"PERL_MOD_DIR"});
-use lib (@INC,$ENV{"LIB_INFO_MOD"});
-no lib "$ENV{PERL_MOD_DIR}/i686-linux";
-no lib ".";
-
 =head1 NAME
    nt_fasta_check.pl
 
@@ -51,7 +43,7 @@ B<--help,-h>
 
 
 use strict;
-use Switch;
+use warnings;
 use File::Basename;
 use Data::Dumper;
 use Bio::SeqIO;
@@ -129,7 +121,7 @@ while (my $s = $inseq->next_seq){
 	my $ATGC = $sequence_string =~ tr/ATGCatgc/ATGCatgc/;
 	my $sequence_size = length($sequence_string);
 	my $atgc = $ATGC / $sequence_size;
-	
+
 	if ($qc_flag == 1) {
 	    print FOUT ">".$new_name."\n".$s->seq."\n";
 	}
@@ -158,6 +150,7 @@ while (my $s = $inseq->next_seq){
 close(FOUT);
 close(REF);
 
+exit(0);
 ###############################################################################
 ####  SUBS
 ###############################################################################
@@ -210,36 +203,36 @@ sub freq_cal
     my $len = length($seq);
     $seq =~ s/X//gi;
     if ($seq =~ m/[^ATCGNRYSWKMBDHV]/i) {
-	# print STDERR "Invalid base(s) in $seq_name";
-	# exit(259);
-	print STDERR "Warning (Major) for INVALID BASES for seq id: $seq_name\n";
-	$flag = 0;
-	$warn5++;
+    	# print STDERR "Invalid base(s) in $seq_name";
+    	# exit(259);
+    	print STDERR "Warning (Major) for INVALID BASES for seq id: $seq_name\n";
+    	$flag = 0;
+    	$warn5++;
     }
-    
+
     my $ATCGcount = () = $seq =~ /[ATCG]/ig;
     my $Ncount = () = $seq =~ /[N]/ig;
-    
+
     my $freq_atcg = ($ATCGcount/$len)*100;
     my $freq_n = ($Ncount/$len)*100;
-    
+
     if($freq_atcg < 97) {
-	print STDERR "Warning (Minor) for ATCG Frequency (".$freq_atcg."\%) for seq id: $seq_name\n";
-	$warn1++;
+    	print STDERR "Warning (Minor) for ATCG Frequency (".$freq_atcg."\%) for seq id: $seq_name\n";
+    	$warn1++;
     }
     if($freq_atcg < 93) {
-	print STDERR "Warning (Major) for ATCG Frequency (".$freq_atcg."\%) for seq id: $seq_name\n";
-	$flag = 0;
-	$warn2++;
+    	print STDERR "Warning (Major) for ATCG Frequency (".$freq_atcg."\%) for seq id: $seq_name\n";
+    	$flag = 0;
+    	$warn2++;
     }
     if($freq_n > 5) {
-	print STDERR "Warning (Major) for N frequency (".$freq_n."\%)  for seq id: $seq_name\n";
-	$flag = 0;
-	$warn4++;
+    	print STDERR "Warning (Major) for N frequency (".$freq_n."\%)  for seq id: $seq_name\n";
+    	$flag = 0;
+    	$warn4++;
     }
     if($freq_n > 2) {
-	print STDERR "Warning (Minor) for N frequncy (".$freq_n."\%) for seq id: $seq_name\n";
-	$warn3++;
+    	print STDERR "Warning (Minor) for N frequncy (".$freq_n."\%) for seq id: $seq_name\n";
+    	$warn3++;
     }
     return $flag;
 }

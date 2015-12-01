@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    FxnalDBBreak.pl
@@ -42,8 +42,9 @@ B<--help,-h>
 
 =cut
 
-use IO::File;
 use strict;
+use warnings;
+use IO::File;
 use DBI;
 use LIBInfo;
 use UTILS_V;
@@ -160,7 +161,9 @@ foreach my $lib (@libArray){
 		}
 
 		print "\t\tWriting xDoc file\n";
-		open (FHD, ">", $options{outdir} ."/xDocs/". $n."_XMLDOC_".$lib.".xml") or die "Can not write to file: " . ">", $options{outdir} ."/xDocs/". $n."_XMLDOC_".$lib.".xml";
+		open (FHD, ">", "$options{outdir}/xDocs/${n}_XMLDOC_${lib}.xml")
+            or die "Can not write to file: $options{outdir}/xDocs/${n}_XMLDOC_${lib}.xml";
+
 		print FHD "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		print FHD "<root>\n";
 		print FHD $xDoc;
@@ -168,7 +171,9 @@ foreach my $lib (@libArray){
 		close FHD;
 
 		print "\t\tWriting idDoc file\n";
-		open (FHD, ">", $options{outdir} ."/xDocs/". $n."_IDDOC_".$lib.".xml") or die "Can not write to file $!";
+		open (FHD, ">", "$options{outdir}/xDocs/${n}_IDDOC_${lib}.xml")
+            or die "Can not write to file $options{outdir}/xDocs/${n}_IDDOC_${lib}.xml";
+            
 		print FHD "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		print FHD "<root>\n";
 		print FHD $iDoc;

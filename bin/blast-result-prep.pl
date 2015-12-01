@@ -1,10 +1,5 @@
 #!/usr/bin/perl
 
-
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
-
 =head1 NAME
 
 blast-result-prep.pl - prepare blast btabl file for mysql upload
@@ -107,7 +102,7 @@ use Data::Dumper;
 my %options = ();
 my $results = GetOptions (\%options,
                           'input|i=s',
-			  'outdir|od=s',
+                          'outdir|od=s',
                           'liblist|ll=s',
                           'lookupDir|ld=s',
                           'log|l=s',
@@ -130,9 +125,9 @@ if( $options{'help'} ){
 
 #if file size is greater than 0, mostly a check for rRNA blast.
 unless(-s $options{input} > 0){
-  print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
-  #$logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
-  exit(0);
+    print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
+    #$logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
+    exit(0);
 }
 
 ##############################################################################
@@ -176,151 +171,110 @@ $fxn_topHit=0;
 open (DAT, "<", $options{input}) || die; #$logger->logdie("Could not open file $options{input}");
 open (OUT, ">", $filename) || die; # $logger->logdie("Could not open file $filename");
 
-my $bytes_read = 0;
-my $total_bytes = (-s $options{input});
-my $p=0;
-
 #loop through input and upload them to db
 print "Starting updates...\n";
 print "Total # of bytes to process: $total_bytes\n";
 
 while (<DAT>){
-  unless (/^#/){
+    unless (/^#/) {
 
-	my $line = $_;
-    chomp $line;
+        my $line = $_;
+        chomp $line;
 
-	#### get bytes read so far
-	{
-		use bytes;
-		$bytes_read += length($line);
+        my @info = split (/\t/, $line);
+        my $sequenceId = $utils->get_sequenceId($info[0]);
 
-		my $percent = ($bytes_read/$total_bytes)*100;
+        #print $sequenceId."\t".$info[0]."\n";
+        #exit();
 
-		if (($percent >= 10) && ($percent < 20) && $p < 1) {
-			print "10% complete\n";
-			$p = 1;
-		} elsif (($percent >= 20) && ($percent < 30) && $p < 2) {
-			print "20% complete\n";
-			$p = 2;
-		} elsif (($percent >= 30) && ($percent < 40) && $p < 3) {
-			print "30% complete\n";
-			$p = 3;
-		} elsif (($percent >= 40) && ($percent < 50) && $p < 4) {
-			print "40% complete\n";
-			$p = 4;
-		} elsif (($percent >= 50) && ($percent < 60) && $p < 5) {
-			print "50% complete\n";
-			$p = 5;
-		} elsif (($percent >= 60) && ($percent < 70) && $p < 6) {
-			print "60% complete\n";
-			$p = 6;
-		} elsif (($percent >= 70) && ($percent < 80) && $p < 7) {
-			print "70% complete\n";
-			$p = 7;
-		} elsif (($percent >= 80) && ($percent < 90) && $p < 8) {
-			print "80% complete\n";
-			$p = 8;
-		} elsif (($percent >= 90) && ($percent < 100) && $p < 9) {
-			print "90% complete\n";
-			$p = 9;
-		}
-	}
+        #update on 10/6/10 by Jaysheel, assuming that input comes from
+        #clean_expand_btab.pl file. Which will format ncbi-blast btab file
+        #to proper standard for virome blastx/n/p tables.
 
-    my @info = split (/\t/, $line);
-    my $sequenceId = $utils->get_sequenceId($info[0]);
+        #if array length is of size 17 or 18 elements then its a METAGENOMES
+        #output with out any taxonomy data.
+        #else its a UNIREF100P formated blast result.
 
-    #print $sequenceId."\t".$info[0]."\n";
-    #exit();
+        if ($#info == 27){
+            $dom = $utils->trim($info[18]);
+            $kin = $utils->trim($info[19]);
+            $phl = $utils->trim($info[20]);
+            $cls = $utils->trim($info[21]);
+            $ord = $utils->trim($info[22]);
+            $fam = $utils->trim($info[23]);
+            $gen = $utils->trim($info[24]);
+            $spe = $utils->trim($info[25]);
+            $org = $utils->trim($info[26]);
+            $fxn_topHit = $utils->trim($info[27]);
+        }
 
-    #update on 10/6/10 by Jaysheel, assuming that input comes from
-    #clean_expand_btab.pl file. Which will format ncbi-blast btab file
-    #to proper standard for virome blastx/n/p tables.
+        $qname = $utils->trim($info[0]);
+        $qlen = $utils->trim($info[1]);
+        $algo = $utils->trim($info[2]);
+        $dname = $utils->trim($info[3]);
+        $hname = $utils->trim($info[4]);
+        $qstart = $utils->trim($info[5]);
+        $qend = $utils->trim($info[6]);
+        $hstart = $utils->trim($info[7]);
+        $hend = $utils->trim($info[8]);
+        $pident = $utils->trim($info[9]);
+        $psim = $utils->trim($info[10]);
+        $rscr = $utils->trim($info[11]);
+        $bscr = $utils->trim($info[12]);
+        $hdesc = $utils->trim($info[13]);
+        $bframe = $utils->trim($info[14]);
+        $qstrand = $utils->trim($info[15]);
+        $slen = $utils->trim($info[16]);
+        $eval = $utils->trim($info[17]);
 
-    #if array length is of size 17 or 18 elements then its a METAGENOMES
-    #output with out any taxonomy data.
-    #else its a UNIREF100P formated blast result.
+        ## end update 10/6/10
 
-    if ($#info == 27){
-      $dom = $utils->trim($info[18]);
-      $kin = $utils->trim($info[19]);
-      $phl = $utils->trim($info[20]);
-      $cls = $utils->trim($info[21]);
-      $ord = $utils->trim($info[22]);
-      $fam = $utils->trim($info[23]);
-      $gen = $utils->trim($info[24]);
-      $spe = $utils->trim($info[25]);
-      $org = $utils->trim($info[26]);
-	  $fxn_topHit = $utils->trim($info[27]);
-    }
+        # check if self blast result
+        if ($qname ne $hname) {
 
-    $qname = $utils->trim($info[0]);
-    $qlen = $utils->trim($info[1]);
-    $algo = $utils->trim($info[2]);
-    $dname = $utils->trim($info[3]);
-    $hname = $utils->trim($info[4]);
-    $qstart = $utils->trim($info[5]);
-    $qend = $utils->trim($info[6]);
-    $hstart = $utils->trim($info[7]);
-    $hend = $utils->trim($info[8]);
-    $pident = $utils->trim($info[9]);
-    $psim = $utils->trim($info[10]);
-    $rscr = $utils->trim($info[11]);
-    $bscr = $utils->trim($info[12]);
-    $hdesc = $utils->trim($info[13]);
-    $bframe = $utils->trim($info[14]);
-    $qstrand = $utils->trim($info[15]);
-    $slen = $utils->trim($info[16]);
-    $eval = $utils->trim($info[17]);
+            # check if this is the first hit, and set tophit flag
+            $curr_seq = $qname;
+            $curr_db = $dname;
 
-    ## end update 10/6/10
+            if (($curr_seq ne $prev_seq) || ($curr_db ne $prev_db)){
+                $topHit = 1;
+                $prev_seq = $curr_seq;
+                $prev_db = $curr_db;
+            } else {
+                $topHit = 0;
+            }
 
-    # check if self blast result
-    if ($qname ne $hname){
+            # db ranking system
+            if ($dname =~ /uniref100p/i){
+                $db_ranking = 100;
+            } elsif ($dname =~ /aclame/i){
+                $db_ranking = 90;
+            } elsif ($dname =~ /phgseed/i){
+            	$db_ranking = 80;
+            } elsif ($dname =~ /seed/i){
+                $db_ranking = 70;
+            } elsif ($dname =~ /kegg/i){
+                $db_ranking = 60;
+            } elsif ($dname =~ /cog/i){
+                $db_ranking = 50;
+            } elsif ($dname =~ /metagenomes/i){
+                $db_ranking = 10;
+            }
 
-      # check if this is the first hit, and set tophit flag
-      $curr_seq = $qname;
-      $curr_db = $dname;
-      if (($curr_seq ne $prev_seq) || ($curr_db ne $prev_db)){
-              $topHit = 1;
-              $prev_seq = $curr_seq;
-              $prev_db = $curr_db;
-      } else { $topHit = 0; }
+            #output data to tab file for import.
+            print OUT join("\t",$qname, $qlen, $algo, $dname, $hname,
+            	  $qstart, $qend, $hstart, $hend, $pident, $psim,
+            	  $rscr, $bscr, $hdesc, $bframe, $qstrand, $slen, $eval,
+            	  $dom, $kin, $phl, $cls, $ord, $fam, $gen, $spe, $org,
+            	  $sequenceId, $topHit, $db_ranking, $fxn_topHit);
+            print OUT "\n";
+        } # end check for self blast.
+        else {
+            print "SELF BLAST : \n@info\n\n";
+        }
 
-      # db ranking system
-      if ($dname =~ /uniref100p/i){
-		$db_ranking = 100;
-      } elsif ($dname =~ /aclame/i){
-		$db_ranking = 90;
-      } elsif ($dname =~ /phgseed/i){
-        	$db_ranking = 80;
-      } elsif ($dname =~ /seed/i){
-		$db_ranking = 70;
-      } elsif ($dname =~ /kegg/i){
-		$db_ranking = 60;
-      } elsif ($dname =~ /cog/i){
-		$db_ranking = 50;
-      } elsif ($dname =~ /metagenomes/i){
-		$db_ranking = 10;
-      }
-
-      #output data to tab file for import.
-      print OUT join("\t",$qname, $qlen, $algo, $dname, $hname,
-			  $qstart, $qend, $hstart, $hend, $pident, $psim,
-			  $rscr, $bscr, $hdesc, $bframe, $qstrand, $slen, $eval,
-			  $dom, $kin, $phl, $cls, $ord, $fam, $gen, $spe, $org,
-			  $sequenceId, $topHit, $db_ranking, $fxn_topHit);
-      print OUT "\n";
-    } # end check for self blast.
-    else {
-      print "SELF BLAST : \n@info\n\n";
-    }
-
-  } #end check for comments
+    } #end check for comments
 } #end while loop
-
-print "100% complete\n";
-print "Closing all handles\n";
 
 #close file handlers
 untie(%sequenceLookup);

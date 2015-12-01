@@ -1,8 +1,4 @@
-#!/usr/bin/perl -w
-
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
+#!/usr/bin/perl
 
 =head1 NAME
 
@@ -49,6 +45,7 @@ Create a sequence relationship mysql batch file for a given library.
 =cut
 
 use strict;
+use warnings;
 use DBI;
 use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;

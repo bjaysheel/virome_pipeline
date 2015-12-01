@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 # MANUAL FOR btab2viromebtab.pl
 
@@ -20,22 +20,22 @@ the BTAB format needed for the VIROME pipeline.
 
 Input Fields:
 ===== ======
- 1 qseqid                                                                                                                                                                                                                                   
- 2 qlen                                                                                                                                                                                                                                     
- 3 sseqid                                                                                                                                                                                                                                   
- 4 qstart                                                                                                                                                                                                                                   
- 5 qend                                                                                                                                                                                                                                     
- 6 sstart                                                                                                                                                                                                                                   
- 7 send                                                                                                                                                                                                                                     
- 8 pident                                                                                                                                                                                                                                   
- 9 ppos                                                                                                                                                                                                                                     
-10 score                                                                                                                                                                                                                                    
-11 bitscore                                                                                                                                                                                                                                 
-12 salltitles                                                                                                                                                                                                                               
-13 frames                                                                                                                                                                                                                                   
-14 sstrand                                                                                                                                                                                                                                  
-15 slen                                                                                                                                                                                                                                     
-16 evalue 
+ 1 qseqid
+ 2 qlen
+ 3 sseqid
+ 4 qstart
+ 5 qend
+ 6 sstart
+ 7 send
+ 8 pident
+ 9 ppos
+10 score
+11 bitscore
+12 salltitles
+13 frames
+14 sstrand
+15 slen
+16 evalue
 
 Output Fields:
 ====== ======
@@ -67,7 +67,7 @@ Output Fields:
 
 =item B<-i, --input>=FILENAME
 
-Input file in BTAB format. (Required) 
+Input file in BTAB format. (Required)
 
 =item B<-o, --outdir>=FILENAME
 
@@ -87,11 +87,11 @@ Name of the database (UNIREF100P_SEP2013, METAGENOMES_FEB2013, UniVec_Core, rRNA
 
 =item B<-h, --help>
 
-Displays the usage message.  (Optional) 
+Displays the usage message.  (Optional)
 
 =item B<-m, --manual>
 
-Displays full manual.  (Optional) 
+Displays full manual.  (Optional)
 
 =back
 
@@ -103,7 +103,7 @@ Requires the following Perl libraries.
 
 =head1 AUTHOR
 
-Written by Daniel Nasko, 
+Written by Daniel Nasko,
 Center for Bioinformatics and Computational Biology, University of Delaware.
 
 =head1 REPORTING BUGS
@@ -112,18 +112,19 @@ Report bugs to dnasko@udel.edu
 
 =head1 COPYRIGHT
 
-Copyright 2013 Daniel Nasko.  
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.  
-This is free software: you are free to change and redistribute it.  
-There is NO WARRANTY, to the extent permitted by law.  
+Copyright 2013 Daniel Nasko.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
 
-Please acknowledge author and affiliation in published work arising from this script's 
+Please acknowledge author and affiliation in published work arising from this script's
 usage <http://bioinformatics.udel.edu/Core/Acknowledge>.
 
 =cut
 
 
 use strict;
+use warnings;
 use Getopt::Long;
 use File::Basename;
 use Pod::Usage;
@@ -154,12 +155,18 @@ pod2usage( -msg  => "\n\n ERROR!  Required argument -database missing or not fou
 
 my $date = `date +%Y-%m-%d`; chomp($date);
 
-open(IN,"<$infile") || die "\n\n Error: Cannot open the infile: $infile\n\n";
-open(OUT,">$outdir/$prefix.btab") || die "\n\n Error: Cannot open the outfile: $outdir/$prefix.btab\n\n";
+open(IN, "<", $infile) || die "\n\n Error: Cannot open the infile: $infile\n\n";
+open(OUT, ">", "$outdir/$prefix.btab") || die "\n\n Error: Cannot open the outfile: $outdir/$prefix.btab\n\n";
 while(<IN>) {
     chomp;
     my @A = split(/\t/, $_);
-    my $pvalue = 1-($e**(-1*$A[15]));
+
+    #### Jaysheel Bhavsar 11/24/15
+    #### p-value is removed in clean_expand_btab output
+    #### dummpy value to keep expected columns the same for downstream scripts.
+    #my $pvalue = 1-($e**(-1*$A[15]));
+    my $pvalue = $e;
+
     if ($algorithm =~ m/blastp/i) {
 	print OUT $A[0] . "\t" . $date . "\t" . $A[1] . "\t" .
 	    $algorithm . "\t" . $database . "\t" . $A[2] . "\t" .
@@ -177,7 +184,7 @@ while(<IN>) {
 	    $A[14] ."\t" . $A[15] ."\t" . $pvalue . "\n";
     }
     else {
-	die "\n Error: The algorithm you supplied is neither BLASTp nor, BLASTn\n\n";
+        die "\n Error: The algorithm you supplied is neither BLASTp nor, BLASTn\n\n";
     }
 }
 close(OUT);

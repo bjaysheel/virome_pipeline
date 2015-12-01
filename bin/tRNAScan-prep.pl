@@ -1,9 +1,5 @@
 #!/usr/bin/perl
 
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
-
 =head1 NAME
 
 tRNAScan-prep.pl - prepare tRNAScan raw output for mysql upload
@@ -73,8 +69,8 @@ BEGIN {
 my %options = ();
 my $results = GetOptions (\%options,
                           'input|i=s',
-			  'outdir|od=s',
-			  'liblist|ll=s',
+                          'outdir|od=s',
+                          'liblist|ll=s',
                           'lookupDir|ld=s',
                           'log|l=s',
                           'debug|d=s',
@@ -97,9 +93,9 @@ if( $options{'help'} ){
 # check if tRNA output file is not empty
 # check if the file is empty.
 unless(-s $options{input} > 0){
-  print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
-  $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
-  exit(0);
+    print STDERR "This file $options{input} seem to be empty nothing therefore nothing to do.";
+    $logger->debug("This file $options{input} seem to be empty nothing therefore nothing to do.");
+    exit(0);
 }
 
 ###############################################################################
@@ -123,23 +119,23 @@ open (OUT, ">>", $filename) || die $logger->logdie("Could not open file $filenam
 
 #loop through input and upload them to db
 while (<DAT>){
-  unless (/^#/){
-    chomp $_;
-    my @info = split(/\t/,$_);
+    unless (/^#/){
+        chomp $_;
+        my @info = split(/\t/,$_);
 
-    ## get sequenceId.
-    my $sequenceId = $utils->get_sequenceId($utils->trim($info[0]));
+        ## get sequenceId.
+        my $sequenceId = $utils->get_sequenceId($utils->trim($info[0]));
 
-    ## check for duplicate entry and threshold cut off.
-    if ($info[8] >= $threshold){
-      $info[4] =~ s/\$([a-z])/\u$1/ig;
-	  $info[4] =~ s/pse/Pseudo/i;
-	  $info[4] =~ s/und/Undef/i;
+        ## check for duplicate entry and threshold cut off.
+        if ($info[8] >= $threshold) {
+            $info[4] =~ s/\$([a-z])/\u$1/ig;
+            $info[4] =~ s/pse/Pseudo/i;
+            $info[4] =~ s/und/Undef/i;
 
-      print OUT join("\t",$utils->trim($sequenceId), $utils->trim($info[1]), $utils->trim($info[2]), $utils->trim($info[3]),
-			   $utils->trim($info[4]), $utils->trim($info[5]), $utils->trim($info[6]), $utils->trim($info[7]), $utils->trim($info[8]))."\n";
+            print OUT join("\t",$utils->trim($sequenceId), $utils->trim($info[1]), $utils->trim($info[2]), $utils->trim($info[3]),
+            	   $utils->trim($info[4]), $utils->trim($info[5]), $utils->trim($info[6]), $utils->trim($info[7]), $utils->trim($info[8]))."\n";
+        }
     }
-  }
 }
 
 untie(%sequenceLookup);

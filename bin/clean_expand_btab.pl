@@ -1,12 +1,5 @@
 #! /usr/bin/perl
 
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-  if 0;    # not running under some shell
-
-BEGIN {
-	foreach (@INC) { s/\/usr\/local\/packages/\/local\/platform/ }
-}
-
 =head1 NAME
 
    expand_uniref100P_btab.pl
@@ -153,23 +146,32 @@ my $dbh1;
 
 my $utils = new UTILS_V;
 
-#tie lookup files
-tie( my %kegg_lkp,    'MLDBM', $options{lookupDir} . "/kegg.ldb" );
-tie( my %cog_lkp,     'MLDBM', $options{lookupDir} . "/cog.ldb" );
-tie( my %seed_lkp,    'MLDBM', $options{lookupDir} . "/seed.ldb" );
-tie( my %aclame_lkp,  'MLDBM', $options{lookupDir} . "/aclame.ldb" );
-tie( my %uniref_lkp,  'MLDBM', $options{lookupDir} . "/uniref.ldb" );
-tie( my %mgol_lkp,    'MLDBM', $options{lookupDir} . "/mgol.ldb" );
-tie( my %phgseed_lkp, 'MLDBM', $options{lookupDir} . "/phgseed.ldb" );
+my %kegg_lkp, %cog_lkp, %seed_lkp, %aclame_lkp, %uniref_lkp, %mgol_lkp, %phgseed_lkp;
 
-#set class obj
-$utils->kegg_lookup( \%kegg_lkp );
-$utils->cog_lookup( \%cog_lkp );
-$utils->seed_lookup( \%seed_lkp );
-$utils->aclame_lookup( \%aclame_lkp );
-$utils->uniref_lookup( \%uniref_lkp );
-$utils->mgol_lookup( \%mgol_lkp );
-$utils->phgseed_lookup( \%phgseed_lkp );
+#### get database name from input file.
+my $database_name_from_input = `head -n1 $options{input} | cut -f4`;
+chomp $database_name_from_input;
+
+if ($database_name_from_input =~ /uniref100p/i) {
+    #tie lookup files
+    tie(%kegg_lkp,    'MLDBM', $options{lookupDir} . "/kegg.ldb" );
+    tie(%cog_lkp,     'MLDBM', $options{lookupDir} . "/cog.ldb" );
+    tie(%seed_lkp,    'MLDBM', $options{lookupDir} . "/seed.ldb" );
+    tie(%aclame_lkp,  'MLDBM', $options{lookupDir} . "/aclame.ldb" );
+    tie(%uniref_lkp,  'MLDBM', $options{lookupDir} . "/uniref.ldb" );
+    tie(%phgseed_lkp, 'MLDBM', $options{lookupDir} . "/phgseed.ldb" );
+
+    #set class obj
+    $utils->kegg_lookup( \%kegg_lkp );
+    $utils->cog_lookup( \%cog_lkp );
+    $utils->seed_lookup( \%seed_lkp );
+    $utils->aclame_lookup( \%aclame_lkp );
+    $utils->uniref_lookup( \%uniref_lkp );
+    $utils->phgseed_lookup( \%phgseed_lkp );
+} elsif ($database_name_from_input =~ /metagenomes/i) {
+    tie(%mgol_lkp, 'MLDBM', $options{lookupDir} . "/mgol.ldb" );
+    $utils->mgol_lookup( \%mgol_lkp );
+}
 
 open( BTAB, "<", $options{input} ) or die "Can not open file $options{input}\n";
 open( OUT, ">", $options{output} )
@@ -205,7 +207,7 @@ while (<BTAB>) {
 
 	if ( $db_name =~ /uniref100p/i ) {
 		$curr = $arr[0];
-		
+
 		if ( $curr eq $prev ) {
 			push( @seqarray, $btabline );
 		} else {
@@ -238,13 +240,18 @@ if ( $db_name =~ /UNIREF100P/i ) {
 	expand();
 }
 
-untie(%kegg_lkp);
-untie(%seed_lkp);
-untie(%phgseed_lkp);
-untie(%aclame_lkp);
-untie(%uniref_lkp);
-
 close(OUT);
+
+if ($database_name_from_input =~ /uniref100p/i) {
+    untie(%kegg_lkp);
+    untie(%seed_lkp);
+    untie(%phgseed_lkp);
+    untie(%aclame_lkp);
+    untie(%uniref_lkp);
+} elsif ($database_name_from_input =~ /metagenomes/i) {
+    untie(%mgol_lkp);
+}
+
 exit(0);
 
 ###############################################################################
@@ -686,9 +693,8 @@ sub modifyDescription {
 			$dwel = $mgol_hash->{phys_subst};
 		}
 
-		$str =
-"$mgol_hash->{lib_type} metagenome from $mgol_hash->{ecosystem} $dwel "
-		  . "near $mgol_hash->{geog_place_name}, $mgol_hash->{country} [library: $mgol_hash->{lib_shortname}]";
+		$str = "$mgol_hash->{lib_type} metagenome from $mgol_hash->{ecosystem} $dwel ";
+		$str .= "near $mgol_hash->{geog_place_name}, $mgol_hash->{country} [library: $mgol_hash->{lib_shortname}]";
 		$str =~ s/'|"//g;
 	}
 

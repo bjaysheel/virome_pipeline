@@ -1,4 +1,4 @@
-#! /usr/bin/perl -w
+#! /usr/bin/perl
 
 =head1 NAME
 
@@ -60,6 +60,7 @@ B<--help,-h>
 =cut
 
 use strict;
+use warnings;
 use DBI;
 use Switch;
 use LIBInfo;
@@ -112,33 +113,24 @@ timer();    #call timer to see when process ended.
 
 print "INFO: Start processing.....\n";
 
-#### get all the libraries and servers
-my $getlib;
-if ( $options{library} <= 0 ) {
-	$getlib = $dbh0->prepare(
-		qq{SELECT name, prefix, server, id
-			      FROM library
-			      WHERE server='$options{server}'
-			      ORDER BY id}
-	);
-}
-else {
-	$getlib = $dbh0->prepare(
-		qq{SELECT name, prefix, server, id
-			      FROM library
-			      WHERE id=$options{library}
-			      ORDER BY id}
-	);
+my $lib_sel = $dbh0->prepare(q{SELECT name, prefix, server, id FROM library WHERE deleted=0 and server=? ORDER by id});
+
+my $rslt = '';
+my @libArray;
+
+if ($options{library} <= 0) {
+    $lib_sel->execute($options{server});
+    $rslt = $lib_sel->fetchall_arrayref({});
+
+    foreach my $lib (@$rslt) {
+        push @libArray, $lib->{'id'};
+    }
+} else {
+    push @libArray, $options{library};
 }
 
-#### execute sql and get its resultset
-$getlib->execute();
-my $libraryRSLT = $getlib->fetchall_arrayref( {} );
-
-print "INFO: Got all libraries\n";
-
-#### loop through each row of the library
-foreach my $lib (@$libraryRSLT) {
+foreach my $libId (@libArray) {
+	#### loop through each row of the library
 	my %lib_feature;
 	my $libHash = {
 		"LIBRARY"          => {},
@@ -154,28 +146,25 @@ foreach my $lib (@$libraryRSLT) {
 	my $sequence = $dbh->prepare(
 		qq{SELECT distinct b.query_name, b.sequenceId
 				 FROM blastp b
-				 	inner join 
+				 	inner join
 				 	  sequence s on s.id=b.sequenceId
-				 WHERE s.libraryId = $lib->{id}
+				 WHERE s.libraryId = $libId
 				 	and b.e_value <= 0.001
 				  	and b.database_name='METAGENOMES' }
 	);
-				   # and query_name like '$lib->{prefix}%' }
 
 	$sequence->execute();
-	my $sequenceRSLT = $sequence->fetchall_arrayref( {} );
+	my $sequenceRSLT = $sequence->fetchall_arrayref({});
 
-	print "INFO: Retrived all sequences for $lib->{prefix}\n";
+	print "INFO: Retrived all sequences for $libObject->{prefix}\n";
 
 	#### loop through all sequence in the given library.
 	foreach my $seq (@$sequenceRSLT) {
-
-	 #### init struct for each sequence.
-	 #### each struct is an array of struct for each sequenceId
-	 #### for example struct of seq_lib_struct will be
-	 #### sequenceId -> { 'type' => LIBRARY, 'cat' => LIB_PREFIX, 'eval' => EVAL}
-		my ( $seq_lib_struct, $eval_sum ) =
-		  &bestEvalue( $seq->{sequenceId}, $seq->{query_name} );
+		#### init struct for each sequence.
+		#### each struct is an array of struct for each sequenceId
+		#### for example struct of seq_lib_struct will be
+		#### sequenceId -> { 'type' => LIBRARY, 'cat' => LIB_PREFIX, 'eval' => EVAL}
+		my ( $seq_lib_struct, $eval_sum ) = &bestEvalue( $seq->{sequenceId}, $seq->{query_name} );
 
 		my $curr    = '';
 		my $seqHash = {
@@ -214,30 +203,22 @@ foreach my $lib (@$libraryRSLT) {
 
 				#eval_sum is a hash containing sum of all evalues per genera
 				#$eval_sum is log inverse eval.
-				my $weight =
-				  log( 1 / $a->{'eval'} ) / $eval_sum->{ $a->{'type'} };
+				my $weight = log( 1 / $a->{'eval'} ) / $eval_sum->{ $a->{'type'} };
 
-			  #'cat' contains sub cat of each 'type' i.e: natural, anthropegenic
+			  	#'cat' contains sub cat of each 'type' i.e: natural, anthropegenic
 				$link .= $a->{'cat'} . "=>" . $weight . "^|^";
 
 				#summarized and store for entire library in libHash.
-				if (
-					defined $libHash->{ $a->{'type'} }->{ $a->{'cat'} }
-					->{ $a->{'from'} } )
-				{
-					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }
-					  ->{ $a->{'from'} }->{'weight'} += $weight;
-					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }
-					  ->{ $a->{'from'} }->{'id'} .= "," . $a->{'id'};
+				if (defined $libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'}}) {
+					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }->{'weight'} += $weight;
+					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }->{'id'} .= "," . $a->{'id'};
 				}
 				else {
-					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }
-					  ->{ $a->{'from'} }->{'weight'} = $weight;
-					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }
-					  ->{ $a->{'from'} }->{'id'} = $a->{'id'};
+					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }->{'weight'} = $weight;
+					$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }->{'id'} = $a->{'id'};
 				}
-				$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }
-				  ->{'libName'} = $a->{'libName'};
+
+				$libHash->{ $a->{'type'} }->{ $a->{'cat'} }->{ $a->{'from'} }->{'libName'} = $a->{'libName'};
 			}
 
 			#link containts concatinated 'cat' for each 'type' per library
@@ -247,7 +228,7 @@ foreach my $lib (@$libraryRSLT) {
 			$seqHash->{$cat} = $link;
 		}
 	}
-	push @{ $lib_feature{ $lib->{id} } }, $libHash;
+	push @{ $lib_feature{ $libId } }, $libHash;
 
 	print "INFO: All sequences processed\n";
 
@@ -269,23 +250,15 @@ foreach my $lib (@$libraryRSLT) {
 				#print feature of given library.
 				my $cname   = '';
 				my $fprefix = uc $feature;
+
 				$fprefix =~ s/ //ig;
 				$cname = $fprefix;
-				my $xFile = $file_loc
-				  . "/xDocs/"
-				  . $fprefix
-				  . "_XMLDOC_"
-				  . $libId . ".xml";
-				my $idFile = $file_loc
-				  . "/xDocs/"
-				  . $fprefix
-				  . "_IDDOC_"
-				  . $libId . ".xml";
 
-				open( OUT, ">$xFile" )
-				  or die "Cannot open file $xFile to write\n";
-				open( IDOUT, ">$idFile" )
-				  or die "Cannot open file $idFile to write\n";
+				my $xFile = "${file_loc}/xDocs/${fprefix}_XMLDOC_${libId}.xml";
+				my $idFile = "${file_loc}/xDocs/${fprefix}_IDDOC_${libId}.xml";
+
+				open( OUT, ">", $xFile) or die "Cannot open file $xFile to write\n";
+				open( IDOUT, ">", $idFile) or die "Cannot open file $idFile to write\n";
 
 				#initialize xml documents.
 				print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
@@ -340,12 +313,10 @@ foreach my $lib (@$libraryRSLT) {
 						  . $category->{$feature}->{$key}->{$val}->{'libName'}
 						  . "\"/>\n";
 
-						$id_list .=
-						  $category->{$feature}->{$key}->{$val}->{'id'} . ",";
-						$libName =
-						  $category->{$feature}->{$key}->{$val}->{'libName'};
+						$id_list .= $category->{$feature}->{$key}->{$val}->{'id'} . ",";
+						$libName = $category->{$feature}->{$key}->{$val}->{'libName'};
 
-				  #print id tag and value in seperate file. no nesting required.
+				  		#print id tag and value in seperate file. no nesting required.
 						print IDOUT "<TAG_"
 						  . $tagCount
 						  . " IDLIST=\"$category->{$feature}->{$key}->{$val}->{'id'}\"/>\n";
@@ -399,7 +370,7 @@ foreach my $lib (@$libraryRSLT) {
 						print OUT $g->{'sub-cat'};
 						print OUT "</$cname>\n";
 
-				  #print id tag and value in seperate file. no nesting required.
+				  		#print id tag and value in seperate file. no nesting required.
 						print IDOUT "<TAG_"
 						  . $g->{'tagCount'}
 						  . " IDLIST=\"$g->{'idList'}\"/>\n";
@@ -418,6 +389,7 @@ foreach my $lib (@$libraryRSLT) {
 $getlib->finish();
 $dbh0->disconnect;
 $dbh->disconnect;
+
 timer();    #call timer to see when process ended.
 exit(0);
 
@@ -495,7 +467,7 @@ sub check_parameters {
 ###############################################################################
 sub bestEvalue {
 	my ( $sequenceId, $query_name ) = @_;
-	
+
 	my %env_feature;
 	my %eval_sum = (
 		'LIBRARY'   		=> 0,
@@ -513,10 +485,10 @@ sub bestEvalue {
 	  )
 	{
 		my $blast = $dbh->prepare(qq{SELECT m.$field as field, m.lib_prefix, min(b.e_value) as eval, m.lib_shortname
-                                   FROM blastp b 
-                                   	INNER JOIN 
+                                   FROM blastp b
+                                   	INNER JOIN
                                    		mgol_library m on LEFT(b.hit_name,3)=m.lib_prefix
-                                   WHERE b.sequenceId = $sequenceId 
+                                   WHERE b.sequenceId = $sequenceId
                                    	and b.database_name='METAGENOMES'
                                     and LEFT(hit_name,3) not like LEFT('$query_name',3)
                                     and b.e_value <= 0.001
@@ -524,13 +496,13 @@ sub bestEvalue {
                                    ORDER BY e_value}
 		);
 		#b.query_name = '$query_name'
-                                    
+
 		$blast->execute();
 		my $blastRSLT = $blast->fetchall_arrayref( {} );
 
 		foreach my $line (@$blastRSLT) {
 			$line->{eval} = ( $line->{eval} != 0 ) ? $line->{eval} : 1.0e-255;
-			
+
 			if ( $field eq 'lib_prefix' ) {
 				$eval_sum{'LIBRARY'} += log( 1 / $line->{eval} );
 				push @{ $env_feature{$query_name} },
@@ -635,8 +607,8 @@ sub timer {
 		$dayOfWeek,  $dayOfYear, $daylightSavings
 	  )
 	  = localtime();
+	  
 	my $year    = 1900 + $yearOffset;
-	my $theTime =
-"$hour:$minute:$second, $weekDays[$dayOfWeek] $months[$month] $dayOfMonth, $year";
+	my $theTime = "$hour:$minute:$second, $weekDays[$dayOfWeek] $months[$month] $dayOfMonth, $year";
 	print "Time now: " . $theTime . "\n";
 }

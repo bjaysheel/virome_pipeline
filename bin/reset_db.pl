@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    reset_db.
@@ -42,8 +42,9 @@ B<--help,-h>
 
 =cut
 
-use IO::File;
 use strict;
+use warnings;
+use IO::File;
 use DBI;
 use Pod::Usage;
 use Data::Dumper;
@@ -87,7 +88,7 @@ parse_library_info();
     my %processing_databases = (
         'diag1'  =>  'virome_processing_1',
         'diag2'  =>  'virome_processing_2',
-	'diag3'  =>  'virome_processing_3',
+	    'diag3'  =>  'virome_processing_3',
         'diag4'  =>  'virome_processing_4',
         'diag5'  =>  'virome_processing_5',
     );

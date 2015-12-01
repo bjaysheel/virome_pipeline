@@ -1,8 +1,4 @@
-#!/usr/bin/perl -w
-
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-
+#!/usr/bin/perl
 
 =head1 NAME
 
@@ -24,7 +20,7 @@ USAGE: db-load-library.pl
 
 B<--id, -i>
     The id number of the library you are running.
-    
+
 B<--prefix, -p>
     Three letter prefix for the library.
 
@@ -36,7 +32,7 @@ B<--env, -e>
 
 B<--outdir, o>
     Path to output dir where a tab file of library id and library prefix is stored.
-    
+
 B<--debug,-d>
     Debug level.  Use a large number to turn on verbose debugging.
 
@@ -65,6 +61,7 @@ the information tot he table.
 =cut
 
 use strict;
+use warnings;
 use DBI;
 use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
@@ -93,7 +90,7 @@ pod2usage( -msg  => "\n\n Fatal! Required argument -prefix not found.\n\n", -exi
 pod2usage( -msg  => "\n\n Fatal! Required argument -name not found.\n\n", -exitval => 2, -verbose => 1)   if (! $name );
 pod2usage( -msg  => "\n\n Fatal! Required argument -env not found.\n\n", -exitval => 2, -verbose => 1)    if (! $env );
 
-open(OUT,">$outdir/db-load-library.txt") || die "\n Cannot open: $outdir/db-load-library.txt\n";
+open(OUT, ">", "$outdir/db-load-library.txt") || die "\n Cannot open: $outdir/db-load-library.txt\n";
 print OUT $id . "\t" . $name . "\t" . $prefix . "\t" . "noDB" . "\t" . $env . "\n";
 close(OUT);
 

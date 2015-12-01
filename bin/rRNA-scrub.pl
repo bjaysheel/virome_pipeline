@@ -1,11 +1,4 @@
-#!/usr/bin/perl -w
-
-eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
-    if 0; # not running under some shell
-BEGIN{foreach (@INC) {s/\/usr\/local\/packages/\/local\/platform/}};
-use lib (@INC,$ENV{"PERL_MOD_DIR"});
-no lib "$ENV{PERL_MOD_DIR}/i686-linux";
-no lib ".";
+#!/usr/bin/perl
 
 =head1 NAME
 
@@ -28,13 +21,13 @@ USAGE: rRNA-scrub.pl
 
 B<--fasta_file_base, -n>
     The base name of fasta file.
-    
+
 B<--fasta_file_path, -b>
     The full path to fasta file.
-    
+
 B<--fasta_file_extension, -e>
     The file extension
-    
+
 B<--btab,-b>
     The input btab blast output from the ncbi-blastn suite.
 
@@ -78,6 +71,7 @@ rRNA identified sequences.
 =cut
 
 use strict;
+use warnings;
 use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
 BEGIN {
@@ -92,7 +86,7 @@ my $results = GetOptions (\%options,
                           'fasta_file_extension|e=s',
                           'outputA|oA=s',
                           'outputB|oB=s',
-			  'tmp_dir|td=s',
+                          'tmp_dir|td=s',
                           'log|l=s',
                           'debug|d=s',
                           'help|h') || pod2usage();
@@ -117,29 +111,29 @@ my $rRNA_positive = "";
 my $btab_blast_result = `grep "$options{fasta_file_base}\\." $options{btab_file_list}`;
 
 #open blast btab result file
-open (DAT, $btab_blast_result) || die $logger->logdie("Could not open file $btab_blast_result");
+open (DAT, "<", $btab_blast_result) || die $logger->logdie("Could not open file $btab_blast_result");
 
 #loop through results of blast
 while (<DAT>){
     chomp $_;
-    
+
     # store tab delimited values into an array
     # btab file is from clean_expand btab.
     my @result = split(/\t/, $_);
-    
-    # seq are rRNA positive only if (b.qry_end - b.qry_start) >= 150) 
+
+    # seq are rRNA positive only if (b.qry_end - b.qry_start) >= 150)
     # AND ((b.qry_start<=20) OR (b.qry_end >= (b.query_length-20)))
     if ( $result[6]-$result[5] >= 150 && ( $result[5] <= 20 || ($result[6] >= ($result[1]-20)) ) ){
-      
+
       #get rRNA identified sequence.
       $ident{$result[0]} = 1;
       #push @ident, $result[0];
-      
+
       #$ident .= `sed -n -r '/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/p' $options{outputA}`;
       #$ident .= `sed -n -r '0,/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/!{/>/,/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/!p;}' $options{outputA}`;
-      
+
       $rRNA_positive .= $_ ."\n";
-      
+
       #remove rRNA idendified sequence from fasta.
       #system `sed -r '0,/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/!{/>/,/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/!d;}' $options{outputA} | sed -r '/\($result[0]\$\)|\($result[0]\ +\)|\($result[0]\t\)/d' > $temp`;
       #system `mv $temp $options{outputA}`;
@@ -157,31 +151,30 @@ my $seq = '';
 
 # loop through input fasta file
 while(<FSA>){
-  my $line = $_;
-  
-  if ($line =~ /^>/){
-    $flag = 0;
-    $seq = '';
-    
-    # loop through all identified seqs and find it in fasta file
-    foreach $seq (keys %ident){
-      if ($line =~ /$seq/i){
-	$flag = 1;
-      }
+    my $line = $_;
+
+    if ($line =~ /^>/){
+        $flag = 0;
+        $seq = '';
+        $line =~ s/^>//;
+        $line =~ s/ .*//;
+
+        if (exists $ident{$line}) {
+          $flag = 1;
+        }
+
+        # once sequence if found remove it from hash (reduces subsequent loops)
+        if ($flag) {
+            delete($ident{$seq});
+        }
     }
-    
-    # once sequence if found remove it from hash (reduces subsequent loops)
+
+    # output to appropriate streams
     if ($flag){
-      delete($ident{$seq});
+        print rPOS $_;
+    } else {
+        print rNEG $_;
     }
-  }
-  
-  # output to appropriate streams
-  if ($flag){
-    print rPOS $_;
-  } else {
-    print rNEG $_;
-  }
 }
 
 close FSA;
@@ -193,11 +186,19 @@ open(OUT, ">", $btab_blast_result) || die $logger->logdie("Could not open file $
 print OUT $rRNA_positive;
 close OUT;
 
+
+if (scalar keys %ident > 0) {
+    foreach my $k (keys %ident) {
+        print STDERR "Sequence $k missing from input fasta file\n";
+    }
+    die "\nError: It appears that I didn't scrub all rRNA identifed sequences\n";
+}
+
 exit(0);
 
 ############################################################################
 sub check_parameters {
-    
+
     ## at least one input type is required
     unless ( $options{btab_file_list} ||
              $options{fasta_file_base} ||

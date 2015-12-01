@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 =head1 NAME
    db-load-nohit.pl
@@ -41,8 +41,9 @@ B<--help,-h>
 
 =cut
 
-use IO::File;
 use strict;
+use warnings;
+use IO::File;
 use DBI;
 use LIBInfo;
 use UTILS_V;
@@ -91,13 +92,10 @@ $utils->set_db_params( $options{env} );
 ##############################################################################
 timer();
 
-my $lib_sel =
-  $dbh0->prepare(q{SELECT id FROM library WHERE deleted=0 and server=?});
-
+my $lib_sel = $dbh0->prepare(q{SELECT id FROM library WHERE deleted=0 and server=?});
 my $seq_info = $dbh->prepare(qq{SELECT name,size,id FROM sequence where id=?});
 
-my $get_orfans = $dbh->prepare(
-	qq{SELECT orfan_id
+my $get_orfans = $dbh->prepare(qq{SELECT orfan_id
 								  FROM statistics
 								  WHERE libraryId=?
                                     and deleted=0}
@@ -159,18 +157,9 @@ $get_orfans->finish();
 $dbh0->disconnect;
 $dbh->disconnect;
 
-my $cmd =
-  "mysqlimport --columns=$column_list --compress --fields-terminated-by='\\t'";
-$cmd = $cmd
-  . " --lines-terminated-by='\\n' --host="
-  . $utils->db_host
-  . " --user="
-  . $utils->db_user;
-$cmd = $cmd
-  . " --password="
-  . $utils->db_pass . " "
-  . $utils->db_name
-  . " -L $filename";
+my $cmd = "mysqlimport --columns=$column_list --compress --fields-terminated-by='\\t'";
+$cmd .= " --lines-terminated-by='\\n' --host=$utils->db_host --user=$utils->db_user";
+$cmd .= " --password=$utils->db_pass $utils->db_name -L $filename";
 
 #execute mysql import
 system($cmd);
