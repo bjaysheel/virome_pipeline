@@ -683,8 +683,6 @@ foreach my $libId (@libArray) {
     # 		$lineage,$libId));
 }
 
-$dbh1->finish();
-$dbh->finish();
 $dbh1->disconnect;
 $dbh->disconnect;
 
@@ -775,6 +773,15 @@ sub get_fxn_query{
 	  case "COG" { return q|SELECT fxn1 from cog where realacc = ?|; }  # not used
 	  else { return ""; }
    }
+}
+
+###############################################################################
+sub getTimeStamp {
+
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=localtime(time);
+    my $nice_timestamp = sprintf ( "%04d-%02d-%02d %02d:%02d:%02d",
+                                   $year+1900,$mon+1,$mday,$hour,$min,$sec);
+    return $nice_timestamp;
 }
 
 ###############################################################################
