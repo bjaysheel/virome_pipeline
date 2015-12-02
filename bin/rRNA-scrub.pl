@@ -109,6 +109,8 @@ my $rRNA_positive = "";
 
 ##get blast output btab file to look in.
 my $btab_blast_result = `grep "$options{fasta_file_base}\\." $options{btab_file_list}`;
+chomp($btab_blast_result);
+$btab_blast_result =~ s/ $//;
 
 #open blast btab result file
 open (DAT, "<", $btab_blast_result) || die $logger->logdie("Could not open file $btab_blast_result");
@@ -141,43 +143,30 @@ while (<DAT>){
 }
 close DAT;
 
-open (FSA, "<", $options{fasta_file_path}) or die $logger->logdie("Could not open file $options{fasta_file_path}");
 open(rPOS, ">", $options{outputB}) || die $logger->logdie("Could not open file $options{outputB}");
 open(rNEG, ">", $options{outputA}) || die $logger->logdie("Could not open file $options{outputA}");
 
-#my $idx = -1;
-my $flag = 0;
-my $seq = '';
+# my $idx = -1;
+# my $flag = 0;
+# my $seq = '';
 
-# loop through input fasta file
-while(<FSA>){
-    my $line = $_;
-
-    if ($line =~ /^>/){
-        $flag = 0;
-        $seq = '';
-        $line =~ s/^>//;
-        $line =~ s/ .*//;
-
-        if (exists $ident{$line}) {
-          $flag = 1;
-        }
-
-        # once sequence if found remove it from hash (reduces subsequent loops)
-        if ($flag) {
-            delete($ident{$seq});
-        }
+use Bio::SeqIO;
+my $seq_in  = Bio::SeqIO->new(
+    -format => 'fasta',
+    -file   => $options{fasta_file_path} );
+while( my $seq = $seq_in->next_seq() ) {
+    my $header = $seq->id;
+    my $sequence = $seq->seq;
+    if (exists $ident{$header}) {
+	print rPOS ">" . $header . "\n";
+	print rPOS $sequence . "\n";
+	delete $ident{$header};
     }
-
-    # output to appropriate streams
-    if ($flag){
-        print rPOS $_;
-    } else {
-        print rNEG $_;
+    else {
+	print rNEG ">" . $header . "\n";
+	print rNEG $sequence . "\n";
     }
 }
-
-close FSA;
 close rPOS;
 close rNEG;
 
@@ -189,7 +178,8 @@ close OUT;
 
 if (scalar keys %ident > 0) {
     foreach my $k (keys %ident) {
-        print STDERR "Sequence $k missing from input fasta file\n";
+	my $total_missing = scalar keys %ident;
+        print STDERR "Sequence $k missing from input fasta file: There are a total of $total_missing missing\n\n";
     }
     die "\nError: It appears that I didn't scrub all rRNA identifed sequences\n";
 }

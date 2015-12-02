@@ -173,7 +173,7 @@ open (OUT, ">", $filename) || die; # $logger->logdie("Could not open file $filen
 
 #loop through input and upload them to db
 print "Starting updates...\n";
-print "Total # of bytes to process: $total_bytes\n";
+# print "Total # of bytes to process: $total_bytes\n";
 
 while (<DAT>){
     unless (/^#/) {

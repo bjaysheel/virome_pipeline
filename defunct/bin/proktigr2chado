@@ -1,0 +1,51 @@
+#!/bin/sh
+
+if [ -z "$DBCACHE" ]
+then
+    DBCACHE=1
+export DBCACHE
+fi
+if [ -z "$PRISM" ]
+then
+    PRISM=Prok:Sybase:SYBTIGR
+export PRISM
+fi
+if [ -z "$PSQL" ]
+then
+    PSQL=/export/PGSQL/bin/psql
+export PSQL
+fi
+if [ -z "$BCP" ]
+then
+    BCP=/usr/local/packages/sybase/OCS/bin/bcp_CHADO
+export BCP
+fi
+if [ -z "$WRITER_CONF" ]
+then
+    WRITER_CONF=Chado:BulkSybase:SYBTIGR
+export WRITER_CONF
+fi
+if [ -z "$OUTPUT_DIR" ]
+then
+    OUTPUT_DIR=.
+export OUTPUT_DIR
+fi
+if [ -z "$COMMIT_ORDER" ]
+then
+    COMMIT_ORDER=tableinfo,project,contact,db,cv,dbxref,cvterm,dbxrefprop,cvtermprop,author,pub,synonym,pubprop,pub_relationship,pub_dbxref,pub_author,organism,organismprop,organism_dbxref,cvtermpath,cvtermsynonym,cvterm_relationship,cvterm_dbxref,feature,featureprop,feature_pub,featureprop_pub,feature_synonym,feature_cvterm,feature_cvtermprop,feature_dbxref,featureloc,feature_relationship,feature_relationship_pub,feature_relationshipprop,feature_relprop_pub,analysis,analysisprop,analysisfeature
+export COMMIT_ORDER
+fi
+if [ -z "$ID_REPOSITORY" ]
+then
+    ID_REPOSITORY=.
+export ID_REPOSITORY
+fi
+if [ -z "$QUALIFIED_ONTOLOGIES" ]
+then
+    QUALIFIED_ONTOLOGIES=TIGR_roles.ontology,ec.ontology,evidence_codes,go_properties,so.ontology,gene_ontology,annotation_attributes.ontology,component.ontology,output.ontology
+export QUALIFIED_ONTOLOGIES
+fi
+
+
+exec /usr/bin/perl -I /diag/projects/virome/package_virome/lib/perl5 /diag/projects/virome/package_virome/bin/proktigr2chado.pl "$@"    
+

@@ -174,7 +174,7 @@ if ($sequences < 20) {
 }
 
 ## All of the components needing to get the location update . . .
-my @LOCATION = qw( clean_expand_btab.mgol clean_expand_btab.rna clean_expand_btab.uniref db-load-library.default db-load-nohit.default db-to-lookup.seq-lookup db-upload.blastp db-upload.orfs db-upload.orfs_nuc db-upload.rna-blast db-upload.rna-clean db-upload.rna db-upload.sequence_relationship-prep db-upload.trna env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default sequence_relationship-prep.default viromeClassification.default viromeTaxonomyXML.default );
+my @LOCATION = qw( clean_expand_btab.mgol clean_expand_btab.uniref db-load-library.default db-load-nohit.default db-to-lookup.seq-lookup db-upload.blastp db-upload.orfs db-upload.orfs_nuc db-upload.rna-blast db-upload.rna-clean db-upload.rna db-upload.sequence_relationship-prep db-upload.trna env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default sequence_relationship-prep.default viromeClassification.default viromeTaxonomyXML.default );
 
 foreach my $component (@LOCATION) {
     my @a = split(/\./, $component);

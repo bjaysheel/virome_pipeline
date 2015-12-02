@@ -105,7 +105,7 @@ close(OUTfas);
 
 my $percent_pass = sprintf ("%0.2f", (($seq_pass/$seq_num)*100));
 print STDOUT "Total number of sequence processed: $seq_num\n";
-print STDOUT "Number of sequence pass min lenght filter of $minLength: $seq_pass ($precent_pass%)\n";
+print STDOUT "Number of sequence pass min lenght filter of $minLength: $seq_pass ($percent_pass%)\n";
 
 exit(0);
 ###############################################################################
