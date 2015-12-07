@@ -149,7 +149,7 @@ my $utils = new UTILS_V;
 my (%kegg_lkp, %cog_lkp, %seed_lkp, %aclame_lkp, %uniref_lkp, %mgol_lkp, %phgseed_lkp);
 
 #### get database name from input file.
-my $database_name_from_input = `head -n1 $options{input} | cut -f4`;
+my $database_name_from_input = `head -n1 $options{input} | cut -f5`;
 chomp $database_name_from_input;
 
 if ($database_name_from_input =~ /uniref100p/i) {
