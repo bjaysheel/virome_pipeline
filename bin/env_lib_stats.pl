@@ -386,7 +386,7 @@ foreach my $libId (@libArray) {
 	}    #end lib output process
 }
 
-$getlib->finish();
+# $getlib->finish();
 $dbh0->disconnect;
 $dbh->disconnect;
 

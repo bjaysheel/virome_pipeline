@@ -157,9 +157,18 @@ $get_orfans->finish();
 $dbh0->disconnect;
 $dbh->disconnect;
 
+my $db_host = $utils->db_host;
+my $db_user = $utils->db_user;
+my $db_pass = $utils->db_pass;
+my $db_name = $utils->db_name;
+
+# my $cmd = "mysqlimport --columns=$column_list --compress --fields-terminated-by='\\t'";
+# $cmd .= " --lines-terminated-by='\\n' --host=$utils->db_host --user=$utils->db_user";
+# $cmd .= " --password=$utils->db_pass $utils->db_name -L $filename";
+
 my $cmd = "mysqlimport --columns=$column_list --compress --fields-terminated-by='\\t'";
-$cmd .= " --lines-terminated-by='\\n' --host=$utils->db_host --user=$utils->db_user";
-$cmd .= " --password=$utils->db_pass $utils->db_name -L $filename";
+$cmd .= " --lines-terminated-by='\\n' --host=$db_host --user=$db_user";
+$cmd .= " --password=$db_pass $db_name -L $filename";
 
 #execute mysql import
 system($cmd);
