@@ -40,10 +40,6 @@
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
-            <name>db-load-nohit.default</name>
-        </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
             <name>dump_db.default</name>
         </commandSet>
     </commandSet>
