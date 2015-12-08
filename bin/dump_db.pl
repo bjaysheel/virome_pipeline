@@ -56,7 +56,7 @@ use Getopt::Long qw(:config no_ignore_case no_auto_abbrev pass_through);
 use Pod::Usage;
 use UTILS_V;
 
-my ($info,$outdir,$mgol,$uniref,$pipeline);
+my ($info,$outdir,$mgol,$uniref,$pipeline,$pipelineid);
 my %options = ();
 my $results = GetOptions (\%options,
                           'info|i=s'	=>	\$info,
