@@ -1,5 +1,3 @@
-#!/usr/bin/perl -w
-
 =head1 NAME
 
 dump_db.pl - Dumps the contents of a database into a directory full of table tab files
@@ -66,6 +64,7 @@ my $results = GetOptions (\%options,
 			  'mgol|m=s'    =>      \$mgol,
 			  'uniref|u=s'  =>      \$uniref,
 			  'pipeline|p=s'=>      \$pipeline,
+	  		  'pipelineid|r=s' =>   \$pipelineid,
 			  'help|h') || pod2usage();
 
 ## display documentation                                                                                                                                                                                                                    
@@ -165,8 +164,8 @@ foreach my $table (@tables) {
 
 print `mkdir $outdir/../$prefix/xDocs`;
 print `mkdir $outdir/../$prefix/idFiles`;
-print `cp /diag/projects/virome/virome-cache-files/xDocs/*_$library_id.xml $outdir/../$prefix/xDocs`;
-print `cp /diag/projects/virome/virome-cache-files/idFiles/*_$library_id.txt $outdir/../$prefix/idFiles`;
+print `cp /diag/projects/virome/virome-cache-files/$pipelineid/xDocs/*_$library_id.xml $outdir/../$prefix/xDocs`;
+print `cp /diag/projects/virome/virome-cache-files/$pipelineid/idFiles/*_$library_id.txt $outdir/../$prefix/idFiles`;
 
 #####################################################################
 ## Print out the version control info to the version_info.txt file ##

@@ -56,12 +56,16 @@ BEGIN {
 }
 
 my %options = ();
-my $results = GetOptions(
-	\%options,   'server|s=s',  'library|b=s', 'env|e=s',
-	'input|i=s', 'outdir|od=s', 'log|l=s',     'debug|d=s',
-	'help|h'
-  )
-  || pod2usage();
+my $results = GetOptions(\%options,
+						 'server|s=s',
+						 'library|b=s',
+						 'env|e=s',
+						 'input|i=s',
+						 'outdir|od=s',
+						 'pipelineid|p=s',
+						 'log|l=s',
+						 'debug|d=s',
+						 'help|h') || pod2usage();
 
 ## display documentation
 if ( $options{'help'} ) {
@@ -131,7 +135,7 @@ foreach my $lib (@libArray) {
 	my $orf_file = $get_orfans->fetchrow_array();
 
 	#open orf file and get all ids.
-	my $fileLoc = "/diag/projects/virome/virome-cache-files/idFiles";
+	my $fileLoc = "/diag/projects/virome/virome-cache-files/$options{pipelineid}/idFiles";
 	open( ORF, "<", $fileLoc . "/" . $orf_file )
 	  or die("Could not open file $orf_file\n\n $fileLoc/$orf_file\n");
 
@@ -211,7 +215,7 @@ sub check_parameters {
 	}
 
 	# if exec env is not specified show error
-	unless ( $options{env} ) {
+	unless ( $options{env} && $options{pipelineid}) {
 		pod2usage(
 			{
 				-exitval => 2,
