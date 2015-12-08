@@ -730,6 +730,9 @@ sub check_parameters {
 	  $options{server} = $libObject->{server};
    }
 
+   system ("mkdir -p $options{outdir}/idFiles");
+   system ("mkdir -p $options{outdir}/xDocs");
+
 
    $dbh1 = DBI->connect("DBI:mysql:database=".$utils->u_name.";host=".$utils->db_host,
    	       $utils->db_user, $utils->db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});

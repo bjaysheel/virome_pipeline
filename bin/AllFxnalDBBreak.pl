@@ -201,6 +201,9 @@ sub check_parameters {
         $options{server} = $libObject->{server};
     }
 
+	system ("mkdir -p $options{outdir}/idFiles");
+	system ("mkdir -p $options{outdir}/xDocs");
+
     $dbh0 = DBI->connect("DBI:mysql:database=".$utils->db_live_name.";host=".$utils->db_live_host,
 		$utils->db_live_user, $utils->db_live_pass, {PrintError=>1, RaiseError =>1, AutoCommit =>1});
 
