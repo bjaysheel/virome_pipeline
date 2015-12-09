@@ -1,12 +1,12 @@
-<?xmlversion="1.0"encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<commandSetRootxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation='commandSet.xsd'>
-<commandSettype="serial">
-	<name>ADDNO-HITS</name>
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+<commandSet type="serial">
+	<name>ADD NO-HITS</name>
 	<!--Processing-->
 	<command>
 		<type>RunUnixCommand</type>
-		<name>adddummyNOHITvaluestoblastp</name>
+		<name>add dummy NOHIT values to blastp</name>
 		<state>incomplete</state>
 		<executable>$;BIN_DIR$;/db-load-nohit</executable>
 

@@ -2,7 +2,7 @@
 
 <commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
     <commandSet type="serial">
-        <name>Gen Lib Stats</name>
+        <name>GenLibStats</name>
         <!--Processing-->
 	<command>
             <type>RunUnixCommand</type>
