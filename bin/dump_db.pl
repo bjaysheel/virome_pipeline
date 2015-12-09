@@ -75,17 +75,21 @@ if( $options{'help'} ){
 ## make sure everything passed was peachy
 pod2usage( -msg  => "ERROR!  Required argument -i not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $info);
 pod2usage( -msg  => "ERROR!  Required argument -o not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $outdir);
+pod2usage( -msg  => "ERROR!  Required argument -m not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $mgol);
+pod2usage( -msg  => "ERROR!  Required argument -u not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $uniref);
+pod2usage( -msg  => "ERROR!  Required argument -p not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $pipeline);
+pod2usage( -msg  => "ERROR!  Required argument -r not found.\n", -exitval => 0, -verbose => 2, -output => \*STDERR)  if (! $pipelineid);
 
 ## MySQL Server information
-my $db_name = "virome";
-my $db_host = "virome-db.igs.umaryland.edu";
-my $db_user = "dnasko";
-my $db_pass = "dnas_76";
-my @row;
+# my $db_name = "virome";
+# my $db_host = "virome-db.igs.umaryland.edu";
+# my $db_user = "dnasko";
+# my $db_pass = "dnas_76";
+# my @row;
 
-my $dbh = DBI->connect("DBI:mysql:database=".$db_name.";host=".$db_host, $db_user, $db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});
-my $select_sql = qq/SELECT `user` FROM library WHERE id = ? ;/;
-my $sth_select = $dbh->prepare($select_sql);
+# my $dbh = DBI->connect("DBI:mysql:database=".$db_name.";host=".$db_host, $db_user, $db_pass,{PrintError=>1, RaiseError =>1, AutoCommit =>1});
+# my $select_sql = qq/SELECT `user` FROM library WHERE id = ? ;/;
+# my $sth_select = $dbh->prepare($select_sql);
 
 ###################################
 ## Let's Gather Some Information ##
@@ -111,11 +115,11 @@ Server       = $server
 Proc DB      = $processing_db
 ";
 
-$sth_select->execute ($library_id);
-while (@row = $sth_select->fetchrow_array) {
-    $user = $row[0];
-}
-print "User      = $user\n";
+# $sth_select->execute ($library_id);
+# while (@row = $sth_select->fetchrow_array) {
+#     $user = $row[0];
+# }
+# print "User      = $user\n";
 if ($processing_db =~ m/diag/) {
     $root = "/diag/projects/virome/";
 }
@@ -135,35 +139,40 @@ my %processing_databases = (
     'diag5'  =>  'virome_processing_5',
     'diag'   =>  'virome_processing'
     );
-my @tables = ('blastn','blastp','sequence','statistics','sequence_relationship','tRNA');
+my @tables = ('blastp','blastn','sequence','statistics','sequence_relationship','tRNA');
 my $stg_db_name = '';
 if (exists $processing_databases{$processing_db}) {
     $stg_db_name = $processing_databases{$processing_db};
 }
 else { die "\n Invalid staging database provided: $processing_db\n"; }
-print `mkdir $outdir/../$prefix`;
+print `mkdir -p $outdir/../$prefix`;
 
 foreach my $table (@tables) {
-    print `mysql $stg_db_name -udnasko -hdnode001.igs.umaryland.edu -pdnas_76 -e"SELECT * FROM $table" > $outdir/../$prefix/$table.tab`;
-    open(TMP,">$outdir/$table.tab2") || die "\n cannot write to: $outdir/$table.tab2\n";
+    print "Dumping table $table\n";
+    system("mysql $stg_db_name -udnasko -hdnode001.igs.umaryland.edu -pdnas_76 -e\"SELECT * FROM $table\" > $outdir/../$prefix/$table.tab");
+
+    #### append # to first line 
+    open(TMP, ">", "$outdir/$table.tab2") || die "\n cannot write to: $outdir/$table.tab2\n";
     print TMP "#";
-    open(IN,"<$outdir/../$prefix/$table.tab") || die "\n Cannot open: $outdir/../$prefix/$table.tab\n";
+
+    open(IN, "<", "$outdir/../$prefix/$table.tab") || die "\n Cannot open: $outdir/../$prefix/$table.tab\n";
     while(<IN>) {
-	chomp;
-	print TMP $_ . "\n";
+	    chomp;
+	    print TMP $_ . "\n";
     }
     close(TMP);
     close(IN);
+
     print `mv $outdir/$table.tab2 $outdir/../$prefix/$table.tab`;
     my $lines = `grep -c "^" $outdir/../$prefix/$table.tab`; chomp($lines);
     if ($lines == 1) {
-	print `rm $outdir/../$prefix/$table.tab`;
-	print `touch $outdir/../$prefix/$table.tab`;
+	    print `rm $outdir/../$prefix/$table.tab`;
+	    print `touch $outdir/../$prefix/$table.tab`;
     }
 }
 
-print `mkdir $outdir/../$prefix/xDocs`;
-print `mkdir $outdir/../$prefix/idFiles`;
+print `mkdir -p $outdir/../$prefix/xDocs`;
+print `mkdir -p $outdir/../$prefix/idFiles`;
 print `cp /diag/projects/virome/virome-cache-files/$pipelineid/xDocs/*_$library_id.xml $outdir/../$prefix/xDocs`;
 print `cp /diag/projects/virome/virome-cache-files/$pipelineid/idFiles/*_$library_id.txt $outdir/../$prefix/idFiles`;
 
