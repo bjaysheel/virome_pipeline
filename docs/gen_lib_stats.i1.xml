@@ -4,7 +4,7 @@
     <commandSet type="serial">
         <name>GenLibStats</name>
         <!--Processing-->
-	<command>
+        <command>
             <type>RunUnixCommand</type>
             <name>calculate general library statistics</name>
             <state>incomplete</state>
@@ -25,7 +25,7 @@
                 <key>--input</key>
                 <value>$;I_FILE_PATH$;</value>
             </param>
-	    <param>
+            <param>
                 <key>--lookupDir</key>
                 <value>$;LOOKUP_DIR$;</value>
             </param>
@@ -36,12 +36,11 @@
             <param>
                 <key>stdout</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stdout</value>
-	    </param>
-	    <param>
-                <key>stderr</key>    
+            </param>
+            <param>
+                <key>stderr</key>
                 <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stderr</value>
-	    </param>
+            </param>
         </command>
     </commandSet>
 </commandSetRoot>
-

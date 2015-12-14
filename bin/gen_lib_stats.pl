@@ -683,8 +683,8 @@ foreach my $libId (@libArray) {
     # 		$lineage,$libId));
 }
 
-$dbh1->disconnect;
-$dbh->disconnect;
+#$dbh1->disconnect;
+#$dbh->disconnect;
 
 timer(); #call timer to see when process ended.
 exit(0);

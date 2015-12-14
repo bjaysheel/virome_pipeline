@@ -3,13 +3,13 @@
 <commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
     <commandSet type="serial">
         <name>All Fxnal charts</name>
-	<!--Processing-->
+        <!--Processing-->
         <command>
             <type>RunUnixCommand</type>
             <name>Create ALL Fxnal charts</name>
             <state>incomplete</state>
             <executable>$;BIN_DIR$;/fxnal_count_chart_creator_all</executable>
-             <param>
+            <param>
                 <key>--server</key>
                 <value>$;SERVER_NAME$;</value>
             </param>
@@ -31,13 +31,12 @@
             </param>
             <param>
                 <key>stdout</key>
-                <value>$;TMP_DIR$;/fxnal_count_chart_creator_all.stdout</value>
-	    </param>
-	    <param>
-		<key>stderr</key>    
-		<value>$;TMP_DIR$;/fxnal_count_chart_creator_all.stderr</value>
-	    </param>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stdout</value>
+            </param>
+            <param>
+                <key>stderr</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stderr</value>
+            </param>
         </command>
     </commandSet>
 </commandSetRoot>
-

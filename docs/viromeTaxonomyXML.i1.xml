@@ -31,13 +31,12 @@
             </param>
             <param>
                 <key>stdout</key>
-                <value>$;TMP_DIR$;/viromeTaxonomyXML.stdout</value>
-	    </param>
-	    <param>
-		<key>stderr</key>    
-		<value>$;TMP_DIR$;/viromeTaxonomyXML.stderr</value>
-	    </param>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stdout</value>
+            </param>
+            <param>
+                <key>stderr</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stderr</value>
+            </param>
         </command>
     </commandSet>
 </commandSetRoot>
-

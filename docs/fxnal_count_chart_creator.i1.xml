@@ -3,7 +3,7 @@
 <commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
     <commandSet type="serial">
         <name>Fxnal charts</name>
-	<!--Processing-->
+        <!--Processing-->
         <command>
             <type>RunUnixCommand</type>
             <name>create overall fxnal xmls</name>
@@ -31,13 +31,12 @@
             </param>
             <param>
                 <key>stdout</key>
-                <value>$;TMP_DIR$;/fxnal_count_chart_creator.stdout</value>
-	    </param>
-	    <param>
-		<key>stderr</key>    
-		<value>$;TMP_DIR$;/fxnal_count_chart_creator.stderr</value>
-	    </param>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stdout</value>
+            </param>
+            <param>
+                <key>stderr</key>
+                <value>$;OUTPUT_DIRECTORY$;/$;ITERATOR_NAME$;/g$;GROUP_NUMBER$;/$;COMPONENT_NAME$;.stderr</value>
+            </param>
         </command>
     </commandSet>
 </commandSetRoot>
-
