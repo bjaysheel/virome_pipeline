@@ -2,22 +2,42 @@
     <commandSet type="serial">
         <state>incomplete</state>
         <name>start</name>
-	<commandSet type="serial">
-            <state>incomplete</state>
-            <name>reset_db.default</name>
-        </commandSet>
-        <commandSet type="serial">
-	    <state>incomplete</state>
-            <name>import_library_from_archive.default</name>
-        </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
-            <name>clean_expand_btab.uniref</name>
-        </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
-            <name>blast-result-prep.uniref</name>
-        </commandSet>
+            <commandSet type="serial">
+                <state>incomplete</state>
+                <commandSet type="serial">
+                    <state>incomplete</state>
+                    <commandSet type="serial">
+                        <state>incomplete</state>
+                        <commandSet type="serial">
+                            <state>incomplete</state>
+                            <commandSet type="serial">
+                                <state>incomplete</state>
+                                <commandSet type="serial">
+                                    <state>incomplete</state>
+                                    <commandSet type="serial">
+                                        <state>incomplete</state>
+                                        <commandSet type="serial">
+                                            <state>incomplete</state>
+                                            <commandSet type="serial">
+                                                <state>incomplete</state>
+                                                <commandSet type="serial">
+                                                    <state>incomplete</state>
+                                                    <name>reset_db.default</name>
+                                                </commandSet>
+                                                <commandSet type="serial">
+                                                    <state>incomplete</state>
+                                                    <name>import_library_from_archive.default</name>
+                                                </commandSet>
+                                                <commandSet type="serial">
+                                                    <state>incomplete</state>
+                                                    <name>clean_expand_btab.uniref</name>
+                                                </commandSet>
+                                                <commandSet type="serial">
+                                                    <state>incomplete</state>
+                                                    <name>blast-result-prep.uniref</name>
+                                                </commandSet>
                                                 <commandSet type="serial">
                                                     <state>incomplete</state>
                                                     <name>concatenate_files.default</name>
@@ -62,9 +82,19 @@
                                                     <state>incomplete</state>
                                                     <name>dump_db.default</name>
                                                 </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
-            <name>transfer_checkin.default</name>
-	</commandSet>
+                                                <commandSet type="serial">
+                                                    <state>incomplete</state>
+                                                    <name>transfer_checkin.default</name>
+                                                </commandSet>
+                                            </commandSet>
+                                        </commandSet>
+                                    </commandSet>
+                                </commandSet>
+                            </commandSet>
+                        </commandSet>
+                    </commandSet>
+                </commandSet>
+            </commandSet>
+        </commandSet>
     </commandSet>
 </commandSetRoot>

@@ -88,6 +88,13 @@ pod2usage( -msg  => "\n\n ERROR!  Required argument --prefix not found.\n\n", -e
 pod2usage( -msg  => "\n\n ERROR!  Required argument --lib_info not found.\n\n", -exitval => 2, -verbose => 1) if (! $lib_info );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --db not found.\n\n", -exitval => 2, -verbose => 1)       if (! $db );
 
+my $db_load_file = $lib_info;
+$db_load_file =~ s/.list$//;
+print `sed -i 's/diag.\$/diag5/' $db_load_file`;
+my $pipeline_id = $lib_info;
+$pipeline_id =~ s/.*db-load-library\///;
+$pipeline_id =~ s/_default.*//;
+
 ## GLOBAL VARIABLES
 my $root = '/diag/projects/virome/automated_pipeline_package/';
 my $instantiator_script = 'virome_rerun_stats.pl';
@@ -107,6 +114,7 @@ my $instantiate = "perl " . $instant_dir . $instantiator_script
     . " --lib_info="          . $lib_info
     . " --database="          . $db
     . " --prefix="            . $prefix
+    . " --pipeline="          . $pipeline_id
     ;
 print `$instantiate`;
 

@@ -89,6 +89,7 @@ use Ergatis::SavedPipeline;
 
 my %options = ();
 my $results = GetOptions (\%options,
+			  'pipeline|z=s',
 			  'database|d=s',
 			  'prefix|p=s',
 			  'lib_info|l=s',
@@ -139,6 +140,29 @@ $import_library_from_archive_config->RewriteConfig();
 $import_library_from_archive_config->setval( 'input', '$;INPUT_FILE$;', "/diag/projects/virome/output_repository/dump_db/$prefix" );
 $import_library_from_archive_config->RewriteConfig();
 
+## clean_expand_btab.uniref
+my $clean_expand_btab_config = new Ergatis::ConfigFile(
+    -file => "$options{repository_root}/workflow/runtime/clean_expand_btab/" . $pipeline->id . "_uniref/clean_expand_btab.uniref.user.config");
+$clean_expand_btab_config->setval('input', '$;INPUT_FILE_LIST$;', "/diag/projects/virome/output_repository/btab2viromebtab/".$options{pipeline}."_uniref/btab2viromebtab.btab.list" );
+$clean_expand_btab_config->RewriteConfig();
+
+## blast-result-prep.uniref
+my $blast_result_prep_config = new Ergatis::ConfigFile(
+    -file => "$options{repository_root}/workflow/runtime/blast-result-prep/" . $pipeline->id . "_uniref/blast-result-prep.uniref.user.config");
+$blast_result_prep_config->setval('input', '$;LIBRARY_LIST_FILE$;', $options{lib_info} );
+$blast_result_prep_config->RewriteConfig();
+
+## concatenate_files.default
+my $concatenate_files_config = new Ergatis::ConfigFile(
+    -file => "$options{repository_root}/workflow/runtime/concatenate_files/" . $pipeline->id . "_default/concatenate_files.default.user.config");
+$concatenate_files_config->setval('input', '$;INPUT_FILE_LIST$;', "$options{repository_root}/output_repository/blast-result-prep/" . $pipeline->id . "_uniref/blast-result-prep.txt.list,/diag/projects/virome/output_repository/blast-result-prep/" . $options{pipeline} . "_mgol/blast-result-prep.txt.list" );
+
+## transfer_checkin
+my $transfer_checkin_config = new Ergatis::ConfigFile(
+    -file => "$options{repository_root}/workflow/runtime/transfer_checkin/" . $pipeline->id . "_default/transfer_checkin.default.user.config");
+$transfer_checkin_config->setval('input', '$;INPUT_FILE_LIST$;', $lib_info );
+$transfer_checkin_config->RewriteConfig();
+
 ## reset-processing-db
 my $reset_proc_db_config = new Ergatis::ConfigFile(
     -file => "$options{repository_root}/workflow/runtime/reset_db/" . $pipeline->id . "_default/reset_db.default.user.config");
@@ -152,7 +176,7 @@ $dump_db_config->setval('input', '$;INPUT_FILE_LIST$;', $lib_info );
 $dump_db_config->RewriteConfig();
 
 ## All of the components needing to get the location update . . .
-my @LOCATION = qw( env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default viromeClassification.default viromeTaxonomyXML.default );
+my @LOCATION = qw( env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default viromeClassification.default viromeTaxonomyXML.default db-load-nohit );
 
 foreach my $component (@LOCATION) {
     my @a = split(/\./, $component);
@@ -192,7 +216,7 @@ sub check_parameters {
     my $options = shift;
     
     ## make sure required arguments were passed
-    my @required = qw( template_directory repository_root id_repository ergatis_ini prefix lib_info database);
+    my @required = qw( template_directory repository_root id_repository ergatis_ini prefix lib_info database pipeline);
     for my $option ( @required ) {
         unless  ( defined $$options{$option} ) {
             die "--$option is a required option";
