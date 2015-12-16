@@ -10,7 +10,7 @@ rerun_stats_on_library.pl -- Rerun the stats scripts on a library that has a db_
 
 =head1 SYNOPSIS
 
- rerun_stats_on_library.pl --prefix=PRF --db=diag5 --lib_info=/diag/projects/virome/output_repository/db-load-libaray/EREAFD3241/db-load-librart.txt.list
+ rerun_stats_on_library.pl --db=diag5 --lib_info=/diag/projects/virome/output_repository/db-load-libaray/EREAFD3241/db-load-librart.txt.list
                      [--help] [--manual]
 
 =head1 DESCRIPTION
@@ -19,10 +19,6 @@ rerun_stats_on_library.pl -- Rerun the stats scripts on a library that has a db_
 =head1 OPTIONS
 
 =over 3
-
-=item B<-p, --prefix>=NAME
-
-Prefix. (Required) 
 
 =item B<-l, --lib_info>=FILENAME
 
@@ -75,7 +71,6 @@ use DBI;
 #ARGUMENTS WITH NO DEFAULT
 my($prefix,$lib_info,$db,$help,$manual);
 GetOptions (
-                         "p|prefix=s"   => \$prefix,
                          "l|lib_info=s" => \$lib_info,
                          "d|db=s"       => \$db,
                          "h|help"       => \$help,
@@ -84,7 +79,6 @@ GetOptions (
 # VALIDATE ARGS
 pod2usage(-verbose => 2)  if ($manual);
 pod2usage( {-exitval => 0, -verbose => 2, -output => \*STDERR} )  if ($help);
-pod2usage( -msg  => "\n\n ERROR!  Required argument --prefix not found.\n\n", -exitval => 2, -verbose => 1)   if (! $prefix );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --lib_info not found.\n\n", -exitval => 2, -verbose => 1) if (! $lib_info );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --db not found.\n\n", -exitval => 2, -verbose => 1)       if (! $db );
 
@@ -94,6 +88,9 @@ print `sed -i 's/diag.\$/diag5/' $db_load_file`;
 my $pipeline_id = $lib_info;
 $pipeline_id =~ s/.*db-load-library\///;
 $pipeline_id =~ s/_default.*//;
+$prefix = `cut -f3 $db_load_file`; chomp($prefix);
+print `rm /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
+print `touch /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
 
 ## GLOBAL VARIABLES
 my $root = '/diag/projects/virome/automated_pipeline_package/';

@@ -176,7 +176,7 @@ $dump_db_config->setval('input', '$;INPUT_FILE_LIST$;', $lib_info );
 $dump_db_config->RewriteConfig();
 
 ## All of the components needing to get the location update . . .
-my @LOCATION = qw( env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default viromeClassification.default viromeTaxonomyXML.default db-load-nohit );
+my @LOCATION = qw( env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default viromeClassification.default viromeTaxonomyXML.default db-load-nohit.default );
 
 foreach my $component (@LOCATION) {
     my @a = split(/\./, $component);
