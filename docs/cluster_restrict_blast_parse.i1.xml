@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commandSetRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation='commandSet.xsd'>
+    <commandSet type="serial">
+        <name>cluster_restrict_blast_parse compute</name>
+        <command>
+            <type>RunUnixCommand</type>
+            <name>cluster_restrict_blast_parse</name>
+            <state>incomplete</state>
+            <executable>$;BIN_DIR$;/cluster_restrict_blast_parse</executable>
+            <param>  
+                <key>--fasta</key>
+                <value>$;INPUT_FILE$;</value>
+            </param>
+            <param>  
+                <key>--output_dir</key>
+                <value>$;OUTPUT_DIRECTORY$;/i1/g$;GROUP_NUMBER$;</value>
+            </param>
+            <param>  
+                <key>--btab</key>
+                <value>$;INPUT_BTAB$;</value>
+            </param>
+            <param>  
+                <key>--lookup</key>
+                <value>$;LOOKUP_FILE$;</value>
+            </param>
+        </command>
+    </commandSet>
+</commandSetRoot>
