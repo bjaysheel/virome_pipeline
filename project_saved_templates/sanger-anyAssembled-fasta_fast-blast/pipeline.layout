@@ -221,8 +221,16 @@
                 <state>incomplete</state>
                 <commandSet type="serial">
                     <state>incomplete</state>
-                    <name>ncbi-blastp-plus.uniref</name>
+                    <name>ncbi-blastp-plus.uniref50.config</name>
                 </commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>concatenate_files.unirefbtab.config</name>
+		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>cluster_restrict_blast_parse.uniref.config</name>
+		</commandSet>
                 <commandSet type="serial">
 		    <state>incomplete</state>
                     <name>btab2viromebtab.uniref</name>
