@@ -231,6 +231,14 @@
 		    <state>incomplete</state>
 		    <name>cluster_restrict_blast_parse.uniref.config</name>
 		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>split_multifasta.orf_mgol.config</name>
+		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>ncbi-blastp-plus-restrict.uniref100.config</name>
+		</commandSet>
                 <commandSet type="serial">
 		    <state>incomplete</state>
                     <name>btab2viromebtab.uniref</name>
