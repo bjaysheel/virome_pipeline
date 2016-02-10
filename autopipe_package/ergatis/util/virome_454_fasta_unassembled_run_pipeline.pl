@@ -168,7 +168,7 @@ $fasta_size_filter_config->setval('input', '$;INPUT_FILE$;', $fasta );
 $fasta_size_filter_config->RewriteConfig();
 
 ## split_multifasta (if needed)
-if ($sequences < 75) {
+if ($sequences < 20) {
     my $split_multifasta_config = new Ergatis::ConfigFile(
 	-file => "$options{repository_root}/workflow/runtime/split_multifasta/" . $pipeline->id . "_default/split_multifasta.default.user.config");
     $split_multifasta_config->setval('parameters', '$;TOTAL_FILES$;', $sequences );
@@ -176,7 +176,7 @@ if ($sequences < 75) {
 }
 
 ## All of the components needing to get the location update . . .
-my @LOCATION = qw( clean_expand_btab.mgol clean_expand_btab.rna clean_expand_btab.uniref db-load-library.default db-load-nohit.default db-to-lookup.seq-lookup db-upload.blastp db-upload.orfs db-upload.orfs_nuc db-upload.rna-blast db-upload.rna-clean db-upload.rna db-upload.sequence_relationship-prep db-upload.trna env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default sequence_relationship-prep.default viromeClassification.default viromeTaxonomyXML.default );
+my @LOCATION = qw( clean_expand_btab.mgol clean_expand_btab.uniref db-load-library.default db-load-nohit.default db-to-lookup.seq-lookup db-upload.blastp db-upload.orfs db-upload.orfs_nuc db-upload.rna-blast db-upload.rna-clean db-upload.rna db-upload.sequence_relationship-prep db-upload.trna env_lib_stats.default fxnal_count_chart_creator_all.default fxnal_count_chart_creator.default gen_lib_stats.default libraryHistogram.default sequence_relationship-prep.default viromeClassification.default viromeTaxonomyXML.default );
 
 foreach my $component (@LOCATION) {
     my @a = split(/\./, $component);

@@ -221,23 +221,23 @@
                 <state>incomplete</state>
                 <commandSet type="serial">
                     <state>incomplete</state>
-                    <name>ncbi-blastp-plus.uniref50.config</name>
+                    <name>ncbi-blastp-plus-fast.uniref50</name>
                 </commandSet>
 		<commandSet type="serial">
 		    <state>incomplete</state>
-		    <name>concatenate_files.unirefbtab.config</name>
+		    <name>concatenate_files.unirefbtab</name>
 		</commandSet>
 		<commandSet type="serial">
 		    <state>incomplete</state>
-		    <name>cluster_restrict_blast_parse.uniref.config</name>
+		    <name>cluster_restrict_blast_parse.uniref</name>
 		</commandSet>
 		<commandSet type="serial">
 		    <state>incomplete</state>
-		    <name>split_multifasta.orf_mgol.config</name>
+		    <name>split_multifasta.orf_uniref</name>
 		</commandSet>
 		<commandSet type="serial">
 		    <state>incomplete</state>
-		    <name>ncbi-blastp-plus-restrict.uniref100.config</name>
+		    <name>ncbi-blastp-plus-restrict.uniref100</name>
 		</commandSet>
                 <commandSet type="serial">
 		    <state>incomplete</state>
@@ -254,11 +254,27 @@
             </commandSet>
             <commandSet type="serial">
                 <state>incomplete</state>
-                <commandSet type="serial">
-                    <state>incomplete</state>
-                    <name>ncbi-blastp-plus.mgol</name>
-                </commandSet>
-                <commandSet type="serial">
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>ncbi-blastp-plus-fast.mgol60</name>
+		</commandSet>
+		<commandSet type="serial">
+               	    <state>incomplete</state>
+		    <name>concatenate_files.mgolbtab</name>
+		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>cluster_restrict_blast_parse.mgol</name>
+		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>split_multifasta.orf_mgol</name>
+		</commandSet>
+		<commandSet type="serial">
+		    <state>incomplete</state>
+		    <name>ncbi-blastp-plus-restrict.mgol100</name>
+		</commandSet>
+		<commandSet type="serial">
 		    <state>incomplete</state>
                     <name>btab2viromebtab.mgol</name>
                 </commandSet>

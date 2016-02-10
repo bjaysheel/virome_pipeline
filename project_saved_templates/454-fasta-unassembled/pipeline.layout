@@ -19,9 +19,9 @@
             <name>nt_fasta_check.default</name>
         </commandSet>
 	<commandSet type="serial">
-            <state>incomplete</state>
-            <name>cd-hit-454.default</name>
-        </commandSet>
+	    <state>incomplete</state>
+	    <name>cd-hit-454.default</name>
+	</commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
             <name>split_multifasta.default</name>
@@ -50,10 +50,6 @@
                     <name>btab2viromebtab.rna</name>
                 </commandSet>
             </commandSet>
-        </commandSet>
-        <commandSet type="serial">
-            <state>incomplete</state>
-            <name>clean_expand_btab.rna</name>
         </commandSet>
         <commandSet type="serial">
             <state>incomplete</state>
@@ -272,7 +268,7 @@
                     <state>incomplete</state>
                     <name>concatenate_files.blastp</name>
                 </commandSet>
-	<commandSet type="serial">	
+	<commandSet type="serial">
                     <state>incomplete</state>
                     <name>db-upload.blastp</name>
         </commandSet>

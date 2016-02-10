@@ -252,6 +252,7 @@ else {
 	. " --sequences="         . $seqs
 	;
     print `$instantiate`;
+    # print "\n\nCommand:\n\n$instantiate\n\n";
 }
 
 $lv_dbh->disconnect;
