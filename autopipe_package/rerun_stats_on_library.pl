@@ -89,8 +89,8 @@ my $pipeline_id = $lib_info;
 $pipeline_id =~ s/.*db-load-library\///;
 $pipeline_id =~ s/_default.*//;
 $prefix = `cut -f3 $db_load_file`; chomp($prefix);
-print `rm /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
-print `touch /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
+# print `rm /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
+# print `touch /diag/projects/virome/output_repository/dump_db/$prefix/blastp.tab`;
 
 ## GLOBAL VARIABLES
 my $root = '/diag/projects/virome/automated_pipeline_package/';

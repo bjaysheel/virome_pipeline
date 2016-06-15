@@ -105,7 +105,7 @@ open(IN,"<$options{btab}") || die "\n Cannot read the input btab: $options{btab}
 while(<IN>) {
     chomp;
     my @fields = split(/\t/, $_);
-    $Subjects{$fields[1]} = 1;
+    $Subjects{$fields[2]} = 1; ## VIROME-DIAG blast has the subject ID in the 3rd field.
     $Queries{$fields[0]} = 1;
 }
 close(IN);
